@@ -22,7 +22,6 @@ BugReports: https://github.com/ninoxconsulting/PEMsamplr/issues
 Imports:
   cli, 
   fs,
-  sf,
   terra,
   dplyr
 Encoding: UTF-8
