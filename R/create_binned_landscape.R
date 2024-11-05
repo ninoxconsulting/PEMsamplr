@@ -8,6 +8,8 @@
 #' @param layers A `character` vector with the names of the landscape .tif files
 #'      on which the binning will be based. Default names are
 #'      c("dah_LS", "landform_LS","mrvbf_LS")
+#' @param write_output should the binned landscape raster be written to disk?
+#'     If `TRUE` (default), will write to `in_dir`.
 #'
 #' @return a `SpatRast`
 #' @export
@@ -20,7 +22,9 @@
 #' }
 create_binned_landscape <- function(
     in_dir = fs::path(PEMprepr::read_fid()$dir_1020_covariates$path_rel, "25m", "modules_landscape"),
-    layers = c("dah_LS", "landform_LS","mrvbf_LS")
+    layers = c("dah_LS", "landform_LS","mrvbf_LS"),
+    write_output = TRUE
+
 ){
 
   if (!dir.exists(fs::path(in_dir))) {
@@ -29,15 +33,13 @@ create_binned_landscape <- function(
   }
 
   rastlist <- fs::dir_ls(in_dir, glob = ("*.tif"))
-  # matchedlayers <- grep(paste(layers, collapse = "|"), basename(rastlist), value= TRUE)
-  matchedlayers <- grep(paste(layers, collapse = "|"), rastlist, value = TRUE)
+  rastlist <- rastlist[grep(paste(layers, collapse = "|"), rastlist, value = TRUE)]
 
-
-  if (length(layers) == length(matchedlayers)) {
+  if (length(layers) == length(rastlist)) {
     print("using the following files:")
     print(rastlist)
 
-    ancDat <- terra::rast(matchedlayers)
+    ancDat <- terra::rast(rastlist)
 
   } else {
     cli::cli_abort("{.var layers} and not found in your {.var in_dir}, please
@@ -56,6 +58,15 @@ create_binned_landscape <- function(
   out_rast <- terra::rast(anc_class, type="xyz", crs= terra::crs(ancDat), digits=6)
   out_rast <- out_rast$landscape
 
-  return(out_rast)
+  if(write_output){
+
+    terra::writeRaster(out_rast, fs::path(in_dir, "landscape_binned.tif"), overwrite = TRUE)
+    cli::cat_line()
+    cli::cli_alert_success(
+      "Binned landscape raster written to {.path {in_dir}}"
+    )
+  }
+
+  out_rast
 
 }

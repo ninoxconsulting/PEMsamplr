@@ -7,7 +7,8 @@
 create_binned_landscape(
   in_dir = fs::path(PEMprepr::read_fid()$dir_1020_covariates$path_rel, "25m",
     "modules_landscape"),
-  layers = c("dah_LS", "landform_LS", "mrvbf_LS")
+  layers = c("dah_LS", "landform_LS", "mrvbf_LS"),
+  write_output = TRUE
 )
 }
 \arguments{
@@ -17,6 +18,9 @@ of . A default location and name are applied in line with standard workflow.}
 \item{layers}{A \code{character} vector with the names of the landscape .tif files
 on which the binning will be based. Default names are
 c("dah_LS", "landform_LS","mrvbf_LS")}
+
+\item{write_output}{should the binned landscape raster be written to disk?
+If \code{TRUE} (default), will write to \code{in_dir}.}
 }
 \value{
 a \code{SpatRast}
