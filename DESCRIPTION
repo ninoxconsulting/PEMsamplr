@@ -23,6 +23,8 @@ Imports:
   cli, 
   fs,
   terra,
+  PEMprepr,
+  ggplot2,
   dplyr
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
