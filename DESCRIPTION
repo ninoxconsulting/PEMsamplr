@@ -25,6 +25,8 @@ Imports:
   terra,
   PEMprepr,
   ggplot2,
+  sf,
+  data.table,
   dplyr
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
