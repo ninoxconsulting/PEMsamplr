@@ -17,17 +17,18 @@
 #'   binned_landscape = fs::path(PEMprepr::read_fid()$dir_1020_covariates$path_rel,
 #'   "25m","modules_landscape")
 #' }
-
 check_bgc_landscapes <- function(
-    bec = fs::path(PEMprepr::read_fid()$dir_1020_covariates$path_rel,
-                   "25m", "bec.tif"),
-    binned_landscape = fs::path(PEMprepr::read_fid()$dir_1020_covariates$path_rel,
-                                "25m","modules_landscape", "landscape_binned.tif")
-    ) {
-
+    bec = fs::path(
+      PEMprepr::read_fid()$dir_1020_covariates$path_rel,
+      "25m", "bec.tif"
+    ),
+    binned_landscape = fs::path(
+      PEMprepr::read_fid()$dir_1020_covariates$path_rel,
+      "25m", "modules_landscape", "landscape_binned.tif"
+    )) {
   # testing
-  #bec <- fs::path(PEMprepr::read_fid()$dir_1020_covariates$path_rel, "25m", "bec.tif")
-  #binned_landscape <- landscapes
+  # bec <- fs::path(PEMprepr::read_fid()$dir_1020_covariates$path_rel, "25m", "bec.tif")
+  # binned_landscape <- landscapes
   # binned_landscape = fs::path(PEMprepr::read_fid()$dir_1020_covariates$path_rel,"25m","modules_landscape")
 
   if (inherits(bec, c("character"))) {
@@ -42,15 +43,19 @@ check_bgc_landscapes <- function(
     cli::cli_abort("{.var binned_landscape} must be a SpatRaster or a path to a file")
   }
 
-  # stack
-  rout <- c(bec, binned_landscape)
-  routdf <- as.data.frame(rout)
+  if (!isTRUE(all.equal(bec, binned_landscape))) {
+    cli::cli_abort("{.var bec} must match spatial extent of landscapes raster stack")
+  } else {
+    # stack
+    rout <- c(bec, binned_landscape)
+    routdf <- as.data.frame(rout)
 
-  routdf <- stats::na.omit(routdf)
+    routdf <- stats::na.omit(routdf)
 
- ggplot2::ggplot(routdf, ggplot2::aes(routdf$landscape)) +
-  ggplot2::geom_histogram() +
-  ggplot2::facet_wrap(~MAP_LABEL)
+    ggplot2::ggplot(routdf, ggplot2::aes(routdf$landscape)) +
+      ggplot2::geom_histogram() +
+      ggplot2::facet_wrap(~MAP_LABEL)
 
-  return(routdf)
+    return(routdf)
+  }
 }
