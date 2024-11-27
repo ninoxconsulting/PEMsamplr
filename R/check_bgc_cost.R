@@ -22,7 +22,7 @@
 #'     fs::path(PEMprepr::read_fid()$dir_201010_inputs$path_abs,"acost.tif"))
 #' check_bgc_cost(bec, binned_landscape, cost)
 #' }
-check_bgc_cost <- function(bec, binned_landscapes, cost) {
+check_bgc_cost <- function(bec, binned_landscape, cost) {
 
   if (inherits(bec, c("character"))) {
     bec <- terra::rast(bec)
@@ -51,8 +51,8 @@ check_bgc_cost <- function(bec, binned_landscapes, cost) {
     rcost <- c(bec, binned_landscape, cost)
 
     rcdf <- as.data.frame(rcost, xy = TRUE)
-    rcdf <- na.omit(rcdf)
-    rcdf <- rcdf |> dplyr::select(-c(x, y))
+    rcdf <- stats::na.omit(rcdf)
+    rcdf <- rcdf |> dplyr::select(-c("x", "y"))
 
     rcdf_class <- rcdf |>
       dplyr::mutate(cost_code = dplyr::case_when(

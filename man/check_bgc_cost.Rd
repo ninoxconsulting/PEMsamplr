@@ -4,17 +4,17 @@
 \alias{check_bgc_cost}
 \title{Check sample cost per BGC}
 \usage{
-check_bgc_cost(bec, binned_landscapes, cost)
+check_bgc_cost(bec, binned_landscape, cost)
 }
 \arguments{
 \item{bec}{A \code{SpatRast} or path to BEC raster generated at a landscape (25m)
 scale. This output is derived from the create_bgc_template().}
 
-\item{cost}{A \code{SpatRast} or path to the generated cost layer. This is the
-output of the function (prep_cost_layer TBFinalised)}
-
 \item{binned_landscape}{A \code{SpatRast} with the landscape binned. This is the
 output of the \code{\link[=create_binned_landscape]{create_binned_landscape()}} function.}
+
+\item{cost}{A \code{SpatRast} or path to the generated cost layer. This is the
+output of the function (prep_cost_layer TBFinalised)}
 }
 \value{
 data.frame with a class
