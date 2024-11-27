@@ -35,9 +35,9 @@ check_roads <- function(
   # check road surface
   roads_check <- roads_check |>
     dplyr::rename(
-      "road_surface" = roads_check$ROAD_CLASS,
-      "surface" = roads_check$ROAD_SURFACE,
-      "name" = roads_check$ROAD_NAME_FULL
+      "road_surface" = "ROAD_CLASS",
+      "surface" = "ROAD_SURFACE",
+      "name" = "ROAD_NAME_FULL"
     )
 
   rsurface <- unique(roads_check$surface)
