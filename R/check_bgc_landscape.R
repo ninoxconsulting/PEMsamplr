@@ -1,10 +1,9 @@
 #' Generate a summary table of binned landscape classes per BGC
 #'
-#' @param bec A `SpatRast` of path to BEC raster generated at a landscape (25m)
+#' @param bec A `SpatRast` or path to BEC raster generated at a landscape (25m)
 #'      scale. This output is derived from the create_bgc_template().
 #' @param binned_landscape A `SpatRast` with the landscape binned. This is the
 #'      output of the [create_binned_landscape()] function.
-#'
 #' @return A dataframe with summary of landsclass class and BEC unit.
 #'        A plot is also returned.
 #' @export
