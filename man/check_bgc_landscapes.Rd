@@ -11,7 +11,7 @@ check_bgc_landscapes(
 )
 }
 \arguments{
-\item{bec}{A \code{SpatRast} of path to BEC raster generated at a landscape (25m)
+\item{bec}{A \code{SpatRast} or path to BEC raster generated at a landscape (25m)
 scale. This output is derived from the create_bgc_template().}
 
 \item{binned_landscape}{A \code{SpatRast} with the landscape binned. This is the
