@@ -3,7 +3,6 @@
 #' @param roads a `sf` object or path to roads layers. Default location is based
 #'          on standard workflow. Roads is created using the create_base_vectors()
 #'          function.
-#'
 #' @return TRUE
 #' @export
 #'
