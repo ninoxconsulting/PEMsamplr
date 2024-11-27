@@ -43,7 +43,7 @@ check_bgc_landscapes <- function(
     cli::cli_abort("{.var binned_landscape} must be a SpatRaster or a path to a file")
   }
 
-  if (!isTRUE(all.equal(bec, binned_landscape))) {
+  if (!isTRUE(terra::compareGeom(bec, binned_landscape))) {
     cli::cli_abort("{.var bec} must match spatial extent of landscapes raster stack")
   } else {
     # stack
