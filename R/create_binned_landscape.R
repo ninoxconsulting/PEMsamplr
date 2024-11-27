@@ -10,7 +10,6 @@
 #'      c("dah_LS", "landform_LS","mrvbf_LS")
 #' @param write_output should the binned landscape raster be written to disk?
 #'     If `TRUE` (default), will write to `in_dir`.
-#'
 #' @return a `SpatRast`
 #' @export
 #'
