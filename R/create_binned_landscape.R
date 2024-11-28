@@ -3,8 +3,9 @@
 #' Create a Spatrast object based on the binned landscape variables to assess
 #' the landscape environmental space.
 #'
-#' @param in_dir A `character` or path filepath which points to input location
-#'      of . A default location and name are applied in line with standard workflow.
+#' @param in_dir A `character` or path which points to input location of
+#'      landscape level `spatRaster`'s created using the create_landscape_covariate().
+#'      A default location and name are applied in line with standard workflow.
 #' @param layers A `character` vector with the names of the landscape .tif files
 #'      on which the binning will be based. Default names are
 #'      c("dah_LS", "landform_LS","mrvbf_LS")
