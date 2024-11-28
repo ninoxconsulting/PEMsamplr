@@ -26,8 +26,7 @@
 #'      of . A default location and name are applied in line with standard workflow.
 #' @param write_output A `logical` should the cost_penalty spatRaster be
 #'     written to disk? If `TRUE` (default), will write to `out_dir`.
-#'
-#' @return a `spatRaster` representing costs with cost penality values applied
+#' @return A `SpatRaster` representing costs with cost penality values applied
 #' @export
 #'
 #' @examples
@@ -55,7 +54,7 @@
 #' }
 #'
 #'
-create_cost_penalty <- function(vec_dir,
+create_cost_penalty <- function(vec_dir = fs::path(PEMprepr::read_fid()$dir_1010_vector$path_abs),
                                 dem,
                                 cost,
                                 costval = 3000,
@@ -82,7 +81,7 @@ create_cost_penalty <- function(vec_dir,
 
 
   if (calc_by_qq == T) {
-    qq <- terra::global(cost, quantile, probs = c(0.65, 0.70, 0.90), na.rm = T)
+    qq <- terra::global(cost, stats::quantile, probs = c(0.65, 0.70, 0.90), na.rm = T)
 
     vri_cost <- qq$X65.
     costval <- qq$X70.
@@ -195,8 +194,8 @@ create_cost_penalty <- function(vec_dir,
     "Steep slopes added to cost penalty layer"
   )
 
-  names(hc_out) <- "cost"
-
+  terra::varnames(hc_out) <- "cost"
+  names(hc_out)<- "cost"
 
   if (write_output) {
 
