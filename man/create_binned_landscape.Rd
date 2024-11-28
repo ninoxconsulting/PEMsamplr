@@ -12,8 +12,9 @@ create_binned_landscape(
 )
 }
 \arguments{
-\item{in_dir}{A \code{character} or path filepath which points to input location
-of . A default location and name are applied in line with standard workflow.}
+\item{in_dir}{A \code{character} or path which points to input location of
+landscape level \code{spatRaster}'s created using the create_landscape_covariate().
+A default location and name are applied in line with standard workflow.}
 
 \item{layers}{A \code{character} vector with the names of the landscape .tif files
 on which the binning will be based. Default names are
