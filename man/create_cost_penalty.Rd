@@ -5,7 +5,7 @@
 \title{Create a cost penalty layer for sample plan development}
 \usage{
 create_cost_penalty(
-  vec_dir,
+  vec_dir = fs::path(PEMprepr::read_fid()$dir_1010_vector$path_abs),
   dem,
   cost,
   costval = 3000,
@@ -46,7 +46,7 @@ of . A default location and name are applied in line with standard workflow.}
 written to disk? If \code{TRUE} (default), will write to \code{out_dir}.}
 }
 \value{
-a \code{spatRaster} representing costs with cost penality values applied
+A \code{SpatRaster} representing costs with cost penality values applied
 }
 \description{
 Uses cost layer and applies a cost layers to the following criteria:
