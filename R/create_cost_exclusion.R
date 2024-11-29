@@ -9,6 +9,8 @@
 #' @param cost A `SpatRast` or path to cost layer with high cost applied.
 #'    This is created using the create_cost_penality() function. A default
 #'    location and name is applied in line with standard workflow.
+#' @param buffer A `numeric` values in meters representing the buffer distance to
+#'    be excluded surrounding lakes
 #' @param out_dir A `character` or path which points to input location
 #'      of . A default location and name are applied in line with standard workflow.
 #' @param write_output A `logical` should the cost_penalty spatRaster be
@@ -29,7 +31,6 @@ create_cost_exclusion <- function(vec_dir = fs::path(PEMprepr::read_fid()$dir_10
                                   buffer = 150,
                                   out_dir = fs::path(PEMprepr::read_fid()$dir_201010_inputs$path_abs),
                                   write_output = TRUE) {
-
   if (!inherits(vec_dir, c("character"))) {
     cli::cli_abort("{.var vec_dir} must be a SpatRaster or a path to a file")
   }
@@ -42,7 +43,7 @@ create_cost_exclusion <- function(vec_dir = fs::path(PEMprepr::read_fid()$dir_10
 
   if (fs::file_exists(fs::path(vec_dir, "water.gpkg"))) {
     water <- sf::st_read(file.path(vec_dir, "water.gpkg")) |>
-      dplyr::filter(WATERBODY_TYPE != "W")
+      dplyr::filter("WATERBODY_TYPE" != "W")
     water_buff <- sf::st_buffer(water, dist = buffer)
     cli::cat_line()
     cli::cli_alert_success(
@@ -75,7 +76,6 @@ create_cost_exclusion <- function(vec_dir = fs::path(PEMprepr::read_fid()$dir_10
     terra::mask(water_buff, inverse = TRUE)
 
   if (write_output) {
-
     if (!fs::dir_exists(out_dir)) {
       fs::dir_create(out_dir, recurse = TRUE)
       cli::cli_alert_warning(
@@ -99,5 +99,4 @@ create_cost_exclusion <- function(vec_dir = fs::path(PEMprepr::read_fid()$dir_10
   }
 
   return(sample_cost_masked)
-
 }
