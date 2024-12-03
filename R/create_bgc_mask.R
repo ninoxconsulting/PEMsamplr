@@ -61,7 +61,7 @@ create_bgc_mask <- function(
     for (b in boi) {
 
       subzone <- bec |>
-        dplyr::filter("MAP_LABEL" %in% b)
+        dplyr::filter(bec$MAP_LABEL %in% b)
 
       subzone_buff <- sf::st_buffer(subzone, dist = -150)
 
