@@ -10,7 +10,7 @@
 #' \dontrun{
 #'check_clhs_cost(PEMprepr::read_fid()$dir_20102010_clhs$path_abs)
 #' }
-check_clhs_cost <- function(
+plot_clhs_cost <- function(
     clhs_dir = PEMprepr::read_fid()$dir_20102010_clhs$path_abs) {
   ftemp <- fs::dir_ls(clhs_dir, regexp = ".gpkg$")
 
