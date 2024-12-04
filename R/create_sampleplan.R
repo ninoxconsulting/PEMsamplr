@@ -54,9 +54,6 @@ create_sampleplan <- function(clhs_set,
   allpoints <- grep("points_all", sf::st_layers(file.path(out_dir, "s1_sampling.gpkg"))$name, value = T)
   boi <- stringr::str_extract(allpoints, "[^_]+")
 
-  allpoints <- grep("points_all", sf::st_layers(file.path(out_dir, "s1_sampling.gpkg"))$name, value = T)
-  boi <- stringr::str_extract(allpoints, "[^_]+")
-
   for (ii in 1:length(boi)) {
     #ii = 1
     b <- boi[ii]
