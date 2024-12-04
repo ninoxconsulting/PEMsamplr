@@ -38,8 +38,8 @@ check_clhs_cost <- function(
 
   repsum <- repsum |>
     dplyr::group_by(repsum$file_name, repsum$bgc) |>
-    dplyr::mutate(tcost = sum(cost)) |>
-    dplyr::select(-cost) |>
+    dplyr::mutate(tcost = sum(repsum$cost)) |>
+    dplyr::select(-repsum$cost) |>
     dplyr::distinct()
 
   # plot the total costs by subzone
