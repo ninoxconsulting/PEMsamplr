@@ -2,6 +2,7 @@
 
 export(check_bgc_cost)
 export(check_bgc_landscapes)
+export(check_clhs_cost)
 export(check_locations)
 export(check_roads)
 export(create_bgc_mask)
