@@ -17,11 +17,11 @@
 #' @examples
 #' \dontrun{
 #' combr = create_binned_landscape(
-#'   in_dir = fs::path(PEMprepr::read_fid()$dir_1020_covariates$path_rel, "25m", "modules_landscape"),
+#'   in_dir = fs::path(PEMprepr::read_fid()$dir_1020_covariates$path_rel, "25m", "modules"),
 #'   layers = c("dah_LS", "landform_LS","mrvbf_LS"))
 #' }
 create_binned_landscape <- function(
-    in_dir = fs::path(PEMprepr::read_fid()$dir_1020_covariates$path_rel, "25m", "modules_landscape"),
+    in_dir = fs::path(PEMprepr::read_fid()$dir_1020_covariates$path_rel, "25m", "modules"),
     layers = c("dah_LS", "landform_LS","mrvbf_LS"),
     write_output = TRUE
 
