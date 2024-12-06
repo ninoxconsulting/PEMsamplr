@@ -4,7 +4,7 @@
 #' the landscape environmental space.
 #'
 #' @param in_dir A `character` or path which points to input location of
-#'      landscape level `spatRaster`'s created using the create_landscape_covariate().
+#'      landscape level `spatRaster`'s created using the [PEMprepr::create_landscape_covariate()].
 #'      A default location and name are applied in line with standard workflow.
 #' @param layers A `character` vector with the names of the landscape .tif files
 #'      on which the binning will be based. Default names are
@@ -51,7 +51,7 @@ create_binned_landscape <- function(
   comb.df <- as.data.frame(combinations)
   comb.df <- stats::na.omit(comb.df) # remove NA values
 
-  comb.df$landscape = seq(1,length(comb.df[,1]),1)
+  comb.df$landscape = seq_len(nrow(comb.df))
   ancDat.df <- as.data.frame(ancDat, xy = TRUE)
   anc_class <- dplyr::left_join(ancDat.df, comb.df)
 
