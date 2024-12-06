@@ -51,7 +51,7 @@ create_binned_landscape <- function(
   comb.df <- as.data.frame(combinations)
   comb.df <- stats::na.omit(comb.df) # remove NA values
 
-  comb.df$landscape = seq(1,length(comb.df[,1]),1)
+  comb.df$landscape = seq_len(nrow(comb.df))
   ancDat.df <- as.data.frame(ancDat, xy = TRUE)
   anc_class <- dplyr::left_join(ancDat.df, comb.df)
 
