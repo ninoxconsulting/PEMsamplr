@@ -49,12 +49,7 @@ create_bgc_mask <- function(
   } else {
     bec <- sf::st_read(fs::path(vec_dir, "bec.gpkg"))
 
-    if (!fs::dir_exists(out_dir)) {
-      fs::dir_create(out_dir, recurse = TRUE)
-      cli::cli_alert_warning(
-        "write out folder does not exist, creating at location {.var out_dir}}"
-      )
-    }
+  fs::dir_create(out_dir, recurse = TRUE)
 
     boi <- unique(bec$MAP_LABEL)
 
