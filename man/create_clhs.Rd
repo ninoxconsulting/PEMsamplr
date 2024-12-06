@@ -17,7 +17,8 @@ create_clhs(
 )
 }
 \arguments{
-\item{all_cov}{A \code{spatRast} stack with all landscape covariates and masked cost layer}
+\item{all_cov}{A \code{spatRast} stack with all landscape covariates and masked
+cost layer. Note all layers excluding the cost layer should be factors.}
 
 \item{num_slices}{A \code{numeric} representing the number of slices to be built}
 
@@ -26,8 +27,7 @@ create_clhs(
 \item{n_points}{A \code{numeric} represrnting the numnber of points per slice}
 
 \item{min_dist}{A `numeric' value for the minimum distance to between each
-clhs point in meters. Default is 1000m. Note currently placeholder
-to be fixed}
+clhs point in meters. Default is 1000m.}
 
 \item{num_sample}{A \code{numeric}for the number of samples to run CLHS on.
 Default is 5000000.}
