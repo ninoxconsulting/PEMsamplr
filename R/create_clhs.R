@@ -3,14 +3,13 @@
 #'conditional latin hypercube sampling to create the specified number of points
 #'in slices.
 #'
-#' @param all_cov A `spatRast` stack with all landscape covariates and masked cost layer
-#'
+#' @param all_cov A `spatRast` stack with all landscape covariates and masked
+#' cost layer. Note all layers excluding the cost layer should be factors.
 #' @param num_slices A `numeric` representing the number of slices to be built
 #' @param to_include A `sf`dataframe of already sample points to include in plan
 #' @param n_points A `numeric` represrnting the numnber of points per slice
 #' @param min_dist A `numeric' value for the minimum distance to between each
-#'              clhs point in meters. Default is 1000m. Note currently placeholder
-#'              to be fixed
+#'              clhs point in meters. Default is 1000m.
 #' @param num_sample A `numeric`for the number of samples to run CLHS on.
 #' Default is 5000000.
 #'
@@ -25,7 +24,6 @@
 #                  n_points = 5,
 #                 num_sample = 5000000)
 #' }
-
 create_clhs <- function(all_cov,
                         num_slices,
                         to_include = NULL,
@@ -44,6 +42,12 @@ create_clhs <- function(all_cov,
     cli::cli_abort("Hold up! {.var num_slices} must have at least one slice.")
   }
 
+  if(length(isTRUE(is.factor(all_cov)))>1){
+    cli::cli_abort("Hold up! All rasters in {.var allcov} (except cost), shoudl
+                   be factors")
+
+  }
+
   if (length(terra::cells(all_cov)) > num_sample) {
     cli::cli_alert_warning("{.var num_sample} is greater than possible sampling options available and will be
                              reduced")
@@ -51,11 +55,13 @@ create_clhs <- function(all_cov,
   }
 
   layer_names <- names(all_cov)
+
+
   samp_dat <- terra::spatSample(all_cov,
-    size = num_sample,
-    method = "regular",
-    xy = TRUE,
-    as.df = F
+                                size = num_sample,
+                                method = "regular",
+                                xy = TRUE,
+                                as.df = F
   )
   samp_dat <- samp_dat[!is.na(samp_dat[, "cost"]) & !is.infinite(samp_dat[, ncol(samp_dat)]), ]
 
@@ -81,16 +87,17 @@ create_clhs <- function(all_cov,
 
     for (i in 1:5) {
       templhs <- clhs::clhs(curr_dat,
-        size = size,
-        must.include = inc_idx,
-        iter = 20000,
-        simple = FALSE,
-        progress = TRUE,
-        cost = "cost",
-        use.cpp = T,
-        latlon = coords
-      )
-     }
+                            size = size,
+                            must.include = inc_idx,
+                            iter = 20000,
+                            simple = FALSE,
+                            progress = TRUE,
+                            cost = "cost",
+                            use.cpp = T,
+                            latlon = coords,
+                            min.dist = min_dist)
+      if(sum(templhs$final_obj_distance) == 0) break
+    }
 
   } else {
     cli::cli_alert_success("Gen-R-ating multiple slices...")
@@ -99,19 +106,28 @@ create_clhs <- function(all_cov,
       # snum = 1
       for (i in 1:5) {
         templhs <- clhs::clhs(curr_dat,
-          size = snum * size,
-          must.include = inc_idx,
-          iter = 20000,
-          simple = FALSE,
-          progress = TRUE,
-          cost = "cost",
-          use.cpp = T,
-          latlon = coords
-        )
+                        size = snum * size,
+                        must.include = inc_idx,
+                        iter = 20000 ,
+                        simple = FALSE,
+                        progress = TRUE,
+                        cost= "cost",
+                        use.cpp = T,
+                        latlon = coords,
+                        min.dist = min_dist)
+        if(sum(templhs$final_obj_distance) == 0){
+          break
+        }else{
+          cli::cli_alert_warning("Points too close. Trying again...")
+        }
       }
       inc_idx <- templhs$index_samples
     }
   }
+
+  # uncomment to plot points and check distance
+  if(any(templhs$final_obj_distance != 0)){
+    cli::cli_alert_warning("Some points fall within minimum distance!")}
 
   out <- data.table::as.data.table(samp_dat[templhs$index_samples, ])
   out[, `:=`(
@@ -119,6 +135,7 @@ create_clhs <- function(all_cov,
     point_num = rep(1:n_points, times = num_slices)
   )]
   out_sf <- sf::st_as_sf(out, coords = c("x", "y"), crs = 3005)
+  #dist_mat <- st_distance(out_sf,out_sf)
   terra::plot(all_cov$cost)
   terra::points(terra::vect(out_sf["slice_num"]))
 
