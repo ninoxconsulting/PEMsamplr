@@ -53,17 +53,17 @@ create_binned_landscape <- function(
 
   comb.df$landscape = seq_len(nrow(comb.df))
   ancDat.df <- as.data.frame(ancDat, xy = TRUE)
-  anc_class <- dplyr::left_join(ancDat.df, comb.df)
+  anc_class <- dplyr::left_join(ancDat.df, comb.df, by = names(ancDat)
 
   out_rast <- terra::rast(anc_class, type="xyz", crs= terra::crs(ancDat), digits=6)
   out_rast <- out_rast$landscape
 
   if(write_output){
-
-    terra::writeRaster(out_rast, fs::path(in_dir, "landscape_binned.tif"), overwrite = TRUE)
+    outpath <- fs::path(in_dir, "landscape_binned.tif")
+    terra::writeRaster(out_rast, outpath, overwrite = TRUE)
     cli::cat_line()
     cli::cli_alert_success(
-      "Binned landscape raster written to {.path {in_dir}}"
+      "Binned landscape raster written to {.path {outpath}}"
     )
   }
 
