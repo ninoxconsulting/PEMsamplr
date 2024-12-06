@@ -4,6 +4,7 @@
 #'      scale. This output is derived from the create_bgc_template().
 #' @param binned_landscape A `SpatRast` with the landscape binned. This is the
 #'      output of the [create_binned_landscape()] function.
+#' @param plot a logical if the plot is to be returned. Default is true
 #' @return A dataframe with summary of landsclass class and BEC unit.
 #'        A plot is also returned.
 #' @export
@@ -23,8 +24,9 @@ check_bgc_landscapes <- function(
     ),
     binned_landscape = fs::path(
       PEMprepr::read_fid()$dir_1020_covariates$path_rel,
-      "25m", "modules_landscape", "landscape_binned.tif"
-    )) {
+      "25m", "modules", "landscape_binned.tif"
+    ),
+    plot = TRUE) {
   # testing
   # bec <- fs::path(PEMprepr::read_fid()$dir_1020_covariates$path_rel, "25m", "bec.tif")
   # binned_landscape <- landscapes
@@ -51,10 +53,13 @@ check_bgc_landscapes <- function(
 
     routdf <- stats::na.omit(routdf)
 
-    ggplot2::ggplot(routdf, ggplot2::aes(routdf$landscape)) +
+  if(plot){
+    plot1 <- ggplot2::ggplot(routdf, ggplot2::aes(routdf$landscape)) +
       ggplot2::geom_histogram() +
       ggplot2::facet_wrap(~MAP_LABEL)
 
+    print(plot1)
+  }
     return(routdf)
   }
 }

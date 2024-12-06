@@ -18,6 +18,12 @@ check_roads <- function(
   ## read in the major roads
  # roads = sf::st_read(fs::path(PEMprepr::read_fid()$dir_1010_vector$path_rel,"road_network.gpkg"))
 
+  if (inherits(roads, c("character"))) {
+    roads <- sf::st_read(roads, quiet = TRUE)
+  } else if (!inherits(roads, c("sf", "sfc"))) {
+    cli::cli_abort("{.var aoi} must be an sf or an sfc object or a path to a file")
+  }
+
   roads_check <- roads |>
     sf::st_drop_geometry() |>
     dplyr::select("ROAD_CLASS", "ROAD_SURFACE", "ROAD_NAME_FULL")
