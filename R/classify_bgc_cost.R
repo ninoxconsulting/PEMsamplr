@@ -1,4 +1,4 @@
-#' Check sample cost per BGC
+#' Classify the sample cost per BGC variant and subzone
 #'
 #' Assess the costs of sampling areas for each BGC to help assess how well the cost layer describes to study area
 #'
@@ -22,7 +22,7 @@
 #'     fs::path(PEMprepr::read_fid()$dir_201010_inputs$path_abs,"acost.tif"))
 #' check_bgc_cost(bec, binned_landscape, cost)
 #' }
-check_bgc_cost <- function(bec, binned_landscape, cost) {
+classify_bgc_cost <- function(bec, binned_landscape, cost) {
 
   if (inherits(bec, c("character"))) {
     bec <- terra::rast(bec)
