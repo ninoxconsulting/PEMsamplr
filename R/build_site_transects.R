@@ -14,8 +14,12 @@
 #' \dontrun{
 #' build_site_transects(sample_points, cost, centroid_distance = 400, out_dir)
 #' }
-
-build_site_transects <- function(sample_points, cost, mask_poly, centroid_distance = 400, out_dir, outname = "s1_sampling.gpkg") {
+build_site_transects <- function(sample_points,
+                                 cost,
+                                 mask_poly,
+                                 centroid_distance = 400,
+                                 out_dir,
+                                 outname = "s1_sampling.gpkg") {
   sample_points <- dplyr::select(sample_points, c("slice_num", "point_num", "bgc")) |>
     dplyr::arrange("slice_num", "point_num") |>
     dplyr::mutate(cid = seq(1, nrow(sample_points), 1))
@@ -50,7 +54,7 @@ build_site_transects <- function(sample_points, cost, mask_poly, centroid_distan
 
     rotated_points <- sf::st_sf(sf::st_sfc()) |> sf::st_set_crs(3005)
 
-    rotated_points <- foreach::foreach(Bear = rotation_angles, .combine = rbind) %do% {
+    rotated_points <- foreach::foreach("Bear" = rotation_angles, .combine = rbind) %do% {
       # Bear = rotation_angles[5]
       Feature_geo <- sf::st_geometry(pnt_feat)
       PivotPoint <- sf::st_geometry(pnt)
@@ -81,7 +85,7 @@ build_site_transects <- function(sample_points, cost, mask_poly, centroid_distan
 
   sample_points_low_cost <- sample_points_rotations |>
     dplyr::group_by("slice_num", "point_num") |>
-    dplyr::filter(aoi == TRUE) |>
+    dplyr::filter("aoi" == TRUE) |>
     dplyr::slice(which.min("cost")) |>
     dplyr::ungroup()
 
@@ -90,7 +94,7 @@ build_site_transects <- function(sample_points, cost, mask_poly, centroid_distan
 
   sample_points_clhs <- sample_points_clhs |>
     dplyr::mutate(rotation = "cLHS") |>
-    dplyr::select(-aoi)
+    dplyr::select(-"aoi")
 
   sample_points_rotations <- sample_points_rotations |>
     dplyr::select(-"cost", -"Rotation", -"aoi") |>
@@ -125,15 +129,15 @@ build_site_transects <- function(sample_points, cost, mask_poly, centroid_distan
   ##### write Transects####################
 
   sf::st_write(all_points, fs::path(out_dir, outname),
-               layer = paste0(b, "_points_all"), delete_layer = TRUE, quiet = T
+    layer = paste0(b, "_points_all"), delete_layer = TRUE, quiet = T
   )
 
   sf::st_write(all_triangles, fs::path(out_dir, outname),
-               layer = paste0(b, "_transects_all"), delete_layer = TRUE, quiet = T
+    layer = paste0(b, "_transects_all"), delete_layer = TRUE, quiet = T
   )
 
   sf::st_write(paired_sample, file.path(out_dir, outname),
-               layer = paste0(b, "_points"), delete_layer = TRUE, quiet = T
+    layer = paste0(b, "_points"), delete_layer = TRUE, quiet = T
   )
 
 
