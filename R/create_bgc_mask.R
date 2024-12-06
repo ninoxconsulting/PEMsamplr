@@ -88,6 +88,5 @@ create_bgc_mask <- function(
 
     }
     invisible(out_dir)
-  }
 
 }
