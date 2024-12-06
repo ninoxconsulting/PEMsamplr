@@ -35,6 +35,8 @@ Suggests:
     testthat (>= 3.0.0),
     xfun (>= 0.44),
     withr
+Remotes:
+    ninoxconsulting/PEMprepr
 Depends:
     R (>= 4.1)
 Config/testthat/edition: 3
