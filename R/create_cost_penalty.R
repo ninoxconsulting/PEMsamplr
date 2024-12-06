@@ -81,7 +81,7 @@ create_cost_penalty <- function(vec_dir = fs::path(PEMprepr::read_fid()$dir_1010
 
 
   if (calc_by_qq == T) {
-    qq <- terra::global(cost, stats::quantile, probs = c(0.65, 0.70, 0.90), na.rm = T)
+    qq <- terra::global(cost, stats::quantile, probs = c(0.65, 0.70, 0.90), na.rm = TRUE)
 
     vri_cost <- qq$X65.
     costval <- qq$X70.
