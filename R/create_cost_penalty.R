@@ -80,7 +80,7 @@ if (!inherits(vec_dir, "character") || !fs::dir_exists(vec_dir)) {
   }
 
 
-  if (calc_by_qq == T) {
+  if (isTRUE(calc_by_qq)) {
     qq <- terra::global(cost, stats::quantile, probs = c(0.65, 0.70, 0.90), na.rm = TRUE)
 
     vri_cost <- qq$X65.
