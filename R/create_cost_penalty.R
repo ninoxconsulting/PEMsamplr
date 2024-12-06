@@ -63,8 +63,8 @@ create_cost_penalty <- function(vec_dir = fs::path(PEMprepr::read_fid()$dir_1010
                                 out_dir = fs::path(PEMprepr::read_fid()$dir_201010_inputs$path_abs),
                                 write_output = TRUE) {
 
-  if (!inherits(vec_dir, c("character"))) {
-    cli::cli_abort("{.var vec_dir} must be a SpatRaster or a path to a file")
+if (!inherits(vec_dir, "character") || !fs::dir_exists(vec_dir)) {
+    cli::cli_abort("{.var vec_dir} must be a directory path")
   }
 
   if (inherits(dem, c("character"))) {
