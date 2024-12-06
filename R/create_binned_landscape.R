@@ -53,7 +53,7 @@ create_binned_landscape <- function(
 
   comb.df$landscape = seq_len(nrow(comb.df))
   ancDat.df <- as.data.frame(ancDat, xy = TRUE)
-  anc_class <- dplyr::left_join(ancDat.df, comb.df)
+  anc_class <- dplyr::left_join(ancDat.df, comb.df, by = names(ancDat)
 
   out_rast <- terra::rast(anc_class, type="xyz", crs= terra::crs(ancDat), digits=6)
   out_rast <- out_rast$landscape
