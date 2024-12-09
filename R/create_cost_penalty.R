@@ -71,18 +71,9 @@ if (!inherits(vec_dir, "character") || !fs::dir_exists(vec_dir)) {
     cli::cli_abort("{.var vec_dir} must be a directory path")
   }
 
-  if (inherits(dem, c("character"))) {
-    dem <- terra::rast(dem)
-  } else if (!inherits(dem, c("SpatRaster"))) {
-    cli::cli_abort("{.var dem} must be a SpatRaster or a path to a file")
-  }
+  dem <- PEMprepr::read_spatrast_if_necessary(dem)
 
-  if (inherits(cost, c("character"))) {
-    cost <- terra::rast(cost)
-  } else if (!inherits(cost, c("SpatRaster"))) {
-    cli::cli_abort("{.var cost} must be a SpatRaster or a path to a file")
-  }
-
+  cost <- PEMprepr::read_spatrast_if_necessary(cost)
 
   if (isTRUE(calc_by_qq)) {
     qq <- terra::global(cost, stats::quantile, probs = c(0.65, 0.70, 0.90), na.rm = TRUE)
@@ -100,8 +91,10 @@ if (!inherits(vec_dir, "character") || !fs::dir_exists(vec_dir)) {
     cli::cli_alert_success(
       "Cutblocks added to cost penalty layer"
     )
-
-
+  } else {
+    cli::cli_alert_warning(
+      "Cutblocks not found in {.path {vec_dir}}"
+    )
   }
 
   # 2. Assign high cost to age class 1 and 2
@@ -113,7 +106,13 @@ if (!inherits(vec_dir, "character") || !fs::dir_exists(vec_dir)) {
       "Vri class 1 and 2 added to cost penalty layer"
     )
 
+  } else {
+    cli::cli_alert_warning(
+      "Vri class 1 and 2 not found in {.path {vec_dir}}"
+    )
   }
+
+
 
   # 3. Assign a slightly lower cost to age class 3.
   if (fs::file_exists(fs::path(vec_dir,"vri_class3.gpkg"))) {
@@ -124,6 +123,10 @@ if (!inherits(vec_dir, "character") || !fs::dir_exists(vec_dir)) {
       "Vri class 3 added to cost penalty layer"
     )
 
+  } else {
+    cli::cli_alert_warning(
+      "Vri class 3 not found not found in {.path {vec_dir}}"
+  )
   }
 
 
@@ -135,7 +138,10 @@ if (!inherits(vec_dir, "character") || !fs::dir_exists(vec_dir)) {
     cli::cli_alert_success(
       "Vri deciduous added to cost penalty layer"
     )
-
+  } else {
+    cli::cli_alert_warning(
+      "Vri deciduous not found in {.path {vec_dir}}"
+    )
   }
 
   # 4. Assign high cost to private lands
@@ -146,9 +152,12 @@ if (!inherits(vec_dir, "character") || !fs::dir_exists(vec_dir)) {
     cli::cli_alert_success(
       "Private lands added to cost penalty layer"
     )
-
-
+  } else{
+    cli::cli_alert_warning(
+      "Private lands not found in {.path {vec_dir}}"
+    )
   }
+
 
   # 5. Add high cost for high and medium intensity fire areas or all fires
   if (fs::file_exists(fs::path(vec_dir, "fire_int.gpkg"))) {
@@ -158,12 +167,20 @@ if (!inherits(vec_dir, "character") || !fs::dir_exists(vec_dir)) {
     cli::cli_alert_success(
       "Fire intensity added to cost penalty layer"
     )
+  } else {
+    cli::cli_alert_warning(
+      "Fire intensity not found in {.path {vec_dir}}"
+    )
   }
 
   # 6. Add high cost for all fires
   if (fs::file_exists(fs::path(vec_dir, "fires.gpkg"))) {
     rfires <- .assign_highcost(file.path(vec_dir, "fires.gpkg"), costval = costval, cost = cost)
     hc <- terra::cover(hc, rfires)
+  } else {
+    cli::cli_alert_warning(
+      "Fires not found in {.path {vec_dir}}"
+    )
   }
 
   # 7. Assign high cost to transmission lines
@@ -172,9 +189,13 @@ if (!inherits(vec_dir, "character") || !fs::dir_exists(vec_dir)) {
     hc <- terra::cover(hc, rtrans)
     cli::cat_line()
     cli::cli_alert_success(
-      "Fire boundaries added to cost penalty layer"
+      "Transmission lines added to cost penalty layer"
     )
-  }
+  } else{
+    cli::cli_alert_warning(
+      "Transmission lines not found in {.path {vec_dir}}"
+    )
+
 
 
   # 8. Very steep areas
