@@ -43,7 +43,7 @@ Suggests:
     xfun (>= 0.44),
     withr
 Remotes:
-    ninoxconsulting/PEMprepr
+    ninoxconsulting/PEMprepr,
     kdaust/clhs
 Depends:
     R (>= 4.1)
