@@ -229,7 +229,7 @@ if (!inherits(vec_dir, "character") || !fs::dir_exists(vec_dir)) {
 
 .assign_highcost <- function(shape, crs = 3005, costval, cost) {
   hcsf <- sf::st_read(shape, quiet = TRUE) |>
-    sf::st_set_crs(crs) |>
+    sf::st_transform(crs) |>
     dplyr::mutate(cost = costval) |>
     dplyr::select(cost) |>
     sf::st_buffer(dist = 150) |>
