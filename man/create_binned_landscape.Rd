@@ -13,7 +13,7 @@ create_binned_landscape(
 \arguments{
 \item{in_dir}{A \code{character} or path which points to input location of
 landscape level \code{spatRaster}'s created using the
-"\code{\link[PEMprepr:create_landscape_covariates]{PEMprepr::create_landscape_covariates()}}.
+\code{\link[PEMprepr:create_landscape_covariates]{PEMprepr::create_landscape_covariates()}}.
 A default location and name are applied in line with standard workflow.}
 
 \item{layers}{A \code{character} vector with the names of the landscape .tif files
