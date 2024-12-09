@@ -24,8 +24,8 @@ create_bgc_mask <- function(
    overwrite = TRUE,
    ...){
 
-  if (!inherits(vec_dir, c("character"))) {
-    cli::cli_abort("{.var vec_dir} must be a SpatRaster or a path to a file")
+  if (!inherits(vec_dir, "character") || !fs::dir_exists(vec_dir)) {
+    cli::cli_abort("{.var vec_dir} must be a directory path")
   }
 
   if (inherits(cost_masked, c("character"))) {
