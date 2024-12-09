@@ -26,6 +26,9 @@
 #'      of . A default location and name are applied in line with standard workflow.
 #' @param write_output A `logical` should the cost_penalty spatRaster be
 #'     written to disk? If `TRUE` (default), will write to `out_dir`.
+#' @param overwrite A `logical` should the cost_penalty spatRaster overwrite any
+#'    existing file? If `TRUE` (default), will overwrite the existing file. This
+#'    is only applicable where `write_output` is `TRUE`.
 #' @return A `SpatRaster` representing costs with cost penality values applied
 #' @export
 #'
@@ -61,7 +64,8 @@ create_cost_penalty <- function(vec_dir = fs::path(PEMprepr::read_fid()$dir_1010
                                 vri_cost = 2500,
                                 calc_by_qq = TRUE,
                                 out_dir = fs::path(PEMprepr::read_fid()$dir_201010_inputs$path_abs),
-                                write_output = TRUE) {
+                                write_output = TRUE,
+                                overwrite = FALSE) {
 
   if (!inherits(vec_dir, c("character"))) {
     cli::cli_abort("{.var vec_dir} must be a SpatRaster or a path to a file")
@@ -214,7 +218,7 @@ create_cost_penalty <- function(vec_dir = fs::path(PEMprepr::read_fid()$dir_1010
       )
     }
 
-    terra::writeRaster(hc_out, fs::path(output_file), overwrite = TRUE)
+    terra::writeRaster(hc_out, fs::path(output_file), overwrite = overwrite)
     cli::cat_line()
     cli::cli_alert_success(
       "Cost penalty Raster written to {.path {output_file}}"
