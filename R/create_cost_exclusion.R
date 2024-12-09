@@ -43,7 +43,8 @@ create_cost_exclusion <- function(vec_dir = fs::path(PEMprepr::read_fid()$dir_10
 
   if (fs::file_exists(fs::path(vec_dir, "water.gpkg"))) {
     water <- sf::st_read(file.path(vec_dir, "water.gpkg")) |>
-      dplyr::filter("WATERBODY_TYPE" != "W")
+    dplyr::filter("WATERBODY_TYPE" != "W")|>
+    sf::st_transform(3005)
     water_buff <- sf::st_buffer(water, dist = buffer)
     cli::cat_line()
     cli::cli_alert_success(
