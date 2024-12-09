@@ -31,19 +31,16 @@ create_cost_exclusion <- function(vec_dir = fs::path(PEMprepr::read_fid()$dir_10
                                   buffer = 150,
                                   out_dir = fs::path(PEMprepr::read_fid()$dir_201010_inputs$path_abs),
                                   write_output = TRUE) {
-  if (!inherits(vec_dir, c("character"))) {
-    cli::cli_abort("{.var vec_dir} must be a SpatRaster or a path to a file")
+  if (!inherits(vec_dir, "character") || !fs::dir_exists(vec_dir)) {
+    cli::cli_abort("{.var vec_dir} must be a directory path")
   }
 
-  if (inherits(cost, c("character"))) {
-    cost <- terra::rast(cost)
-  } else if (!inherits(cost, c("SpatRaster"))) {
-    cli::cli_abort("{.var cost} must be a SpatRaster or a path to a file")
-  }
+  cost <- PEMprepr:::read_spatrast_if_necessary(cost)
 
   if (fs::file_exists(fs::path(vec_dir, "water.gpkg"))) {
     water <- sf::st_read(file.path(vec_dir, "water.gpkg")) |>
-      dplyr::filter("WATERBODY_TYPE" != "W")
+    dplyr::filter("WATERBODY_TYPE" != "W")|>
+    sf::st_transform(3005)
     water_buff <- sf::st_buffer(water, dist = buffer)
     cli::cat_line()
     cli::cli_alert_success(

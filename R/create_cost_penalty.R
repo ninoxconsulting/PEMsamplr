@@ -26,6 +26,9 @@
 #'      of . A default location and name are applied in line with standard workflow.
 #' @param write_output A `logical` should the cost_penalty spatRaster be
 #'     written to disk? If `TRUE` (default), will write to `out_dir`.
+#' @param overwrite A `logical` should the cost_penalty spatRaster overwrite any
+#'    existing file? If `TRUE` (default), will overwrite the existing file. This
+#'    is only applicable where `write_output` is `TRUE`.
 #' @return A `SpatRaster` representing costs with cost penality values applied
 #' @export
 #'
@@ -61,27 +64,18 @@ create_cost_penalty <- function(vec_dir = fs::path(PEMprepr::read_fid()$dir_1010
                                 vri_cost = 2500,
                                 calc_by_qq = TRUE,
                                 out_dir = fs::path(PEMprepr::read_fid()$dir_201010_inputs$path_abs),
-                                write_output = TRUE) {
-
-  if (!inherits(vec_dir, c("character"))) {
-    cli::cli_abort("{.var vec_dir} must be a SpatRaster or a path to a file")
+                                write_output = TRUE,
+                                overwrite = FALSE) {
+  if (!inherits(vec_dir, "character") || !fs::dir_exists(vec_dir)) {
+    cli::cli_abort("{.var vec_dir} must be a directory path")
   }
 
-  if (inherits(dem, c("character"))) {
-    dem <- terra::rast(dem)
-  } else if (!inherits(dem, c("SpatRaster"))) {
-    cli::cli_abort("{.var dem} must be a SpatRaster or a path to a file")
-  }
+  dem <- PEMprepr:::read_spatrast_if_necessary(dem)
 
-  if (inherits(cost, c("character"))) {
-    cost <- terra::rast(cost)
-  } else if (!inherits(cost, c("SpatRaster"))) {
-    cli::cli_abort("{.var cost} must be a SpatRaster or a path to a file")
-  }
+  cost <- PEMprepr:::read_spatrast_if_necessary(cost)
 
-
-  if (calc_by_qq == T) {
-    qq <- terra::global(cost, stats::quantile, probs = c(0.65, 0.70, 0.90), na.rm = T)
+  if (isTRUE(calc_by_qq)) {
+    qq <- terra::global(cost, stats::quantile, probs = c(0.65, 0.70, 0.90), na.rm = TRUE)
 
     vri_cost <- qq$X65.
     costval <- qq$X70.
@@ -96,8 +90,10 @@ create_cost_penalty <- function(vec_dir = fs::path(PEMprepr::read_fid()$dir_1010
     cli::cli_alert_success(
       "Cutblocks added to cost penalty layer"
     )
-
-
+  } else {
+    cli::cli_alert_warning(
+      "Cutblocks not found in {.path {vec_dir}}"
+    )
   }
 
   # 2. Assign high cost to age class 1 and 2
@@ -108,18 +104,26 @@ create_cost_penalty <- function(vec_dir = fs::path(PEMprepr::read_fid()$dir_1010
     cli::cli_alert_success(
       "Vri class 1 and 2 added to cost penalty layer"
     )
-
+  } else {
+    cli::cli_alert_warning(
+      "Vri class 1 and 2 not found in {.path {vec_dir}}"
+    )
   }
 
+
+
   # 3. Assign a slightly lower cost to age class 3.
-  if (fs::file_exists(fs::path(vec_dir,"vri_class3.gpkg"))) {
+  if (fs::file_exists(fs::path(vec_dir, "vri_class3.gpkg"))) {
     rvri3_class <- .assign_highcost(file.path(vec_dir, "vri_class3.gpkg"), costval = vri_cost, cost = cost)
     hc <- terra::cover(rvri3_class, hc)
     cli::cat_line()
     cli::cli_alert_success(
       "Vri class 3 added to cost penalty layer"
     )
-
+  } else {
+    cli::cli_alert_warning(
+      "Vri class 3 not found not found in {.path {vec_dir}}"
+    )
   }
 
 
@@ -131,7 +135,10 @@ create_cost_penalty <- function(vec_dir = fs::path(PEMprepr::read_fid()$dir_1010
     cli::cli_alert_success(
       "Vri deciduous added to cost penalty layer"
     )
-
+  } else {
+    cli::cli_alert_warning(
+      "Vri deciduous not found in {.path {vec_dir}}"
+    )
   }
 
   # 4. Assign high cost to private lands
@@ -142,9 +149,12 @@ create_cost_penalty <- function(vec_dir = fs::path(PEMprepr::read_fid()$dir_1010
     cli::cli_alert_success(
       "Private lands added to cost penalty layer"
     )
-
-
+  } else {
+    cli::cli_alert_warning(
+      "Private lands not found in {.path {vec_dir}}"
+    )
   }
+
 
   # 5. Add high cost for high and medium intensity fire areas or all fires
   if (fs::file_exists(fs::path(vec_dir, "fire_int.gpkg"))) {
@@ -154,12 +164,20 @@ create_cost_penalty <- function(vec_dir = fs::path(PEMprepr::read_fid()$dir_1010
     cli::cli_alert_success(
       "Fire intensity added to cost penalty layer"
     )
+  } else {
+    cli::cli_alert_warning(
+      "Fire intensity not found in {.path {vec_dir}}"
+    )
   }
 
   # 6. Add high cost for all fires
   if (fs::file_exists(fs::path(vec_dir, "fires.gpkg"))) {
     rfires <- .assign_highcost(file.path(vec_dir, "fires.gpkg"), costval = costval, cost = cost)
     hc <- terra::cover(hc, rfires)
+  } else {
+    cli::cli_alert_warning(
+      "Fires not found in {.path {vec_dir}}"
+    )
   }
 
   # 7. Assign high cost to transmission lines
@@ -168,16 +186,17 @@ create_cost_penalty <- function(vec_dir = fs::path(PEMprepr::read_fid()$dir_1010
     hc <- terra::cover(hc, rtrans)
     cli::cat_line()
     cli::cli_alert_success(
-      "Fire boundaries added to cost penalty layer"
+      "Transmission lines added to cost penalty layer"
+    )
+  } else {
+    cli::cli_alert_warning(
+      "Transmission lines not found in {.path {vec_dir}}"
     )
   }
 
-
   # 8. Very steep areas
   slope <- terra::terrain(dem, v = "slope", neighbors = 8, unit = "degrees")
-
   # degrees (45 degrees = 100%, use around 30 degrees ~ 60% )
-
   m <- c(
     45, 60, maxval,
     30, 45, costval
@@ -186,8 +205,6 @@ create_cost_penalty <- function(vec_dir = fs::path(PEMprepr::read_fid()$dir_1010
   rclmat <- matrix(m, ncol = 3, byrow = TRUE)
   rc <- terra::classify(slope, rclmat)
 
-  # hc_out  <- terra::cover(rc, hc)
-
   hc_out <- terra::mosaic(rc, hc, fun = "max")
   cli::cat_line()
   cli::cli_alert_success(
@@ -195,10 +212,9 @@ create_cost_penalty <- function(vec_dir = fs::path(PEMprepr::read_fid()$dir_1010
   )
 
   terra::varnames(hc_out) <- "cost"
-  names(hc_out)<- "cost"
+  names(hc_out) <- "cost"
 
   if (write_output) {
-
     if (!fs::dir_exists(out_dir)) {
       fs::dir_create(out_dir, recurse = TRUE)
       cli::cli_alert_warning(
@@ -214,7 +230,7 @@ create_cost_penalty <- function(vec_dir = fs::path(PEMprepr::read_fid()$dir_1010
       )
     }
 
-    terra::writeRaster(hc_out, fs::path(output_file), overwrite = TRUE)
+    terra::writeRaster(hc_out, fs::path(output_file), overwrite = overwrite)
     cli::cat_line()
     cli::cli_alert_success(
       "Cost penalty Raster written to {.path {output_file}}"
@@ -225,7 +241,7 @@ create_cost_penalty <- function(vec_dir = fs::path(PEMprepr::read_fid()$dir_1010
 
 .assign_highcost <- function(shape, crs = 3005, costval, cost) {
   hcsf <- sf::st_read(shape, quiet = TRUE) |>
-    sf::st_set_crs(crs) |>
+    sf::st_transform(crs) |>
     dplyr::mutate(cost = costval) |>
     dplyr::select(cost) |>
     sf::st_buffer(dist = 150) |>

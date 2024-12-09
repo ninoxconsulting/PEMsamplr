@@ -24,15 +24,11 @@ create_bgc_mask <- function(
    overwrite = TRUE,
    ...){
 
-  if (!inherits(vec_dir, c("character"))) {
-    cli::cli_abort("{.var vec_dir} must be a SpatRaster or a path to a file")
+  if (!inherits(vec_dir, "character") || !fs::dir_exists(vec_dir)) {
+    cli::cli_abort("{.var vec_dir} must be a directory path")
   }
 
-  if (inherits(cost_masked, c("character"))) {
-    cost <- terra::rast(cost_masked)
-  } else if (!inherits(cost_masked, c("SpatRaster"))) {
-    cli::cli_abort("{.var cost_masked} must be a SpatRaster or a path to a file")
-  }
+  cost_masked <- PEMprepr:::read_spatrast_if_necessary(cost_masked)
 
   if (!fs::dir_exists(out_dir)) {
     fs::dir_create(out_dir, recurse = TRUE)
@@ -46,22 +42,18 @@ create_bgc_mask <- function(
       "bec.gpkg does not exist in {.var vec_dir}. Please check the function
         create_base_vectors() ran correctly or add this manually"
     )
-  } else {
-    bec <- sf::st_read(fs::path(vec_dir, "bec.gpkg"))
+  }
+  bec <- sf::st_read(fs::path(vec_dir, "bec.gpkg"))
 
-    if (!fs::dir_exists(out_dir)) {
-      fs::dir_create(out_dir, recurse = TRUE)
-      cli::cli_alert_warning(
-        "write out folder does not exist, creating at location {.var out_dir}}"
-      )
-    }
+  fs::dir_create(out_dir, recurse = TRUE)
 
     boi <- unique(bec$MAP_LABEL)
 
     for (b in boi) {
 
       subzone <- bec |>
-        dplyr::filter(bec$MAP_LABEL %in% b)
+
+        dplyr::filter("MAP_LABEL" == b)
 
       subzone_buff <- sf::st_buffer(subzone, dist = -150)
 
@@ -93,6 +85,5 @@ create_bgc_mask <- function(
 
     }
     invisible(out_dir)
-  }
 
 }
