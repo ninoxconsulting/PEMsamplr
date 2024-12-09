@@ -12,7 +12,6 @@
 #'              clhs point in meters. Default is 1000m.
 #' @param num_sample A `numeric`for the number of samples to run CLHS on.
 #' Default is 5000000.
-#' @importFrom data.table ':='
 #' @return `sf` points object with the location of clhs sample points
 #' @export
 #'
