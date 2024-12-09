@@ -31,17 +31,10 @@ check_bgc_landscapes <- function(
   # binned_landscape <- landscapes
   # binned_landscape = fs::path(PEMprepr::read_fid()$dir_1020_covariates$path_rel,"25m","modules_landscape")
 
-  if (inherits(bec, c("character"))) {
-    bec <- terra::rast(bec)
-  } else if (!inherits(bec, c("SpatRaster"))) {
-    cli::cli_abort("{.var bec} must be a SpatRaster or a path to a file")
-  }
 
-  if (inherits(binned_landscape, c("character"))) {
-    binned_landscape <- terra::rast(binned_landscape)
-  } else if (!inherits(binned_landscape, c("SpatRaster"))) {
-    cli::cli_abort("{.var binned_landscape} must be a SpatRaster or a path to a file")
-  }
+  bec <- PEMprepr::read_spatrast_if_necessary(bec)
+
+  binned_landscape <- PEMprepr::read_spatrast_if_necessary(binned_landscape)
 
   if (!isTRUE(terra::compareGeom(bec, binned_landscape))) {
     cli::cli_abort("{.var bec} must match spatial extent of landscapes raster stack")
