@@ -5,15 +5,15 @@
 \title{Create a binned landscape}
 \usage{
 create_binned_landscape(
-  in_dir = fs::path(PEMprepr::read_fid()$dir_1020_covariates$path_rel, "25m",
-    "modules_landscape"),
+  in_dir = fs::path(PEMprepr::read_fid()$dir_1020_covariates$path_rel, "25m", "modules"),
   layers = c("dah_LS", "landform_LS", "mrvbf_LS"),
   write_output = TRUE
 )
 }
 \arguments{
 \item{in_dir}{A \code{character} or path which points to input location of
-landscape level \code{spatRaster}'s created using the create_landscape_covariate().
+landscape level \code{spatRaster}'s created using the
+"\code{\link[PEMprepr:create_landscape_covariates]{PEMprepr::create_landscape_covariates()}}.
 A default location and name are applied in line with standard workflow.}
 
 \item{layers}{A \code{character} vector with the names of the landscape .tif files
@@ -33,7 +33,7 @@ the landscape environmental space.
 \examples{
 \dontrun{
 combr = create_binned_landscape(
-  in_dir = fs::path(PEMprepr::read_fid()$dir_1020_covariates$path_rel, "25m", "modules_landscape"),
+  in_dir = fs::path(PEMprepr::read_fid()$dir_1020_covariates$path_rel, "25m", "modules"),
   layers = c("dah_LS", "landform_LS","mrvbf_LS"))
 }
 }
