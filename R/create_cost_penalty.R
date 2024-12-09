@@ -66,8 +66,7 @@ create_cost_penalty <- function(vec_dir = fs::path(PEMprepr::read_fid()$dir_1010
                                 out_dir = fs::path(PEMprepr::read_fid()$dir_201010_inputs$path_abs),
                                 write_output = TRUE,
                                 overwrite = FALSE) {
-
-if (!inherits(vec_dir, "character") || !fs::dir_exists(vec_dir)) {
+  if (!inherits(vec_dir, "character") || !fs::dir_exists(vec_dir)) {
     cli::cli_abort("{.var vec_dir} must be a directory path")
   }
 
@@ -105,7 +104,6 @@ if (!inherits(vec_dir, "character") || !fs::dir_exists(vec_dir)) {
     cli::cli_alert_success(
       "Vri class 1 and 2 added to cost penalty layer"
     )
-
   } else {
     cli::cli_alert_warning(
       "Vri class 1 and 2 not found in {.path {vec_dir}}"
@@ -115,18 +113,17 @@ if (!inherits(vec_dir, "character") || !fs::dir_exists(vec_dir)) {
 
 
   # 3. Assign a slightly lower cost to age class 3.
-  if (fs::file_exists(fs::path(vec_dir,"vri_class3.gpkg"))) {
+  if (fs::file_exists(fs::path(vec_dir, "vri_class3.gpkg"))) {
     rvri3_class <- .assign_highcost(file.path(vec_dir, "vri_class3.gpkg"), costval = vri_cost, cost = cost)
     hc <- terra::cover(rvri3_class, hc)
     cli::cat_line()
     cli::cli_alert_success(
       "Vri class 3 added to cost penalty layer"
     )
-
   } else {
     cli::cli_alert_warning(
       "Vri class 3 not found not found in {.path {vec_dir}}"
-  )
+    )
   }
 
 
@@ -152,7 +149,7 @@ if (!inherits(vec_dir, "character") || !fs::dir_exists(vec_dir)) {
     cli::cli_alert_success(
       "Private lands added to cost penalty layer"
     )
-  } else{
+  } else {
     cli::cli_alert_warning(
       "Private lands not found in {.path {vec_dir}}"
     )
@@ -191,12 +188,11 @@ if (!inherits(vec_dir, "character") || !fs::dir_exists(vec_dir)) {
     cli::cli_alert_success(
       "Transmission lines added to cost penalty layer"
     )
-  } else{
+  } else {
     cli::cli_alert_warning(
       "Transmission lines not found in {.path {vec_dir}}"
     )
-
-
+  }
 
   # 8. Very steep areas
   slope <- terra::terrain(dem, v = "slope", neighbors = 8, unit = "degrees")
@@ -209,7 +205,6 @@ if (!inherits(vec_dir, "character") || !fs::dir_exists(vec_dir)) {
   rclmat <- matrix(m, ncol = 3, byrow = TRUE)
   rc <- terra::classify(slope, rclmat)
 
-
   hc_out <- terra::mosaic(rc, hc, fun = "max")
   cli::cat_line()
   cli::cli_alert_success(
@@ -217,10 +212,9 @@ if (!inherits(vec_dir, "character") || !fs::dir_exists(vec_dir)) {
   )
 
   terra::varnames(hc_out) <- "cost"
-  names(hc_out)<- "cost"
+  names(hc_out) <- "cost"
 
   if (write_output) {
-
     if (!fs::dir_exists(out_dir)) {
       fs::dir_create(out_dir, recurse = TRUE)
       cli::cli_alert_warning(
