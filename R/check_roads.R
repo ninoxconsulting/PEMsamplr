@@ -16,11 +16,10 @@ check_roads <- function(
     roads = fs::path(PEMprepr::read_fid()$dir_1010_vector$path_rel,"road_network.gpkg")
 ) {
   ## read in the major roads
-  roads = sf::st_read(fs::path(PEMprepr::read_fid()$dir_1010_vector$path_rel,"road_network.gpkg"))
+  #roads = sf::st_read(fs::path(PEMprepr::read_fid()$dir_1010_vector$path_rel,"road_network.gpkg"))
 
   roads <- PEMprepr::read_sf_if_necessary(roads)
 
-  # check that the road layer contains the required fields
   roads_check <- roads |>
     dplyr::select("ROAD_CLASS", "ROAD_SURFACE", "ROAD_NAME_FULL")
 
@@ -42,8 +41,6 @@ check_roads <- function(
   }
 
 
-  # check if road class is contained within the acceptable road classes defined
-  #in the function
   road_surface_types_acceptable =  c("resource", "unclassified", "recreation",
                                      "trail", "local", "collector", "highway",
                                      "service", "arterial", "freeway", "strata",
