@@ -4,7 +4,8 @@
 #' the landscape environmental space.
 #'
 #' @param in_dir A `character` or path which points to input location of
-#'      landscape level `spatRaster`'s created using the [PEMprepr::create_landscape_covariate()].
+#'      landscape level `spatRaster`'s created using the
+#'      [PEMprepr::create_landscape_covariates()].
 #'      A default location and name are applied in line with standard workflow.
 #' @param layers A `character` vector with the names of the landscape .tif files
 #'      on which the binning will be based. Default names are
