@@ -23,14 +23,13 @@
 create_binned_landscape <- function(
     in_dir = fs::path(PEMprepr::read_fid()$dir_1020_covariates$path_rel, "25m", "modules"),
     layers = c("dah_LS", "landform_LS","mrvbf_LS"),
-    write_output = TRUE
+    write_output = TRUE){
 
-){
-
-  if (!dir.exists(fs::path(in_dir))) {
+  if (!inherits(in_dir, "character") || !fs::dir_exists(in_dir)) {
     cli::cli_abort("{.var in_dir} does not exist, please check the path to your
                  landscape covariates is correct")
   }
+
 
   rastlist <- fs::dir_ls(in_dir, glob = ("*.tif"))
   rastlist <- rastlist[grep(paste(layers, collapse = "|"), rastlist, value = TRUE)]
@@ -53,7 +52,7 @@ create_binned_landscape <- function(
 
   comb.df$landscape = seq_len(nrow(comb.df))
   ancDat.df <- as.data.frame(ancDat, xy = TRUE)
-  anc_class <- dplyr::left_join(ancDat.df, comb.df, by = names(ancDat)
+  anc_class <- dplyr::left_join(ancDat.df, comb.df, by = names(ancDat))
 
   out_rast <- terra::rast(anc_class, type="xyz", crs= terra::crs(ancDat), digits=6)
   out_rast <- out_rast$landscape
