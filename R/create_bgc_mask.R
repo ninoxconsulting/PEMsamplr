@@ -28,11 +28,7 @@ create_bgc_mask <- function(
     cli::cli_abort("{.var vec_dir} must be a directory path")
   }
 
-  if (inherits(cost_masked, c("character"))) {
-    cost <- terra::rast(cost_masked)
-  } else if (!inherits(cost_masked, c("SpatRaster"))) {
-    cli::cli_abort("{.var cost_masked} must be a SpatRaster or a path to a file")
-  }
+  cost_masked <- PEMprepr::read_spatrast_if_necessary(cost_masked)
 
   if (!fs::dir_exists(out_dir)) {
     fs::dir_create(out_dir, recurse = TRUE)
@@ -47,7 +43,7 @@ create_bgc_mask <- function(
         create_base_vectors() ran correctly or add this manually"
     )
   }
-    bec <- sf::st_read(fs::path(vec_dir, "bec.gpkg"))
+  bec <- sf::st_read(fs::path(vec_dir, "bec.gpkg"))
 
   fs::dir_create(out_dir, recurse = TRUE)
 
