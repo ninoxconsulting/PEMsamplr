@@ -7,7 +7,8 @@
 check_bgc_landscapes(
   bec = fs::path(PEMprepr::read_fid()$dir_1020_covariates$path_rel, "25m", "bec.tif"),
   binned_landscape = fs::path(PEMprepr::read_fid()$dir_1020_covariates$path_rel, "25m",
-    "modules_landscape", "landscape_binned.tif")
+    "modules", "landscape_binned.tif"),
+  plot = TRUE
 )
 }
 \arguments{
@@ -16,10 +17,11 @@ scale. This output is derived from the create_bgc_template().}
 
 \item{binned_landscape}{A \code{SpatRast} with the landscape binned. This is the
 output of the \code{\link[=create_binned_landscape]{create_binned_landscape()}} function.}
+
+\item{plot}{a logical if the plot is to be returned. Default is true}
 }
 \value{
 A dataframe with summary of landsclass class and BEC unit.
-A plot is also returned.
 }
 \description{
 Generate a summary table of binned landscape classes per BGC

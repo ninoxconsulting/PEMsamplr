@@ -12,7 +12,8 @@ create_cost_penalty(
   vri_cost = 2500,
   calc_by_qq = TRUE,
   out_dir = fs::path(PEMprepr::read_fid()$dir_201010_inputs$path_abs),
-  write_output = TRUE
+  write_output = TRUE,
+  overwrite = FALSE
 )
 }
 \arguments{
@@ -44,6 +45,10 @@ of . A default location and name are applied in line with standard workflow.}
 
 \item{write_output}{A \code{logical} should the cost_penalty spatRaster be
 written to disk? If \code{TRUE} (default), will write to \code{out_dir}.}
+
+\item{overwrite}{A \code{logical} should the cost_penalty spatRaster overwrite any
+existing file? If \code{TRUE} (default), will overwrite the existing file. This
+is only applicable where \code{write_output} is \code{TRUE}.}
 }
 \value{
 A \code{SpatRaster} representing costs with cost penality values applied
