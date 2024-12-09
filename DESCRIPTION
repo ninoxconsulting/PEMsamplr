@@ -17,7 +17,27 @@ Description: PEMsamplr is a subpackage of "PEMr" and forms part of the workflow 
   develop Predictive Ecosystem Maps (PEM). Specifically this package builds on data 
   prepared using the PEMprepr package and generates a field sampling plan to collect
   data for modeling. 
-License: Apache License (== 2.0) | file LICENSE
+License: Apache License (>= 2)
+BugReports: https://github.com/ninoxconsulting/PEMsamplr/issues
+Imports:
+  PEMprepr,
+  cli, 
+  fs,
+  terra,
+  ggplot2,
+  sf,
+  stringr,
+  foreach,
+  dplyr
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
+Suggests:
+    testthat (>= 3.0.0),
+    xfun (>= 0.44),
+    withr
+Remotes:
+    ninoxconsulting/PEMprepr
+Depends:
+    R (>= 4.1)
+Config/testthat/edition: 3
