@@ -18,7 +18,7 @@ check_roads <- function(
   ## read in the major roads
   #roads = sf::st_read(fs::path(PEMprepr::read_fid()$dir_1010_vector$path_rel,"road_network.gpkg"))
 
-  roads <- PEMprepr::read_sf_if_necessary(roads)
+  roads <- PEMprepr:::read_sf_if_necessary(roads)
 
   roads_check <- roads |>
     dplyr::select("ROAD_CLASS", "ROAD_SURFACE", "ROAD_NAME_FULL")

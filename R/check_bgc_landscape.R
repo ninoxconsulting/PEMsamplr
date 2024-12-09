@@ -32,9 +32,9 @@ check_bgc_landscapes <- function(
   # binned_landscape = fs::path(PEMprepr::read_fid()$dir_1020_covariates$path_rel,"25m","modules_landscape")
 
 
-  bec <- PEMprepr::read_spatrast_if_necessary(bec)
+  bec <- PEMprepr:::read_spatrast_if_necessary(bec)
 
-  binned_landscape <- PEMprepr::read_spatrast_if_necessary(binned_landscape)
+  binned_landscape <- PEMprepr:::read_spatrast_if_necessary(binned_landscape)
 
   if (!isTRUE(terra::compareGeom(bec, binned_landscape))) {
     cli::cli_abort("{.var bec} must match spatial extent of landscapes raster stack")

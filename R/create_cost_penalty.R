@@ -70,9 +70,9 @@ create_cost_penalty <- function(vec_dir = fs::path(PEMprepr::read_fid()$dir_1010
     cli::cli_abort("{.var vec_dir} must be a directory path")
   }
 
-  dem <- PEMprepr::read_spatrast_if_necessary(dem)
+  dem <- PEMprepr:::read_spatrast_if_necessary(dem)
 
-  cost <- PEMprepr::read_spatrast_if_necessary(cost)
+  cost <- PEMprepr:::read_spatrast_if_necessary(cost)
 
   if (isTRUE(calc_by_qq)) {
     qq <- terra::global(cost, stats::quantile, probs = c(0.65, 0.70, 0.90), na.rm = TRUE)

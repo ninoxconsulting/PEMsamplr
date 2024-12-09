@@ -35,7 +35,7 @@ create_cost_exclusion <- function(vec_dir = fs::path(PEMprepr::read_fid()$dir_10
     cli::cli_abort("{.var vec_dir} must be a directory path")
   }
 
-  cost <- PEMprepr::read_spatrast_if_necessary(cost)
+  cost <- PEMprepr:::read_spatrast_if_necessary(cost)
 
   if (fs::file_exists(fs::path(vec_dir, "water.gpkg"))) {
     water <- sf::st_read(file.path(vec_dir, "water.gpkg")) |>

@@ -28,7 +28,7 @@ create_bgc_mask <- function(
     cli::cli_abort("{.var vec_dir} must be a directory path")
   }
 
-  cost_masked <- PEMprepr::read_spatrast_if_necessary(cost_masked)
+  cost_masked <- PEMprepr:::read_spatrast_if_necessary(cost_masked)
 
   if (!fs::dir_exists(out_dir)) {
     fs::dir_create(out_dir, recurse = TRUE)
