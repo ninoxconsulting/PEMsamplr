@@ -179,9 +179,7 @@ if (!inherits(vec_dir, "character") || !fs::dir_exists(vec_dir)) {
 
   # 8. Very steep areas
   slope <- terra::terrain(dem, v = "slope", neighbors = 8, unit = "degrees")
-
   # degrees (45 degrees = 100%, use around 30 degrees ~ 60% )
-
   m <- c(
     45, 60, maxval,
     30, 45, costval
@@ -190,7 +188,6 @@ if (!inherits(vec_dir, "character") || !fs::dir_exists(vec_dir)) {
   rclmat <- matrix(m, ncol = 3, byrow = TRUE)
   rc <- terra::classify(slope, rclmat)
 
-  # hc_out  <- terra::cover(rc, hc)
 
   hc_out <- terra::mosaic(rc, hc, fun = "max")
   cli::cat_line()
