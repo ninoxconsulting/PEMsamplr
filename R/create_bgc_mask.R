@@ -46,7 +46,7 @@ create_bgc_mask <- function(
       "bec.gpkg does not exist in {.var vec_dir}. Please check the function
         create_base_vectors() ran correctly or add this manually"
     )
-  } else {
+  }
     bec <- sf::st_read(fs::path(vec_dir, "bec.gpkg"))
 
   fs::dir_create(out_dir, recurse = TRUE)
