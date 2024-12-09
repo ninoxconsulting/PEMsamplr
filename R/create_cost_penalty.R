@@ -67,8 +67,8 @@ create_cost_penalty <- function(vec_dir = fs::path(PEMprepr::read_fid()$dir_1010
                                 write_output = TRUE,
                                 overwrite = FALSE) {
 
-  if (!inherits(vec_dir, c("character"))) {
-    cli::cli_abort("{.var vec_dir} must be a SpatRaster or a path to a file")
+if (!inherits(vec_dir, "character") || !fs::dir_exists(vec_dir)) {
+    cli::cli_abort("{.var vec_dir} must be a directory path")
   }
 
   if (inherits(dem, c("character"))) {
@@ -84,8 +84,8 @@ create_cost_penalty <- function(vec_dir = fs::path(PEMprepr::read_fid()$dir_1010
   }
 
 
-  if (calc_by_qq == T) {
-    qq <- terra::global(cost, stats::quantile, probs = c(0.65, 0.70, 0.90), na.rm = T)
+  if (isTRUE(calc_by_qq)) {
+    qq <- terra::global(cost, stats::quantile, probs = c(0.65, 0.70, 0.90), na.rm = TRUE)
 
     vri_cost <- qq$X65.
     costval <- qq$X70.
