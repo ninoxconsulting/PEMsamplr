@@ -6,7 +6,6 @@
 #'      output of the [create_binned_landscape()] function.
 #' @param plot a logical if the plot is to be returned. Default is true
 #' @return A dataframe with summary of landsclass class and BEC unit.
-#'        A plot is also returned.
 #' @export
 #'
 #' @examples
