@@ -26,21 +26,15 @@ Imports:
   terra,
   ggplot2,
   sf,
-<<<<<<< HEAD
   data.table,
-  dplyr,
   clhs,
   stringr,
   foreach,
   LearnGeom,
   plyr,
   purrr,
-  stats
-=======
-  stringr,
-  foreach,
+  stats,
   dplyr
->>>>>>> b4d798416d5ad9f9f6572c84f3c59aa28f96bafa
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
@@ -50,6 +44,7 @@ Suggests:
     withr
 Remotes:
     ninoxconsulting/PEMprepr
+    kdaust/clhs
 Depends:
     R (>= 4.1)
 Config/testthat/edition: 3
