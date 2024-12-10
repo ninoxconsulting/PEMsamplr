@@ -11,7 +11,7 @@ plot_clhs_cost(clhs_dir = PEMprepr::read_fid()$dir_20102010_clhs$path_abs)
 Default location is based on standard workflow.}
 }
 \value{
-ggplt2 plot
+ggplot2 plot
 }
 \description{
 Plot the cost of clhs sample plans

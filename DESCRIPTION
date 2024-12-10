@@ -26,12 +26,9 @@ Imports:
   terra,
   ggplot2,
   sf,
-  data.table,
   clhs,
   stringr,
-  foreach,
   LearnGeom,
-  plyr,
   purrr,
   stats,
   dplyr

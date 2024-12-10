@@ -21,14 +21,15 @@ build_site_transects(
 
 \item{mask_poly}{\strong{sf} spatial object of mask for specific bgc}
 
-\item{centroid_distance}{Numeric value at which the triangles are placed apart, default is 400 based on albers crs meters}
+\item{centroid_distance}{Numeric value at which the triangles are placed apart,
+default is 400 based on albers crs meters}
 
 \item{out_dir}{text string with location in which output sample plan as a geopackage is written}
 
 \item{outname}{A character name for output file. Default is s1_sampling}
 }
 \value{
-writes out sf geompackage with multiple layers
+writes out sf geopackage with multiple layers
 }
 \description{
 Build site transects
@@ -36,6 +37,7 @@ Build the associates triangles, buffered triangles and selected paired triangle 
 }
 \examples{
 \dontrun{
-build_site_transects(sample_points, cost, centroid_distance = 400, out_dir)
+build_site_transects(sample_points, cost, mask_poly, centroid_distance = 400,
+out_dir, outname = "s1_sampling.gpkg")
 }
 }

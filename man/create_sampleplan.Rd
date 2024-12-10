@@ -6,10 +6,10 @@
 \usage{
 create_sampleplan(
   clhs_set,
-  clhs_dir = PEMprepr::read_fid()$dir_20103010_clhs$path_abs,
-  mask_dir = PEMprepr::read_fid()$dir_201020_masks$path_abs,
-  cost_dir = PEMprepr::read_fid()$dir_201010_inputs$path_abs,
-  out_dir = PEMprepr::read_fid()$dir_20103020_review$path_rel
+  clhs_dir = fs::path(PEMprepr::read_fid()$dir_20103010_clhs$path_abs),
+  mask_dir = fs::path(PEMprepr::read_fid()$dir_201020_masks$path_abs),
+  cost = fs::path(PEMprepr::read_fid()$dir_201010_inputs$path_abs, "cost_final.tif"),
+  out_dir = fs::path(PEMprepr::read_fid()$dir_20103020_review$path_rel)
 )
 }
 \arguments{
@@ -22,11 +22,11 @@ Default location is based on standard workflow.}
 \item{mask_dir}{A path to the location of masked bec spatial files for the BEC
 units specified by the clhs_set. Default location is based on standard workflow.}
 
-\item{cost_dir}{A path to the location of final cost output \code{spatRast}.
-Default location is based on standard workflow.}
-
 \item{out_dir}{A path to the location in which the output sample plan will be
 saved. Default location is based on standard workflow.}
+
+\item{cost_dir}{A path to the location of final cost output \code{spatRast}.
+Default location is based on standard workflow.}
 }
 \value{
 path to the output directory where files are written (invisibly).
