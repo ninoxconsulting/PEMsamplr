@@ -10,7 +10,7 @@
 #'  Default location is based on standard workflow.
 #' @param mask_dir A path to the location of masked bec spatial files for the BEC
 #'  units specified by the clhs_set. Default location is based on standard workflow.
-#' @param cost_dir A path to the location of final cost output `spatRast`.
+#' @param cost A `spatRaster` or path to the location of final cost output `spatRast`.
 #'  Default location is based on standard workflow.
 #' @param out_dir A path to the location in which the output sample plan will be
 #' saved. Default location is based on standard workflow.
@@ -73,7 +73,7 @@ create_sampleplan <- function(clhs_set,
 }
 
 
-make_sampleplan <- function(clhs_set){
+make_sampleplan <- function(clhs_set, clhs_dir, mask_dir, cost, out_dir){
 
   boi <- stringr::str_extract(clhs_set, "[^_]+")
   sample_points <- sf::st_read(fs::path(clhs_dir, pattern = clhs_set), quiet = T)
