@@ -4,15 +4,17 @@
 #' @param sample_points **sf** spatial object of clhs points
 #' @param cost **SpatRast** cost layer generate for sample plan
 #' @param mask_poly **sf** spatial object of mask for specific bgc
-#' @param centroid_distance Numeric value at which the triangles are placed apart, default is 400 based on albers crs meters
+#' @param centroid_distance Numeric value at which the triangles are placed apart,
+#'        default is 400 based on albers crs meters
 #' @param outname A character name for output file. Default is s1_sampling
 #' @param out_dir text string with location in which output sample plan as a geopackage is written
 #'
-#' @return writes out sf geompackage with multiple layers
+#' @return writes out sf geopackage with multiple layers
 #' @export
 #' @examples
 #' \dontrun{
-#' build_site_transects(sample_points, cost, centroid_distance = 400, out_dir)
+#' build_site_transects(sample_points, cost, mask_poly, centroid_distance = 400,
+#' out_dir, outname = "s1_sampling.gpkg")
 #' }
 build_site_transects <- function(sample_points,
                                  cost,
@@ -20,19 +22,14 @@ build_site_transects <- function(sample_points,
                                  centroid_distance = 400,
                                  out_dir,
                                  outname = "s1_sampling.gpkg") {
+
   sample_points <- dplyr::select(sample_points, c("slice_num", "point_num", "bgc")) |>
     dplyr::arrange("slice_num", "point_num") |>
     dplyr::mutate(cid = seq(1, nrow(sample_points), 1))
 
-  # b <- unique(sample_points$bgc)
+  b <- unique(sample_points$bgc)
 
   sf::st_geometry(sample_points) <- "geometry"
-  # g <- sample_points
-  # name<- "geometry"
-  # current = attr(g, "sf_column")
-  # names(g)[names(g)==current] = name
-  # sf::st_geometry(g)=name
-  # sample_points <- g
 
   # create paired outputs
   sample_points_clhs <- sf::st_as_sf(sample_points) |>
@@ -43,7 +40,8 @@ build_site_transects <- function(sample_points,
 
   sample_points_rotations <- sf::st_sf(sf::st_sfc()) |> sf::st_set_crs(3005)
 
-  print("generating site points")
+  cli::cli_alert_success("generating site points")
+
 
   for (i in 1:nrow(sample_points_clhs)) {
     # i = 1
@@ -54,24 +52,33 @@ build_site_transects <- function(sample_points,
 
     rotated_points <- sf::st_sf(sf::st_sfc()) |> sf::st_set_crs(3005)
 
-    rotated_points <- foreach::foreach("Bear" = rotation_angles, .combine = rbind) %do% {
-      # Bear = rotation_angles[5]
+    rotated_points <- do.call(rbind, lapply(rotation_angles, function(Bear) {
       Feature_geo <- sf::st_geometry(pnt_feat)
       PivotPoint <- sf::st_geometry(pnt)
-      ## Convert bearing from degrees to radians
-      d <- ifelse("Bear" > 180, pi * (("Bear" - 360) / 180), pi * ("Bear" / 180))
+      d <- ifelse(Bear > 180, pi * ((Bear - 360) / 180), pi * (Bear / 180))
       rFeature <- (Feature_geo - PivotPoint) * .rot(d) + PivotPoint
       rFeature <- sf::st_set_crs(rFeature, sf::st_crs(pnt_feat))
-      pnt_feat$geometry <- sf::st_geometry(rFeature) ## replace the original geometry
+      pnt_feat$geometry <- sf::st_geometry(rFeature)
       pnt_feat$Rotation <- Bear
       pnt_feat <- pnt_feat |> sf::st_set_crs(3005)
-    }
+      pnt_feat
+    }))
 
     sample_points_rotations <- rbind(rotated_points, sample_points_rotations)
   }
 
   sample_points_rotations <- sf::st_as_sf(sample_points_rotations, crs = 3005) |>
-    dplyr::mutate(rotation = plyr::mapvalues("Rotation", "rotation_angles", c("N", "NE", "SE", "W", "E", "NW", "SW", "S"))) |>
+    # dplyr::mutate(rotation = plyr::mapvalues("Rotation", "rotation_angles", c("N", "NE", "SE", "W", "E", "NW", "SW", "S"))) #|>
+    dplyr::mutate(rotation = dplyr::case_when(
+      Rotation == 0 ~ "N",
+      Rotation == 45 ~ "NE",
+      Rotation == 90 ~ "E",
+      Rotation == 135 ~ "SE",
+      Rotation == 180 ~ "S",
+      Rotation == 225 ~ "SW",
+      Rotation == 270 ~ "W",
+      Rotation == 315 ~ "NW"
+    )) |>
     dplyr::filter(!is.na("Rotation")) |>
     sf::st_join(mask_poly, join = sf::st_intersects) |>
     dplyr::mutate(aoi = dplyr::case_when(
@@ -83,11 +90,16 @@ build_site_transects <- function(sample_points,
   cost <- terra::extract(cost, sample_points_rotations, ID = FALSE)
   sample_points_rotations <- cbind(sample_points_rotations, cost)
 
-  sample_points_low_cost <- sample_points_rotations |>
-    dplyr::group_by("slice_num", "point_num") |>
-    dplyr::filter("aoi" == TRUE) |>
-    dplyr::slice(which.min("cost")) |>
-    dplyr::ungroup()
+  sample_points_low_cost <- do.call(rbind, lapply(split(
+    sample_points_rotations,
+    list(
+      sample_points_rotations$slice_num,
+      sample_points_rotations$point_num
+    )
+  ), function(df) {
+    df <- subset(df, aoi == TRUE)
+    df[which.min(df$cost), ]
+  }))
 
   sample_points_low_cost <- sample_points_low_cost |>
     dplyr::select(-c("cost", "Rotation", "aoi"))
@@ -100,14 +112,16 @@ build_site_transects <- function(sample_points,
     dplyr::select(-"cost", -"Rotation", -"aoi") |>
     dplyr::filter(!is.na("rotation"))
 
-  all_points <- rbind(sample_points_clhs, sample_points_rotations) |>
-    dplyr::mutate(id = paste(paste(bgc, paste(slice_num, point_num, sep = "."), .$cid, sep = "_"), .$rotation, sep = "_"))
 
-  paired_sample <- rbind(sample_points_clhs, sample_points_low_cost) |>
-    dplyr::mutate(id = paste(paste(bgc, paste(slice_num, point_num, sep = "."), .$cid, sep = "_"), .$rotation, sep = "_"))
+  all_points <- rbind(sample_points_clhs, sample_points_rotations)
+  all_points$id <- paste(paste(all_points$bgc, paste(all_points$slice_num, all_points$point_num, sep = "."), all_points$cid, sep = "_"), all_points$rotation, sep = "_")
+
+  paired_sample <- rbind(sample_points_clhs, sample_points_low_cost)
+  paired_sample$id <- paste(paste(paired_sample$bgc, paste(paired_sample$slice_num, paired_sample$point_num, sep = "."), paired_sample$cid, sep = "_"), paired_sample$rotation, sep = "_")
 
   # Create triangle around each point and randomly rotate
-  print("generating site transects")
+
+  cli::cli_alert_success("generating site transects")
 
   all_triangles <- sf::st_sf(sf::st_sfc()) |> sf::st_set_crs(3005)
 
@@ -124,7 +138,7 @@ build_site_transects <- function(sample_points,
 
   paired_triangles <- all_triangles[all_triangles$id %in% paired_sample$id, ]
 
-  print("writting out spatial data")
+  cli::cli_alert_success("generating output file to be saved : {.path {out_dir}}")
 
   ##### write Transects####################
 
@@ -164,6 +178,7 @@ build_site_transects <- function(sample_points,
   out <- matrix(c(cos(a), sin(a), -sin(a), cos(a)), 2, 2)
   return(out)
 }
+
 
 .Tri_build <- function(id, x, y) {
   tris <- LearnGeom::CreateRegularPolygon(3, c(
