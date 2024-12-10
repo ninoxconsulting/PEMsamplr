@@ -38,7 +38,7 @@ plot_clhs_cost <- function(
   # plot the total costs by subzone
   p1 <- ggplot2::ggplot(repsum, ggplot2::aes(y = repsum$tcost, x = repsum$file_name)) +
     ggplot2::geom_point() +
-    ggplot2::facet_wrap(~ repsum$bgc, scales = "free_y") +
+    ggplot2::facet_wrap(~ repsum$bgc, scales = "free") +
     ggplot2::labs(x = "Sampleplan", y = "Total Cost") +
     ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 90, vjust = 0.5, hjust = 1))
 

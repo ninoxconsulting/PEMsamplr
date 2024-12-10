@@ -22,65 +22,51 @@
 #' \dontrun{
 #' generate_sampleplan (
 #'   clhs_set <- c("ICHmc2_clhs_sample_3.gpkg", "ICHmc1_clhs_sample_3.gpkg"),
-#'   clhs_dir = PEMprepr::read_fid()$dir_20103010_clhs$path_abs,
-#'   mask_dir = PEMprepr::read_fid()$dir_201020_masks$path_abs,
-#'   cost_dir = PEMprepr::read_fid()$dir_201010_inputs$path_abs,
-#'   out_dir = PEMprepr::read_fid()$dir_20103020_review$path_rel)
+#'   clhs_dir =  fs::path(PEMprepr::read_fid()$dir_20103010_clhs$path_abs),
+#'   mask_dir = fs::path(PEMprepr::read_fid()$dir_201020_masks$path_abs),
+#'   cost = fs::path(PEMprepr::read_fid()$dir_201010_inputs$path_abs, "cost_final.tif"),
+#'   out_dir = fs::path(PEMprepr::read_fid()$dir_20103020_review$path_rel)
 #' }
 create_sampleplan <- function(clhs_set,
                               clhs_dir = fs::path(PEMprepr::read_fid()$dir_20103010_clhs$path_abs),
                               mask_dir = fs::path(PEMprepr::read_fid()$dir_201020_masks$path_abs),
                               cost = fs::path(PEMprepr::read_fid()$dir_201010_inputs$path_abs, "cost_final.tif"),
-                              out_dir = fs::path(PEMprepr::read_fid()$dir_20103020_review$path_rel)){
-
-  # # testing
-  # clhs_set <- "ICHmc2_clhs_sample_5.gpkg"
-  # clhs_set <- c("ICHmc2_clhs_sample_3.gpkg", "ICHmc1_clhs_sample_3.gpkg")
-  # clhs_dir = PEMprepr::read_fid()$dir_20103010_clhs$path_abs
-  # mask_dir = PEMprepr::read_fid()$dir_201020_masks$path_abs
-  # cost = fs::path(PEMprepr::read_fid()$dir_201010_inputs$path_abs, "cost_final.tif")
-  # out_dir = PEMprepr::read_fid()$dir_20103020_review$path_rel
-  # #
-
-  # check inputs
+                              out_dir = fs::path(PEMprepr::read_fid()$dir_20103020_review$path_rel)) {
 
   cost <- PEMprepr:::read_spatrast_if_necessary(cost)
 
   purrr::map(clhs_set, make_sampleplan)
 
+  cli::cat_line()
   cli::cli_alert_success("sample plan generated for {.var clhs_set}")
 
   allpoints <- grep("points_all", sf::st_layers(file.path(out_dir, "s1_sampling.gpkg"))$name, value = T)
   boi <- stringr::str_extract(allpoints, "[^_]+")
 
   for (ii in 1:length(boi)) {
-    #ii = 1
+    # ii = 1
     b <- boi[ii]
-    points <- sf::st_read(file.path(out_dir, "s1_sampling.gpkg"), layer = paste0(b,"_points_all"), quiet = T)
+    points <- sf::st_read(file.path(out_dir, "s1_sampling.gpkg"), layer = paste0(b, "_points_all"), quiet = T)
     pointsout <- points |>
       cbind(sf::st_coordinates(points)) |>
-      dplyr::select("bgc","id", "rotation", "X","Y") |>
+      dplyr::select("bgc", "id", "rotation", "X", "Y") |>
       sf::st_drop_geometry() |>
       dplyr::mutate(Surveyor = "", Date_Completed = "", Transect_comment = "")
 
     utils::write.csv(pointsout, fs::path(out_dir, paste0(b, "_tracking_sheet.csv")))
-
-    cli::cli_alert_success("tracking sheet exported to {.path {out_dir}}")
-
   }
+  cli::cat_line()
+  cli::cli_alert_success("tracking sheet exported to {.path {out_dir}}")
 
   invisible(out_dir)
 }
 
 
-make_sampleplan <- function(clhs_set, clhs_dir, mask_dir, cost, out_dir){
-
+make_sampleplan <- function(clhs_set) {
   boi <- stringr::str_extract(clhs_set, "[^_]+")
   sample_points <- sf::st_read(fs::path(clhs_dir, pattern = clhs_set), quiet = T)
 
-  mask_poly <- sf::st_read(fs::path(mask_dir, pattern = paste0(boi,"_exclude_poly.gpkg")), quiet = T)
+  mask_poly <- sf::st_read(fs::path(mask_dir, pattern = paste0(boi, "_exclude_poly.gpkg")), quiet = T)
 
   build_site_transects(sample_points, cost, mask_poly, centroid_distance = 400, out_dir)
-
 }
-
