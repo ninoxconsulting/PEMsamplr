@@ -22,7 +22,6 @@ build_site_transects <- function(sample_points,
                                  centroid_distance = 400,
                                  out_dir,
                                  outname = "s1_sampling.gpkg") {
-
   sample_points <- dplyr::select(sample_points, c("slice_num", "point_num", "bgc")) |>
     dplyr::arrange("slice_num", "point_num") |>
     dplyr::mutate(cid = seq(1, nrow(sample_points), 1))
@@ -32,9 +31,9 @@ build_site_transects <- function(sample_points,
   sf::st_geometry(sample_points) <- "geometry"
 
   # create paired outputs
-  sample_points_clhs <- sf::st_as_sf(sample_points) |>
-    sf::st_transform(3005) |>
-    dplyr::mutate(aoi = NA)
+  sample_points_clhs <- sf::st_as_sf(sample_points) |> sf::st_transform(3005)
+  sample_points_clhs$aoi <- NA
+
 
   rotation_angles <- seq(0, 315, 45) # Rotation degrees
 
@@ -142,18 +141,14 @@ build_site_transects <- function(sample_points,
 
   ##### write Transects####################
 
-  sf::st_write(all_points, fs::path(out_dir, outname),
-    layer = paste0(b, "_points_all"), delete_layer = TRUE, quiet = T
+  sf::st_write(all_points, fs::path(out_dir, outname),layer = paste0(b, "_points_all"), delete_layer = TRUE, quiet = T
   )
 
-  sf::st_write(all_triangles, fs::path(out_dir, outname),
-    layer = paste0(b, "_transects_all"), delete_layer = TRUE, quiet = T
+  sf::st_write(all_triangles, fs::path(out_dir, outname),layer = paste0(b, "_transects_all"), delete_layer = TRUE, quiet = T
   )
 
-  sf::st_write(paired_sample, file.path(out_dir, outname),
-    layer = paste0(b, "_points"), delete_layer = TRUE, quiet = T
+  sf::st_write(paired_sample, file.path(out_dir, outname),layer = paste0(b, "_points"), delete_layer = TRUE, quiet = T
   )
-
 
   #### write buffer#########################
   triangle_buff <- sf::st_buffer(all_triangles, dist = 10)
@@ -181,6 +176,7 @@ build_site_transects <- function(sample_points,
 
 
 .Tri_build <- function(id, x, y) {
+
   tris <- LearnGeom::CreateRegularPolygon(3, c(
     as.numeric(paste(x)),
     as.numeric(paste(y))
@@ -199,15 +195,10 @@ build_site_transects <- function(sample_points,
 }
 
 .rotFeature <- function(Feature, PivotPt, Bearing) {
-  # where Feature is the Shape to be rotated, eg:  #Feature <- tri
-  # Bearing is the compass bearing to rotate to    #PivotPt <- pt.sf
-  # PivotPt is the point to rotate around          #Bearing <- 15
 
-  ## extract the geometry
   Feature_geo <- sf::st_geometry(Feature)
   PivotPoint <- sf::st_geometry(PivotPt)
 
-  ## Convert bearing from degrees to radians
   d <- ifelse(Bearing > 180, pi * ((Bearing - 360) / 180), pi * (Bearing / 180))
 
   rFeature <- (Feature_geo - PivotPoint) * .rot(d) + PivotPoint
