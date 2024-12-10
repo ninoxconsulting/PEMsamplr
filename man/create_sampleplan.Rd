@@ -22,11 +22,11 @@ Default location is based on standard workflow.}
 \item{mask_dir}{A path to the location of masked bec spatial files for the BEC
 units specified by the clhs_set. Default location is based on standard workflow.}
 
+\item{cost}{A \code{spatRaster} or path to the location of final cost output \code{spatRast}.
+Default location is based on standard workflow.}
+
 \item{out_dir}{A path to the location in which the output sample plan will be
 saved. Default location is based on standard workflow.}
-
-\item{cost_dir}{A path to the location of final cost output \code{spatRast}.
-Default location is based on standard workflow.}
 }
 \value{
 path to the output directory where files are written (invisibly).
