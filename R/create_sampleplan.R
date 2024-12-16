@@ -35,7 +35,7 @@ create_sampleplan <- function(clhs_set,
 
   cost <- PEMprepr:::read_spatrast_if_necessary(cost)
 
-  purrr::map(clhs_set, make_sampleplan)
+  purrr::map(clhs_set, \(x) make_sampleplan(x, clhs_dir, mask_dir, cost, out_dir))
 
   cli::cat_line()
   cli::cli_alert_success("sample plan generated for {.var clhs_set}")
@@ -62,7 +62,7 @@ create_sampleplan <- function(clhs_set,
 }
 
 
-make_sampleplan <- function(clhs_set) {
+make_sampleplan <- function(clhs_set, clhs_dir, mask_dir, cost, out_dir) {
   boi <- stringr::str_extract(clhs_set, "[^_]+")
   sample_points <- sf::st_read(fs::path(clhs_dir, pattern = clhs_set), quiet = T)
 
