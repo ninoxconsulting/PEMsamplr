@@ -172,8 +172,7 @@ build_site_transects <- function(sample_points,
 
 
 .rot <- function(a) {
-  out <- matrix(c(cos(a), sin(a), -sin(a), cos(a)), 2, 2)
-  return(out)
+  matrix(c(cos(a), sin(a), -sin(a), cos(a)), 2, 2)
 }
 
 

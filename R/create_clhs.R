@@ -134,8 +134,8 @@ create_clhs <- function(all_cov,
     cli::cli_alert_warning("Some points fall within minimum distance!")}
 
   out <- as.data.frame(samp_dat[templhs$index_samples, ])
-  out$slice_num <- rep(num_slices:1, each = n_points)
-  out$point_num <- rep(1:n_points, times = num_slices)
+  out$slice_num <- rep(rev(seq_len(num_slices)), each = n_points)
+  out$point_num <- rep(seq_len(n_points), times = num_slices)
   out_sf <- sf::st_as_sf(out, coords = c("x", "y"), crs = 3005)
   #dist_mat <- st_distance(out_sf,out_sf)
   terra::plot(all_cov$cost)
