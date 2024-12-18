@@ -119,7 +119,7 @@ build_site_transects <- function(sample_points,
 
   cli::cli_alert_success("generating site transects")
 
-  all_triangles <- purrr::map(seq_along(nrow(all_points)), function(i) {
+  all_triangles <- purrr::map(seq_len(nrow(all_points)), function(i) {
     # i = 1
     poc <- all_points[i, ]
 
