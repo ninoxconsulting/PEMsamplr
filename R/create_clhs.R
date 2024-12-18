@@ -116,7 +116,7 @@ create_clhs <- function(all_cov,
                         simple = FALSE,
                         progress = TRUE,
                         cost= "cost",
-                        use.cpp = T,
+                        use.cpp = TRUE,
                         latlon = coords,
                         min.dist = min_dist)
         if(sum(templhs$final_obj_distance) == 0){
