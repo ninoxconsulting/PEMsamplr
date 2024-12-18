@@ -41,7 +41,7 @@ create_clhs <- function(all_cov,
     cli::cli_abort("Hold up! {.var num_slices} must have at least one slice.")
   }
 
-  if(length(isTRUE(is.factor(all_cov)))>1){
+  if(length(names(all_cov)) - sum(terra::is.factor(all_cov)) > 1){
     cli::cli_abort("Hold up! All rasters in {.var allcov} (except cost), shoudl
                    be factors")
 
