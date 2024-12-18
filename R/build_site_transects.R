@@ -40,34 +40,27 @@ build_site_transects <- function(sample_points,
   rotation_angles <- seq(0, 315, 45) # Rotation degrees
 
   # create blank placeholder
-  sample_points_rotations <- sf::st_sf(sf::st_sfc()) |> sf::st_set_crs(3005)
-
   cli::cli_alert_success("generating site points")
 
-  for (i in 1:nrow(sample_points_clhs)) {
-    # i = 1
-    pnt <- sample_points_clhs[i, ]
-    pGeom <- sf::st_geometry(pnt)
-    pGeom <- pGeom + c(0, centroid_distance)
-    pnt_feat <- sf::st_set_geometry(pnt, pGeom)
-
-    rotated_points <- sf::st_sf(sf::st_sfc()) |> sf::st_set_crs(3005)
-
-    # generate the rotated points at centroid distance apart on bearings and add to blank placeholder
-    rotated_points <- do.call(rbind, lapply(rotation_angles, function(Bear) {
-      Feature_geo <- sf::st_geometry(pnt_feat)
-      PivotPoint <- sf::st_geometry(pnt)
-      d <- ifelse(Bear > 180, pi * ((Bear - 360) / 180), pi * (Bear / 180))
-      rFeature <- (Feature_geo - PivotPoint) * .rot(d) + PivotPoint
-      rFeature <- sf::st_set_crs(rFeature, sf::st_crs(pnt_feat))
-      pnt_feat$geometry <- sf::st_geometry(rFeature)
-      pnt_feat$Rotation <- Bear
-      pnt_feat <- pnt_feat |> sf::st_set_crs(3005)
-      pnt_feat
-    }))
-
-    sample_points_rotations <- rbind(rotated_points, sample_points_rotations)
-  }
+  sample_points_rotations <- purrr::map(
+    seq_len(nrow(sample_points_clhs)),
+    function(i) {
+      # i = 1
+      pnt <- sample_points_clhs[i, ]
+      pGeom <- sf::st_geometry(pnt)  + c(0, centroid_distance)
+      pnt_feat <- sf::st_set_geometry(pnt, pGeom)
+      rotated_points <- purrr::map(rotation_angles, function(Bear) {
+        Feature_geo <- sf::st_geometry(pnt_feat)
+        PivotPoint <- sf::st_geometry(pnt)
+        d <- ifelse(Bear > 180, pi * ((Bear - 360) / 180), pi * (Bear / 180))
+        sf::st_geometry(pnt_feat) <- (Feature_geo - PivotPoint) * .rot(d) + PivotPoint
+        pnt_feat$Rotation <- Bear
+        sf::st_set_crs(pnt_feat, 3005)
+      }) |>
+        dplyr::bind_rows()
+    }
+  ) |>
+    dplyr::bind_rows()
 
   #update names for rotation and chech if points are within mask
   sample_points_rotations <- sf::st_as_sf(sample_points_rotations, crs = 3005) |>
@@ -86,7 +79,7 @@ build_site_transects <- function(sample_points,
     dplyr::mutate(aoi = ifelse(is.na(cost), FALSE, TRUE)) |>
     dplyr::select(-"cost", -"Rotation")
 
-  cost_vals <- terra::extract(cost, sample_points_rotations, ID = FALSE) |> 
+  cost_vals <- terra::extract(cost, sample_points_rotations, ID = FALSE) |>
     stats::setNames("cost")
   sample_points_rotations <- cbind(sample_points_rotations, cost_vals)
 
@@ -139,7 +132,7 @@ build_site_transects <- function(sample_points,
     )
     random_rotation <- stats::runif(1, min = 0, max = 360)
     .rotFeature(triangle, poc, random_rotation)
-  }) |> 
+  }) |>
     dplyr::bind_rows()
 
 
@@ -178,8 +171,7 @@ build_site_transects <- function(sample_points,
 
 
 .rot <- function(a) {
-  out <- matrix(c(cos(a), sin(a), -sin(a), cos(a)), 2, 2)
-  return(out)
+  matrix(c(cos(a), sin(a), -sin(a), cos(a)), 2, 2)
 }
 
 
