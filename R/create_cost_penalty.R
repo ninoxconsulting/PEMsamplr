@@ -98,7 +98,11 @@ create_cost_penalty <- function(vec_dir = fs::path(PEMprepr::read_fid()$dir_1010
 
   # 2. Assign high cost to age class 1 and 2
   if (fs::file_exists(fs::path(vec_dir, "vri_class1_2.gpkg"))) {
-    rvri12_class <- .assign_highcost(file.path(vec_dir, "vri_class1_2.gpkg"), costval = costval, cost = cost)
+    rvri12_class <- .assign_highcost(
+      file.path(vec_dir, "vri_class1_2.gpkg"),
+      costval = costval,
+      cost = cost
+    )
     hc <- terra::cover(rvri12_class, hc)
     cli::cat_line()
     cli::cli_alert_success(
@@ -110,11 +114,13 @@ create_cost_penalty <- function(vec_dir = fs::path(PEMprepr::read_fid()$dir_1010
     )
   }
 
-
-
   # 3. Assign a slightly lower cost to age class 3.
   if (fs::file_exists(fs::path(vec_dir, "vri_class3.gpkg"))) {
-    rvri3_class <- .assign_highcost(file.path(vec_dir, "vri_class3.gpkg"), costval = vri_cost, cost = cost)
+    rvri3_class <- .assign_highcost(
+      file.path(vec_dir, "vri_class3.gpkg"),
+      costval = vri_cost,
+      cost = cost
+    )
     hc <- terra::cover(rvri3_class, hc)
     cli::cat_line()
     cli::cli_alert_success(
@@ -195,15 +201,7 @@ create_cost_penalty <- function(vec_dir = fs::path(PEMprepr::read_fid()$dir_1010
   }
 
   # 8. Very steep areas
-  slope <- terra::terrain(dem, v = "slope", neighbors = 8, unit = "degrees")
-  # degrees (45 degrees = 100%, use around 30 degrees ~ 60% )
-  m <- c(
-    45, 60, maxval,
-    30, 45, costval
-  )
-
-  rclmat <- matrix(m, ncol = 3, byrow = TRUE)
-  rc <- terra::classify(slope, rclmat)
+  rc <- make_steep_slopes(dem, maxval = maxval, costval = costval)
 
   hc_out <- terra::mosaic(rc, hc, fun = "max")
   cli::cat_line()
@@ -243,10 +241,23 @@ create_cost_penalty <- function(vec_dir = fs::path(PEMprepr::read_fid()$dir_1010
   hcsf <- sf::st_read(shape, quiet = TRUE) |>
     sf::st_transform(crs) |>
     dplyr::mutate(cost = costval) |>
-    dplyr::select(cost) |>
+    dplyr::select("cost") |>
     sf::st_buffer(dist = 150) |>
     sf::st_cast("MULTIPOLYGON")
 
   rhc <- terra::rasterize(hcsf, cost, field = "cost", fun = "max")
   return(rhc)
+}
+
+make_steep_slopes <- function(dem, maxval, costval) {
+  slope <- terra::terrain(dem, v = "slope", neighbors = 8, unit = "degrees")
+  # degrees (45 degrees = 100%, use around 30 degrees ~ 60% )
+  m <- c(
+    45, 60, maxval,
+    30, 45, costval
+  )
+
+  rclmat <- matrix(m, ncol = 3, byrow = TRUE)
+
+  terra::classify(slope, rclmat)
 }
