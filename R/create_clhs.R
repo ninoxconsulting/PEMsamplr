@@ -37,6 +37,11 @@ create_clhs <- function(all_cov,
   #num_sample = 5000000
   #min_dist = 1000
 
+  if(isFALSE("cost" %in% names(all_cov))){
+    cli::cli_abort("Hold up! {.var all_cov} must have a numeric layer named `cost` which contains costs.")
+  }
+
+
   if (num_slices < 1) {
     cli::cli_abort("Hold up! {.var num_slices} must have at least one slice.")
   }
@@ -62,7 +67,7 @@ create_clhs <- function(all_cov,
                                 xy = TRUE,
                                 as.df = F
   )
-  samp_dat <- samp_dat[!is.na(samp_dat[, "cost"]) & !is.infinite(samp_dat[, ncol(samp_dat)]), ]
+  samp_dat <- samp_dat[!is.na(samp_dat[, "cost"]) & !is.infinite(samp_dat[, "cost"]), ]
 
   coords <- samp_dat[, c("x", "y")]
   curr_dat <- samp_dat[, layer_names]
