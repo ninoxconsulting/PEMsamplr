@@ -40,9 +40,9 @@ unit
 \dontrun{
 generate_sampleplan (
   clhs_set <- c("ICHmc2_clhs_sample_3.gpkg", "ICHmc1_clhs_sample_3.gpkg"),
-  clhs_dir = PEMprepr::read_fid()$dir_20103010_clhs$path_abs,
-  mask_dir = PEMprepr::read_fid()$dir_201020_masks$path_abs,
-  cost_dir = PEMprepr::read_fid()$dir_201010_inputs$path_abs,
-  out_dir = PEMprepr::read_fid()$dir_20103020_review$path_rel)
+  clhs_dir =  fs::path(PEMprepr::read_fid()$dir_20103010_clhs$path_abs),
+  mask_dir = fs::path(PEMprepr::read_fid()$dir_201020_masks$path_abs),
+  cost = fs::path(PEMprepr::read_fid()$dir_201010_inputs$path_abs, "cost_final.tif"),
+  out_dir = fs::path(PEMprepr::read_fid()$dir_20103020_review$path_rel)
 }
 }
