@@ -100,7 +100,7 @@ create_cost_penalty <- function(vec_dir = fs::path(PEMprepr::read_fid()$dir_1010
   if (fs::file_exists(fs::path(vec_dir, "vri_class1_2.gpkg"))) {
     rvri12_class <- .assign_highcost(
       file.path(vec_dir, "vri_class1_2.gpkg"),
-      costval = costval, # Should cosval here be vri_cost? Docs suggest it is for class 1 and 2
+      costval = costval,
       cost = cost
     )
     hc <- terra::cover(rvri12_class, hc)
@@ -118,7 +118,7 @@ create_cost_penalty <- function(vec_dir = fs::path(PEMprepr::read_fid()$dir_1010
   if (fs::file_exists(fs::path(vec_dir, "vri_class3.gpkg"))) {
     rvri3_class <- .assign_highcost(
       file.path(vec_dir, "vri_class3.gpkg"),
-      costval = vri_cost, # Should costval = costval here, instead of vri_cost?
+      costval = vri_cost,
       cost = cost
     )
     hc <- terra::cover(rvri3_class, hc)
@@ -258,6 +258,6 @@ make_steep_slopes <- function(dem, maxval, costval) {
   )
 
   rclmat <- matrix(m, ncol = 3, byrow = TRUE)
-  
+
   terra::classify(slope, rclmat)
 }
