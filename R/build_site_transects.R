@@ -187,8 +187,7 @@ build_site_transects <- function(sample_points,
   MoonLineCentre <- sf::st_as_sf(MoonLineCentre, coords = c("X", "Y"), crs = 3005)
   MoonLineCentre <- MoonLineCentre |>
     dplyr::mutate(id = id) |>
-    dplyr::group_by(id) |>
-    dplyr::summarise() |>
+    dplyr::summarise(.by = "id") |>
     sf::st_cast("POLYGON") |>
     sf::st_cast("MULTILINESTRING")
 
