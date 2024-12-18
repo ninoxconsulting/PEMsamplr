@@ -87,31 +87,36 @@ build_site_transects <- function(sample_points,
       is.na(cost) ~ FALSE,
       TRUE ~ TRUE
     )) |>
-    dplyr::select(-"cost")
+    dplyr::select(-"cost", -"Rotation")
 
   cost <- terra::extract(cost, sample_points_rotations, ID = FALSE)
   sample_points_rotations <- cbind(sample_points_rotations, cost)
 
-  sample_points_low_cost <- do.call(rbind, lapply(split(
-    sample_points_rotations,
-    list(
-      sample_points_rotations$slice_num,
-      sample_points_rotations$point_num
-    )
-  ), function(df) {
-    df <- subset(df, aoi == TRUE)
-    df[which.min(df$cost), ]
-  }))
+  sample_points_low_cost <- sample_points_rotations |>
+    dplyr::filter(.data$aoi) |>
+    dplyr::slice_min(
+      .data$cost,
+      by = c("slice_num", "point_num"),
+      with_ties = FALSE
+    ) |>
+    dplyr::select(-c("cost", "aoi"))
+
 
   sample_points_low_cost <- sample_points_low_cost |>
-    dplyr::select(-c("cost", "Rotation", "aoi"))
+    dplyr::select(-c("cost", "aoi"))
 
   sample_points_clhs <- sample_points_clhs |>
     dplyr::mutate(rotation = "cLHS") |>
     dplyr::select(-"aoi")
 
+
+  if(nrow(sample_points_low_cost) != nrow(sample_points_clhs)){
+    cli::cli_alert_warning("Not all sites have a low cost paired site automatically selected,
+    please review the output and manually select an appropraire pair where needed")
+  }
+
   sample_points_rotations <- sample_points_rotations |>
-    dplyr::select(-"cost", -"Rotation", -"aoi") |>
+    dplyr::select(-"cost", -"aoi") |>
     dplyr::filter(!is.na("rotation"))
 
 
