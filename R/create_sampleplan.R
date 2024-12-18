@@ -66,7 +66,7 @@ make_sampleplan <- function(clhs_set, clhs_dir, mask_dir, cost, out_dir) {
   boi <- stringr::str_extract(clhs_set, "[^_]+")
   sample_points <- sf::st_read(fs::path(clhs_dir, pattern = clhs_set), quiet = TRUE)
 
-  mask_poly <- sf::st_read(fs::path(mask_dir, pattern = paste0(boi, "_exclude_poly.gpkg")), quiet = T)
+  mask_poly <- sf::st_read(fs::path(mask_dir, pattern = paste0(boi, "_exclude_poly.gpkg")), quiet = TRUE)
 
   build_site_transects(sample_points, cost, mask_poly, centroid_distance = 400, out_dir)
 }
