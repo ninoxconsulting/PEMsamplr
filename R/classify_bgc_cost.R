@@ -24,46 +24,32 @@
 #' }
 classify_bgc_cost <- function(bec, binned_landscape, cost) {
 
-  if (inherits(bec, c("character"))) {
-    bec <- terra::rast(bec)
-  } else if (!inherits(bec, c("SpatRaster"))) {
-    cli::cli_abort("{.var bec} must be a SpatRaster or a path to a file")
-  }
-
-  if (inherits(binned_landscape, c("character"))) {
-    binned_landscape <- terra::rast(binned_landscape)
-  } else if (!inherits(binned_landscape, c("SpatRaster"))) {
-    cli::cli_abort("{.var binned_landscape} must be a SpatRaster or a path to a file")
-  }
-
-  if (inherits(binned_landscape, c("character"))) {
-    cost <- terra::rast(binned_landscape)
-  } else if (!inherits(cost, c("SpatRaster"))) {
-    cli::cli_abort("{.var cost} must be a SpatRaster or a path to a file")
-  }
+  bec <- PEMprepr:::read_spatrast_if_necessary(bec)
+  binned_landscape <- PEMprepr:::read_spatrast_if_necessary(binned_landscape)
+  cost <- PEMprepr:::read_spatrast_if_necessary(cost)
 
   if (!isTRUE(terra::compareGeom(bec, binned_landscape, cost))) {
     cli::cli_abort("{.var bec} must match spatial extent of landscapes raster stack")
   }
-
-    names(cost) <- "cost"
-
-    rcost <- c(bec, binned_landscape, cost)
-
-    rcdf <- as.data.frame(rcost, xy = TRUE)
-    rcdf <- stats::na.omit(rcdf)
-    rcdf <- rcdf |> dplyr::select(-c("x", "y"))
-
-    rcdf_class <- rcdf |>
-      dplyr::mutate(cost_code = dplyr::case_when(
-        cost < 250 ~ "low",
-        cost >= 250 & cost < 500 ~ "moderate",
-        cost >= 500 & cost < 800 ~ "high",
-        cost >= 800 & cost < 1000 ~ "very high",
-        cost >= 1000 ~ "prohibative",
-        .default = "unknown"
-      ))
-
-    return(rcdf_class)
+  
+  names(cost) <- "cost"
+  
+  rcost <- c(bec, binned_landscape, cost)
+  
+  rcdf <- as.data.frame(rcost, xy = TRUE)
+  rcdf <- stats::na.omit(rcdf)
+  rcdf <- rcdf |> dplyr::select(-c("x", "y"))
+  
+  rcdf_class <- rcdf |>
+  dplyr::mutate(cost_code = dplyr::case_when(
+    cost < 250 ~ "low",
+    cost >= 250 & cost < 500 ~ "moderate",
+    cost >= 500 & cost < 800 ~ "high",
+    cost >= 800 & cost < 1000 ~ "very high",
+    cost >= 1000 ~ "prohibative",
+    .default = "unknown"
+  ))
+  
+  return(rcdf_class)
 
 }

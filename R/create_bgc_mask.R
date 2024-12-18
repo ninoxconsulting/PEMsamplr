@@ -30,12 +30,7 @@ create_bgc_mask <- function(
 
   cost_masked <- PEMprepr:::read_spatrast_if_necessary(cost_masked)
 
-  if (!fs::dir_exists(out_dir)) {
-    fs::dir_create(out_dir, recurse = TRUE)
-    cli::cli_alert_warning(
-      "write out folder does not exist, creating at location {.var out_dir}"
-    )
-  }
+  fs::dir_create(out_dir, recurse = TRUE)
 
   if (!fs::file_exists(fs::path(vec_dir, "bec.gpkg"))) {
     cli::cli_abort(
@@ -52,7 +47,8 @@ create_bgc_mask <- function(
     for (b in boi) {
 
       subzone <- bec |>
-        dplyr::filter("MAP_LABEL" == b)
+
+        dplyr::filter(.data$MAP_LABEL == {{ b }})
 
       subzone_buff <- sf::st_buffer(subzone, dist = -150)
 

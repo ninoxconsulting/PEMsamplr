@@ -153,6 +153,16 @@
 #' raster::plot(acost)
 #'
 #'
+#'tacost <- terra::rast(acost)
+#'
+#'terra::crs(tacost)  <- "epsg:3005"
+#'
+#'names(tacost) <- "cost"
+#'
+#'terra::writeRaster(tacost, fs::path(sampleplan_dir, "acost.tif"), overwrite = TRUE)
+#'
+#'
+#'
 #' raster::writeRaster(acost, fs::path(sampleplan_dir, "acost.tif"), format = "GTiff", overwrite = TRUE)
 #'
 #' rm(tr1)

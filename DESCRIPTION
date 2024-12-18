@@ -20,15 +20,19 @@ Description: PEMsamplr is a subpackage of "PEMr" and forms part of the workflow 
 License: Apache License (>= 2)
 BugReports: https://github.com/ninoxconsulting/PEMsamplr/issues
 Imports:
-  PEMprepr,
-  cli, 
-  fs,
-  terra,
-  ggplot2,
-  sf,
-  stringr,
-  foreach,
-  dplyr
+    PEMprepr,
+    cli,
+    fs,
+    terra,
+    ggplot2,
+    sf,
+    clhs,
+    stringr,
+    LearnGeom,
+    purrr,
+    stats,
+    dplyr,
+    rlang
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
@@ -37,7 +41,8 @@ Suggests:
     xfun (>= 0.44),
     withr
 Remotes:
-    ninoxconsulting/PEMprepr
+    ninoxconsulting/PEMprepr,
+    kdaust/clhs
 Depends:
     R (>= 4.1)
 Config/testthat/edition: 3
