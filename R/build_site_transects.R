@@ -83,10 +83,7 @@ build_site_transects <- function(sample_points,
     )) |>
     dplyr::filter(!is.na(.data$Rotation)) |>
     sf::st_join(mask_poly, join = sf::st_intersects) |>
-    dplyr::mutate(aoi = dplyr::case_when(
-      is.na(cost) ~ FALSE,
-      TRUE ~ TRUE
-    )) |>
+    dplyr::mutate(aoi = ifelse(is.na(cost), FALSE, TRUE)) |>
     dplyr::select(-"cost", -"Rotation")
 
   cost_vals <- terra::extract(cost, sample_points_rotations, ID = FALSE) |> 
