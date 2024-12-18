@@ -22,9 +22,11 @@ build_site_transects <- function(sample_points,
                                  centroid_distance = 400,
                                  out_dir,
                                  outname = "s1_sampling.gpkg") {
+
   sample_points <- dplyr::select(sample_points, c("slice_num", "point_num", "bgc")) |>
     dplyr::arrange("slice_num", "point_num") |>
-    dplyr::mutate(cid = seq(1, nrow(sample_points), 1))
+    dplyr::mutate(cid = seq(1, nrow(sample_points), 1),
+                  aoi = NA)
 
   b <- unique(sample_points$bgc)
 
