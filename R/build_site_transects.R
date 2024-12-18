@@ -78,7 +78,7 @@ build_site_transects <- function(sample_points,
       Rotation == 270 ~ "W",
       Rotation == 315 ~ "NW"
     )) |>
-    dplyr::filter(!is.na("Rotation")) |>
+    dplyr::filter(!is.na(.data$Rotation)) |>
     sf::st_join(mask_poly, join = sf::st_intersects) |>
     dplyr::mutate(aoi = dplyr::case_when(
       is.na(cost) ~ FALSE,
