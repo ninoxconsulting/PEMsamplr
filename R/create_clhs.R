@@ -97,7 +97,7 @@ create_clhs <- function(all_cov,
                             simple = FALSE,
                             progress = TRUE,
                             cost = "cost",
-                            use.cpp = T,
+                            use.cpp = TRUE,
                             latlon = coords,
                             min.dist = min_dist)
       if(sum(templhs$final_obj_distance) == 0) break
@@ -106,7 +106,7 @@ create_clhs <- function(all_cov,
   } else {
     cli::cli_alert_success("Gen-R-ating multiple slices...")
 
-    for (snum in 1:num_slices) {
+    for (snum in seq_len(num_slices)) {
       # snum = 1
       for (i in 1:5) {
         templhs <- clhs::clhs(curr_dat,
