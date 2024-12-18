@@ -81,7 +81,7 @@ build_site_transects <- function(sample_points,
       Rotation == 270 ~ "W",
       Rotation == 315 ~ "NW"
     )) |>
-    dplyr::filter(!is.na("Rotation")) |>
+    dplyr::filter(!is.na(.data$Rotation)) |>
     sf::st_join(mask_poly, join = sf::st_intersects) |>
     dplyr::mutate(aoi = dplyr::case_when(
       is.na(cost) ~ FALSE,
@@ -89,8 +89,9 @@ build_site_transects <- function(sample_points,
     )) |>
     dplyr::select(-"cost", -"Rotation")
 
-  cost <- terra::extract(cost, sample_points_rotations, ID = FALSE)
-  sample_points_rotations <- cbind(sample_points_rotations, cost)
+  cost_vals <- terra::extract(cost, sample_points_rotations, ID = FALSE) |> 
+    stats::setNames("cost")
+  sample_points_rotations <- cbind(sample_points_rotations, cost_vals)
 
   sample_points_low_cost <- sample_points_rotations |>
     dplyr::filter(.data$aoi) |>
@@ -130,17 +131,19 @@ build_site_transects <- function(sample_points,
 
   cli::cli_alert_success("generating site transects")
 
-  all_triangles <- sf::st_sf(sf::st_sfc()) |> sf::st_set_crs(3005)
-
-  for (i in 1:nrow(all_points)) {
+  all_triangles <- purrr::map(seq_along(nrow(all_points)), function(i) {
     # i = 1
     poc <- all_points[i, ]
 
-    triangle <- .Tri_build(id = poc$id, x = sf::st_coordinates(poc)[1], y = sf::st_coordinates(poc)[2])
+    triangle <- .Tri_build(
+      id = poc$id,
+      x = sf::st_coordinates(poc)[1],
+      y = sf::st_coordinates(poc)[2]
+    )
     random_rotation <- stats::runif(1, min = 0, max = 360)
-    triangle <- .rotFeature(triangle, poc, random_rotation)
-    all_triangles <- rbind(all_triangles, triangle)
-  }
+    .rotFeature(triangle, poc, random_rotation)
+  }) |> 
+    dplyr::bind_rows()
 
 
   paired_triangles <- all_triangles[all_triangles$id %in% paired_sample$id, ]
@@ -194,8 +197,7 @@ build_site_transects <- function(sample_points,
   MoonLineCentre <- sf::st_as_sf(MoonLineCentre, coords = c("X", "Y"), crs = 3005)
   MoonLineCentre <- MoonLineCentre |>
     dplyr::mutate(id = id) |>
-    dplyr::group_by(id) |>
-    dplyr::summarise() |>
+    dplyr::summarise(.by = "id") |>
     sf::st_cast("POLYGON") |>
     sf::st_cast("MULTILINESTRING")
 
