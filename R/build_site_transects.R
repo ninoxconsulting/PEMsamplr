@@ -34,15 +34,15 @@ build_site_transects <- function(sample_points,
 
   # create paired outputs
   sample_points_clhs <- sf::st_as_sf(sample_points) |> sf::st_transform(3005)
-  sample_points_clhs$aoi <- NA
+  #sample_points_clhs$aoi <- NA
 
 
   rotation_angles <- seq(0, 315, 45) # Rotation degrees
 
+  # create blank placeholder
   sample_points_rotations <- sf::st_sf(sf::st_sfc()) |> sf::st_set_crs(3005)
 
   cli::cli_alert_success("generating site points")
-
 
   for (i in 1:nrow(sample_points_clhs)) {
     # i = 1
@@ -53,6 +53,7 @@ build_site_transects <- function(sample_points,
 
     rotated_points <- sf::st_sf(sf::st_sfc()) |> sf::st_set_crs(3005)
 
+    # generate the rotated points at centroid distance apart on bearings and add to blank placeholder
     rotated_points <- do.call(rbind, lapply(rotation_angles, function(Bear) {
       Feature_geo <- sf::st_geometry(pnt_feat)
       PivotPoint <- sf::st_geometry(pnt)
@@ -68,8 +69,8 @@ build_site_transects <- function(sample_points,
     sample_points_rotations <- rbind(rotated_points, sample_points_rotations)
   }
 
+  #update names for rotation and chech if points are within mask
   sample_points_rotations <- sf::st_as_sf(sample_points_rotations, crs = 3005) |>
-    # dplyr::mutate(rotation = plyr::mapvalues("Rotation", "rotation_angles", c("N", "NE", "SE", "W", "E", "NW", "SW", "S"))) #|>
     dplyr::mutate(rotation = dplyr::case_when(
       Rotation == 0 ~ "N",
       Rotation == 45 ~ "NE",
@@ -86,7 +87,7 @@ build_site_transects <- function(sample_points,
       is.na(cost) ~ FALSE,
       TRUE ~ TRUE
     )) |>
-    dplyr::select(-cost)
+    dplyr::select(-"cost")
 
   cost <- terra::extract(cost, sample_points_rotations, ID = FALSE)
   sample_points_rotations <- cbind(sample_points_rotations, cost)
@@ -143,36 +144,37 @@ build_site_transects <- function(sample_points,
 
   ##### write Transects####################
 
-  sf::st_write(all_points, fs::path(out_dir, outname),layer = paste0(b, "_points_all"), delete_layer = TRUE, quiet = T
+  sf::st_write(all_points, fs::path(out_dir, outname),layer = paste0(b, "_points_all"), delete_layer = TRUE, quiet = TRUE
   )
 
-  sf::st_write(all_triangles, fs::path(out_dir, outname),layer = paste0(b, "_transects_all"), delete_layer = TRUE, quiet = T
+  sf::st_write(all_triangles, fs::path(out_dir, outname),layer = paste0(b, "_transects_all"), delete_layer = TRUE, quiet = TRUE
   )
 
-  sf::st_write(paired_sample, file.path(out_dir, outname),layer = paste0(b, "_points"), delete_layer = TRUE, quiet = T
+  sf::st_write(paired_sample, file.path(out_dir, outname),layer = paste0(b, "_points"), delete_layer = TRUE, quiet = TRUE
   )
 
   #### write buffer#########################
   triangle_buff <- sf::st_buffer(all_triangles, dist = 10)
 
-  sf::st_write(triangle_buff, fs::path(out_dir, outname), layer = paste0(b, "_transects_all_buffered"), delete_layer = TRUE, quiet = T)
+  sf::st_write(triangle_buff, fs::path(out_dir, outname), layer = paste0(b, "_transects_all_buffered"), delete_layer = TRUE, quiet = TRUE)
 
-  sf::st_write(paired_sample, fs::path(out_dir, outname), layer = paste0(b, "_points"), delete_layer = TRUE, quiet = T)
+  sf::st_write(paired_sample, fs::path(out_dir, outname), layer = paste0(b, "_points"), delete_layer = TRUE, quiet = TRUE)
 
   # paired_triangles
-  sf::st_write(paired_triangles, fs::path(out_dir, outname), layer = paste0(b, "_transects"), delete_layer = TRUE, quiet = T)
+  sf::st_write(paired_triangles, fs::path(out_dir, outname), layer = paste0(b, "_transects"), delete_layer = TRUE, quiet = TRUE)
 
   #### write buffer#########################
   ptriangle_buff <- sf::st_buffer(paired_triangles, dist = 10)
-  sf::st_write(ptriangle_buff, fs::path(out_dir, outname), layer = paste0(b, "_transects_buffered"), delete_layer = TRUE, quiet = T)
+  sf::st_write(ptriangle_buff, fs::path(out_dir, outname), layer = paste0(b, "_transects_buffered"), delete_layer = TRUE, quiet = TRUE)
 
   # write out clhs points only
-  sf::st_write(sample_points_clhs, fs::path(out_dir, outname), layer = paste0(b, "_points_clhs"), delete_layer = TRUE, quiet = T)
+  sf::st_write(sample_points_clhs, fs::path(out_dir, outname), layer = paste0(b, "_points_clhs"), delete_layer = TRUE, quiet = TRUE)
 }
 
 
 .rot <- function(a) {
-  matrix(c(cos(a), sin(a), -sin(a), cos(a)), 2, 2)
+  out <- matrix(c(cos(a), sin(a), -sin(a), cos(a)), 2, 2)
+  return(out)
 }
 
 
