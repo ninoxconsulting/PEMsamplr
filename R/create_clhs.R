@@ -37,11 +37,16 @@ create_clhs <- function(all_cov,
   #num_sample = 5000000
   #min_dist = 1000
 
+  if(isFALSE("cost" %in% names(all_cov))){
+    cli::cli_abort("Hold up! {.var all_cov} must have a numeric layer named `cost` which contains costs.")
+  }
+
+
   if (num_slices < 1) {
     cli::cli_abort("Hold up! {.var num_slices} must have at least one slice.")
   }
 
-  if(length(isTRUE(is.factor(all_cov)))>1){
+  if(length(names(all_cov)) - sum(terra::is.factor(all_cov)) > 1){
     cli::cli_abort("Hold up! All rasters in {.var allcov} (except cost), shoudl
                    be factors")
 
@@ -62,7 +67,7 @@ create_clhs <- function(all_cov,
                                 xy = TRUE,
                                 as.df = F
   )
-  samp_dat <- samp_dat[!is.na(samp_dat[, "cost"]) & !is.infinite(samp_dat[, ncol(samp_dat)]), ]
+  samp_dat <- samp_dat[!is.na(samp_dat[, "cost"]) & !is.infinite(samp_dat[, "cost"]), ]
 
   coords <- samp_dat[, c("x", "y")]
   curr_dat <- samp_dat[, layer_names]
@@ -74,7 +79,7 @@ create_clhs <- function(all_cov,
     inc_pts <- terra::extract(all_cov, to_include)
     inc_pts <- inc_pts[, -(1)]
     inc_pts <- sf::st_as_sf(inc_pts)
-    inc_idx <- 1:nrow(inc_pts)
+    inc_idx <- seq_along(nrow(inc_pts))
     size <- n_points + nrow(inc_pts)
     curr_dat <- rbind(to_include, curr_dat)
     include_coords <- sf::st_coordinates(to_include)
@@ -92,7 +97,7 @@ create_clhs <- function(all_cov,
                             simple = FALSE,
                             progress = TRUE,
                             cost = "cost",
-                            use.cpp = T,
+                            use.cpp = TRUE,
                             latlon = coords,
                             min.dist = min_dist)
       if(sum(templhs$final_obj_distance) == 0) break
@@ -101,7 +106,7 @@ create_clhs <- function(all_cov,
   } else {
     cli::cli_alert_success("Gen-R-ating multiple slices...")
 
-    for (snum in 1:num_slices) {
+    for (snum in seq_len(num_slices)) {
       # snum = 1
       for (i in 1:5) {
         templhs <- clhs::clhs(curr_dat,
@@ -111,7 +116,7 @@ create_clhs <- function(all_cov,
                         simple = FALSE,
                         progress = TRUE,
                         cost= "cost",
-                        use.cpp = T,
+                        use.cpp = TRUE,
                         latlon = coords,
                         min.dist = min_dist)
         if(sum(templhs$final_obj_distance) == 0){
@@ -129,8 +134,8 @@ create_clhs <- function(all_cov,
     cli::cli_alert_warning("Some points fall within minimum distance!")}
 
   out <- as.data.frame(samp_dat[templhs$index_samples, ])
-  out$slice_num <- rep(num_slices:1, each = n_points)
-  out$point_num <- rep(1:n_points, times = num_slices)
+  out$slice_num <- rep(rev(seq_len(num_slices)), each = n_points)
+  out$point_num <- rep(seq_len(n_points), times = num_slices)
   out_sf <- sf::st_as_sf(out, coords = c("x", "y"), crs = 3005)
   #dist_mat <- st_distance(out_sf,out_sf)
   terra::plot(all_cov$cost)
