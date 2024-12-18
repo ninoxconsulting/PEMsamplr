@@ -74,7 +74,7 @@ create_clhs <- function(all_cov,
     inc_pts <- terra::extract(all_cov, to_include)
     inc_pts <- inc_pts[, -(1)]
     inc_pts <- sf::st_as_sf(inc_pts)
-    inc_idx <- 1:nrow(inc_pts)
+    inc_idx <- seq_along(nrow(inc_pts))
     size <- n_points + nrow(inc_pts)
     curr_dat <- rbind(to_include, curr_dat)
     include_coords <- sf::st_coordinates(to_include)
