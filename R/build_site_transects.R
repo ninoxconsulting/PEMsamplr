@@ -122,17 +122,19 @@ build_site_transects <- function(sample_points,
 
   cli::cli_alert_success("generating site transects")
 
-  all_triangles <- sf::st_sf(sf::st_sfc()) |> sf::st_set_crs(3005)
-
-  for (i in 1:nrow(all_points)) {
+  all_triangles <- purrr::map(seq_along(nrow(all_points)), function(i) {
     # i = 1
     poc <- all_points[i, ]
 
-    triangle <- .Tri_build(id = poc$id, x = sf::st_coordinates(poc)[1], y = sf::st_coordinates(poc)[2])
+    triangle <- .Tri_build(
+      id = poc$id,
+      x = sf::st_coordinates(poc)[1],
+      y = sf::st_coordinates(poc)[2]
+    )
     random_rotation <- stats::runif(1, min = 0, max = 360)
-    triangle <- .rotFeature(triangle, poc, random_rotation)
-    all_triangles <- rbind(all_triangles, triangle)
-  }
+    .rotFeature(triangle, poc, random_rotation)
+  }) |> 
+    dplyr::bind_rows()
 
 
   paired_triangles <- all_triangles[all_triangles$id %in% paired_sample$id, ]
