@@ -34,8 +34,6 @@ build_site_transects <- function(sample_points,
 
   # create paired outputs
   sample_points_clhs <- sf::st_as_sf(sample_points) |> sf::st_transform(3005)
-  #sample_points_clhs$aoi <- NA
-
 
   rotation_angles <- seq(0, 315, 45) # Rotation degrees
 
@@ -63,7 +61,7 @@ build_site_transects <- function(sample_points,
     dplyr::bind_rows()
 
   #update names for rotation and chech if points are within mask
-  sample_points_rotations <- sf::st_as_sf(sample_points_rotations, crs = 3005) |>
+  sample_points_rotations <- sample_points_rotations |>
     dplyr::mutate(rotation = dplyr::case_when(
       Rotation == 0 ~ "N",
       Rotation == 45 ~ "NE",
