@@ -86,8 +86,9 @@ build_site_transects <- function(sample_points,
     )) |>
     dplyr::select(-cost)
 
-  cost <- terra::extract(cost, sample_points_rotations, ID = FALSE)
-  sample_points_rotations <- cbind(sample_points_rotations, cost)
+  cost_vals <- terra::extract(cost, sample_points_rotations, ID = FALSE) |> 
+    stats::setNames("cost")
+  sample_points_rotations <- cbind(sample_points_rotations, cost_vals)
 
   sample_points_low_cost <- do.call(rbind, lapply(split(
     sample_points_rotations,
