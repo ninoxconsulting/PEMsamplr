@@ -1,15 +1,15 @@
 #' Build site transects
 #' Build the associates triangles, buffered triangles and selected paired triangle to sample, based on lowest cost.
 #'
-#' @param sample_points **sf** spatial object of clhs points
-#' @param cost **SpatRast** cost layer generate for sample plan
-#' @param mask_poly **sf** spatial object of mask for specific bgc
-#' @param centroid_distance Numeric value at which the triangles are placed apart,
+#' @param sample_points a `sf` spatial object of clhs points
+#' @param cost A `SpatRast` with cost layer generate for sample plan
+#' @param mask_poly A`sf` spatial object of mask for specific bgc
+#' @param centroid_distance `Numeric` value at which the triangles are placed apart,
 #'        default is 400 based on albers crs meters
-#' @param outname A character name for output file. Default is s1_sampling
-#' @param out_dir text string with location in which output sample plan as a geopackage is written
+#' @param outname A `character` name for output file. Default is `s1_sampling.pgkg`.
+#' @param out_dir A `character` or path where output sample plan is written to.
 #'
-#' @return writes out sf geopackage with multiple layers
+#' @return an `sf` geopackage with multiple layers
 #' @export
 #' @examples
 #' \dontrun{

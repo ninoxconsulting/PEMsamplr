@@ -15,21 +15,21 @@ build_site_transects(
 )
 }
 \arguments{
-\item{sample_points}{\strong{sf} spatial object of clhs points}
+\item{sample_points}{a \code{sf} spatial object of clhs points}
 
-\item{cost}{\strong{SpatRast} cost layer generate for sample plan}
+\item{cost}{A \code{SpatRast} with cost layer generate for sample plan}
 
-\item{mask_poly}{\strong{sf} spatial object of mask for specific bgc}
+\item{mask_poly}{A\code{sf} spatial object of mask for specific bgc}
 
-\item{centroid_distance}{Numeric value at which the triangles are placed apart,
+\item{centroid_distance}{\code{Numeric} value at which the triangles are placed apart,
 default is 400 based on albers crs meters}
 
-\item{out_dir}{text string with location in which output sample plan as a geopackage is written}
+\item{out_dir}{A \code{character} or path where output sample plan is written to.}
 
-\item{outname}{A character name for output file. Default is s1_sampling}
+\item{outname}{A \code{character} name for output file. Default is \code{s1_sampling.pgkg}.}
 }
 \value{
-writes out sf geopackage with multiple layers
+an \code{sf} geopackage with multiple layers
 }
 \description{
 Build site transects

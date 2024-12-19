@@ -12,10 +12,11 @@ simplify_transectlayout(
 )
 }
 \arguments{
-\item{input_path}{A character string of path where sample plan layout geopackage is stored.
-Default location is based on standard workflow.}
+\item{input_path}{A \code{character} string or path where sample plan layout geopackage is stored.
+Default location is based on standard workflow. Note this function is set up to work with
+multiple files so ensure sample plan is only .gpkg in folder.}
 
-\item{out_dir}{A path to the location in which the simplifeid transect layout will be
+\item{out_dir}{A path to the location in which the simplified transect layout will be
 saved. Default location is based on standard workflow.}
 
 \item{writeout}{should the simplifeid transect layout sf object be written to disk?
