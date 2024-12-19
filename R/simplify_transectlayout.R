@@ -1,8 +1,9 @@
 #' Simplify sample plan layout for post processing
 #'
-#' @param input_path A character string of path where sample plan layout geopackage is stored.
-#'  Default location is based on standard workflow.
-#' @param out_dir A path to the location in which the simplifeid transect layout will be
+#' @param input_path A `character` string or path where sample plan layout geopackage is stored.
+#'  Default location is based on standard workflow. Note this function is set up to work with
+#'  multiple files so ensure sample plan is only .gpkg in folder.
+#' @param out_dir A path to the location in which the simplified transect layout will be
 #' saved. Default location is based on standard workflow.
 #' @param writeout should the simplifeid transect layout sf object be written to disk?
 #'     If `TRUE` (default), will write to `out_dir`. Default location is based
@@ -26,25 +27,27 @@ simplify_transectlayout <- function(input_path = fs::path(PEMprepr::read_fid()$d
                                     writeout = TRUE,
                                     overwrite = FALSE){
 
+  # check which files are in the folder
   trans <- list.files(input_path, pattern = ".gpkg$", full.names = TRUE, recursive = FALSE)
 
-  transect_layout <- do.call(rbind, lapply(trans, function(x) {
-    clhs_layers <- sf::st_layers(x)
+  transect_layout <- purrr::map(trans, function(i) {
+    #i = trans[1]
+    clhs_layers <- sf::st_layers(i)
     lines <- which(clhs_layers[["geomtype"]] %in% c("Line String", "Multi Line String"))
     if (length(lines)) {
-      do.call(rbind, lapply(clhs_layers$name[lines], function(y) {
-        transect <- sf::st_read(x, y, quiet = TRUE)
+      transect_layout_lines <- purrr::map(clhs_layers$name[lines], function(y) {
+        # y = lines$name[1]
+        transect <- sf::st_read(i, layer = y, quiet = TRUE)
         names(transect) <- tolower(names(transect))
         transect <- transect[, "id", drop = FALSE]
         transect$id <- as.character(transect$id)
         sf::st_transform(transect, 3005)
-      }))
+      })|>
+        dplyr::bind_rows()
     }
-  }))
-
-  transect_layout <- unique(transect_layout)
-
-  #if write out is true, check if file exists and overwrite if necessary
+  }) |>
+    dplyr::bind_rows() |>
+    unique()
 
   if (writeout) {
 
