@@ -29,6 +29,7 @@ Imports:
     clhs,
     stringr,
     LearnGeom,
+    lubridate,
     purrr,
     stats,
     dplyr,
