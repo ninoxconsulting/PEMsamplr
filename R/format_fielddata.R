@@ -33,11 +33,11 @@ format_fielddata <- function(data_dir = NULL, transect_layout, buffer = 10) {
 
     # apply function to point datatypes only
 
-    s1_layers <- sf::st_layers(x)
+    s1_layers <- sf::st_layers(i)
     pts <- which(s1_layers[["geomtype"]] %in% c("Point", "3D Point", "3D Measured Point"))
 
     if (length(pts) > 0) {
-      points_read <- sf::st_read(x, quiet = TRUE) |>
+      points_read <- sf::st_read(i, quiet = TRUE) |>
         sf::st_transform(3005) |>
         sf::st_zm() |>
         dplyr::rename_all(.funs = tolower)
@@ -63,9 +63,7 @@ format_fielddata <- function(data_dir = NULL, transect_layout, buffer = 10) {
             dplyr::mutate(date_time = lubridate::as_datetime(points_read$timestamp))
 
           points_read <- points_read |>
-            dplyr::mutate(time_hms = format(date_time, format = "%H:%M:%S"))
-        } else {
-          points_read <- dplyr::mutate(points_read, time_hms = NA)
+            dplyr::mutate(time_hms = format(.data$date_time, format = "%H:%M:%S"))
         }
       }
 
@@ -74,12 +72,12 @@ format_fielddata <- function(data_dir = NULL, transect_layout, buffer = 10) {
 
       if ("name" %in% names(points_read)) {
         points_read <- points_read |>
-          dplyr::mutate(order = as.numeric(gsub("Placemark ", "", name)))
+          dplyr::mutate(order = as.numeric(gsub("Placemark ", "", .data$name)))
       }
 
       if ("objectid" %in% names(points_read)) {
         points_read <- points_read |>
-          dplyr::mutate(order = as.numeric(objectid))
+          dplyr::mutate(order = as.numeric(.data$objectid))
       }
 
       if (("order" %in% names(points_read)) == FALSE) {
@@ -103,8 +101,8 @@ format_fielddata <- function(data_dir = NULL, transect_layout, buffer = 10) {
           dplyr::distinct()
 
         points_read <- points_read |>
-          dplyr::mutate(id = gsub("\\s", "", id)) |>
-          dplyr::mutate(transect_id = id)
+          dplyr::mutate(id = gsub("\\s", "", .data$id)) |>
+          dplyr::mutate(transect_id = .data$id)
       }
 
 
@@ -112,7 +110,7 @@ format_fielddata <- function(data_dir = NULL, transect_layout, buffer = 10) {
 
       if (any(is.na(unique(points_read$transect_id)))) {
         points_read <- points_read |>
-          dplyr::mutate(data_type = ifelse(is.na(transect_id), "incidental", "s1"))
+          dplyr::mutate(data_type = ifelse(is.na(.data$transect_id), "incidental", "s1"))
 
         cli::cli_alert_warning("points outside the transect buffer, assigned to incidental,
                                please check these and re-run if needed")
@@ -121,8 +119,8 @@ format_fielddata <- function(data_dir = NULL, transect_layout, buffer = 10) {
       # 6) add observer name to points
 
       points_read <- points_read |>
-        dplyr::mutate(observer = stringr::str_trim(observer)) |>
-        dplyr::mutate(observer = dplyr::na_if(observer, ""))
+        dplyr::mutate(observer = stringr::str_trim(.data$observer)) |>
+        dplyr::mutate(observer = dplyr::na_if(.data$observer, ""))
 
       if (all(is.na(points_read$observer))) {
         # print(x)
@@ -159,17 +157,19 @@ format_fielddata <- function(data_dir = NULL, transect_layout, buffer = 10) {
 
       # 9) add missing columns if not in data
 
-      points_read <- .add_missing_cols(points_read)
+      points_read <- .add_missing_cols(points_read,
+                                       c("photos", "comments", "date_ymd",
+                                         "time_hms","struc_stage","struc_mod"))
 
       # 10) reorder and subset cols of interest
 
       points_read <- points_read |>
-        dplyr::select(any_of(c(
+        dplyr::select(dplyr::any_of(c(
           "order", "mapunit1", "mapunit2", "point_type", "transect_id",
           "observer", "transition", "struc_stage", "struc_mod",
           "date_ymd", "time_hms", "edatope", "comments", "photos", "data_type"
         ))) |>
-        dplyr::group_by(transect_id) |>
+        dplyr::group_by(.data$transect_id) |>
         dplyr::arrange(as.numeric(order), by_group = TRUE) |>
         dplyr::ungroup()
 
@@ -179,8 +179,8 @@ format_fielddata <- function(data_dir = NULL, transect_layout, buffer = 10) {
 
 
       if (endlength != start_length) {
-        cli::cli_warning("length of input file does not match cleaned file review raw data:")
-        print(x)
+        cli::cli_alert_warning("length of input file does not match cleaned file review raw data:")
+        #print(x)
       }
 
       points_read
@@ -203,7 +203,7 @@ format_fielddata <- function(data_dir = NULL, transect_layout, buffer = 10) {
     sf::st_drop_geometry() |>
     dplyr::distinct() |>
     stats::na.omit() |>
-    dplyr::mutate(.data$observer_fill = trimws(.data$observer_fill, which = "both")) |>
+    dplyr::mutate(observer_fill = trimws(.data$observer_fill, which = "both")) |>
     dplyr::filter(.data$observer_fill != "")
 
   if (length(observer_key$transect_id) != length(unique(observer_key$transect_id))) {
@@ -220,299 +220,55 @@ format_fielddata <- function(data_dir = NULL, transect_layout, buffer = 10) {
 
 
 
-
-
-
 .check_col_names <- function(points_read) {
-  # 1) transect name
-  if ("f01_transec" %in% names(points_read)) {
-    dnames <- names(points_read)
-    colnames(points_read) <- gsub("f0", "x0", dnames)
-    points_read <- points_read |>
-      dplyr::mutate(x10_edatope = f10_edatope)
-  }
 
-  if ("f01_transe" %in% names(points_read)) {
-    dnames <- names(points_read)
-    colnames(points_read) <- gsub("f0", "x0", dnames)
-  }
+  # update "f0 cols to "x0 columns
+  points_read <- points_read |>
+    dplyr::rename_with(.fn = ~ gsub("f0", "x0", .x, fixed = TRUE), .col = dplyr::starts_with("f0")) |>
+    dplyr::rename_with(.fn = ~ gsub("f1", "x1", .x, fixed = TRUE), .col = dplyr::starts_with("f1"))
 
-  if ("f01_transect_id" %in% names(points_read)) {
-    dnames <- names(points_read)
-    colnames(points_read) <- gsub("f0", "x0", dnames)
-  }
+  # recode the new and old names into table
 
-  if ("x01_trans" %in% names(points_read)) {
-    points_read <- points_read |>
-      dplyr::rename(transect_id = x01_trans)
-  }
-
-  if ("x01_transec" %in% names(points_read)) {
-    points_read <- points_read |>
-      dplyr::rename(transect_id = x01_transec)
-  }
-
-  if ("x01_transe" %in% names(points_read)) {
-    points_read <- points_read |>
-      dplyr::mutate() |>
-      dplyr::rename(transect_id = x01_transe)
-  }
-
-  if ("x01_transect_id" %in% names(points_read)) {
-    points_read <- points_read |>
-      dplyr::mutate() |>
-      dplyr::rename(transect_id = x01_transect_id)
-  }
-
-  # 2) observer
-  if ("x02_observe" %in% names(points_read)) {
-    points_read <- points_read |>
-      dplyr::rename(observer = x02_observe)
-  }
-
-  if ("x02_observer" %in% names(points_read)) {
-    points_read <- points_read |>
-      dplyr::rename(observer = x02_observer)
-  }
-
-  if ("x02_observ" %in% names(points_read)) {
-    points_read <- points_read |>
-      dplyr::mutate() |>
-      dplyr::rename(observer = x02_observ)
-  }
-
-  if ("x1observer" %in% names(points_read)) {
-    points_read <- points_read |>
-      dplyr::rename(observer = x1observer)
-  }
-
-  # 3) point_type
-  if ("x03_pt_type" %in% names(points_read)) {
-    points_read <- points_read |>
-      dplyr::rename(point_type = x03_pt_type)
-  }
-  # 3) point_type
-  if ("x03_pt_typ" %in% names(points_read)) {
-    points_read <- points_read |>
-      dplyr::rename(point_type = x03_pt_typ)
-  }
-
-  # 3) point_type
-  if ("x6pointtype" %in% names(points_read)) {
-    points_read <- points_read |>
-      dplyr::rename(point_type = x6pointtype)
-  }
-  # 3) point_type
-  if ("pt_type" %in% names(points_read)) {
-    points_read <- points_read |>
-      dplyr::rename(point_type = pt_type)
-  }
-
-  # 4) Mapunit1
-  if ("x04_mapunit" %in% names(points_read)) {
-    points_read <- points_read |>
-      dplyr::rename(mapunit1 = x04_mapunit)
-  }
-
-  # 4) Mapunit1
-  if ("x04_mapuni" %in% names(points_read)) {
-    points_read <- points_read |>
-      dplyr::rename(mapunit1 = x04_mapuni)
-  }
-
-  if ("x04_mapunit1" %in% names(points_read)) {
-    points_read <- points_read |>
-      dplyr::rename(mapunit1 = x04_mapunit1)
-  }
-
-  #  Mapunit1
-  if ("x2mapunit1" %in% names(points_read)) {
-    points_read <- points_read |>
-      dplyr::rename(mapunit1 = x2mapunit1)
-  }
-  #  Mapunit1
-  if ("x2mapunit" %in% names(points_read)) {
-    points_read <- points_read |>
-      dplyr::rename(mapunit1 = x2mapunit)
-  }
-
-  # 5) Mapunit2
-  if ("x06_mapunit" %in% names(points_read)) {
-    points_read <- points_read |>
-      dplyr::rename(mapunit2 = x06_mapunit)
-  }
-
-  if ("x06_mapunit2" %in% names(points_read)) {
-    points_read <- points_read |>
-      dplyr::rename(mapunit2 = x06_mapunit2)
-  }
-
-  if ("x4mapunit2" %in% names(points_read)) {
-    points_read <- points_read |>
-      dplyr::rename(mapunit2 = x4mapunit2)
-  }
-
-  # 5) Mapunit2
-  if ("x06_mapuni" %in% names(points_read)) {
-    points_read <- points_read |>
-      dplyr::rename(mapunit2 = x06_mapuni)
-  }
-
-  # 6) transtition
-  if ("x05_transit" %in% names(points_read)) {
-    points_read <- points_read |>
-      dplyr::rename(transition = x05_transit)
-  }
-
-  if ("x05_transi" %in% names(points_read)) {
-    points_read <- points_read |>
-      dplyr::rename(transition = x05_transi)
-  }
-
-  if ("x05_transition" %in% names(points_read)) {
-    points_read <- points_read |>
-      dplyr::rename(transition = x05_transition)
-  }
-  if ("x3transitio" %in% names(points_read)) {
-    points_read <- points_read |>
-      dplyr::rename(transition = x3transitio)
-  }
+  recode_df <- data.frame(
+    old = c("x01_transect_id", "x01_transec", "x01_transe", "x01_trans",
+            "x1observer", "x02_observ","x02_observer","x02_observe",
+            "pt_type", "x6pointtype","x03_pt_typ","x03_pt_type" ,
+            "x2mapunit", "x2mapunit1","x04_mapunit1" ,"x04_mapuni","x04_mapunit",
+            "x06_mapuni","x4mapunit2","x06_mapunit2","x06_mapunit",
+            "x3transitio","x05_transition","x05_transi","x05_transit",
+            "x07_struc_","x07_struct","x07_struct_","x07_struct_stage","x7structsta" ,
+            "x08_struct_","x08_struct_","x08_struct_stage_mod",
+            "x10_edatope", "x6edatope",
+            "x09_commen", "x5comments", "x09_comment"),
+    new = c(
+      "transect_id", "transect_id", "transect_id", "transect_id",
+      "observer", "observer","observer","observer",
+      "point_type", "point_type","point_type","point_type",
+      "mapunit1","mapunit1","mapunit1","mapunit1","mapunit1",
+      "mapunit2","mapunit2","mapunit2","mapunit2",
+      "transition","transition","transition","transition",
+      "struc_stage","struc_stage","struc_stage","struc_stage","struc_stage",
+      "struc_mod","struc_mod","struc_mod",
+      "edatope", "edatope",
+      "comments", "comments","comments")
+  )
 
 
-  # 7) Stand struc
-  if ("x07_struc_" %in% names(points_read)) {
-    points_read <- points_read |>
-      dplyr::rename(struc_stage = x07_struc_)
-  }
+  recode_vec <- stats::setNames(recode_df$old, recode_df$new)
 
-  if ("x07_struct" %in% names(points_read)) {
-    points_read <- points_read |>
-      dplyr::rename(struc_stage = x07_struct)
-  }
-
-  if ("x07_struct_" %in% names(points_read)) {
-    points_read <- points_read |>
-      dplyr::rename(struc_stage = x07_struct_)
-  }
-
-  if ("x07_struct_stage" %in% names(points_read)) {
-    points_read <- points_read |>
-      dplyr::rename(struc_stage = x07_struct_stage)
-  }
-  if ("x7structsta" %in% names(points_read)) {
-    points_read <- points_read |>
-      dplyr::rename(struc_stage = x7structsta)
-  }
-
-  # 8) Stand struc
-  if ("x08_struct" %in% names(points_read)) {
-    points_read <- points_read |>
-      dplyr::rename(struc_mod = x08_struct)
-  }
-
-  # 8) Stand struc
-  if ("x08_struct_" %in% names(points_read)) {
-    points_read <- points_read |>
-      dplyr::rename(struc_mod = x08_struct_)
-  }
-
-  if ("x08_struct_stage_mod" %in% names(points_read)) {
-    points_read <- points_read |>
-      dplyr::rename(struc_mod = x08_struct_stage_mod)
-  }
-
-  # 9) Edatope
-  if ("x10_edatope" %in% names(points_read)) {
-    points_read <- points_read |>
-      dplyr::rename(edatope = x10_edatope)
-  }
-
-  # 9) Edatope
-  if ("x6edatope" %in% names(points_read)) {
-    points_read <- points_read |>
-      dplyr::rename(edatope = x6edatope)
-  }
-
-  # 10) comments
-  if ("x5comments" %in% names(points_read)) {
-    points_read <- points_read |>
-      dplyr::rename(comments = x5comments)
-  }
-  if ("x09_comment" %in% names(points_read)) {
-    points_read <- points_read |>
-      dplyr::rename(comments = x09_comment)
-  }
-
-  if ("x09_comments" %in% names(points_read)) {
-    points_read <- points_read |>
-      dplyr::rename(comments = x09_comments)
-  }
-
-  if ("x5comments" %in% names(points_read)) {
-    points_read <- points_read |>
-      dplyr::rename(comments = x5comments)
-  }
-  if ("x09_commen" %in% names(points_read)) {
-    points_read <- points_read |>
-      dplyr::rename(comments = x09_commen)
-  }
+  points_read <- points_read |>
+    dplyr::rename(dplyr::any_of(recode_vec))
 
   return(points_read)
 }
+
 
 
 # add missing columns if not in data
 
-.add_missing_cols <- function(points_read) {
-  if ("photos" %in% names(points_read)) {
-
-  } else {
-    # add missing columns if not in data
-    if ("pdfmaps_ph" %in% names(points_read)) {
-      points_read <- points_read |>
-        dplyr::mutate(photos = pdfmaps_ph)
-    } else {
-      points_read <- points_read |>
-        dplyr::mutate(photos = NA)
-    }
-  }
-
-  if ("comments" %in% names(points_read)) {
-
-  } else {
-    points_read <- points_read |>
-      dplyr::mutate(comments = NA)
-  }
-
-  if ("edatope" %in% names(points_read)) {
-
-  } else {
-    points_read <- points_read |>
-      dplyr::mutate(edatope = NA)
-  }
-
-
-  if (("date_ymd" %in% names(points_read)) == FALSE) {
-    points_read <- points_read |>
-      dplyr::mutate(
-        date_ymd = NA,
-        time_hms = NA
-      )
-  }
-
-  if ("struc_stage" %in% names(points_read)) {
-
-  } else {
-    points_read <- points_read |>
-      dplyr::mutate(struc_stage = NA)
-  }
-
-  if ("struc_mod" %in% names(points_read)) {
-
-  } else {
-    points_read <- points_read |>
-      dplyr::mutate(struc_mod = NA)
-  }
-
+.add_missing_cols <- function(points_read, cols) {
+  add <- cols[!cols %in% names(points_read)]
+  if(length(add) !=0 ) points_read[add] <- NA
   return(points_read)
 }
+
