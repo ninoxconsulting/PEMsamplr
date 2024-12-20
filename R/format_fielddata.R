@@ -14,7 +14,6 @@
 #' clean_pts <- format_fielddata(inputfolder, transect_layout, buffer = 10)
 #' }
 format_fielddata <- function(data_dir = NULL, transect_layout, buffer = 10) {
-
   #  datafolder <- rawdat
   #  buffer = 10
 
@@ -30,7 +29,6 @@ format_fielddata <- function(data_dir = NULL, transect_layout, buffer = 10) {
   # points <- points[c(2,4)]
 
   all_points <- purrr::map(points, function(i) {
-
     # apply function to point datatypes only
 
     s1_layers <- sf::st_layers(i)
@@ -89,11 +87,8 @@ format_fielddata <- function(data_dir = NULL, transect_layout, buffer = 10) {
       # 4) add the transect id number using the transect layout buffered.
 
       if ("id" %in% names(points_read)) {
-
         # print("transect id already present")
-
       } else {
-
         points_read <-
           sf::st_join(points_read, transect_layout_buf, join = sf::st_intersects)
         points_read <- points_read |>
@@ -157,9 +152,13 @@ format_fielddata <- function(data_dir = NULL, transect_layout, buffer = 10) {
 
       # 9) add missing columns if not in data
 
-      points_read <- .add_missing_cols(points_read,
-                                       c("photos", "comments", "date_ymd",
-                                         "time_hms","struc_stage","struc_mod"))
+      points_read <- .add_missing_cols(
+        points_read,
+        c(
+          "photos", "comments", "date_ymd",
+          "time_hms", "struc_stage", "struc_mod"
+        )
+      )
 
       # 10) reorder and subset cols of interest
 
@@ -180,7 +179,7 @@ format_fielddata <- function(data_dir = NULL, transect_layout, buffer = 10) {
 
       if (endlength != start_length) {
         cli::cli_alert_warning("length of input file does not match cleaned file review raw data:")
-        #print(x)
+        # print(x)
       }
 
       points_read
@@ -221,7 +220,6 @@ format_fielddata <- function(data_dir = NULL, transect_layout, buffer = 10) {
 
 
 .check_col_names <- function(points_read) {
-
   # update "f0 cols to "x0 columns
   points_read <- points_read |>
     dplyr::rename_with(.fn = ~ gsub("f0", "x0", .x, fixed = TRUE), .col = dplyr::starts_with("f0")) |>
@@ -230,27 +228,30 @@ format_fielddata <- function(data_dir = NULL, transect_layout, buffer = 10) {
   # recode the new and old names into table
 
   recode_df <- data.frame(
-    old = c("x01_transect_id", "x01_transec", "x01_transe", "x01_trans",
-            "x1observer", "x02_observ","x02_observer","x02_observe",
-            "pt_type", "x6pointtype","x03_pt_typ","x03_pt_type" ,
-            "x2mapunit", "x2mapunit1","x04_mapunit1" ,"x04_mapuni","x04_mapunit",
-            "x06_mapuni","x4mapunit2","x06_mapunit2","x06_mapunit",
-            "x3transitio","x05_transition","x05_transi","x05_transit",
-            "x07_struc_","x07_struct","x07_struct_","x07_struct_stage","x7structsta" ,
-            "x08_struct_","x08_struct_","x08_struct_stage_mod",
-            "x10_edatope", "x6edatope",
-            "x09_commen", "x5comments", "x09_comment"),
+    old = c(
+      "x01_transect_id", "x01_transec", "x01_transe", "x01_trans",
+      "x1observer", "x02_observ", "x02_observer", "x02_observe",
+      "pt_type", "x6pointtype", "x03_pt_typ", "x03_pt_type",
+      "x2mapunit", "x2mapunit1", "x04_mapunit1", "x04_mapuni", "x04_mapunit",
+      "x06_mapuni", "x4mapunit2", "x06_mapunit2", "x06_mapunit",
+      "x3transitio", "x05_transition", "x05_transi", "x05_transit",
+      "x07_struc_", "x07_struct", "x07_struct_", "x07_struct_stage", "x7structsta",
+      "x08_struct_", "x08_struct_", "x08_struct_stage_mod",
+      "x10_edatope", "x6edatope",
+      "x09_commen", "x5comments", "x09_comment"
+    ),
     new = c(
       "transect_id", "transect_id", "transect_id", "transect_id",
-      "observer", "observer","observer","observer",
-      "point_type", "point_type","point_type","point_type",
-      "mapunit1","mapunit1","mapunit1","mapunit1","mapunit1",
-      "mapunit2","mapunit2","mapunit2","mapunit2",
-      "transition","transition","transition","transition",
-      "struc_stage","struc_stage","struc_stage","struc_stage","struc_stage",
-      "struc_mod","struc_mod","struc_mod",
+      "observer", "observer", "observer", "observer",
+      "point_type", "point_type", "point_type", "point_type",
+      "mapunit1", "mapunit1", "mapunit1", "mapunit1", "mapunit1",
+      "mapunit2", "mapunit2", "mapunit2", "mapunit2",
+      "transition", "transition", "transition", "transition",
+      "struc_stage", "struc_stage", "struc_stage", "struc_stage", "struc_stage",
+      "struc_mod", "struc_mod", "struc_mod",
       "edatope", "edatope",
-      "comments", "comments","comments")
+      "comments", "comments", "comments"
+    )
   )
 
 
@@ -268,7 +269,6 @@ format_fielddata <- function(data_dir = NULL, transect_layout, buffer = 10) {
 
 .add_missing_cols <- function(points_read, cols) {
   add <- cols[!cols %in% names(points_read)]
-  if(length(add) !=0 ) points_read[add] <- NA
+  if (length(add) != 0) points_read[add] <- NA
   return(points_read)
 }
-
