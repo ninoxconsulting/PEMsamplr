@@ -32,6 +32,7 @@ Imports:
     lubridate,
     purrr,
     stats,
+    tidyr,
     dplyr,
     rlang
 Encoding: UTF-8
