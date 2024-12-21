@@ -65,7 +65,7 @@ format_tracklog <- function(data_dir = NULL, transect_layout, buffer = 10) {
       # 3) assign data type
 
       tdat <- tdat |>
-        dplyr::mutate(data_type = ifelse(is.na(transect_id), "incidental", "s1"))
+        dplyr::mutate(data_type = ifelse(is.na(.data$transect_id), "incidental", "s1"))
 
 
 
@@ -78,7 +78,7 @@ format_tracklog <- function(data_dir = NULL, transect_layout, buffer = 10) {
       # 5) filter columns
 
       tdat <- tdat |>
-        dplyr::select(any_of(c("transect_id", "date_ymd", "time_hms", "photos", "data_type")))
+        dplyr::select(dplyr::any_of(c("transect_id", "date_ymd", "time_hms", "photos", "data_type")))
 
       sf::st_geometry(tdat) <- "geom"
 
