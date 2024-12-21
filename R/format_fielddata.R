@@ -41,24 +41,16 @@ format_fielddata <- function(data_dir = NULL, transect_layout, buffer = 10) {
 
       start_length <- length(points_read$geom)
 
+
       # 1) check the names of the columns are unifom across all files
 
       points_read <- .check_col_names(points_read)
 
+
       # 2) fix date and times.
 
-      if ("timestamp" %in% names(points_read)) {
-        points_read <- points_read |>
-          dplyr::mutate(date_ymd = lubridate::as_date(points_read$timestamp))
+      points_read <- .fix_timestamp(points_read)
 
-        if (stringr::str_length(points_read$timestamp[1]) > 10) {
-          points_read <- points_read |>
-            dplyr::mutate(date_time = lubridate::as_datetime(points_read$timestamp))
-
-          points_read <- points_read |>
-            dplyr::mutate(time_hms = format(.data$date_time, format = "%H:%M:%S"))
-        }
-      }
 
       # 3) An a order to points
 
@@ -77,21 +69,12 @@ format_fielddata <- function(data_dir = NULL, transect_layout, buffer = 10) {
           dplyr::mutate(order = as.numeric(seq(1, length(points_read$geom), 1)))
       }
 
+
       # 4) add the transect id number using the transect layout buffered.
 
-      if ("id" %in% names(points_read)) {
-        # print("transect id already present")
-      } else {
-        points_read <-
-          sf::st_join(points_read, transect_layout_buf, join = sf::st_intersects)
-        points_read <- points_read |>
-          dplyr::rename_all(.funs = tolower) |>
-          dplyr::distinct()
+      points_read <- .transect_intersect(points_read, transect_layout_buf)
 
-        points_read <- points_read |>
-          dplyr::mutate(id = gsub("\\s", "", .data$id)) |>
-          dplyr::mutate(transect_id = .data$id)
-      }
+
 
       # 5) assign incidental to points outside the transect buffer and give warning
 
@@ -102,6 +85,7 @@ format_fielddata <- function(data_dir = NULL, transect_layout, buffer = 10) {
         cli::cli_alert_warning("points outside the transect buffer, assigned to incidental,
                                please check these and re-run if needed")
       }
+
 
       # 6) add observer name to points
 
@@ -117,6 +101,7 @@ format_fielddata <- function(data_dir = NULL, transect_layout, buffer = 10) {
 
         points_read <- .fill_observer(points_read)
       }
+
 
       # 7) check the mapunit 1 is filled if mapunit 2 is not NA
 
@@ -181,7 +166,28 @@ format_fielddata <- function(data_dir = NULL, transect_layout, buffer = 10) {
 }
 
 
+# split timestamp into date and time
 
+.fix_timestamp <- function(points_read){
+  if ("timestamp" %in% names(points_read)) {
+    points_read <- points_read |>
+      dplyr::mutate(date_ymd = lubridate::as_date(points_read$timestamp))
+
+    if (stringr::str_length(points_read$timestamp[1]) > 10) {
+      points_read <- points_read |>
+        dplyr::mutate(date_time = lubridate::as_datetime(points_read$timestamp))
+
+      points_read <- points_read |>
+        dplyr::mutate(time_hms = format(.data$date_time, format = "%H:%M:%S"))
+    }
+  }
+  return(points_read)
+}
+
+
+
+
+# fill observer name
 
 .fill_observer <- function(input_data) {
 
@@ -261,4 +267,20 @@ format_fielddata <- function(data_dir = NULL, transect_layout, buffer = 10) {
   add <- cols[!cols %in% names(points_read)]
   if (length(add) != 0) points_read[add] <- NA
   return(points_read)
+}
+
+
+# intersect with transect layout to define transect_id
+
+.transect_intersect <- function(points_read, transect_layout_buf) {
+  points_read <- sf::st_join(points_read, transect_layout_buf, join = sf::st_intersects)
+  points_read <- points_read |>
+    dplyr::rename_all(.funs = tolower) |>
+    dplyr::distinct()
+
+  points_read <- points_read |>
+    dplyr::mutate(id = gsub("\\s", "", .data$id)) |>
+    dplyr::mutate(transect_id = .data$id)
+
+return(points_read)
 }
