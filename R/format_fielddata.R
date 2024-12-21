@@ -14,7 +14,7 @@
 #' clean_pts <- format_fielddata(inputfolder, transect_layout, buffer = 10)
 #' }
 format_fielddata <- function(data_dir = NULL, transect_layout, buffer = 10) {
-  #  datafolder <- rawdat
+  # data_dir <- rawdat
   #  buffer = 10
 
   transect_layout_buf <- sf::st_buffer(transect_layout, buffer)
@@ -24,12 +24,9 @@ format_fielddata <- function(data_dir = NULL, transect_layout, buffer = 10) {
     cli::cli_abort("{.var datafolder} must be a directory path")
   }
 
-
   points <- fs::dir_ls(path = data_dir, recurse = TRUE, regexp = ".gpkg$|.shp$")
-  # points <- points[c(2,4)]
 
   all_points <- purrr::map(points, function(i) {
-    # apply function to point datatypes only
 
     s1_layers <- sf::st_layers(i)
     pts <- which(s1_layers[["geomtype"]] %in% c("Point", "3D Point", "3D Measured Point"))
@@ -44,11 +41,9 @@ format_fielddata <- function(data_dir = NULL, transect_layout, buffer = 10) {
 
       start_length <- length(points_read$geom)
 
-
       # 1) check the names of the columns are unifom across all files
 
       points_read <- .check_col_names(points_read)
-
 
       # 2) fix date and times.
 
@@ -64,7 +59,6 @@ format_fielddata <- function(data_dir = NULL, transect_layout, buffer = 10) {
             dplyr::mutate(time_hms = format(.data$date_time, format = "%H:%M:%S"))
         }
       }
-
 
       # 3) An a order to points
 
@@ -83,7 +77,6 @@ format_fielddata <- function(data_dir = NULL, transect_layout, buffer = 10) {
           dplyr::mutate(order = as.numeric(seq(1, length(points_read$geom), 1)))
       }
 
-
       # 4) add the transect id number using the transect layout buffered.
 
       if ("id" %in% names(points_read)) {
@@ -99,7 +92,6 @@ format_fielddata <- function(data_dir = NULL, transect_layout, buffer = 10) {
           dplyr::mutate(id = gsub("\\s", "", .data$id)) |>
           dplyr::mutate(transect_id = .data$id)
       }
-
 
       # 5) assign incidental to points outside the transect buffer and give warning
 
@@ -119,13 +111,12 @@ format_fielddata <- function(data_dir = NULL, transect_layout, buffer = 10) {
 
       if (all(is.na(points_read$observer))) {
         # print(x)
-        #  cli::cli_abort("observer name missing in original data, check and re-run the above transect data")
+        cli::cli_abort("observer name missing in original data, check and re-run the above transect data")
       } else {
         # print ("filling observer names")
 
         points_read <- .fill_observer(points_read)
       }
-
 
       # 7) check the mapunit 1 is filled if mapunit 2 is not NA
 
@@ -142,7 +133,6 @@ format_fielddata <- function(data_dir = NULL, transect_layout, buffer = 10) {
           mapunit1 == mapunit2 ~ NA_character_,
           TRUE ~ as.character(mapunit2)
         ))
-
 
 
       # 8) add back sight/ line of site check
@@ -194,7 +184,6 @@ format_fielddata <- function(data_dir = NULL, transect_layout, buffer = 10) {
 
 
 .fill_observer <- function(input_data) {
-  # input_data <- points_read
 
   observer_key <- input_data |>
     dplyr::select(.data$transect_id, .data$observer) |>
@@ -220,6 +209,7 @@ format_fielddata <- function(data_dir = NULL, transect_layout, buffer = 10) {
 
 
 .check_col_names <- function(points_read) {
+
   # update "f0 cols to "x0 columns
   points_read <- points_read |>
     dplyr::rename_with(.fn = ~ gsub("f0", "x0", .x, fixed = TRUE), .col = dplyr::starts_with("f0")) |>
