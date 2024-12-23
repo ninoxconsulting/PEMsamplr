@@ -7,7 +7,7 @@
 simplify_transectlayout(
   input_path = fs::path(PEMprepr::read_fid()$dir_20104020_transect$path_rel),
   out_dir = fs::path(PEMprepr::read_fid()$dir_20104020_transect$path_rel),
-  writeout = TRUE,
+  write_output = TRUE,
   overwrite = FALSE
 )
 }
@@ -19,12 +19,12 @@ multiple files so ensure sample plan is only .gpkg in folder.}
 \item{out_dir}{A path to the location in which the simplified transect layout will be
 saved. Default location is based on standard workflow.}
 
-\item{writeout}{should the simplifeid transect layout sf object be written to disk?
+\item{write_output}{should the simplifeid transect layout sf object be written to disk?
 If \code{TRUE} (default), will write to \code{out_dir}. Default location is based
 on standard workflow.}
 
 \item{overwrite}{a \code{logical} to determine if the output file be overwritten
-if it already exists? Only used when \code{writeout = TRUE}. Default is \code{FALSE}.}
+if it already exists? Only used when \code{write_output = TRUE}. Default is \code{FALSE}.}
 }
 \value{
 sf object of simplified transect layout
@@ -37,7 +37,7 @@ Simplify sample plan layout for post processing
 t1 <- simplify_transectlayout(
     input_dir = fs::path(PEMprepr::read_fid()$dir_20104020_transect$path_abs),
     out_dir = fs::path(PEMprepr::read_fid()$dir_20104020_transect$path_abs),
-    writeout = TRUE,
+    write_output = TRUE,
     overwrite = FALSE)
 }
 }

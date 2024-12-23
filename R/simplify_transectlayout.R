@@ -5,11 +5,11 @@
 #'  multiple files so ensure sample plan is only .gpkg in folder.
 #' @param out_dir A path to the location in which the simplified transect layout will be
 #' saved. Default location is based on standard workflow.
-#' @param writeout should the simplifeid transect layout sf object be written to disk?
+#' @param write_output should the simplifeid transect layout sf object be written to disk?
 #'     If `TRUE` (default), will write to `out_dir`. Default location is based
 #'     on standard workflow.
 #' @param overwrite a `logical` to determine if the output file be overwritten
-#'      if it already exists? Only used when `writeout = TRUE`. Default is `FALSE`.
+#'      if it already exists? Only used when `write_output = TRUE`. Default is `FALSE`.
 #'
 #' @return sf object of simplified transect layout
 #' @export
@@ -19,12 +19,12 @@
 #' t1 <- simplify_transectlayout(
 #'     input_dir = fs::path(PEMprepr::read_fid()$dir_20104020_transect$path_abs),
 #'     out_dir = fs::path(PEMprepr::read_fid()$dir_20104020_transect$path_abs),
-#'     writeout = TRUE,
+#'     write_output = TRUE,
 #'     overwrite = FALSE)
 #'}
 simplify_transectlayout <- function(input_path = fs::path(PEMprepr::read_fid()$dir_20104020_transect$path_rel),
                                     out_dir = fs::path(PEMprepr::read_fid()$dir_20104020_transect$path_rel),
-                                    writeout = TRUE,
+                                    write_output = TRUE,
                                     overwrite = FALSE){
 
   # check which files are in the folder
@@ -49,7 +49,7 @@ simplify_transectlayout <- function(input_path = fs::path(PEMprepr::read_fid()$d
     dplyr::bind_rows() |>
     unique()
 
-  if (writeout) {
+  if (write_output) {
 
     file_path <- fs::path(out_dir, "transect_layout.gpkg")
     if (file.exists(file_path) && !overwrite) {
