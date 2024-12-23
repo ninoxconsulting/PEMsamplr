@@ -5,11 +5,11 @@
 #' @param data_dir text string with location of raw files in shp or gpk format
 #' @param transect_layout A `sf` object with simplified transect layout
 #' @param buffer numeric value for buffer distance around transect layout
-#' @param write_output should the sf raster be written to disk?
+#' @param write_output should the sf object be written to disk?
 #'     If `TRUE` (default), will write to `out_dir` under the appropriate resolution subfolder.
 #' @param out_dir A character string of path which points to output location. A default
 #'    location and name are applied in line with standard workflow.
-#' @param out_name A character string of the output file name. Default is `s1_points.gpkg`
+#' @param out_name A character string of the output file name. Default is `s1_points_raw.gpkg`
 #' @return sf point data with standardized and consolidated datasets
 #' @export
 #'

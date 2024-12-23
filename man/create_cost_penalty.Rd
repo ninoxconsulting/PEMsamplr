@@ -5,13 +5,13 @@
 \title{Create a cost penalty layer for sample plan development}
 \usage{
 create_cost_penalty(
-  vec_dir = fs::path(PEMprepr::read_fid()$dir_1010_vector$path_abs),
+  vec_dir = fs::path(PEMprepr::read_fid()$dir_1010_vector$path_rel),
   dem,
   cost,
   costval = 3000,
   vri_cost = 2500,
   calc_by_qq = TRUE,
-  out_dir = fs::path(PEMprepr::read_fid()$dir_201010_inputs$path_abs),
+  out_dir = fs::path(PEMprepr::read_fid()$dir_201010_inputs$path_rel),
   write_output = TRUE,
   overwrite = FALSE
 )

@@ -5,8 +5,8 @@
 \title{Simplify sample plan layout for post processing}
 \usage{
 simplify_transectlayout(
-  input_path = fs::path(PEMprepr::read_fid()$dir_20104020_transect$path_abs),
-  out_dir = fs::path(PEMprepr::read_fid()$dir_20104020_transect$path_abs),
+  input_path = fs::path(PEMprepr::read_fid()$dir_20104020_transect$path_rel),
+  out_dir = fs::path(PEMprepr::read_fid()$dir_20104020_transect$path_rel),
   writeout = TRUE,
   overwrite = FALSE
 )

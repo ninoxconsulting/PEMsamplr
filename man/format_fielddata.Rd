@@ -9,24 +9,24 @@ format_fielddata(
   transect_layout,
   buffer = 10,
   write_output = TRUE,
-  out_dir = fs::path(PEMprepr::read_fid()$dir_20105020_clean_field_data$path_abs),
-  out_name = "s1_points.gpkg"
+  out_dir = fs::path(PEMprepr::read_fid()$dir_20105020_clean_field_data$path_rel),
+  out_name = "s1_points_raw.gpkg"
 )
 }
 \arguments{
 \item{data_dir}{text string with location of raw files in shp or gpk format}
 
-\item{transect_layout}{sf object with simplified transect layout}
+\item{transect_layout}{A \code{sf} object with simplified transect layout}
 
 \item{buffer}{numeric value for buffer distance around transect layout}
 
-\item{write_output}{should the sf raster be written to disk?
+\item{write_output}{should the sf object be written to disk?
 If \code{TRUE} (default), will write to \code{out_dir} under the appropriate resolution subfolder.}
 
 \item{out_dir}{A character string of path which points to output location. A default
 location and name are applied in line with standard workflow.}
 
-\item{out_name}{A character string of the output file name. Default is \code{s1_points.gpkg}}
+\item{out_name}{A character string of the output file name. Default is \code{s1_points_raw.gpkg}}
 }
 \value{
 sf point data with standardized and consolidated datasets

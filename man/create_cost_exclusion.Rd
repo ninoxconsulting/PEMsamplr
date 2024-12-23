@@ -5,10 +5,10 @@
 \title{Add exclusion areas to the cost layer for sampling}
 \usage{
 create_cost_exclusion(
-  vec_dir = fs::path(PEMprepr::read_fid()$dir_1010_vector$path_abs),
+  vec_dir = fs::path(PEMprepr::read_fid()$dir_1010_vector$path_rel),
   cost,
   buffer = 150,
-  out_dir = fs::path(PEMprepr::read_fid()$dir_201010_inputs$path_abs),
+  out_dir = fs::path(PEMprepr::read_fid()$dir_201010_inputs$path_rel),
   write_output = TRUE
 )
 }
