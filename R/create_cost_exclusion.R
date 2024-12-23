@@ -26,10 +26,10 @@
 #'
 #' }
 #'
-create_cost_exclusion <- function(vec_dir = fs::path(PEMprepr::read_fid()$dir_1010_vector$path_abs),
+create_cost_exclusion <- function(vec_dir = fs::path(PEMprepr::read_fid()$dir_1010_vector$path_rel),
                                   cost,
                                   buffer = 150,
-                                  out_dir = fs::path(PEMprepr::read_fid()$dir_201010_inputs$path_abs),
+                                  out_dir = fs::path(PEMprepr::read_fid()$dir_201010_inputs$path_rel),
                                   write_output = TRUE) {
   if (!inherits(vec_dir, "character") || !fs::dir_exists(vec_dir)) {
     cli::cli_abort("{.var vec_dir} must be a directory path")

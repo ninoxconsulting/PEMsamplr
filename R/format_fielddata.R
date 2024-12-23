@@ -3,7 +3,7 @@
 #' Standardizes format from raw field data to standard point data
 #'
 #' @param data_dir text string with location of raw files in shp or gpk format
-#' @param transect_layout sf object with simplified transect layout
+#' @param transect_layout A `sf` object with simplified transect layout
 #' @param buffer numeric value for buffer distance around transect layout
 #' @param write_output should the sf raster be written to disk?
 #'     If `TRUE` (default), will write to `out_dir` under the appropriate resolution subfolder.
@@ -21,8 +21,8 @@ format_fielddata <- function(data_dir = NULL,
                              transect_layout,
                              buffer = 10,
                              write_output = TRUE,
-                             out_dir = fs::path(PEMprepr::read_fid()$dir_20105020_clean_field_data$path_abs),
-                             out_name = "s1_points.gpkg"){
+                             out_dir = fs::path(PEMprepr::read_fid()$dir_20105020_clean_field_data$path_rel),
+                             out_name = "s1_points_raw.gpkg"){
   # data_dir <- rawdat
   # buffer = 10
 

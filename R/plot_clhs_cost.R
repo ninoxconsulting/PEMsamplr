@@ -12,7 +12,7 @@
 #' }
 
 plot_clhs_cost <- function(
-    clhs_dir = PEMprepr::read_fid()$dir_20102010_clhs$path_abs) {
+  clhs_dir = PEMprepr::read_fid()$dir_20102010_clhs$path_rel) {
   ftemp <- fs::dir_ls(clhs_dir, regexp = ".gpkg$")
 
   all_samples <- do.call(rbind, lapply(ftemp, function(ff) {

@@ -22,8 +22,8 @@
 #'     writeout = TRUE,
 #'     overwrite = FALSE)
 #'}
-simplify_transectlayout <- function(input_path = fs::path(PEMprepr::read_fid()$dir_20104020_transect$path_abs),
-                                    out_dir = fs::path(PEMprepr::read_fid()$dir_20104020_transect$path_abs),
+simplify_transectlayout <- function(input_path = fs::path(PEMprepr::read_fid()$dir_20104020_transect$path_rel),
+                                    out_dir = fs::path(PEMprepr::read_fid()$dir_20104020_transect$path_rel),
                                     writeout = TRUE,
                                     overwrite = FALSE){
 

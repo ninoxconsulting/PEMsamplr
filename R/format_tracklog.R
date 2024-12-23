@@ -21,8 +21,9 @@ format_tracklog <- function(data_dir = NULL,
                             transect_layout,
                             buffer = 10,
                             write_output = TRUE,
-                            out_dir = fs::path(PEMprepr::read_fid()$dir_20105020_clean_field_data$path_abs),
-                            out_name = "s1_tracks.gpkg") {
+                            out_dir = fs::path(PEMprepr::read_fid()$dir_20105020_clean_field_data$path_rel),
+                            out_name = "s1_tracks_raw.gpkg") {
+
   if (!inherits(data_dir, "character") || !fs::dir_exists(data_dir)) {
     cli::cli_abort("{.var datafolder} must be a directory path")
   }

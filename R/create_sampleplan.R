@@ -28,9 +28,9 @@
 #'   out_dir = fs::path(PEMprepr::read_fid()$dir_20103020_review$path_rel)
 #' }
 create_sampleplan <- function(clhs_set,
-                              clhs_dir = fs::path(PEMprepr::read_fid()$dir_20103010_clhs$path_abs),
-                              mask_dir = fs::path(PEMprepr::read_fid()$dir_201020_masks$path_abs),
-                              cost = fs::path(PEMprepr::read_fid()$dir_201010_inputs$path_abs, "cost_final.tif"),
+                              clhs_dir = fs::path(PEMprepr::read_fid()$dir_20103010_clhs$path_rel),
+                              mask_dir = fs::path(PEMprepr::read_fid()$dir_201020_masks$path_rel),
+                              cost = fs::path(PEMprepr::read_fid()$dir_201010_inputs$path_rel, "cost_final.tif"),
                               out_dir = fs::path(PEMprepr::read_fid()$dir_20103020_review$path_rel)) {
 
   cost <- PEMprepr:::read_spatrast_if_necessary(cost)
