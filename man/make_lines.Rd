@@ -46,6 +46,6 @@ A placeholder has been made to generate transect lines via the transect method c
 }
 \examples{
 \dontrun{
-processed_lines <- make_lines(points, transect_layout, buffer = 20, method = "pts2lines" )
+processed_lines <- make_lines(points, transect_layout, buffer = 20, method = "pts2lines")
 }
 }
