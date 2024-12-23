@@ -5,7 +5,11 @@
 #' @param data_dir text string with location of raw files in shp or gpk format
 #' @param transect_layout sf object with simplified transect layout
 #' @param buffer numeric value for buffer distance around transect layout
-#'
+#' @param write_output should the sf raster be written to disk?
+#'     If `TRUE` (default), will write to `out_dir` under the appropriate resolution subfolder.
+#' @param out_dir A character string of path which points to output location. A default
+#'    location and name are applied in line with standard workflow.
+#' @param out_name A character string of the output file name. Default is `s1_points.gpkg`
 #' @return sf point data with standardized and consolidated datasets
 #' @export
 #'
@@ -13,15 +17,37 @@
 #' \dontrun{
 #' clean_pts <- format_fielddata(inputfolder, transect_layout, buffer = 10)
 #' }
-format_fielddata <- function(data_dir = NULL, transect_layout, buffer = 10) {
+format_fielddata <- function(data_dir = NULL,
+                             transect_layout,
+                             buffer = 10,
+                             write_output = TRUE,
+                             out_dir = fs::path(PEMprepr::read_fid()$dir_20105020_clean_field_data$path_abs),
+                             out_name = "s1_points.gpkg"){
   # data_dir <- rawdat
-  #  buffer = 10
+  # buffer = 10
+
+  # add check for transect_layout
+  if (!inherits(transect_layout, "sf")) {
+    cli::cli_abort("{.var transect_layout} must be an sf object")
+  }
+
+  # add check for buffer
+  if (!is.numeric(buffer)) {
+    cli::cli_abort("{.var buffer} must be numeric")
+  }
+
+  # add check for out_dir
+  if (!inherits(out_dir, "character") || !fs::dir_exists(out_dir)) {
+    cli::cli_abort("{.var out_dir} must be a directory path")
+  }
+
+
 
   transect_layout_buf <- sf::st_buffer(transect_layout, buffer)
   sf::st_geometry(transect_layout_buf) <- "geom"
 
   if (!inherits(data_dir, "character") || !fs::dir_exists(data_dir)) {
-    cli::cli_abort("{.var datafolder} must be a directory path")
+    cli::cli_abort("{.var data_dir} must be a directory path")
   }
 
   points <- fs::dir_ls(path = data_dir, recurse = TRUE, regexp = ".gpkg$|.shp$")
@@ -162,6 +188,20 @@ format_fielddata <- function(data_dir = NULL, transect_layout, buffer = 10) {
   }) |> dplyr::bind_rows()
 
 
+  if(write_output) {
+
+    out_loc <- fs::path(out_dir, out_name)
+
+    #if file exists
+    if(fs::file_exists(out_loc)){
+      cli::cli_alert_warning("file already exists at {.var out_dir}, this file will be overwriten")
+    }
+
+    sf::st_write(all_points, out_loc, driver = "GPKG", append = FALSE)
+    cli::cli_alert_success("field data formatted and written to {.var {out_dir}}")
+
+  }
+
   return(all_points)
 }
 
@@ -183,7 +223,6 @@ format_fielddata <- function(data_dir = NULL, transect_layout, buffer = 10) {
   }
   return(points_read)
 }
-
 
 
 
