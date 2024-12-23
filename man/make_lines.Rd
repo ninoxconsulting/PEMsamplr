@@ -6,7 +6,6 @@
 \usage{
 make_lines(
   points = NA,
-  tracks = NA,
   transect_layout,
   method = "pts2lines",
   buffer = 20,

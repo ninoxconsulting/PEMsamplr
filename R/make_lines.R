@@ -23,19 +23,17 @@
 #' @export
 #' @examples
 #' \dontrun{
-#' processed_lines <- make_lines(points, transect_layout, buffer = 20, method = "pts2lines" )
+#' processed_lines <- make_lines(points, transect_layout, buffer = 20, method = "pts2lines")
 #' }
 make_lines <- function(points = NA,
-                       tracks = NA,
+                       # tracks = NA,
                        transect_layout,
                        method = "pts2lines",
-                       #sortby = "none",
+                       # sortby = "none",
                        buffer = 20,
                        write_output = TRUE,
                        out_dir = fs::path(PEMprepr::read_fid()$dir_20105020_clean_field_data$path_rel),
                        out_name = "proc_s1_transects.gpkg") {
-
-
   # # # # testing
   # #    GPSPoints = points
   # points = points
@@ -49,7 +47,7 @@ make_lines <- function(points = NA,
   # out_name = "proc_s1_transects.gpkg"
 
 
-  #check points contain attributes
+  # check points contain attributes
   if (!inherits(points, "sf")) {
     cli::cli_abort("{.var points} must be an sf object")
   }
@@ -83,8 +81,8 @@ make_lines <- function(points = NA,
 
     planT <- transect_layout |>
       dplyr::mutate(TID = dplyr::row_number()) |>
-      sf::st_buffer( buffer) |>
-      dplyr::select(TID)
+      sf::st_buffer(buffer) |>
+      dplyr::select(.data$TID)
 
     ## Spatial join attributes
     GPSPoints <- sf::st_join(points, planT)
@@ -102,80 +100,55 @@ make_lines <- function(points = NA,
     #   # GPSPoints[order(sortField),]
     #  }
 
-    GPSPoints <- GPSPoints |>
-      tibble::rowid_to_column("ID") # ID is needed table manipulation below
+    GPSPoints <- GPSPoints |> tibble::rowid_to_column("ID")
 
     ## convert GPSPoints to a table for manipulation
     GPSPoints <- cbind(GPSPoints, sf::st_coordinates(GPSPoints))
-    GPSPoints <- GPSPoints |>  sf::st_drop_geometry()
+    GPSPoints <- GPSPoints |> sf::st_drop_geometry()
 
-
-    # loop through each transect
+    # iterate through transect id
     transects_id <- unique(GPSPoints$TID)
 
-    #all_lines <- foreach(x = transects_id, .combine = rbind) %do% {
-
     all_lines <- purrr::map(transects_id, function(x) {
-
-      #x <- transects_id[1] # testing line
+      # x <- transects_id[1] # testing line
 
       GPSPoints_transect <- GPSPoints |>
-        dplyr:::filter(TID == x)
+        dplyr:::filter(.data$TID == x)
 
-      ## Define the Line Start and End Coordinates
-      ## Add XY coordinates as
+      ## Define the Line Start and End Coordinates and Add XY coordinates as
 
       lines <- GPSPoints_transect |>
-        dplyr::mutate(Xend = dplyr::lead(X),
-                      Yend = dplyr::lead(Y)) |>   # collect the coordinates of the next point
-        dplyr::filter(!is.na(Yend)) #%>% # drops the last row (start point with no end)
+        dplyr::mutate(
+          Xend = dplyr::lead(.data$X),
+          Yend = dplyr::lead(.data$Y)
+        ) |>
+        dplyr::filter(!is.na(.data$Yend))
 
+      sf <- lines |>
+        dplyr::group_by(.data$ID) |>
+        dplyr::summarize(
+          geometry = sf::st_sfc(sf::st_linestring(x = matrix(c(.data$X, .data$Xend, .data$Y, .data$Yend), ncol = 2)))
+        ) |>
+        sf::st_sf()
 
-      ## Use data.table with sf to create the line geometry
-      dt <- data.table::as.data.table(lines)
-      sf <- dt[,
-               {
-                 geometry <- sf::st_linestring(x = matrix(c(X, Xend, Y, Yend), ncol = 2))
-                 geometry <- sf::st_sfc(geometry)
-                 geometry <- sf::st_sf(geometry = geometry)
-               }
-               , by = ID
-      ]
-
-      ## Replace the geometry
       lines$geometry <- sf$geometry
 
-      ## Declare as a simple feature
       lines <- sf::st_as_sf(lines, sf_column_name = "geometry") |>
         sf::st_set_crs(PROJ)
 
       lines
-
     }) |> dplyr::bind_rows()
 
 
     ## Need to remove excess lines -- currently there are lines that run between the plots
     all_lines$within <- as.logical(rowSums(unlist(sf::st_within(all_lines, planT, sparse = FALSE)) == TRUE))
-    all_lines <- all_lines[all_lines$within == TRUE, ]  ## removes lines not contained in Transect area
+    all_lines <- all_lines[all_lines$within == TRUE, ]
 
-    ## There are a few invalid geometries
     all_lines$valid <- as.logical(sf::st_is_valid(all_lines))
-
-    ## lwgeom package will validate all invalid geometries
     all_lines <- sf::st_make_valid(all_lines)
-    # lines <- lines[lines$valid == TRUE,]  ## removes lines not contained in Transect area
 
-    all_lines <- all_lines |>  dplyr::select(-c(Xend,Yend,within, valid))
-    # lines <- lines %>% dplyr::select(-c(Xend,Yend, valid))
-    #lines <- lines %>% dplyr::select(TID, id, name, time, SiteSeries:Confidence)
-    all_lines <- all_lines |>  dplyr::select(-c(X,Y,TID, ID))
-
-    #return(all_lines)
-
+    all_lines <- all_lines |> dplyr::select(-c("X", "Y", "TID", "ID", "Xend", "Yend", "within", "valid"))
   } else if (method == "tracklog") {
-    #   ## Begin transect method ----------------------------------------------------
-    #   ## TO DO: use the foreach package and utilize %dopar% where possibl
-
     cli::cli_alert_info("Tracklog method not implemented yet")
     #
     #     # Get tracklog line files, should be in the same place as point files
@@ -577,20 +550,17 @@ make_lines <- function(points = NA,
     #   return(lines)
   }
 
-  #all_lines
 
-  if(write_output) {
 
+  if (write_output) {
     out_loc <- fs::path(out_dir, out_name)
 
-    #if file exists
-    if(fs::file_exists(out_loc)){
+    if (fs::file_exists(out_loc)) {
       cli::cli_alert_warning("file already exists at {.var {out_dir}}, this file will be overwriten")
     }
 
     sf::st_write(all_lines, out_loc, driver = "GPKG", append = FALSE)
     cli::cli_alert_success("processed transects written to {.var {out_dir}}")
-
   }
 
   return(all_lines)
