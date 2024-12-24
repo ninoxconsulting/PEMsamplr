@@ -28,16 +28,19 @@ format_fielddata <- function(data_dir = NULL,
 
   # add check for transect_layout
   if (!inherits(transect_layout, "sf")) {
+    cli::cat_line()
     cli::cli_abort("{.var transect_layout} must be an sf object")
   }
 
   # add check for buffer
   if (!is.numeric(buffer)) {
+    cli::cat_line()
     cli::cli_abort("{.var buffer} must be numeric")
   }
 
   # add check for out_dir
   if (!inherits(out_dir, "character") || !fs::dir_exists(out_dir)) {
+    cli::cat_line()
     cli::cli_abort("{.var out_dir} must be a directory path")
   }
 
@@ -47,6 +50,7 @@ format_fielddata <- function(data_dir = NULL,
   sf::st_geometry(transect_layout_buf) <- "geom"
 
   if (!inherits(data_dir, "character") || !fs::dir_exists(data_dir)) {
+    cli::cat_line()
     cli::cli_abort("{.var data_dir} must be a directory path")
   }
 
@@ -107,7 +111,7 @@ format_fielddata <- function(data_dir = NULL,
       if (any(is.na(unique(points_read$transect_id)))) {
         points_read <- points_read |>
           dplyr::mutate(data_type = ifelse(is.na(.data$transect_id), "incidental", "s1"))
-
+        cli::cat_line()
         cli::cli_alert_warning("points outside the transect buffer, assigned to incidental,
                                please check these and re-run if needed")
       }
@@ -120,10 +124,9 @@ format_fielddata <- function(data_dir = NULL,
         dplyr::mutate(observer = dplyr::na_if(.data$observer, ""))
 
       if (all(is.na(points_read$observer))) {
-        # print(x)
+        cli::cat_line()
         cli::cli_abort("observer name missing in original data, check and re-run the above transect data")
       } else {
-        # print ("filling observer names")
 
         points_read <- .fill_observer(points_read)
       }
@@ -177,10 +180,9 @@ format_fielddata <- function(data_dir = NULL,
 
       endlength <- length(points_read$order)
 
-
       if (endlength != start_length) {
+        cli::cat_line()
         cli::cli_alert_warning("length of input file does not match cleaned file review raw data:")
-        # print(x)
       }
 
       points_read
@@ -194,10 +196,12 @@ format_fielddata <- function(data_dir = NULL,
 
     #if file exists
     if(fs::file_exists(out_loc)){
+      cli::cat_line()
       cli::cli_alert_warning("file already exists at {.var out_dir}, this file will be overwriten")
     }
 
     sf::st_write(all_points, out_loc, driver = "GPKG", append = FALSE)
+    cli::cat_line()
     cli::cli_alert_success("field data formatted and written to {.var {out_dir}}")
 
   }
@@ -240,6 +244,7 @@ format_fielddata <- function(data_dir = NULL,
     dplyr::filter(.data$observer_fill != "")
 
   if (length(observer_key$transect_id) != length(unique(observer_key$transect_id))) {
+    cli::cat_line()
     cli::cli_abort(" number of observers does not match unique transect number")
   }
 

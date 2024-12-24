@@ -25,16 +25,19 @@ format_tracklog <- function(data_dir = NULL,
                             out_name = "s1_tracks_raw.gpkg") {
 
   if (!inherits(data_dir, "character") || !fs::dir_exists(data_dir)) {
+    cli::cat_line()
     cli::cli_abort("{.var datafolder} must be a directory path")
   }
 
   # check for transect_layout
   if (!inherits(transect_layout, "sf")) {
+    cli::cat_line()
     cli::cli_abort("{.var transect_layout} must be an sf object")
   }
 
   # check buffer
   if (!is.numeric(buffer)) {
+    cli::cat_line()
     cli::cli_abort("{.var buffer} must be numeric")
   }
 
@@ -107,10 +110,12 @@ format_tracklog <- function(data_dir = NULL,
 
     # if file exists
     if (fs::file_exists(out_loc)) {
+      cli::cat_line()
       cli::cli_alert_warning("file already exists at {.var out_dir}, this file will be overwriten")
     }
 
     sf::st_write(all_lines, out_loc, driver = "GPKG", append = FALSE)
+    cli::cat_line()
     cli::cli_alert_success("field data formatted and written to {.var {out_dir}}")
   }
 

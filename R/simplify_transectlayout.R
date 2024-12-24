@@ -53,13 +53,16 @@ simplify_transectlayout <- function(input_path = fs::path(PEMprepr::read_fid()$d
 
     file_path <- fs::path(out_dir, "transect_layout.gpkg")
     if (file.exists(file_path) && !overwrite) {
+      cli::cat_line()
       cli::cli_alert("Transect layout geopackage already exists. Use overwrite = TRUE to overwrite.")
     } else {
       if (file.exists(file_path)) {
         file.remove(file_path)
+        cli::cat_line()
         cli::cli_alert("Overwriting existing transect layout .gpkg")
       }
       sf::st_write(transect_layout, file_path, driver = "GPKG", quiet = TRUE)
+      cli::cat_line()
       cli::cli_alert_success("Transect layout geopackage written to {.path {file_path}}")
     }
   }
