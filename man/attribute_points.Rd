@@ -14,6 +14,8 @@ attribute_points(
 )
 }
 \arguments{
+\item{data_pts}{a file gpkg of training points}
+
 \item{cov_dir}{folder containing covariate files}
 
 \item{write_output}{A \code{logical}if the sf object be written to disk?
@@ -23,8 +25,6 @@ If \code{TRUE} (default), will write to \code{out_dir} under the appropriate res
 location and name are applied in line with standard workflow.}
 
 \item{out_name}{A character string of the output file name. Default is \code{allpoints_att.gpkg}}
-
-\item{dat_pts}{a file gpkg of training points}
 }
 \value{
 an sf object
