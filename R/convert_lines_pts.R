@@ -31,6 +31,8 @@ convert_lines_pts <- function(processed_lines = fs::path(PEMprepr::read_fid()$di
                               write_output = TRUE,
                               out_dir = PEMprepr::read_fid()$dir_20105020_clean_field_data$path_rel,
                               out_name = "allpoints.gpkg") {
+
+
   # check processed_transects is path or spatvect
   processed_lines <- PEMprepr:::read_sf_if_necessary(processed_lines)
 
@@ -72,6 +74,7 @@ convert_lines_pts <- function(processed_lines = fs::path(PEMprepr::read_fid()$di
     dplyr::mutate(slice = sub(".*(?=.$)", "", gsub("\\..*", "", .data$tid), perl = T))
 
   # add neighbours if selected
+
   if (neighbours) {
     sf::st_geometry(allpts) <- "geom"
     cli::cat_line()
@@ -86,7 +89,7 @@ convert_lines_pts <- function(processed_lines = fs::path(PEMprepr::read_fid()$di
     cell_lookup <- tibble::tibble(ID = pts$ptsID, cell = cellNums)
 
     adjCells <- terra::adjacent(trast, cells = cellNums[, 2], directions = "queen", include = TRUE) |>
-      tibble::as_tibble(.name_repair = "minimal")  |>
+      tibble::as_tibble(.name_repair = NULL)  |>
       dplyr::rename_with(~ c("Orig", paste("Adj", 1:8, sep = "")))  |>
       dplyr::mutate(ID = dplyr::row_number())
 
@@ -100,7 +103,7 @@ convert_lines_pts <- function(processed_lines = fs::path(PEMprepr::read_fid()$di
 
     pts <- terra::as.points(trast, values = TRUE, na.rm = TRUE)  |>
       sf::st_as_sf()  |>
-      tibble::as_tibble(.name_repair = "minimal")   |>
+      tibble::as_tibble()   |>
       dplyr::rename(CellNum = 1)
 
     allPts <- pts  |>
@@ -111,7 +114,7 @@ convert_lines_pts <- function(processed_lines = fs::path(PEMprepr::read_fid()$di
 
   } else {
 
-    allpts$Postition <- "Orig"
+    allpts$Position <- "Orig"
   }
 
   if (write_output) {
