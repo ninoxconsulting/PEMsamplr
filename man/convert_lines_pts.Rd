@@ -42,7 +42,7 @@ Convert Line segments or points to rasterized training points
 \examples{
 \dontrun{
 clean_tracks <- convert_to_pts(
-  processed_transects = fs::path(PEMprepr::read_fid()$dir_20105020_clean_field_data$path_rel,
+  processed_lines = fs::path(PEMprepr::read_fid()$dir_20105020_clean_field_data$path_rel,
   "proc_s1_transects5.gpkg"),
   trast = fs::path(PEMprepr::read_fid()$dir_1020_covariates$path_rel, "5m", "template.tif"),
   buffer = 2.5,

@@ -72,53 +72,45 @@ convert_lines_pts <- function(processed_lines = fs::path(PEMprepr::read_fid()$di
     dplyr::mutate(slice = sub(".*(?=.$)", "", gsub("\\..*", "", .data$tid), perl = T))
 
   # add neighbours if selected
-  if(neighbours) {
-
+  if (neighbours) {
     sf::st_geometry(allpts) <- "geom"
     cli::cat_line()
     cli::cli_alert_warning("generating neighbouring points")
 
-    dat_pts <- allpts
-
-    dat_pts <- dat_pts %>%
-      mutate(ptsID = row_number())
+    dat_pts <- allpts |> dplyr::mutate(ptsID = dplyr::row_number())
 
     dat_atts <- sf::st_drop_geometry(dat_pts)
 
     pts <- terra::vect(dat_pts)
     cellNums <- terra::cells(trast, pts)
-    cell_lookup <- tibble(ID = pts$ptsID, cell = cellNums)
+    cell_lookup <- tibble::tibble(ID = pts$ptsID, cell = cellNums)
 
-    adjCells <- terra::adjacent(trast, cells = cellNums[, 2], directions = "queen", include = TRUE) %>%
-      as_tibble() %>%
-      rename_with(~ c("Orig", paste("Adj", 1:8, sep = ""))) %>%
-      mutate(ID = row_number())
+    adjCells <- terra::adjacent(trast, cells = cellNums[, 2], directions = "queen", include = TRUE) |>
+      tibble::as_tibble()  |>
+      dplyr::rename_with(~ c("Orig", paste("Adj", 1:8, sep = "")))  |>
+      dplyr::mutate(ID = dplyr::row_number())
 
-    adjLong <- adjCells %>%
-      pivot_longer(cols = starts_with("Adj"), names_to = "Position", values_to = "CellNum") %>%
-      arrange(ID, Position)
+    adjLong <- adjCells  |>
+      tidyr::pivot_longer(cols = !("ID") , names_to = "Position", values_to = "CellNum") |>
+      dplyr::arrange("ID", "Position")
 
     terra::values(trast) <- 1:terra::ncell(trast)
     cellnums <- 1:terra::ncell(trast)
     trast[!cellnums %in% adjLong$CellNum] <- NA
 
-    pts <- terra::as.points(trast, values = TRUE, na.rm = TRUE) %>%
-      st_as_sf() %>%
-      as_tibble() %>%
-      rename(CellNum = 1)
+    pts <- terra::as.points(trast, values = TRUE, na.rm = TRUE)  |>
+      sf::st_as_sf()  |>
+      tibble::as_tibble()  |>
+      dplyr::rename(CellNum = 1)
 
-    allPts <- pts %>%
-      left_join(adjLong, by = "CellNum") %>%
-      left_join(dat_atts, by = c("ID" = "ptsID")) %>%
-      st_as_sf() %>%
-      select(-CellNum)
+    allPts <- pts  |>
+      dplyr::left_join(adjLong, by = "CellNum")  |>
+      dplyr::left_join(dat_atts, by = c("ID" = "ptsID"))  |>
+      sf::st_as_sf()  |>
+      dplyr::select(-"CellNum",-"ID")
 
-    allPts <- terra::vect(allPts)
-    allPts <- st_as_sf(allPts)
-
-    allpts <- allPts %>%
-      select(-CellNum, -ID)
   } else {
+
     allpts$Postition <- "Orig"
   }
 

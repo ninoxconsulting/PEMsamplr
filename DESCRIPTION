@@ -30,7 +30,6 @@ Imports:
     stringr,
     LearnGeom,
     lubridate,
-    data.table,
     tibble,
     purrr,
     stats,
