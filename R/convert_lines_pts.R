@@ -86,7 +86,7 @@ convert_lines_pts <- function(processed_lines = fs::path(PEMprepr::read_fid()$di
     cell_lookup <- tibble::tibble(ID = pts$ptsID, cell = cellNums)
 
     adjCells <- terra::adjacent(trast, cells = cellNums[, 2], directions = "queen", include = TRUE) |>
-      tibble::as_tibble()  |>
+      tibble::as_tibble(.name_repair = "minimal")  |>
       dplyr::rename_with(~ c("Orig", paste("Adj", 1:8, sep = "")))  |>
       dplyr::mutate(ID = dplyr::row_number())
 
@@ -100,7 +100,7 @@ convert_lines_pts <- function(processed_lines = fs::path(PEMprepr::read_fid()$di
 
     pts <- terra::as.points(trast, values = TRUE, na.rm = TRUE)  |>
       sf::st_as_sf()  |>
-      tibble::as_tibble()  |>
+      tibble::as_tibble(.name_repair = "minimal")   |>
       dplyr::rename(CellNum = 1)
 
     allPts <- pts  |>
