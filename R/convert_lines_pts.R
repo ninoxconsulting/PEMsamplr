@@ -15,7 +15,7 @@
 #' @examples
 #' \dontrun{
 #' clean_tracks <- convert_to_pts(
-#'   processed_transects = fs::path(PEMprepr::read_fid()$dir_20105020_clean_field_data$path_rel,
+#'   processed_lines = fs::path(PEMprepr::read_fid()$dir_20105020_clean_field_data$path_rel,
 #'   "proc_s1_transects5.gpkg"),
 #'   trast = fs::path(PEMprepr::read_fid()$dir_1020_covariates$path_rel, "5m", "template.tif"),
 #'   buffer = 2.5,
@@ -31,7 +31,6 @@ convert_lines_pts <- function(processed_lines = fs::path(PEMprepr::read_fid()$di
                               write_output = TRUE,
                               out_dir = PEMprepr::read_fid()$dir_20105020_clean_field_data$path_rel,
                               out_name = "allpoints.gpkg") {
-
   # check processed_transects is path or spatvect
   processed_lines <- PEMprepr:::read_sf_if_necessary(processed_lines)
 
@@ -72,41 +71,55 @@ convert_lines_pts <- function(processed_lines = fs::path(PEMprepr::read_fid()$di
     dplyr::mutate(tid = tolower(gsub("_[[:alpha:]].*", "", .data$transect_id))) |>
     dplyr::mutate(slice = sub(".*(?=.$)", "", gsub("\\..*", "", .data$tid), perl = T))
 
- # add neighbours if selected
-  if (neighbours) {
+  # add neighbours if selected
+  if(neighbours) {
+
     sf::st_geometry(allpts) <- "geom"
     cli::cat_line()
     cli::cli_alert_warning("generating neighbouring points")
 
     dat_pts <- allpts
 
-    dat_pts$ptsID <- 1:nrow(dat_pts)
-    dat_atts <- data.table::as.data.table(sf::st_drop_geometry(dat_pts))
+    dat_pts <- dat_pts %>%
+      mutate(ptsID = row_number())
+
+    dat_atts <- sf::st_drop_geometry(dat_pts)
+
     pts <- terra::vect(dat_pts)
     cellNums <- terra::cells(trast, pts)
-    cell_lookup <- data.table::data.table(ID = pts$ptsID, cell = cellNums)
+    cell_lookup <- tibble(ID = pts$ptsID, cell = cellNums)
 
-    adjCells <- terra::adjacent(trast, cells = cellNums[, 2], directions = "queen", include = T)
-    adjCells <- data.table::as.data.table(adjCells)
-    data.table::setnames(adjCells, c("Orig", paste("Adj", 1:8, sep = "")))
+    adjCells <- terra::adjacent(trast, cells = cellNums[, 2], directions = "queen", include = TRUE) %>%
+      as_tibble() %>%
+      rename_with(~ c("Orig", paste("Adj", 1:8, sep = ""))) %>%
+      mutate(ID = row_number())
 
-    adjCells[, ID := 1:nrow(adjCells)]
-    adjLong <- data.table::melt(adjCells, id.vars = "ID", value.name = "CellNum", variable.name = "Position")
-    data.table::setorder(adjLong, "ID", "Position")
+    adjLong <- adjCells %>%
+      pivot_longer(cols = starts_with("Adj"), names_to = "Position", values_to = "CellNum") %>%
+      arrange(ID, Position)
+
     terra::values(trast) <- 1:terra::ncell(trast)
     cellnums <- 1:terra::ncell(trast)
     trast[!cellnums %in% adjLong$CellNum] <- NA
 
-    pts <- terra::as.points(trast, values = T, na.rm = T)
-    pts2 <- sf::st_as_sf(pts)
-    pts2 <- data.table::as.data.table(pts2)
-    data.table::setnames(pts2, c("CellNum", "geometry"))
-    allPts <- terra::merge(pts2, adjLong, by = "CellNum", all = T)
-    # allPts[cell_lookup, ptID := i.ID, on = c(CellNum = "cell.cell")]
-    allPts <- terra::merge(allPts, dat_atts, by.x = "ID", by.y = "ptsID", all = T)
-    allPts <- terra::vect(sf::st_as_sf(allPts))
-    allPts <- sf::st_as_sf(allPts)
-    allpts <- dplyr::select(allPts, -"CellNum", -"ID")
+    pts <- terra::as.points(trast, values = TRUE, na.rm = TRUE) %>%
+      st_as_sf() %>%
+      as_tibble() %>%
+      rename(CellNum = 1)
+
+    allPts <- pts %>%
+      left_join(adjLong, by = "CellNum") %>%
+      left_join(dat_atts, by = c("ID" = "ptsID")) %>%
+      st_as_sf() %>%
+      select(-CellNum)
+
+    allPts <- terra::vect(allPts)
+    allPts <- st_as_sf(allPts)
+
+    allpts <- allPts %>%
+      select(-CellNum, -ID)
+  } else {
+    allpts$Postition <- "Orig"
   }
 
   if (write_output) {
