@@ -75,7 +75,7 @@ generate_mapkey <- function(data_pts,
       cli::cli_alert_warning("file already exists at {.var {outfile}}, this file will be overwriten")
     }
 
-    output <- readr::write_csv(output, fs::path(outfile))
+    output <- utils::write.csv(output, fs::path(outfile), row.names = FALSE)
   }
 
   return(output)
