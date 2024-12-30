@@ -14,12 +14,15 @@
 #' @examples
 #' \dontrun{
 #' key <- generate_mapkey(
-#'   data_pts  = fs::path(PEMprepr::read_fid()$dir_20105020_clean_field_data$path_rel,
-#'    "s1_points_raw.gpkg"),
+#'   data_pts = fs::path(
+#'     PEMprepr::read_fid()$dir_20105020_clean_field_data$path_rel,
+#'     "s1_points_raw.gpkg"
+#'   ),
 #'   key = utils::read.csv(fs::path_package("PEMsamplr", "extdata/mapkey_all_draft.csv")),
 #'   write_output = FALSE,
 #'   out_dir = fs::path(PEMprepr::read_fid()$dir_3010_inputs$path_rel),
-#'   out_name = "mapunitkey.csv")
+#'   out_name = "mapunitkey.csv"
+#' )
 #' }
 generate_mapkey <- function(data_pts,
                             key = utils::read.csv(fs::path_package("PEMsamplr", "extdata/mapkey_all_draft.csv")),
