@@ -1,0 +1,1885 @@
+Forest_NonForest,BGC,fieldcall,basemapunit,description,mapunit_ss_realm,mapunit_ss_association,mapunit_fnf,mapunit_nf
+NonForest,,,Ag01,Timber oatgrass - Grouseberry - Sandwort,A,Ag,nonforest,Ag01
+NonForest,,,Ag03,Timber oatgrass - Kinnikinnick,A,Ag,nonforest,Ag03
+NonForest,,,Ah33,Alaskan & White mountain-heathers - Tufted hairgrass ,A,Ah,nonforest,Ah33
+NonForest,,,Ah34,Yellow mountain-heather - Bog blueberry - Crowberry ,A,Ah,nonforest,Ah34
+NonForest,,,Am,Alpine meadow,A,Am,nonforest,Am
+NonForest,,,Am33,Arrow-leaved groundsel - Hellebore - Large-awned sedge,A,Am,nonforest,Am33
+NonForest,,,Am34,Tufted hairgrass - Calder's lovage,A,Am,nonforest,Am34
+NonForest,,,Bb01,American Searocket,B,Bb,nonforest,Bb01
+NonForest,,,Bb02,Dune wildrye [Red fescue],B,Bb,nonforest,Bb02
+NonForestSeral,,,Bb02$1,European beachgrass ,B,Bb,nonforest,Bb02$1
+NonForest,,,Bb03,Large-headed sedge - Dune bluegrass,B,Bb,nonforest,Bb03
+NonForest,BGxh1,BGxh1/101,BGxh1/101,,BGxh1/101,BGxh1/101,forest ,forest 
+Forest,BGxh1,BGxh1/102,BGxh1/102,,BGxh1/102,BGxh1/102,forest ,forest 
+Forest,BGxh1,BGxh1/103,BGxh1/103,,BGxh1/103,BGxh1/103,forest ,forest 
+Forest,BGxh1,BGxh1/110,BGxh1/110,,BGxh1/110,BGxh1/110,forest ,forest 
+NonForest,BGxh2,BGxh2/101,BGxh2/101,,BGxh2/101,BGxh2/101,forest ,forest 
+Forest,BGxh2,BGxh2/102,BGxh2/102,,BGxh2/102,BGxh2/102,forest ,forest 
+Forest,BGxh2,BGxh2/110,BGxh2/110,,BGxh2/110,BGxh2/110,forest ,forest 
+NonForest,BGxh3,BGxh3/101,BGxh3/101,,BGxh3/101,BGxh3/101,forest ,forest 
+Forest,BGxh3,BGxh3/110,BGxh3/110,,BGxh3/110,BGxh3/110,forest ,forest 
+Forest,BGxh3,BGxh3/111,BGxh3/111,,BGxh3/111,BGxh3/111,forest ,forest 
+Deciduous,BGxh3,BGxh3/112,BGxh3/112,,BGxh3/112,BGxh3/112,forest ,forest 
+Deciduous,BGxh3,BGxh3/113,BGxh3/113,,BGxh3/113,BGxh3/113,forest ,forest 
+Forest,BGxw1,BGxw1/101,BGxw1/101,,BGxw1/101,BGxw1/101,forest ,forest 
+Forest,BGxw1,BGxw1/102,BGxw1/102,,BGxw1/102,BGxw1/102,forest ,forest 
+Forest,BGxw1,BGxw1/110,BGxw1/110,,BGxw1/110,BGxw1/110,forest ,forest 
+Forest,BGxw1,BGxw1/111,BGxw1/111,,BGxw1/111,BGxw1/111,forest ,forest 
+NonForest,BGxw2,BGxw2/101,BGxw2/101,,BGxw2/101,BGxw2/101,forest ,forest 
+NonForest,BGxw2,BGxw2/101a,BGxw2/101a,,BGxw2/101,BGxw2/101,forest ,forest 
+NonForest,BGxw2,BGxw2/101b,BGxw2/101b,,BGxw2/101,BGxw2/101,forest ,forest 
+NonForest,BGxw2,BGxw2/101c,BGxw2/101c,,BGxw2/101,BGxw2/101,forest ,forest 
+Forest,BGxw2,BGxw2/110,BGxw2/110,,BGxw2/110,BGxw2/110,forest ,forest 
+Forest,BGxw2,BGxw2/111,BGxw2/111,,BGxw2/111,BGxw2/111,forest ,forest 
+Deciduous,BGxw2,BGxw2/112,BGxw2/112,,BGxw2/112,BGxw2/112,forest ,forest 
+Forest,BGxw2,BGxw2/113,BGxw2/113,,BGxw2/113,BGxw2/113,forest ,forest 
+Deciduous,BGxw2,BGxw2/114,BGxw2/114,,BGxw2/114,BGxw2/114,forest ,forest 
+Deciduous,BGxw2,BGxw2/115,BGxw2/115,,BGxw2/115,BGxw2/115,forest ,forest 
+Forest,BWBSdk,BWBSdk/101,BWBSdk/101,,BWBSdk/101,BWBSdk/101,forest ,forest 
+Forest,BWBSdk,BWBSdk/101a,BWBSdk/101a,,BWBSdk/101,BWBSdk/101,forest ,forest 
+Forest,BWBSdk,BWBSdk/101b,BWBSdk/101b,,BWBSdk/101,BWBSdk/101,forest ,forest 
+Forest,BWBSdk,BWBSdk/102,BWBSdk/102,,BWBSdk/102,BWBSdk/102,forest ,forest 
+Forest,BWBSdk,BWBSdk/103,BWBSdk/103,,BWBSdk/103,BWBSdk/103,forest ,forest 
+Forest,BWBSdk,BWBSdk/104,BWBSdk/104,,BWBSdk/104,BWBSdk/104,forest ,forest 
+Forest,BWBSdk,BWBSdk/104a,BWBSdk/104a,,BWBSdk/104,BWBSdk/104,forest ,forest 
+Forest,BWBSdk,BWBSdk/104b,BWBSdk/104b,,BWBSdk/104,BWBSdk/104,forest ,forest 
+Forest,BWBSdk,BWBSdk/110,BWBSdk/110,,BWBSdk/110,BWBSdk/110,forest ,forest 
+Forest,BWBSdk,BWBSdk/111,BWBSdk/111,,BWBSdk/111,BWBSdk/111,forest ,forest 
+Deciduous,BWBSdk,BWBSdk/112,BWBSdk/112,,BWBSdk/112,BWBSdk/112,forest ,forest 
+Forest,BWBSmk,BWBSmk/101,BWBSmk/101,,BWBSmk/101,BWBSmk/101,forest ,forest 
+Forest,BWBSmk,BWBSmk/102,BWBSmk/102,,BWBSmk/102,BWBSmk/102,forest ,forest 
+Forest,BWBSmk,BWBSmk/103,BWBSmk/103,,BWBSmk/103,BWBSmk/103,forest ,forest 
+Forest,BWBSmk,BWBSmk/104,BWBSmk/104,,BWBSmk/104,BWBSmk/104,forest ,forest 
+Forest,BWBSmk,BWBSmk/104a,BWBSmk/104a,,BWBSmk/104,BWBSmk/104,forest ,forest 
+Forest,BWBSmk,BWBSmk/104b,BWBSmk/104b,,BWBSmk/104,BWBSmk/104,forest ,forest 
+Forest,BWBSmk,BWBSmk/110,BWBSmk/110,,BWBSmk/110,BWBSmk/110,forest ,forest 
+Forest,BWBSmk,BWBSmk/111,BWBSmk/111,,BWBSmk/111,BWBSmk/111,forest ,forest 
+Deciduous,BWBSmk,BWBSmk/112,BWBSmk/112,,BWBSmk/112,BWBSmk/112,forest ,forest 
+Forest,BWBSmw,BWBSmw/101,BWBSmw/101,,BWBSmw/101,BWBSmw/101,forest ,forest 
+Forest,BWBSmw,BWBSmw/102,BWBSmw/102,,BWBSmw/102,BWBSmw/102,forest ,forest 
+Forest,BWBSmw,BWBSmw/103,BWBSmw/103,,BWBSmw/103,BWBSmw/103,forest ,forest 
+Forest,BWBSmw,BWBSmw/104,BWBSmw/104,,BWBSmw/104,BWBSmw/104,forest ,forest 
+Forest,BWBSmw,BWBSmw/110,BWBSmw/110,,BWBSmw/110,BWBSmw/110,forest ,forest 
+Forest,BWBSmw,BWBSmw/111,BWBSmw/111,,BWBSmw/111,BWBSmw/111,forest ,forest 
+Deciduous,BWBSmw,BWBSmw/112,BWBSmw/112,,BWBSmw/112,BWBSmw/112,forest ,forest 
+Forest,BWBSwk1,BWBSwk1/101,BWBSwk1/101,,BWBSwk1/101,BWBSwk1/101,forest ,forest 
+Forest,BWBSwk1,BWBSwk1/102,BWBSwk1/102,,BWBSwk1/102,BWBSwk1/102,forest ,forest 
+Forest,BWBSwk1,BWBSwk1/103,BWBSwk1/103,,BWBSwk1/103,BWBSwk1/103,forest ,forest 
+Forest,BWBSwk1,BWBSwk1/104,BWBSwk1/104,,BWBSwk1/104,BWBSwk1/104,forest ,forest 
+Forest,BWBSwk1,BWBSwk1/110,BWBSwk1/110,,BWBSwk1/110,BWBSwk1/110,forest ,forest 
+Forest,BWBSwk1,BWBSwk1/111,BWBSwk1/111,,BWBSwk1/111,BWBSwk1/111,forest ,forest 
+Forest,BWBSwk2,BWBSwk2/101,BWBSwk2/101,,BWBSwk2/101,BWBSwk2/101,forest ,forest 
+Forest,BWBSwk2,BWBSwk2/102,BWBSwk2/102,,BWBSwk2/102,BWBSwk2/102,forest ,forest 
+Forest,BWBSwk2,BWBSwk2/103,BWBSwk2/103,,BWBSwk2/103,BWBSwk2/103,forest ,forest 
+Forest,BWBSwk2,BWBSwk2/104,BWBSwk2/104,,BWBSwk2/104,BWBSwk2/104,forest ,forest 
+Forest,BWBSwk2,BWBSwk2/110,BWBSwk2/110,,BWBSwk2/110,BWBSwk2/110,forest ,forest 
+Forest,BWBSwk2,BWBSwk2/111,BWBSwk2/111,,BWBSwk2/111,BWBSwk2/111,forest ,forest 
+Forest,BWBSwk3,BWBSwk3/101,BWBSwk3/101,,BWBSwk3/101,BWBSwk3/101,forest ,forest 
+Forest,BWBSwk3,BWBSwk3/102,BWBSwk3/102,,BWBSwk3/102,BWBSwk3/102,forest ,forest 
+Forest,BWBSwk3,BWBSwk3/103,BWBSwk3/103,,BWBSwk3/103,BWBSwk3/103,forest ,forest 
+Forest,BWBSwk3,BWBSwk3/110,BWBSwk3/110,,BWBSwk3/110,BWBSwk3/110,forest ,forest 
+Forest,BWBSwk3,BWBSwk3/111,BWBSwk3/111,,BWBSwk3/111,BWBSwk3/111,forest ,forest 
+Forest,CDFmm,CDFmm/01,CDFmm/01,,CDFmm/01,CDFmm/01,forest ,forest 
+Forest,CDFmm,CDFmm/02,CDFmm/02,,CDFmm/02,CDFmm/02,forest ,forest 
+Forest,CDFmm,CDFmm/03,CDFmm/03,,CDFmm/03,CDFmm/03,forest ,forest 
+Forest,CDFmm,CDFmm/04,CDFmm/04,,CDFmm/04,CDFmm/04,forest ,forest 
+Forest,CDFmm,CDFmm/05,CDFmm/05,,CDFmm/05,CDFmm/05,forest ,forest 
+Forest,CDFmm,CDFmm/06,CDFmm/06,,CDFmm/06,CDFmm/06,forest ,forest 
+Forest,CDFmm,CDFmm/07,CDFmm/07,,CDFmm/07,CDFmm/07,forest ,forest 
+Deciduous,CDFmm,CDFmm/08,CDFmm/08,,CDFmm/08,CDFmm/08,forest ,forest 
+Deciduous,CDFmm,CDFmm/09,CDFmm/09,,CDFmm/09,CDFmm/09,forest ,forest 
+Forest,CDFmm,CDFmm/10,CDFmm/10,,CDFmm/10,CDFmm/10,forest ,forest 
+Forest,CDFmm,CDFmm/11,CDFmm/11,,CDFmm/11,CDFmm/11,forest ,forest 
+Forest,CDFmm,CDFmm/12,CDFmm/12,,CDFmm/12,CDFmm/12,forest ,forest 
+Forest,CDFmm,CDFmm/13,CDFmm/13,,CDFmm/13,CDFmm/13,forest ,forest 
+Forest,CDFmm,CDFmm/14,CDFmm/14,,CDFmm/14,CDFmm/14,forest ,forest 
+Forest,CWHdm,CWHdm/01,CWHdm/01,,CWHdm/01,CWHdm/01,forest ,forest 
+Forest,CWHdm,CWHdm/02,CWHdm/02,,CWHdm/02,CWHdm/02,forest ,forest 
+Forest,CWHdm,CWHdm/03,CWHdm/03,,CWHdm/03,CWHdm/03,forest ,forest 
+Forest,CWHdm,CWHdm/04,CWHdm/04,,CWHdm/04,CWHdm/04,forest ,forest 
+Forest,CWHdm,CWHdm/05,CWHdm/05,,CWHdm/05,CWHdm/05,forest ,forest 
+Forest,CWHdm,CWHdm/06,CWHdm/06,,CWHdm/06,CWHdm/06,forest ,forest 
+Forest,CWHdm,CWHdm/07,CWHdm/07,,CWHdm/07,CWHdm/07,forest ,forest 
+Forest,CWHdm,CWHdm/08,CWHdm/08,,CWHdm/08,CWHdm/08,forest ,forest 
+Deciduous,CWHdm,CWHdm/09,CWHdm/09,,CWHdm/09,CWHdm/09,forest ,forest 
+Deciduous,CWHdm,CWHdm/10,CWHdm/10,,CWHdm/10,CWHdm/10,forest ,forest 
+Forest,CWHdm,CWHdm/11,CWHdm/11,,CWHdm/11,CWHdm/11,forest ,forest 
+Forest,CWHdm,CWHdm/12,CWHdm/12,,CWHdm/12,CWHdm/12,forest ,forest 
+Forest,CWHdm,CWHdm/13,CWHdm/13,,CWHdm/13,CWHdm/13,forest ,forest 
+Forest,CWHdm,CWHdm/14,CWHdm/14,,CWHdm/14,CWHdm/14,forest ,forest 
+Forest,CWHdm,CWHdm/15,CWHdm/15,,CWHdm/15,CWHdm/15,forest ,forest 
+Forest,CWHds1,CWHds1/01,CWHds1/01,,CWHds1/01,CWHds1/01,forest ,forest 
+Forest,CWHds1,CWHds1/02,CWHds1/02,,CWHds1/02,CWHds1/02,forest ,forest 
+Forest,CWHds1,CWHds1/03,CWHds1/03,,CWHds1/03,CWHds1/03,forest ,forest 
+Forest,CWHds1,CWHds1/04,CWHds1/04,,CWHds1/04,CWHds1/04,forest ,forest 
+Forest,CWHds1,CWHds1/05,CWHds1/05,,CWHds1/05,CWHds1/05,forest ,forest 
+Forest,CWHds1,CWHds1/06,CWHds1/06,,CWHds1/06,CWHds1/06,forest ,forest 
+Forest,CWHds1,CWHds1/07,CWHds1/07,,CWHds1/07,CWHds1/07,forest ,forest 
+Forest,CWHds1,CWHds1/08,CWHds1/08,,CWHds1/08,CWHds1/08,forest ,forest 
+Deciduous,CWHds1,CWHds1/09,CWHds1/09,,CWHds1/09,CWHds1/09,forest ,forest 
+Deciduous,CWHds1,CWHds1/10,CWHds1/10,,CWHds1/10,CWHds1/10,forest ,forest 
+Forest,CWHds1,CWHds1/11,CWHds1/11,,CWHds1/11,CWHds1/11,forest ,forest 
+Forest,CWHds1,CWHds1/12,CWHds1/12,,CWHds1/12,CWHds1/12,forest ,forest 
+Forest,CWHds2,CWHds2/01,CWHds2/01,,CWHds2/01,CWHds2/01,forest ,forest 
+Forest,CWHds2,CWHds2/02,CWHds2/02,,CWHds2/02,CWHds2/02,forest ,forest 
+Forest,CWHds2,CWHds2/03,CWHds2/03,,CWHds2/03,CWHds2/03,forest ,forest 
+Forest,CWHds2,CWHds2/04,CWHds2/04,,CWHds2/04,CWHds2/04,forest ,forest 
+Forest,CWHds2,CWHds2/05,CWHds2/05,,CWHds2/05,CWHds2/05,forest ,forest 
+Forest,CWHds2,CWHds2/06,CWHds2/06,,CWHds2/06,CWHds2/06,forest ,forest 
+Forest,CWHds2,CWHds2/07,CWHds2/07,,CWHds2/07,CWHds2/07,forest ,forest 
+Forest,CWHds2,CWHds2/08,CWHds2/08,,CWHds2/08,CWHds2/08,forest ,forest 
+Deciduous,CWHds2,CWHds2/09,CWHds2/09,,CWHds2/09,CWHds2/09,forest ,forest 
+Deciduous,CWHds2,CWHds2/10,CWHds2/10,,CWHds2/10,CWHds2/10,forest ,forest 
+Forest,CWHds2,CWHds2/11,CWHds2/11,,CWHds2/11,CWHds2/11,forest ,forest 
+Forest,CWHds2,CWHds2/12,CWHds2/12,,CWHds2/12,CWHds2/12,forest ,forest 
+Forest,CWHmm1,CWHmm1/01,CWHmm1/01,,CWHmm1/01,CWHmm1/01,forest ,forest 
+Forest,CWHmm1,CWHmm1/02,CWHmm1/02,,CWHmm1/02,CWHmm1/02,forest ,forest 
+Forest,CWHmm1,CWHmm1/03,CWHmm1/03,,CWHmm1/03,CWHmm1/03,forest ,forest 
+Forest,CWHmm1,CWHmm1/04,CWHmm1/04,,CWHmm1/04,CWHmm1/04,forest ,forest 
+Forest,CWHmm1,CWHmm1/05,CWHmm1/05,,CWHmm1/05,CWHmm1/05,forest ,forest 
+Forest,CWHmm1,CWHmm1/06,CWHmm1/06,,CWHmm1/06,CWHmm1/06,forest ,forest 
+Forest,CWHmm1,CWHmm1/07,CWHmm1/07,,CWHmm1/07,CWHmm1/07,forest ,forest 
+Forest,CWHmm1,CWHmm1/08,CWHmm1/08,,CWHmm1/08,CWHmm1/08,forest ,forest 
+Deciduous,CWHmm1,CWHmm1/09,CWHmm1/09,,CWHmm1/09,CWHmm1/09,forest ,forest 
+Deciduous,CWHmm1,CWHmm1/10,CWHmm1/10,,CWHmm1/10,CWHmm1/10,forest ,forest 
+Forest,CWHmm1,CWHmm1/11,CWHmm1/11,,CWHmm1/11,CWHmm1/11,forest ,forest 
+Forest,CWHmm1,CWHmm1/12,CWHmm1/12,,CWHmm1/12,CWHmm1/12,forest ,forest 
+Forest,CWHmm2,CWHmm2/01,CWHmm2/01,,CWHmm2/01,CWHmm2/01,forest ,forest 
+Forest,CWHmm2,CWHmm2/02,CWHmm2/02,,CWHmm2/02,CWHmm2/02,forest ,forest 
+Forest,CWHmm2,CWHmm2/03,CWHmm2/03,,CWHmm2/03,CWHmm2/03,forest ,forest 
+Forest,CWHmm2,CWHmm2/04,CWHmm2/04,,CWHmm2/04,CWHmm2/04,forest ,forest 
+Forest,CWHmm2,CWHmm2/05,CWHmm2/05,,CWHmm2/05,CWHmm2/05,forest ,forest 
+Forest,CWHmm2,CWHmm2/06,CWHmm2/06,,CWHmm2/06,CWHmm2/06,forest ,forest 
+Forest,CWHmm2,CWHmm2/07,CWHmm2/07,,CWHmm2/07,CWHmm2/07,forest ,forest 
+Forest,CWHmm2,CWHmm2/08,CWHmm2/08,,CWHmm2/08,CWHmm2/08,forest ,forest 
+Forest,CWHmm2,CWHmm2/09,CWHmm2/09,,CWHmm2/09,CWHmm2/09,forest ,forest 
+Forest,CWHmm2,CWHmm2/10,CWHmm2/10,,CWHmm2/10,CWHmm2/10,forest ,forest 
+Forest,CWHms1,CWHms1/01,CWHms1/01,,CWHms1/01,CWHms1/01,forest ,forest 
+Forest,CWHms1,CWHms1/02,CWHms1/02,,CWHms1/02,CWHms1/02,forest ,forest 
+Forest,CWHms1,CWHms1/03,CWHms1/03,,CWHms1/03,CWHms1/03,forest ,forest 
+Forest,CWHms1,CWHms1/04,CWHms1/04,,CWHms1/04,CWHms1/04,forest ,forest 
+Forest,CWHms1,CWHms1/05,CWHms1/05,,CWHms1/05,CWHms1/05,forest ,forest 
+Forest,CWHms1,CWHms1/06,CWHms1/06,,CWHms1/06,CWHms1/06,forest ,forest 
+Forest,CWHms1,CWHms1/07,CWHms1/07,,CWHms1/07,CWHms1/07,forest ,forest 
+Deciduous,CWHms1,CWHms1/08,CWHms1/08,,CWHms1/08,CWHms1/08,forest ,forest 
+Deciduous,CWHms1,CWHms1/09,CWHms1/09,,CWHms1/09,CWHms1/09,forest ,forest 
+Forest,CWHms1,CWHms1/10,CWHms1/10,,CWHms1/10,CWHms1/10,forest ,forest 
+Forest,CWHms1,CWHms1/11,CWHms1/11,,CWHms1/11,CWHms1/11,forest ,forest 
+Forest,CWHms2,CWHms2/01,CWHms2/01,,CWHms2/01,CWHms2/01,forest ,forest 
+Forest,CWHms2,CWHms2/02,CWHms2/02,,CWHms2/02,CWHms2/02,forest ,forest 
+Forest,CWHms2,CWHms2/03,CWHms2/03,,CWHms2/03,CWHms2/03,forest ,forest 
+Forest,CWHms2,CWHms2/04,CWHms2/04,,CWHms2/04,CWHms2/04,forest ,forest 
+Forest,CWHms2,CWHms2/05,CWHms2/05,,CWHms2/05,CWHms2/05,forest ,forest 
+Forest,CWHms2,CWHms2/06,CWHms2/06,,CWHms2/06,CWHms2/06,forest ,forest 
+Forest,CWHms2,CWHms2/07,CWHms2/07,,CWHms2/07,CWHms2/07,forest ,forest 
+Deciduous,CWHms2,CWHms2/08,CWHms2/08,,CWHms2/08,CWHms2/08,forest ,forest 
+Deciduous,CWHms2,CWHms2/09,CWHms2/09,,CWHms2/09,CWHms2/09,forest ,forest 
+Forest,CWHms2,CWHms2/10,CWHms2/10,,CWHms2/10,CWHms2/10,forest ,forest 
+Forest,CWHms2,CWHms2/11,CWHms2/11,,CWHms2/11,CWHms2/11,forest ,forest 
+Forest,CWHvh1,CWHvh1/01,CWHvh1/01,,CWHvh1/01,CWHvh1/01,forest ,forest 
+Forest,CWHvh1,CWHvh1/02,CWHvh1/02,,CWHvh1/02,CWHvh1/02,forest ,forest 
+Forest,CWHvh1,CWHvh1/03,CWHvh1/03,,CWHvh1/03,CWHvh1/03,forest ,forest 
+Forest,CWHvh1,CWHvh1/04,CWHvh1/04,,CWHvh1/04,CWHvh1/04,forest ,forest 
+Forest,CWHvh1,CWHvh1/05,CWHvh1/05,,CWHvh1/05,CWHvh1/05,forest ,forest 
+Forest,CWHvh1,CWHvh1/06,CWHvh1/06,,CWHvh1/06,CWHvh1/06,forest ,forest 
+Forest,CWHvh1,CWHvh1/07,CWHvh1/07,,CWHvh1/07,CWHvh1/07,forest ,forest 
+Forest,CWHvh1,CWHvh1/08,CWHvh1/08,,CWHvh1/08,CWHvh1/08,forest ,forest 
+Forest,CWHvh1,CWHvh1/09,CWHvh1/09,,CWHvh1/09,CWHvh1/09,forest ,forest 
+Deciduous,CWHvh1,CWHvh1/10,CWHvh1/10,,CWHvh1/10,CWHvh1/10,forest ,forest 
+Forest,CWHvh1,CWHvh1/11,CWHvh1/11,,CWHvh1/11,CWHvh1/11,forest ,forest 
+Forest,CWHvh1,CWHvh1/12,CWHvh1/12,,CWHvh1/12,CWHvh1/12,forest ,forest 
+Forest,CWHvh1,CWHvh1/13,CWHvh1/13,,CWHvh1/13,CWHvh1/13,forest ,forest 
+Forest,CWHvh1,CWHvh1/14,CWHvh1/14,,CWHvh1/14,CWHvh1/14,forest ,forest 
+Forest,CWHvh1,CWHvh1/15,CWHvh1/15,,CWHvh1/15,CWHvh1/15,forest ,forest 
+Forest,CWHvh1,CWHvh1/16,CWHvh1/16,,CWHvh1/16,CWHvh1/16,forest ,forest 
+Forest,CWHvh1,CWHvh1/17,CWHvh1/17,,CWHvh1/17,CWHvh1/17,forest ,forest 
+Forest,CWHvh1,CWHvh1/18,CWHvh1/18,,CWHvh1/18,CWHvh1/18,forest ,forest 
+Forest,CWHvh1,CWHvh1/19,CWHvh1/19,,CWHvh1/19,CWHvh1/19,forest ,forest 
+Forest,CWHvh2,CWHvh2/01,CWHvh2/01,,CWHvh2/01,CWHvh2/01,forest ,forest 
+Forest,CWHvh2,CWHvh2/01a,CWHvh2/01a,,CWHvh2/01,CWHvh2/01,forest ,forest 
+Forest,CWHvh2,CWHvh2/01b,CWHvh2/01b,,CWHvh2/01,CWHvh2/01,forest ,forest 
+Forest,CWHvh2,CWHvh2/01c,CWHvh2/01c,,CWHvh2/01,CWHvh2/01,forest ,forest 
+Forest,CWHvh2,CWHvh2/02,CWHvh2/02,,CWHvh2/02,CWHvh2/02,forest ,forest 
+Forest,CWHvh2,CWHvh2/03,CWHvh2/03,,CWHvh2/03,CWHvh2/03,forest ,forest 
+Forest,CWHvh2,CWHvh2/03a,CWHvh2/03a,,CWHvh2/03,CWHvh2/03,forest ,forest 
+Forest,CWHvh2,CWHvh2/03b,CWHvh2/03b,,CWHvh2/03,CWHvh2/03,forest ,forest 
+Forest,CWHvh2,CWHvh2/04,CWHvh2/04,,CWHvh2/04,CWHvh2/04,forest ,forest 
+Forest,CWHvh2,CWHvh2/04a,CWHvh2/04a,,CWHvh2/04,CWHvh2/04,forest ,forest 
+Forest,CWHvh2,CWHvh2/04b,CWHvh2/04b,,CWHvh2/04,CWHvh2/04,forest ,forest 
+Forest,CWHvh2,CWHvh2/05,CWHvh2/05,,CWHvh2/05,CWHvh2/05,forest ,forest 
+Forest,CWHvh2,CWHvh2/05a,CWHvh2/05a,,CWHvh2/05,CWHvh2/05,forest ,forest 
+Forest,CWHvh2,CWHvh2/05b,CWHvh2/05b,,CWHvh2/05,CWHvh2/05,forest ,forest 
+Forest,CWHvh2,CWHvh2/06,CWHvh2/06,,CWHvh2/06,CWHvh2/06,forest ,forest 
+Forest,CWHvh2,CWHvh2/07,CWHvh2/07,,CWHvh2/07,CWHvh2/07,forest ,forest 
+Forest,CWHvh2,CWHvh2/07a,CWHvh2/07a,,CWHvh2/07,CWHvh2/07,forest ,forest 
+Forest,CWHvh2,CWHvh2/07b,CWHvh2/07b,,CWHvh2/07,CWHvh2/07,forest ,forest 
+Forest,CWHvh2,CWHvh2/08,CWHvh2/08,,CWHvh2/08,CWHvh2/08,forest ,forest 
+Forest,CWHvh2,CWHvh2/09,CWHvh2/09,,CWHvh2/09,CWHvh2/09,forest ,forest 
+Deciduous,CWHvh2,CWHvh2/10,CWHvh2/10,,CWHvh2/10,CWHvh2/10,forest ,forest 
+Forest,CWHvh2,CWHvh2/11,CWHvh2/11,,CWHvh2/11,CWHvh2/11,forest ,forest 
+Forest,CWHvh2,CWHvh2/12,CWHvh2/12,,CWHvh2/12,CWHvh2/12,forest ,forest 
+Forest,CWHvh2,CWHvh2/13,CWHvh2/13,,CWHvh2/13,CWHvh2/13,forest ,forest 
+Forest,CWHvh2,CWHvh2/13a,CWHvh2/13a,,CWHvh2/13,CWHvh2/13,forest ,forest 
+Forest,CWHvh2,CWHvh2/13b,CWHvh2/13b,,CWHvh2/13,CWHvh2/13,forest ,forest 
+Forest,CWHvh2,CWHvh2/14,CWHvh2/14,,CWHvh2/14,CWHvh2/14,forest ,forest 
+Forest,CWHvh2,CWHvh2/15,CWHvh2/15,,CWHvh2/15,CWHvh2/15,forest ,forest 
+Forest,CWHvh2,CWHvh2/16,CWHvh2/16,,CWHvh2/16,CWHvh2/16,forest ,forest 
+Forest,CWHvh2,CWHvh2/17,CWHvh2/17,,CWHvh2/17,CWHvh2/17,forest ,forest 
+Forest,CWHvh2,CWHvh2/18,CWHvh2/18,,CWHvh2/18,CWHvh2/18,forest ,forest 
+Forest,CWHvh2,CWHvh2/19,CWHvh2/19,,CWHvh2/19,CWHvh2/19,forest ,forest 
+Forest,CWHvh3,CWHvh3/101,CWHvh3/101,,CWHvh3/101,CWHvh3/101,forest ,forest 
+Forest,CWHvh3,CWHvh3/101a,CWHvh3/101a,,CWHvh3/101,CWHvh3/101,forest ,forest 
+Forest,CWHvh3,CWHvh3/101b,CWHvh3/101b,,CWHvh3/101,CWHvh3/101,forest ,forest 
+Forest,CWHvh3,CWHvh3/101c,CWHvh3/101c,,CWHvh3/101,CWHvh3/101,forest ,forest 
+Forest,CWHvh3,CWHvh3/102,CWHvh3/102,,CWHvh3/102,CWHvh3/102,forest ,forest 
+Forest,CWHvh3,CWHvh3/103,CWHvh3/103,,CWHvh3/103,CWHvh3/103,forest ,forest 
+Forest,CWHvh3,CWHvh3/103.1,CWHvh3/103.1,,CWHvh3/103,CWHvh3/103,forest ,forest 
+Forest,CWHvh3,CWHvh3/103.2,CWHvh3/103.2,,CWHvh3/103,CWHvh3/103,forest ,forest 
+Forest,CWHvh3,CWHvh3/104,CWHvh3/104,,CWHvh3/104,CWHvh3/104,forest ,forest 
+Forest,CWHvh3,CWHvh3/105,CWHvh3/105,,CWHvh3/105,CWHvh3/105,forest ,forest 
+Forest,CWHvh3,CWHvh3/105a,CWHvh3/105a,,CWHvh3/105,CWHvh3/105,forest ,forest 
+Forest,CWHvh3,CWHvh3/105b,CWHvh3/105b,,CWHvh3/105,CWHvh3/105,forest ,forest 
+Forest,CWHvh3,CWHvh3/106,CWHvh3/106,,CWHvh3/106,CWHvh3/106,forest ,forest 
+Forest,CWHvh3,CWHvh3/106a,CWHvh3/106a,,CWHvh3/106,CWHvh3/106,forest ,forest 
+Forest,CWHvh3,CWHvh3/106b,CWHvh3/106b,,CWHvh3/106,CWHvh3/106,forest ,forest 
+Forest,CWHvh3,CWHvh3/106c,CWHvh3/106c,,CWHvh3/106,CWHvh3/106,forest ,forest 
+Forest,CWHvh3,CWHvh3/110,CWHvh3/110,,CWHvh3/110,CWHvh3/110,forest ,forest 
+Forest,CWHvh3,CWHvh3/110a,CWHvh3/110a,,CWHvh3/110,CWHvh3/110,forest ,forest 
+Forest,CWHvh3,CWHvh3/110b,CWHvh3/110b,,CWHvh3/110,CWHvh3/110,forest ,forest 
+Forest,CWHvh3,CWHvh3/110c,CWHvh3/110c,,CWHvh3/110,CWHvh3/110,forest ,forest 
+Forest,CWHvh3,CWHvh3/111,CWHvh3/111,,CWHvh3/111,CWHvh3/111,forest ,forest 
+Forest,CWHvh3,CWHvh3/112,CWHvh3/112,,CWHvh3/112,CWHvh3/112,forest ,forest 
+Deciduous,CWHvh3,CWHvh3/113,CWHvh3/113,,CWHvh3/113,CWHvh3/113,forest ,forest 
+Forest,CWHvh3,CWHvh3/114,CWHvh3/114,,CWHvh3/114,CWHvh3/114,forest ,forest 
+Forest,CWHvh3,CWHvh3/115,CWHvh3/115,,CWHvh3/115,CWHvh3/115,forest ,forest 
+Forest,CWHvh3,CWHvh3/116,CWHvh3/116,,CWHvh3/116,CWHvh3/116,forest ,forest 
+Forest,CWHvh3,CWHvh3/117,CWHvh3/117,,CWHvh3/117,CWHvh3/117,forest ,forest 
+Forest,CWHvh3,CWHvh3/117a,CWHvh3/117a,,CWHvh3/117,CWHvh3/117,forest ,forest 
+Forest,CWHvh3,CWHvh3/117b,CWHvh3/117b,,CWHvh3/117,CWHvh3/117,forest ,forest 
+Forest,CWHvm1,CWHvm1/01,CWHvm1/01,,CWHvm1/01,CWHvm1/01,forest ,forest 
+Forest,CWHvm1,CWHvm1/01a,CWHvm1/01a,,CWHvm1/01,CWHvm1/01,forest ,forest 
+Forest,CWHvm1,CWHvm1/01b,CWHvm1/01b,,CWHvm1/01,CWHvm1/01,forest ,forest 
+Forest,CWHvm1,CWHvm1/01s,CWHvm1/01s,,CWHvm1/01,CWHvm1/01,forest ,forest 
+Forest,CWHvm1,CWHvm1/02,CWHvm1/02,,CWHvm1/02,CWHvm1/02,forest ,forest 
+Forest,CWHvm1,CWHvm1/03,CWHvm1/03,,CWHvm1/03,CWHvm1/03,forest ,forest 
+Forest,CWHvm1,CWHvm1/04,CWHvm1/04,,CWHvm1/04,CWHvm1/04,forest ,forest 
+Forest,CWHvm1,CWHvm1/05,CWHvm1/05,,CWHvm1/05,CWHvm1/05,forest ,forest 
+Forest,CWHvm1,CWHvm1/06,CWHvm1/06,,CWHvm1/06,CWHvm1/06,forest ,forest 
+Forest,CWHvm1,CWHvm1/06a,CWHvm1/06a,,CWHvm1/06,CWHvm1/06,forest ,forest 
+Forest,CWHvm1,CWHvm1/06b,CWHvm1/06b,,CWHvm1/06,CWHvm1/06,forest ,forest 
+Forest,CWHvm1,CWHvm1/06s,CWHvm1/06s,,CWHvm1/06,CWHvm1/06,forest ,forest 
+Forest,CWHvm1,CWHvm1/07,CWHvm1/07,,CWHvm1/07,CWHvm1/07,forest ,forest 
+Forest,CWHvm1,CWHvm1/08,CWHvm1/08,,CWHvm1/08,CWHvm1/08,forest ,forest 
+Forest,CWHvm1,CWHvm1/09,CWHvm1/09,,CWHvm1/09,CWHvm1/09,forest ,forest 
+Deciduous,CWHvm1,CWHvm1/10,CWHvm1/10,,CWHvm1/10,CWHvm1/10,forest ,forest 
+Deciduous,CWHvm1,CWHvm1/11,CWHvm1/11,,CWHvm1/11,CWHvm1/11,forest ,forest 
+Forest,CWHvm1,CWHvm1/12,CWHvm1/12,,CWHvm1/12,CWHvm1/12,forest ,forest 
+Forest,CWHvm1,CWHvm1/13,CWHvm1/13,,CWHvm1/13,CWHvm1/13,forest ,forest 
+Forest,CWHvm1,CWHvm1/14,CWHvm1/14,,CWHvm1/14,CWHvm1/14,forest ,forest 
+Forest,CWHvm1,CWHvm1/15,CWHvm1/15,,CWHvm1/15,CWHvm1/15,forest ,forest 
+Forest,CWHvm2,CWHvm2/01,CWHvm2/01,,CWHvm2/01,CWHvm2/01,forest ,forest 
+Forest,CWHvm2,CWHvm2/01a,CWHvm2/01a,,CWHvm2/01,CWHvm2/01,forest ,forest 
+Forest,CWHvm2,CWHvm2/01b,CWHvm2/01b,,CWHvm2/01,CWHvm2/01,forest ,forest 
+Forest,CWHvm2,CWHvm2/02,CWHvm2/02,,CWHvm2/02,CWHvm2/02,forest ,forest 
+Forest,CWHvm2,CWHvm2/03,CWHvm2/03,,CWHvm2/03,CWHvm2/03,forest ,forest 
+Forest,CWHvm2,CWHvm2/04,CWHvm2/04,,CWHvm2/04,CWHvm2/04,forest ,forest 
+Forest,CWHvm2,CWHvm2/05,CWHvm2/05,,CWHvm2/05,CWHvm2/05,forest ,forest 
+Forest,CWHvm2,CWHvm2/06,CWHvm2/06,,CWHvm2/06,CWHvm2/06,forest ,forest 
+Forest,CWHvm2,CWHvm2/07,CWHvm2/07,,CWHvm2/07,CWHvm2/07,forest ,forest 
+Forest,CWHvm2,CWHvm2/08,CWHvm2/08,,CWHvm2/08,CWHvm2/08,forest ,forest 
+Forest,CWHvm2,CWHvm2/09,CWHvm2/09,,CWHvm2/09,CWHvm2/09,forest ,forest 
+Forest,CWHvm2,CWHvm2/10,CWHvm2/10,,CWHvm2/10,CWHvm2/10,forest ,forest 
+Forest,CWHvm2,CWHvm2/11,CWHvm2/11,,CWHvm2/11,CWHvm2/11,forest ,forest 
+Forest,CWHvm2,CWHvm2/12,CWHvm2/12,,CWHvm2/12,CWHvm2/12,forest ,forest 
+Forest,CWHwh1,CWHwh1/101,CWHwh1/101,,CWHwh1/101,CWHwh1/101,forest ,forest 
+Forest,CWHwh1,CWHwh1/101a,CWHwh1/101a,,CWHwh1/101,CWHwh1/101,forest ,forest 
+Forest,CWHwh1,CWHwh1/101b,CWHwh1/101b,,CWHwh1/101,CWHwh1/101,forest ,forest 
+Forest,CWHwh1,CWHwh1/102,CWHwh1/102,,CWHwh1/102,CWHwh1/102,forest ,forest 
+Forest,CWHwh1,CWHwh1/103,CWHwh1/103,,CWHwh1/103,CWHwh1/103,forest ,forest 
+Forest,CWHwh1,CWHwh1/103.1,CWHwh1/103.1,,CWHwh1/103,CWHwh1/103,forest ,forest 
+Forest,CWHwh1,CWHwh1/103.2,CWHwh1/103.2,,CWHwh1/103,CWHwh1/103,forest ,forest 
+Forest,CWHwh1,CWHwh1/104,CWHwh1/104,,CWHwh1/104,CWHwh1/104,forest ,forest 
+Forest,CWHwh1,CWHwh1/105,CWHwh1/105,,CWHwh1/105,CWHwh1/105,forest ,forest 
+Forest,CWHwh1,CWHwh1/105a,CWHwh1/105a,,CWHwh1/105,CWHwh1/105,forest ,forest 
+Forest,CWHwh1,CWHwh1/105b,CWHwh1/105b,,CWHwh1/105,CWHwh1/105,forest ,forest 
+Forest,CWHwh1,CWHwh1/110,CWHwh1/110,,CWHwh1/110,CWHwh1/110,forest ,forest 
+Forest,CWHwh1,CWHwh1/110a,CWHwh1/110a,,CWHwh1/110,CWHwh1/110,forest ,forest 
+Forest,CWHwh1,CWHwh1/110b,CWHwh1/110b,,CWHwh1/110,CWHwh1/110,forest ,forest 
+Forest,CWHwh1,CWHwh1/111,CWHwh1/111,,CWHwh1/111,CWHwh1/111,forest ,forest 
+Forest,CWHwh1,CWHwh1/111a,CWHwh1/111a,,CWHwh1/111,CWHwh1/111,forest ,forest 
+Forest,CWHwh1,CWHwh1/111b,CWHwh1/111b,,CWHwh1/111,CWHwh1/111,forest ,forest 
+Forest,CWHwh1,CWHwh1/111c,CWHwh1/111c,,CWHwh1/111,CWHwh1/111,forest ,forest 
+Forest,CWHwh1,CWHwh1/112,CWHwh1/112,,CWHwh1/112,CWHwh1/112,forest ,forest 
+Forest,CWHwh1,CWHwh1/113,CWHwh1/113,,CWHwh1/113,CWHwh1/113,forest ,forest 
+Deciduous,CWHwh1,CWHwh1/114,CWHwh1/114,,CWHwh1/114,CWHwh1/114,forest ,forest 
+Forest,CWHwh1,CWHwh1/115,CWHwh1/115,,CWHwh1/115,CWHwh1/115,forest ,forest 
+Forest,CWHwh1,CWHwh1/116,CWHwh1/116,,CWHwh1/116,CWHwh1/116,forest ,forest 
+Forest,CWHwh1,CWHwh1/117,CWHwh1/117,,CWHwh1/117,CWHwh1/117,forest ,forest 
+Forest,CWHwh1,CWHwh1/118,CWHwh1/118,,CWHwh1/118,CWHwh1/118,forest ,forest 
+Forest,CWHwh1,CWHwh1/118a,CWHwh1/118a,,CWHwh1/118,CWHwh1/118,forest ,forest 
+Forest,CWHwh1,CWHwh1/118b,CWHwh1/118b,,CWHwh1/118,CWHwh1/118,forest ,forest 
+Forest,CWHwh2,CWHwh2/101,CWHwh2/101,,CWHwh2/101,CWHwh2/101,forest ,forest 
+Forest,CWHwh2,CWHwh2/101a,CWHwh2/101a,,CWHwh2/101,CWHwh2/101,forest ,forest 
+Forest,CWHwh2,CWHwh2/101b,CWHwh2/101b,,CWHwh2/101,CWHwh2/101,forest ,forest 
+Forest,CWHwh2,CWHwh2/101c,CWHwh2/101c,,CWHwh2/101,CWHwh2/101,forest ,forest 
+Forest,CWHwh2,CWHwh2/110,CWHwh2/110,,CWHwh2/110,CWHwh2/110,forest ,forest 
+Forest,CWHwh2,CWHwh2/111,CWHwh2/111,,CWHwh2/111,CWHwh2/111,forest ,forest 
+Forest,CWHwh2,CWHwh2/112,CWHwh2/112,,CWHwh2/112,CWHwh2/112,forest ,forest 
+Forest,CWHwh2,CWHwh2/112a,CWHwh2/112a,,CWHwh2/112,CWHwh2/112,forest ,forest 
+Forest,CWHwh2,CWHwh2/112b,CWHwh2/112b,,CWHwh2/112,CWHwh2/112,forest ,forest 
+Forest,CWHwm,CWHwm/01,CWHwm/01,,CWHwm/01,CWHwm/01,forest ,forest 
+Forest,CWHwm,CWHwm/01a,CWHwm/01a,,CWHwm/01,CWHwm/01,forest ,forest 
+Forest,CWHwm,CWHwm/01b,CWHwm/01b,,CWHwm/01,CWHwm/01,forest ,forest 
+Forest,CWHwm,CWHwm/02,CWHwm/02,,CWHwm/02,CWHwm/02,forest ,forest 
+Forest,CWHwm,CWHwm/03,CWHwm/03,,CWHwm/03,CWHwm/03,forest ,forest 
+Forest,CWHwm,CWHwm/04,CWHwm/04,,CWHwm/04,CWHwm/04,forest ,forest 
+Forest,CWHwm,CWHwm/05,CWHwm/05,,CWHwm/05,CWHwm/05,forest ,forest 
+Deciduous,CWHwm,CWHwm/06,CWHwm/06,,CWHwm/06,CWHwm/06,forest ,forest 
+Deciduous,CWHwm,CWHwm/07,CWHwm/07,,CWHwm/07,CWHwm/07,forest ,forest 
+Forest,CWHwm,CWHwm/08,CWHwm/08,,CWHwm/08,CWHwm/08,forest ,forest 
+Forest,CWHwm,CWHwm/09,CWHwm/09,,CWHwm/09,CWHwm/09,forest ,forest 
+Forest,CWHwm,CWHwm/10,CWHwm/10,,CWHwm/10,CWHwm/10,forest ,forest 
+Forest,CWHws1,CWHws1/01,CWHws1/01,,CWHws1/01,CWHws1/01,forest ,forest 
+Forest,CWHws1,CWHws1/01a,CWHws1/01a,,CWHws1/01,CWHws1/01,forest ,forest 
+Forest,CWHws1,CWHws1/01b,CWHws1/01b,,CWHws1/01,CWHws1/01,forest ,forest 
+Forest,CWHws1,CWHws1/02,CWHws1/02,,CWHws1/02,CWHws1/02,forest ,forest 
+Forest,CWHws1,CWHws1/03,CWHws1/03,,CWHws1/03,CWHws1/03,forest ,forest 
+Forest,CWHws1,CWHws1/03a,CWHws1/03a,,CWHws1/03,CWHws1/03,forest ,forest 
+Forest,CWHws1,CWHws1/03b,CWHws1/03b,,CWHws1/03,CWHws1/03,forest ,forest 
+Forest,CWHws1,CWHws1/04,CWHws1/04,,CWHws1/04,CWHws1/04,forest ,forest 
+Forest,CWHws1,CWHws1/05,CWHws1/05,,CWHws1/05,CWHws1/05,forest ,forest 
+Forest,CWHws1,CWHws1/06,CWHws1/06,,CWHws1/06,CWHws1/06,forest ,forest 
+Forest,CWHws1,CWHws1/07,CWHws1/07,,CWHws1/07,CWHws1/07,forest ,forest 
+Deciduous,CWHws1,CWHws1/08,CWHws1/08,,CWHws1/08,CWHws1/08,forest ,forest 
+Deciduous,CWHws1,CWHws1/09,CWHws1/09,,CWHws1/09,CWHws1/09,forest ,forest 
+Forest,CWHws1,CWHws1/10,CWHws1/10,,CWHws1/10,CWHws1/10,forest ,forest 
+Forest,CWHws1,CWHws1/11,CWHws1/11,,CWHws1/11,CWHws1/11,forest ,forest 
+Forest,CWHws2,CWHws2/01,CWHws2/01,,CWHws2/01,CWHws2/01,forest ,forest 
+Forest,CWHws2,CWHws2/02,CWHws2/02,,CWHws2/02,CWHws2/02,forest ,forest 
+Forest,CWHws2,CWHws2/03,CWHws2/03,,CWHws2/03,CWHws2/03,forest ,forest 
+Forest,CWHws2,CWHws2/04,CWHws2/04,,CWHws2/04,CWHws2/04,forest ,forest 
+Forest,CWHws2,CWHws2/05,CWHws2/05,,CWHws2/05,CWHws2/05,forest ,forest 
+Forest,CWHws2,CWHws2/06,CWHws2/06,,CWHws2/06,CWHws2/06,forest ,forest 
+Forest,CWHws2,CWHws2/07,CWHws2/07,,CWHws2/07,CWHws2/07,forest ,forest 
+Deciduous,CWHws2,CWHws2/08,CWHws2/08,,CWHws2/08,CWHws2/08,forest ,forest 
+Deciduous,CWHws2,CWHws2/09,CWHws2/09,,CWHws2/09,CWHws2/09,forest ,forest 
+Forest,CWHws2,CWHws2/10,CWHws2/10,,CWHws2/10,CWHws2/10,forest ,forest 
+Forest,CWHws2,CWHws2/11,CWHws2/11,,CWHws2/11,CWHws2/11,forest ,forest 
+Forest,CWHxm1,CWHxm1/01,CWHxm1/01,,CWHxm1/01,CWHxm1/01,forest ,forest 
+Forest,CWHxm1,CWHxm1/02,CWHxm1/02,,CWHxm1/02,CWHxm1/02,forest ,forest 
+Forest,CWHxm1,CWHxm1/03,CWHxm1/03,,CWHxm1/03,CWHxm1/03,forest ,forest 
+Forest,CWHxm1,CWHxm1/04,CWHxm1/04,,CWHxm1/04,CWHxm1/04,forest ,forest 
+Forest,CWHxm1,CWHxm1/05,CWHxm1/05,,CWHxm1/05,CWHxm1/05,forest ,forest 
+Forest,CWHxm1,CWHxm1/06,CWHxm1/06,,CWHxm1/06,CWHxm1/06,forest ,forest 
+Forest,CWHxm1,CWHxm1/07,CWHxm1/07,,CWHxm1/07,CWHxm1/07,forest ,forest 
+Forest,CWHxm1,CWHxm1/08,CWHxm1/08,,CWHxm1/08,CWHxm1/08,forest ,forest 
+Deciduous,CWHxm1,CWHxm1/09,CWHxm1/09,,CWHxm1/09,CWHxm1/09,forest ,forest 
+Deciduous,CWHxm1,CWHxm1/10,CWHxm1/10,,CWHxm1/10,CWHxm1/10,forest ,forest 
+Forest,CWHxm1,CWHxm1/11,CWHxm1/11,,CWHxm1/11,CWHxm1/11,forest ,forest 
+Forest,CWHxm1,CWHxm1/12,CWHxm1/12,,CWHxm1/12,CWHxm1/12,forest ,forest 
+Forest,CWHxm1,CWHxm1/13,CWHxm1/13,,CWHxm1/13,CWHxm1/13,forest ,forest 
+Forest,CWHxm1,CWHxm1/14,CWHxm1/14,,CWHxm1/14,CWHxm1/14,forest ,forest 
+Forest,CWHxm1,CWHxm1/15,CWHxm1/15,,CWHxm1/15,CWHxm1/15,forest ,forest 
+Forest,CWHxm2,CWHxm2/01,CWHxm2/01,,CWHxm2/01,CWHxm2/01,forest ,forest 
+Forest,CWHxm2,CWHxm2/02,CWHxm2/02,,CWHxm2/02,CWHxm2/02,forest ,forest 
+Forest,CWHxm2,CWHxm2/03,CWHxm2/03,,CWHxm2/03,CWHxm2/03,forest ,forest 
+Forest,CWHxm2,CWHxm2/04,CWHxm2/04,,CWHxm2/04,CWHxm2/04,forest ,forest 
+Forest,CWHxm2,CWHxm2/05,CWHxm2/05,,CWHxm2/05,CWHxm2/05,forest ,forest 
+Forest,CWHxm2,CWHxm2/06,CWHxm2/06,,CWHxm2/06,CWHxm2/06,forest ,forest 
+Forest,CWHxm2,CWHxm2/07,CWHxm2/07,,CWHxm2/07,CWHxm2/07,forest ,forest 
+Forest,CWHxm2,CWHxm2/08,CWHxm2/08,,CWHxm2/08,CWHxm2/08,forest ,forest 
+Deciduous,CWHxm2,CWHxm2/09,CWHxm2/09,,CWHxm2/09,CWHxm2/09,forest ,forest 
+Deciduous,CWHxm2,CWHxm2/10,CWHxm2/10,,CWHxm2/10,CWHxm2/10,forest ,forest 
+Forest,CWHxm2,CWHxm2/11,CWHxm2/11,,CWHxm2/11,CWHxm2/11,forest ,forest 
+Forest,CWHxm2,CWHxm2/12,CWHxm2/12,,CWHxm2/12,CWHxm2/12,forest ,forest 
+Forest,CWHxm2,CWHxm2/13,CWHxm2/13,,CWHxm2/13,CWHxm2/13,forest ,forest 
+Forest,CWHxm2,CWHxm2/14,CWHxm2/14,,CWHxm2/14,CWHxm2/14,forest ,forest 
+Forest,CWHxm2,CWHxm2/15,CWHxm2/15,,CWHxm2/15,CWHxm2/15,forest ,forest 
+NonForest,,,Ed01,Tufted hairgrass - Meadow barley,E,Ed,nonforest,Ed01
+NonForest,,,Ed03,Tufted hairgrass - Douglas' aster,E,Ed,nonforest,Ed03
+NonForest,,,Em01,Widgeon-grass,E,Em,nonforest,Em01
+NonForest,,,Em02,Glasswort - Sea-milkwort  ,E,Em,nonforest,Em02
+NonForest,,,Em03,Seashore saltgrass,E,Em,nonforest,Em03
+NonForest,,,Em05,Lyngbye's sedge,E,Em,nonforest,Em05
+Forest,ESSFdc1,ESSFdc1/101,ESSFdc1/101,,ESSFdc1/101,ESSFdc1/101,forest ,forest 
+Forest,ESSFdc1,ESSFdc1/102,ESSFdc1/102,,ESSFdc1/102,ESSFdc1/102,forest ,forest 
+Forest,ESSFdc1,ESSFdc1/103,ESSFdc1/103,,ESSFdc1/103,ESSFdc1/103,forest ,forest 
+Forest,ESSFdc1,ESSFdc1/104,ESSFdc1/104,,ESSFdc1/104,ESSFdc1/104,forest ,forest 
+Forest,ESSFdc1,ESSFdc1/110,ESSFdc1/110,,ESSFdc1/110,ESSFdc1/110,forest ,forest 
+Forest,ESSFdc1,ESSFdc1/111,ESSFdc1/111,,ESSFdc1/111,ESSFdc1/111,forest ,forest 
+Forest,ESSFdc1,ESSFdc1/112,ESSFdc1/112,,ESSFdc1/112,ESSFdc1/112,forest ,forest 
+Forest,ESSFdc1,ESSFdc1/112a,ESSFdc1/112a,,ESSFdc1/112,ESSFdc1/112,forest ,forest 
+Forest,ESSFdc1,ESSFdc1/112b,ESSFdc1/112b,,ESSFdc1/112,ESSFdc1/112,forest ,forest 
+Forest,ESSFdc2,ESSFdc2/101,ESSFdc2/101,,ESSFdc2/101,ESSFdc2/101,forest ,forest 
+Forest,ESSFdc2,ESSFdc2/102,ESSFdc2/102,,ESSFdc2/102,ESSFdc2/102,forest ,forest 
+Forest,ESSFdc2,ESSFdc2/103,ESSFdc2/103,,ESSFdc2/103,ESSFdc2/103,forest ,forest 
+Forest,ESSFdc2,ESSFdc2/104,ESSFdc2/104,,ESSFdc2/104,ESSFdc2/104,forest ,forest 
+Forest,ESSFdc2,ESSFdc2/110,ESSFdc2/110,,ESSFdc2/110,ESSFdc2/110,forest ,forest 
+Forest,ESSFdc2,ESSFdc2/111,ESSFdc2/111,,ESSFdc2/111,ESSFdc2/111,forest ,forest 
+Forest,ESSFdc2,ESSFdc2/112,ESSFdc2/112,,ESSFdc2/112,ESSFdc2/112,forest ,forest 
+Forest,ESSFdc3,ESSFdc3/01,ESSFdc3/01,,ESSFdc3/01,ESSFdc3/01,forest ,forest 
+Forest,ESSFdc3,ESSFdc3/02,ESSFdc3/02,,ESSFdc3/02,ESSFdc3/02,forest ,forest 
+Forest,ESSFdc3,ESSFdc3/03,ESSFdc3/03,,ESSFdc3/03,ESSFdc3/03,forest ,forest 
+Forest,ESSFdc3,ESSFdc3/04,ESSFdc3/04,,ESSFdc3/04,ESSFdc3/04,forest ,forest 
+Forest,ESSFdc3,ESSFdc3/05,ESSFdc3/05,,ESSFdc3/05,ESSFdc3/05,forest ,forest 
+Forest,ESSFdc3,ESSFdc3/06,ESSFdc3/06,,ESSFdc3/06,ESSFdc3/06,forest ,forest 
+Forest,ESSFdc3,ESSFdc3/07,ESSFdc3/07,,ESSFdc3/07,ESSFdc3/07,forest ,forest 
+Forest,ESSFdc3,ESSFdc3/08,ESSFdc3/08,,ESSFdc3/08,ESSFdc3/08,forest ,forest 
+Forest,ESSFdc3,ESSFdc3/09,ESSFdc3/09,,ESSFdc3/09,ESSFdc3/09,forest ,forest 
+Forest,ESSFdcw,ESSFdcw/101,ESSFdcw/101,,ESSFdcw/101,ESSFdcw/101,forest ,forest 
+Forest,ESSFdcw,ESSFdcw/102,ESSFdcw/102,,ESSFdcw/102,ESSFdcw/102,forest ,forest 
+Forest,ESSFdcw,ESSFdcw/103,ESSFdcw/103,,ESSFdcw/103,ESSFdcw/103,forest ,forest 
+Forest,ESSFdcw,ESSFdcw/110,ESSFdcw/110,,ESSFdcw/110,ESSFdcw/110,forest ,forest 
+Forest,ESSFdh1,ESSFdh1/101,ESSFdh1/101,,ESSFdh1/101,ESSFdh1/101,forest ,forest 
+Forest,ESSFdh1,ESSFdh1/102,ESSFdh1/102,,ESSFdh1/102,ESSFdh1/102,forest ,forest 
+Forest,ESSFdh1,ESSFdh1/103,ESSFdh1/103,,ESSFdh1/103,ESSFdh1/103,forest ,forest 
+Forest,ESSFdh1,ESSFdh1/104,ESSFdh1/104,,ESSFdh1/104,ESSFdh1/104,forest ,forest 
+Forest,ESSFdh1,ESSFdh1/110,ESSFdh1/110,,ESSFdh1/110,ESSFdh1/110,forest ,forest 
+Forest,ESSFdh1,ESSFdh1/111,ESSFdh1/111,,ESSFdh1/111,ESSFdh1/111,forest ,forest 
+Forest,ESSFdk1,ESSFdk1/101,ESSFdk1/101,,ESSFdk1/101,ESSFdk1/101,forest ,forest 
+Forest,ESSFdk1,ESSFdk1/102,ESSFdk1/102,,ESSFdk1/102,ESSFdk1/102,forest ,forest 
+Forest,ESSFdk1,ESSFdk1/103,ESSFdk1/103,,ESSFdk1/103,ESSFdk1/103,forest ,forest 
+Forest,ESSFdk1,ESSFdk1/104,ESSFdk1/104,,ESSFdk1/104,ESSFdk1/104,forest ,forest 
+Forest,ESSFdk1,ESSFdk1/110,ESSFdk1/110,,ESSFdk1/110,ESSFdk1/110,forest ,forest 
+Forest,ESSFdk1,ESSFdk1/111,ESSFdk1/111,,ESSFdk1/111,ESSFdk1/111,forest ,forest 
+Forest,ESSFdk1,ESSFdk1/111a,ESSFdk1/111a,,ESSFdk1/111,ESSFdk1/111,forest ,forest 
+Forest,ESSFdk1,ESSFdk1/111b,ESSFdk1/111b,,ESSFdk1/111,ESSFdk1/111,forest ,forest 
+Forest,ESSFdk2,ESSFdk2/101,ESSFdk2/101,,ESSFdk2/101,ESSFdk2/101,forest ,forest 
+Forest,ESSFdk2,ESSFdk2/102,ESSFdk2/102,,ESSFdk2/102,ESSFdk2/102,forest ,forest 
+Forest,ESSFdk2,ESSFdk2/103,ESSFdk2/103,,ESSFdk2/103,ESSFdk2/103,forest ,forest 
+Forest,ESSFdk2,ESSFdk2/104,ESSFdk2/104,,ESSFdk2/104,ESSFdk2/104,forest ,forest 
+Forest,ESSFdk2,ESSFdk2/110,ESSFdk2/110,,ESSFdk2/110,ESSFdk2/110,forest ,forest 
+Forest,ESSFdk2,ESSFdk2/111,ESSFdk2/111,,ESSFdk2/111,ESSFdk2/111,forest ,forest 
+Forest,ESSFdk2,ESSFdk2/112,ESSFdk2/112,,ESSFdk2/112,ESSFdk2/112,forest ,forest 
+Forest,ESSFdk2,ESSFdk2/112a,ESSFdk2/112a,,ESSFdk2/112,ESSFdk2/112,forest ,forest 
+Forest,ESSFdk2,ESSFdk2/112b,ESSFdk2/112b,,ESSFdk2/112,ESSFdk2/112,forest ,forest 
+Forest,ESSFdkw,ESSFdkw/101,ESSFdkw/101,,ESSFdkw/101,ESSFdkw/101,forest ,forest 
+Forest,ESSFdkw,ESSFdkw/101.1,ESSFdkw/101.1,,ESSFdkw/101,ESSFdkw/101,forest ,forest 
+Forest,ESSFdkw,ESSFdkw/101.2,ESSFdkw/101.2,,ESSFdkw/101,ESSFdkw/101,forest ,forest 
+Forest,ESSFdkw,ESSFdkw/102,ESSFdkw/102,,ESSFdkw/102,ESSFdkw/102,forest ,forest 
+Forest,ESSFdkw,ESSFdkw/103,ESSFdkw/103,,ESSFdkw/103,ESSFdkw/103,forest ,forest 
+Forest,ESSFdkw,ESSFdkw/110,ESSFdkw/110,,ESSFdkw/110,ESSFdkw/110,forest ,forest 
+Forest,ESSFmc,ESSFmc/01,ESSFmc/01,,ESSFmc/01,ESSFmc/01,forest ,forest 
+Forest,ESSFmc,ESSFmc/01a,ESSFmc/01a,,ESSFmc/01,ESSFmc/01,forest ,forest 
+Forest,ESSFmc,ESSFmc/01b,ESSFmc/01b,,ESSFmc/01,ESSFmc/01,forest ,forest 
+Forest,ESSFmc,ESSFmc/02,ESSFmc/02,,ESSFmc/02,ESSFmc/02,forest ,forest 
+Forest,ESSFmc,ESSFmc/03,ESSFmc/03,,ESSFmc/03,ESSFmc/03,forest ,forest 
+Forest,ESSFmc,ESSFmc/04,ESSFmc/04,,ESSFmc/04,ESSFmc/04,forest ,forest 
+Forest,ESSFmc,ESSFmc/05,ESSFmc/05,,ESSFmc/05,ESSFmc/05,forest ,forest 
+Forest,ESSFmc,ESSFmc/06,ESSFmc/06,,ESSFmc/06,ESSFmc/06,forest ,forest 
+Forest,ESSFmc,ESSFmc/07,ESSFmc/07,,ESSFmc/07,ESSFmc/07,forest ,forest 
+Forest,ESSFmc,ESSFmc/08,ESSFmc/08,,ESSFmc/08,ESSFmc/08,forest ,forest 
+Forest,ESSFmc,ESSFmc/09,ESSFmc/09,,ESSFmc/09,ESSFmc/09,forest ,forest 
+Forest,ESSFmc,ESSFmc/10,ESSFmc/10,,ESSFmc/10,ESSFmc/10,forest ,forest 
+Forest,ESSFmc,ESSFmc/11,ESSFmc/11,,ESSFmc/11,ESSFmc/11,forest ,forest 
+Forest,ESSFmcw,ESSFmcw/101,ESSFmcw/101,,ESSFmcw/101,ESSFmcw/101,forest ,forest 
+Forest,ESSFmcw,ESSFmcw/101a,ESSFmcw/101a,,ESSFmcw/101,ESSFmcw/101,forest ,forest 
+Forest,ESSFmcw,ESSFmcw/101b,ESSFmcw/101b,,ESSFmcw/101,ESSFmcw/101,forest ,forest 
+Forest,ESSFmcw,ESSFmcw/102,ESSFmcw/102,,ESSFmcw/102,ESSFmcw/102,forest ,forest 
+Forest,ESSFmcw,ESSFmcw/103,ESSFmcw/103,,ESSFmcw/103,ESSFmcw/103,forest ,forest 
+Forest,ESSFmcw,ESSFmcw/110,ESSFmcw/110,,ESSFmcw/110,ESSFmcw/110,forest ,forest 
+Forest,ESSFmcw,ESSFmcw/111,ESSFmcw/111,,ESSFmcw/111,ESSFmcw/111,forest ,forest 
+Forest,ESSFmh,ESSFmh/101,ESSFmh/101,,ESSFmh/101,ESSFmh/101,forest ,forest 
+Forest,ESSFmh,ESSFmh/102,ESSFmh/102,,ESSFmh/102,ESSFmh/102,forest ,forest 
+Forest,ESSFmh,ESSFmh/103,ESSFmh/103,,ESSFmh/103,ESSFmh/103,forest ,forest 
+Forest,ESSFmh,ESSFmh/104,ESSFmh/104,,ESSFmh/104,ESSFmh/104,forest ,forest 
+Forest,ESSFmh,ESSFmh/105,ESSFmh/105,,ESSFmh/105,ESSFmh/105,forest ,forest 
+Forest,ESSFmh,ESSFmh/110,ESSFmh/110,,ESSFmh/110,ESSFmh/110,forest ,forest 
+Forest,ESSFmh,ESSFmh/111,ESSFmh/111,,ESSFmh/111,ESSFmh/111,forest ,forest 
+Forest,ESSFmh,ESSFmh/112,ESSFmh/112,,ESSFmh/112,ESSFmh/112,forest ,forest 
+Forest,ESSFmh,ESSFmh/112a,ESSFmh/112a,,ESSFmh/112,ESSFmh/112,forest ,forest 
+Forest,ESSFmh,ESSFmh/112b,ESSFmh/112b,,ESSFmh/112,ESSFmh/112,forest ,forest 
+Forest,ESSFmk,ESSFmk/01,ESSFmk/01,,ESSFmk/01,ESSFmk/01,forest ,forest 
+Forest,ESSFmk,ESSFmk/02,ESSFmk/02,,ESSFmk/02,ESSFmk/02,forest ,forest 
+Forest,ESSFmk,ESSFmk/02a,ESSFmk/02a,,ESSFmk/02,ESSFmk/02,forest ,forest 
+Forest,ESSFmk,ESSFmk/02b,ESSFmk/02b,,ESSFmk/02,ESSFmk/02,forest ,forest 
+Forest,ESSFmk,ESSFmk/03,ESSFmk/03,,ESSFmk/03,ESSFmk/03,forest ,forest 
+Forest,ESSFmk,ESSFmk/04,ESSFmk/04,,ESSFmk/04,ESSFmk/04,forest ,forest 
+Forest,ESSFmk,ESSFmk/05,ESSFmk/05,,ESSFmk/05,ESSFmk/05,forest ,forest 
+Forest,ESSFmk,ESSFmk/06,ESSFmk/06,,ESSFmk/06,ESSFmk/06,forest ,forest 
+Forest,ESSFmk,ESSFmk/07,ESSFmk/07,,ESSFmk/07,ESSFmk/07,forest ,forest 
+Forest,ESSFmkw,ESSFmkw/101,ESSFmkw/101,,ESSFmkw/101,ESSFmkw/101,forest ,forest 
+Forest,ESSFmkw,ESSFmkw/102,ESSFmkw/102,,ESSFmkw/102,ESSFmkw/102,forest ,forest 
+Forest,ESSFmkw,ESSFmkw/103,ESSFmkw/103,,ESSFmkw/103,ESSFmkw/103,forest ,forest 
+Forest,ESSFmkw,ESSFmkw/104,ESSFmkw/104,,ESSFmkw/104,ESSFmkw/104,forest ,forest 
+Forest,ESSFmkw,ESSFmkw/110,ESSFmkw/110,,ESSFmkw/110,ESSFmkw/110,forest ,forest 
+Forest,ESSFmkw,ESSFmkw/111,ESSFmkw/111,,ESSFmkw/111,ESSFmkw/111,forest ,forest 
+Forest,ESSFmm1,ESSFmm1/01,ESSFmm1/01,,ESSFmm1/01,ESSFmm1/01,forest ,forest 
+Forest,ESSFmm1,ESSFmm1/02,ESSFmm1/02,,ESSFmm1/02,ESSFmm1/02,forest ,forest 
+Forest,ESSFmm1,ESSFmm1/03,ESSFmm1/03,,ESSFmm1/03,ESSFmm1/03,forest ,forest 
+Forest,ESSFmm1,ESSFmm1/04,ESSFmm1/04,,ESSFmm1/04,ESSFmm1/04,forest ,forest 
+Forest,ESSFmm1,ESSFmm1/05,ESSFmm1/05,,ESSFmm1/05,ESSFmm1/05,forest ,forest 
+Forest,ESSFmm1,ESSFmm1/06,ESSFmm1/06,,ESSFmm1/06,ESSFmm1/06,forest ,forest 
+Forest,ESSFmm1,ESSFmm1/07,ESSFmm1/07,,ESSFmm1/07,ESSFmm1/07,forest ,forest 
+Forest,ESSFmm3,ESSFmm3/101,ESSFmm3/101,,ESSFmm3/101,ESSFmm3/101,forest ,forest 
+Forest,ESSFmm3,ESSFmm3/102,ESSFmm3/102,,ESSFmm3/102,ESSFmm3/102,forest ,forest 
+Forest,ESSFmm3,ESSFmm3/103,ESSFmm3/103,,ESSFmm3/103,ESSFmm3/103,forest ,forest 
+Forest,ESSFmm3,ESSFmm3/104,ESSFmm3/104,,ESSFmm3/104,ESSFmm3/104,forest ,forest 
+Forest,ESSFmm3,ESSFmm3/110,ESSFmm3/110,,ESSFmm3/110,ESSFmm3/110,forest ,forest 
+Forest,ESSFmm3,ESSFmm3/111,ESSFmm3/111,,ESSFmm3/111,ESSFmm3/111,forest ,forest 
+Forest,ESSFmm3,ESSFmm3/112,ESSFmm3/112,,ESSFmm3/112,ESSFmm3/112,forest ,forest 
+Forest,ESSFmv1,ESSFmv1/01,ESSFmv1/01,,ESSFmv1/01,ESSFmv1/01,forest ,forest 
+Forest,ESSFmv1,ESSFmv1/02,ESSFmv1/02,,ESSFmv1/02,ESSFmv1/02,forest ,forest 
+Forest,ESSFmv1,ESSFmv1/03,ESSFmv1/03,,ESSFmv1/03,ESSFmv1/03,forest ,forest 
+Forest,ESSFmv1,ESSFmv1/04,ESSFmv1/04,,ESSFmv1/04,ESSFmv1/04,forest ,forest 
+Forest,ESSFmv1,ESSFmv1/05,ESSFmv1/05,,ESSFmv1/05,ESSFmv1/05,forest ,forest 
+Forest,ESSFmv2,ESSFmv2/01,ESSFmv2/01,,ESSFmv2/01,ESSFmv2/01,forest ,forest 
+Forest,ESSFmv2,ESSFmv2/02,ESSFmv2/02,,ESSFmv2/02,ESSFmv2/02,forest ,forest 
+Forest,ESSFmv2,ESSFmv2/03,ESSFmv2/03,,ESSFmv2/03,ESSFmv2/03,forest ,forest 
+Forest,ESSFmv2,ESSFmv2/04,ESSFmv2/04,,ESSFmv2/04,ESSFmv2/04,forest ,forest 
+Forest,ESSFmv2,ESSFmv2/05,ESSFmv2/05,,ESSFmv2/05,ESSFmv2/05,forest ,forest 
+Forest,ESSFmv2,ESSFmv2/06,ESSFmv2/06,,ESSFmv2/06,ESSFmv2/06,forest ,forest 
+Forest,ESSFmv3,ESSFmv3/01,ESSFmv3/01,,ESSFmv3/01,ESSFmv3/01,forest ,forest 
+Forest,ESSFmv3,ESSFmv3/02,ESSFmv3/02,,ESSFmv3/02,ESSFmv3/02,forest ,forest 
+Forest,ESSFmv3,ESSFmv3/03,ESSFmv3/03,,ESSFmv3/03,ESSFmv3/03,forest ,forest 
+Forest,ESSFmv3,ESSFmv3/04,ESSFmv3/04,,ESSFmv3/04,ESSFmv3/04,forest ,forest 
+Forest,ESSFmv3,ESSFmv3/05,ESSFmv3/05,,ESSFmv3/05,ESSFmv3/05,forest ,forest 
+Forest,ESSFmv3,ESSFmv3/06,ESSFmv3/06,,ESSFmv3/06,ESSFmv3/06,forest ,forest 
+Forest,ESSFmv3,ESSFmv3/07,ESSFmv3/07,,ESSFmv3/07,ESSFmv3/07,forest ,forest 
+Forest,ESSFmv3,ESSFmv3/08,ESSFmv3/08,,ESSFmv3/08,ESSFmv3/08,forest ,forest 
+Forest,ESSFmv4,ESSFmv4/01,ESSFmv4/01,,ESSFmv4/01,ESSFmv4/01,forest ,forest 
+Forest,ESSFmv4,ESSFmv4/02,ESSFmv4/02,,ESSFmv4/02,ESSFmv4/02,forest ,forest 
+Forest,ESSFmv4,ESSFmv4/03,ESSFmv4/03,,ESSFmv4/03,ESSFmv4/03,forest ,forest 
+Forest,ESSFmv4,ESSFmv4/04,ESSFmv4/04,,ESSFmv4/04,ESSFmv4/04,forest ,forest 
+Forest,ESSFmv4,ESSFmv4/05,ESSFmv4/05,,ESSFmv4/05,ESSFmv4/05,forest ,forest 
+Forest,ESSFmw,ESSFmw/01,ESSFmw/01,,ESSFmw/01,ESSFmw/01,forest ,forest 
+Forest,ESSFmw,ESSFmw/02,ESSFmw/02,,ESSFmw/02,ESSFmw/02,forest ,forest 
+Forest,ESSFmw,ESSFmw/03,ESSFmw/03,,ESSFmw/03,ESSFmw/03,forest ,forest 
+Forest,ESSFmw,ESSFmw/04,ESSFmw/04,,ESSFmw/04,ESSFmw/04,forest ,forest 
+Forest,ESSFmw,ESSFmw/05,ESSFmw/05,,ESSFmw/05,ESSFmw/05,forest ,forest 
+Forest,ESSFmw,ESSFmw/06,ESSFmw/06,,ESSFmw/06,ESSFmw/06,forest ,forest 
+Forest,ESSFmw,ESSFmw/07,ESSFmw/07,,ESSFmw/07,ESSFmw/07,forest ,forest 
+Forest,ESSFmw,ESSFmw/08,ESSFmw/08,,ESSFmw/08,ESSFmw/08,forest ,forest 
+Forest,ESSFmw1,ESSFmw1/101,ESSFmw1/101,,ESSFmw1/101,ESSFmw1/101,forest ,forest 
+Forest,ESSFmw1,ESSFmw1/102,ESSFmw1/102,,ESSFmw1/102,ESSFmw1/102,forest ,forest 
+Forest,ESSFmw1,ESSFmw1/102.1,ESSFmw1/102.1,,ESSFmw1/102,ESSFmw1/102,forest ,forest 
+Forest,ESSFmw1,ESSFmw1/102.2,ESSFmw1/102.2,,ESSFmw1/102,ESSFmw1/102,forest ,forest 
+Forest,ESSFmw1,ESSFmw1/103,ESSFmw1/103,,ESSFmw1/103,ESSFmw1/103,forest ,forest 
+Forest,ESSFmw1,ESSFmw1/104,ESSFmw1/104,,ESSFmw1/104,ESSFmw1/104,forest ,forest 
+Forest,ESSFmw1,ESSFmw1/105,ESSFmw1/105,,ESSFmw1/105,ESSFmw1/105,forest ,forest 
+Forest,ESSFmw1,ESSFmw1/110,ESSFmw1/110,,ESSFmw1/110,ESSFmw1/110,forest ,forest 
+Forest,ESSFmw1,ESSFmw1/111,ESSFmw1/111,,ESSFmw1/111,ESSFmw1/111,forest ,forest 
+Forest,ESSFvc,ESSFvc/01,ESSFvc/01,,ESSFvc/01,ESSFvc/01,forest ,forest 
+Forest,ESSFvc,ESSFvc/02,ESSFvc/02,,ESSFvc/02,ESSFvc/02,forest ,forest 
+Forest,ESSFvc,ESSFvc/03,ESSFvc/03,,ESSFvc/03,ESSFvc/03,forest ,forest 
+Forest,ESSFvc,ESSFvc/04,ESSFvc/04,,ESSFvc/04,ESSFvc/04,forest ,forest 
+Forest,ESSFvc,ESSFvc/05,ESSFvc/05,,ESSFvc/05,ESSFvc/05,forest ,forest 
+NonForest,ESSFvc,ESSFvc/06,ESSFvc/06,,ESSFvc/06,ESSFvc/06,forest ,forest 
+Forest,ESSFwc2,ESSFwc2/01,ESSFwc2/01,,ESSFwc2/01,ESSFwc2/01,forest ,forest 
+Forest,ESSFwc2,ESSFwc2/02,ESSFwc2/02,,ESSFwc2/02,ESSFwc2/02,forest ,forest 
+Forest,ESSFwc2,ESSFwc2/03,ESSFwc2/03,,ESSFwc2/03,ESSFwc2/03,forest ,forest 
+Forest,ESSFwc2,ESSFwc2/04,ESSFwc2/04,,ESSFwc2/04,ESSFwc2/04,forest ,forest 
+Forest,ESSFwc2,ESSFwc2/05,ESSFwc2/05,,ESSFwc2/05,ESSFwc2/05,forest ,forest 
+Forest,ESSFwc2,ESSFwc2/06,ESSFwc2/06,,ESSFwc2/06,ESSFwc2/06,forest ,forest 
+Forest,ESSFwc2,ESSFwc2/07,ESSFwc2/07,,ESSFwc2/07,ESSFwc2/07,forest ,forest 
+Forest,ESSFwc2,ESSFwc2/08,ESSFwc2/08,,ESSFwc2/08,ESSFwc2/08,forest ,forest 
+Forest,ESSFwc2,ESSFwc2/09,ESSFwc2/09,,ESSFwc2/09,ESSFwc2/09,forest ,forest 
+NonForest,ESSFwc2,ESSFwc2/10,ESSFwc2/10,,ESSFwc2/10,ESSFwc2/10,forest ,forest 
+Forest,ESSFwc3,ESSFwc3/01,ESSFwc3/01,,ESSFwc3/01,ESSFwc3/01,forest ,forest 
+Forest,ESSFwc3,ESSFwc3/02,ESSFwc3/02,,ESSFwc3/02,ESSFwc3/02,forest ,forest 
+Forest,ESSFwc3,ESSFwc3/03,ESSFwc3/03,,ESSFwc3/03,ESSFwc3/03,forest ,forest 
+Forest,ESSFwc3,ESSFwc3/04,ESSFwc3/04,,ESSFwc3/04,ESSFwc3/04,forest ,forest 
+Forest,ESSFwc4,ESSFwc4/101,ESSFwc4/101,,ESSFwc4/101,ESSFwc4/101,forest ,forest 
+Forest,ESSFwc4,ESSFwc4/102,ESSFwc4/102,,ESSFwc4/102,ESSFwc4/102,forest ,forest 
+Forest,ESSFwc4,ESSFwc4/103,ESSFwc4/103,,ESSFwc4/103,ESSFwc4/103,forest ,forest 
+Forest,ESSFwc4,ESSFwc4/103a,ESSFwc4/103a,,ESSFwc4/103,ESSFwc4/103,forest ,forest 
+Forest,ESSFwc4,ESSFwc4/103b,ESSFwc4/103b,,ESSFwc4/103,ESSFwc4/103,forest ,forest 
+Forest,ESSFwc4,ESSFwc4/110,ESSFwc4/110,,ESSFwc4/110,ESSFwc4/110,forest ,forest 
+Forest,ESSFwc4,ESSFwc4/111,ESSFwc4/111,,ESSFwc4/111,ESSFwc4/111,forest ,forest 
+Forest,ESSFwc4,ESSFwc4/112,ESSFwc4/112,,ESSFwc4/112,ESSFwc4/112,forest ,forest 
+Forest,ESSFwc4,ESSFwc4/112a,ESSFwc4/112a,,ESSFwc4/112,ESSFwc4/112,forest ,forest 
+Forest,ESSFwc4,ESSFwc4/112b,ESSFwc4/112b,,ESSFwc4/112,ESSFwc4/112,forest ,forest 
+Forest,ESSFwcw,ESSFwcw/101,ESSFwcw/101,,ESSFwcw/101,ESSFwcw/101,forest ,forest 
+Forest,ESSFwcw,ESSFwcw/102,ESSFwcw/102,,ESSFwcw/102,ESSFwcw/102,forest ,forest 
+Forest,ESSFwcw,ESSFwcw/103,ESSFwcw/103,,ESSFwcw/103,ESSFwcw/103,forest ,forest 
+Forest,ESSFwcw,ESSFwcw/104,ESSFwcw/104,,ESSFwcw/104,ESSFwcw/104,forest ,forest 
+Forest,ESSFwcw,ESSFwcw/104.1,ESSFwcw/104.1,,ESSFwcw/104,ESSFwcw/104,forest ,forest 
+Forest,ESSFwcw,ESSFwcw/104.2,ESSFwcw/104.2,,ESSFwcw/104,ESSFwcw/104,forest ,forest 
+Forest,ESSFwcw,ESSFwcw/104.3,ESSFwcw/104.3,,ESSFwcw/104,ESSFwcw/104,forest ,forest 
+Forest,ESSFwcw,ESSFwcw/110,ESSFwcw/110,,ESSFwcw/110,ESSFwcw/110,forest ,forest 
+Forest,ESSFwh1,ESSFwh1/101,ESSFwh1/101,,ESSFwh1/101,ESSFwh1/101,forest ,forest 
+Forest,ESSFwh1,ESSFwh1/102,ESSFwh1/102,,ESSFwh1/102,ESSFwh1/102,forest ,forest 
+Forest,ESSFwh1,ESSFwh1/103,ESSFwh1/103,,ESSFwh1/103,ESSFwh1/103,forest ,forest 
+Forest,ESSFwh1,ESSFwh1/104,ESSFwh1/104,,ESSFwh1/104,ESSFwh1/104,forest ,forest 
+Forest,ESSFwh1,ESSFwh1/110,ESSFwh1/110,,ESSFwh1/110,ESSFwh1/110,forest ,forest 
+Forest,ESSFwh1,ESSFwh1/110.1,ESSFwh1/110.1,,ESSFwh1/110,ESSFwh1/110,forest ,forest 
+Forest,ESSFwh1,ESSFwh1/110.2,ESSFwh1/110.2,,ESSFwh1/110,ESSFwh1/110,forest ,forest 
+Forest,ESSFwh1,ESSFwh1/111,ESSFwh1/111,,ESSFwh1/111,ESSFwh1/111,forest ,forest 
+Forest,ESSFwh1,ESSFwh1/111a,ESSFwh1/111a,,ESSFwh1/111,ESSFwh1/111,forest ,forest 
+Forest,ESSFwh1,ESSFwh1/111b,ESSFwh1/111b,,ESSFwh1/111,ESSFwh1/111,forest ,forest 
+Forest,ESSFwh2,ESSFwh2/101,ESSFwh2/101,,ESSFwh2/101,ESSFwh2/101,forest ,forest 
+Forest,ESSFwh2,ESSFwh2/102,ESSFwh2/102,,ESSFwh2/102,ESSFwh2/102,forest ,forest 
+Forest,ESSFwh2,ESSFwh2/103,ESSFwh2/103,,ESSFwh2/103,ESSFwh2/103,forest ,forest 
+Forest,ESSFwh2,ESSFwh2/104,ESSFwh2/104,,ESSFwh2/104,ESSFwh2/104,forest ,forest 
+Forest,ESSFwh2,ESSFwh2/110,ESSFwh2/110,,ESSFwh2/110,ESSFwh2/110,forest ,forest 
+Forest,ESSFwh2,ESSFwh2/111,ESSFwh2/111,,ESSFwh2/111,ESSFwh2/111,forest ,forest 
+Forest,ESSFwh2,ESSFwh2/112,ESSFwh2/112,,ESSFwh2/112,ESSFwh2/112,forest ,forest 
+Forest,ESSFwh2,ESSFwh2/112a,ESSFwh2/112a,,ESSFwh2/112,ESSFwh2/112,forest ,forest 
+Forest,ESSFwh2,ESSFwh2/112b,ESSFwh2/112b,,ESSFwh2/112,ESSFwh2/112,forest ,forest 
+Forest,ESSFwh3,ESSFwh3/101,ESSFwh3/101,,ESSFwh3/101,ESSFwh3/101,forest ,forest 
+Forest,ESSFwh3,ESSFwh3/102,ESSFwh3/102,,ESSFwh3/102,ESSFwh3/102,forest ,forest 
+Forest,ESSFwh3,ESSFwh3/103,ESSFwh3/103,,ESSFwh3/103,ESSFwh3/103,forest ,forest 
+Forest,ESSFwh3,ESSFwh3/104,ESSFwh3/104,,ESSFwh3/104,ESSFwh3/104,forest ,forest 
+Forest,ESSFwh3,ESSFwh3/104.1,ESSFwh3/104.1,,ESSFwh3/104,ESSFwh3/104,forest ,forest 
+Forest,ESSFwh3,ESSFwh3/104.2,ESSFwh3/104.2,,ESSFwh3/104,ESSFwh3/104,forest ,forest 
+Forest,ESSFwh3,ESSFwh3/110,ESSFwh3/110,,ESSFwh3/110,ESSFwh3/110,forest ,forest 
+Forest,ESSFwh3,ESSFwh3/111,ESSFwh3/111,,ESSFwh3/111,ESSFwh3/111,forest ,forest 
+Forest,ESSFwh3,ESSFwh3/112,ESSFwh3/112,,ESSFwh3/112,ESSFwh3/112,forest ,forest 
+Forest,ESSFwh3,ESSFwh3/112a,ESSFwh3/112a,,ESSFwh3/112,ESSFwh3/112,forest ,forest 
+Forest,ESSFwh3,ESSFwh3/112b,ESSFwh3/112b,,ESSFwh3/112,ESSFwh3/112,forest ,forest 
+Forest,ESSFwk1,ESSFwk1/01,ESSFwk1/01,,ESSFwk1/01,ESSFwk1/01,forest ,forest 
+Forest,ESSFwk1,ESSFwk1/02,ESSFwk1/02,,ESSFwk1/02,ESSFwk1/02,forest ,forest 
+Forest,ESSFwk1,ESSFwk1/03,ESSFwk1/03,,ESSFwk1/03,ESSFwk1/03,forest ,forest 
+Forest,ESSFwk1,ESSFwk1/04,ESSFwk1/04,,ESSFwk1/04,ESSFwk1/04,forest ,forest 
+Forest,ESSFwk1,ESSFwk1/05,ESSFwk1/05,,ESSFwk1/05,ESSFwk1/05,forest ,forest 
+Forest,ESSFwk1,ESSFwk1/06,ESSFwk1/06,,ESSFwk1/06,ESSFwk1/06,forest ,forest 
+Forest,ESSFwk1,ESSFwk1/07,ESSFwk1/07,,ESSFwk1/07,ESSFwk1/07,forest ,forest 
+NonForest,ESSFwk1,ESSFwk1/31,ESSFwk1/31,,ESSFwk1/31,ESSFwk1/31,forest ,forest 
+NonForest,ESSFwk1,ESSFwk1/51,ESSFwk1/51,,ESSFwk1/51,ESSFwk1/51,forest ,forest 
+Forest,ESSFwk2,ESSFwk2/01,ESSFwk2/01,,ESSFwk2/01,ESSFwk2/01,forest ,forest 
+Forest,ESSFwk2,ESSFwk2/02,ESSFwk2/02,,ESSFwk2/02,ESSFwk2/02,forest ,forest 
+Forest,ESSFwk2,ESSFwk2/03,ESSFwk2/03,,ESSFwk2/03,ESSFwk2/03,forest ,forest 
+Forest,ESSFwk2,ESSFwk2/04,ESSFwk2/04,,ESSFwk2/04,ESSFwk2/04,forest ,forest 
+Forest,ESSFwk2,ESSFwk2/05,ESSFwk2/05,,ESSFwk2/05,ESSFwk2/05,forest ,forest 
+Forest,ESSFwk2,ESSFwk2/06,ESSFwk2/06,,ESSFwk2/06,ESSFwk2/06,forest ,forest 
+Forest,ESSFwm1,ESSFwm1/101,ESSFwm1/101,,ESSFwm1/101,ESSFwm1/101,forest ,forest 
+Forest,ESSFwm1,ESSFwm1/102,ESSFwm1/102,,ESSFwm1/102,ESSFwm1/102,forest ,forest 
+Forest,ESSFwm1,ESSFwm1/103,ESSFwm1/103,,ESSFwm1/103,ESSFwm1/103,forest ,forest 
+Forest,ESSFwm1,ESSFwm1/104,ESSFwm1/104,,ESSFwm1/104,ESSFwm1/104,forest ,forest 
+Forest,ESSFwm1,ESSFwm1/110,ESSFwm1/110,,ESSFwm1/110,ESSFwm1/110,forest ,forest 
+Forest,ESSFwm1,ESSFwm1/111,ESSFwm1/111,,ESSFwm1/111,ESSFwm1/111,forest ,forest 
+Forest,ESSFwm1,ESSFwm1/112,ESSFwm1/112,,ESSFwm1/112,ESSFwm1/112,forest ,forest 
+Forest,ESSFwm2,ESSFwm2/101,ESSFwm2/101,,ESSFwm2/101,ESSFwm2/101,forest ,forest 
+Forest,ESSFwm2,ESSFwm2/102,ESSFwm2/102,,ESSFwm2/102,ESSFwm2/102,forest ,forest 
+Forest,ESSFwm2,ESSFwm2/103,ESSFwm2/103,,ESSFwm2/103,ESSFwm2/103,forest ,forest 
+Forest,ESSFwm2,ESSFwm2/104,ESSFwm2/104,,ESSFwm2/104,ESSFwm2/104,forest ,forest 
+Forest,ESSFwm2,ESSFwm2/110,ESSFwm2/110,,ESSFwm2/110,ESSFwm2/110,forest ,forest 
+Forest,ESSFwm2,ESSFwm2/111,ESSFwm2/111,,ESSFwm2/111,ESSFwm2/111,forest ,forest 
+Forest,ESSFwm2,ESSFwm2/112,ESSFwm2/112,,ESSFwm2/112,ESSFwm2/112,forest ,forest 
+Forest,ESSFwm2,ESSFwm2/112a,ESSFwm2/112a,,ESSFwm2/112,ESSFwm2/112,forest ,forest 
+Forest,ESSFwm2,ESSFwm2/112b,ESSFwm2/112b,,ESSFwm2/112,ESSFwm2/112,forest ,forest 
+Forest,ESSFwm3,ESSFwm3/101,ESSFwm3/101,,ESSFwm3/101,ESSFwm3/101,forest ,forest 
+Forest,ESSFwm3,ESSFwm3/102,ESSFwm3/102,,ESSFwm3/102,ESSFwm3/102,forest ,forest 
+Forest,ESSFwm3,ESSFwm3/103,ESSFwm3/103,,ESSFwm3/103,ESSFwm3/103,forest ,forest 
+Forest,ESSFwm3,ESSFwm3/104,ESSFwm3/104,,ESSFwm3/104,ESSFwm3/104,forest ,forest 
+Forest,ESSFwm3,ESSFwm3/105,ESSFwm3/105,,ESSFwm3/105,ESSFwm3/105,forest ,forest 
+Forest,ESSFwm3,ESSFwm3/110,ESSFwm3/110,,ESSFwm3/110,ESSFwm3/110,forest ,forest 
+Forest,ESSFwm3,ESSFwm3/111,ESSFwm3/111,,ESSFwm3/111,ESSFwm3/111,forest ,forest 
+Forest,ESSFwm3,ESSFwm3/112,ESSFwm3/112,,ESSFwm3/112,ESSFwm3/112,forest ,forest 
+Forest,ESSFwm3,ESSFwm3/112a,ESSFwm3/112a,,ESSFwm3/112,ESSFwm3/112,forest ,forest 
+Forest,ESSFwm3,ESSFwm3/112b,ESSFwm3/112b,,ESSFwm3/112,ESSFwm3/112,forest ,forest 
+Forest,ESSFwm4,ESSFwm4/101,ESSFwm4/101,,ESSFwm4/101,ESSFwm4/101,forest ,forest 
+Forest,ESSFwm4,ESSFwm4/102,ESSFwm4/102,,ESSFwm4/102,ESSFwm4/102,forest ,forest 
+Forest,ESSFwm4,ESSFwm4/102a,ESSFwm4/102a,,ESSFwm4/102,ESSFwm4/102,forest ,forest 
+Forest,ESSFwm4,ESSFwm4/102b,ESSFwm4/102b,,ESSFwm4/102,ESSFwm4/102,forest ,forest 
+Forest,ESSFwm4,ESSFwm4/103,ESSFwm4/103,,ESSFwm4/103,ESSFwm4/103,forest ,forest 
+Forest,ESSFwm4,ESSFwm4/103.1,ESSFwm4/103.1,,ESSFwm4/103,ESSFwm4/103,forest ,forest 
+Forest,ESSFwm4,ESSFwm4/103.2,ESSFwm4/103.2,,ESSFwm4/103,ESSFwm4/103,forest ,forest 
+Forest,ESSFwm4,ESSFwm4/110,ESSFwm4/110,,ESSFwm4/110,ESSFwm4/110,forest ,forest 
+Forest,ESSFwm4,ESSFwm4/111,ESSFwm4/111,,ESSFwm4/111,ESSFwm4/111,forest ,forest 
+Forest,ESSFwmw,ESSFwmw/101,ESSFwmw/101,,ESSFwmw/101,ESSFwmw/101,forest ,forest 
+Forest,ESSFwmw,ESSFwmw/102,ESSFwmw/102,,ESSFwmw/102,ESSFwmw/102,forest ,forest 
+Forest,ESSFwmw,ESSFwmw/103,ESSFwmw/103,,ESSFwmw/103,ESSFwmw/103,forest ,forest 
+Forest,ESSFwmw,ESSFwmw/110,ESSFwmw/110,,ESSFwmw/110,ESSFwmw/110,forest ,forest 
+Forest,ESSFwv,ESSFwv/01,ESSFwv/01,,ESSFwv/01,ESSFwv/01,forest ,forest 
+Forest,ESSFwv,ESSFwv/02,ESSFwv/02,,ESSFwv/02,ESSFwv/02,forest ,forest 
+Forest,ESSFwv,ESSFwv/03,ESSFwv/03,,ESSFwv/03,ESSFwv/03,forest ,forest 
+Forest,ESSFwv,ESSFwv/04,ESSFwv/04,,ESSFwv/04,ESSFwv/04,forest ,forest 
+Forest,ESSFwv,ESSFwv/05,ESSFwv/05,,ESSFwv/05,ESSFwv/05,forest ,forest 
+Forest,ESSFwv,ESSFwv/06,ESSFwv/06,,ESSFwv/06,ESSFwv/06,forest ,forest 
+Forest,ESSFwv,ESSFwv/07,ESSFwv/07,,ESSFwv/07,ESSFwv/07,forest ,forest 
+Forest,ESSFwv,ESSFwv/08,ESSFwv/08,,ESSFwv/08,ESSFwv/08,forest ,forest 
+Forest,ESSFwv,ESSFwv/09,ESSFwv/09,,ESSFwv/09,ESSFwv/09,forest ,forest 
+Forest,ESSFwvw,ESSFwvw/101,ESSFwvw/101,,ESSFwvw/101,ESSFwvw/101,forest ,forest 
+Forest,ESSFwvw,ESSFwvw/102,ESSFwvw/102,,ESSFwvw/102,ESSFwvw/102,forest ,forest 
+Forest,ESSFwvw,ESSFwvw/103,ESSFwvw/103,,ESSFwvw/103,ESSFwvw/103,forest ,forest 
+Forest,ESSFwvw,ESSFwvw/104,ESSFwvw/104,,ESSFwvw/104,ESSFwvw/104,forest ,forest 
+Forest,ESSFwvw,ESSFwvw/105,ESSFwvw/105,,ESSFwvw/105,ESSFwvw/105,forest ,forest 
+Forest,ESSFwvw,ESSFwvw/110,ESSFwvw/110,,ESSFwvw/110,ESSFwvw/110,forest ,forest 
+Forest,ESSFwvw,ESSFwvw/111,ESSFwvw/111,,ESSFwvw/111,ESSFwvw/111,forest ,forest 
+Forest,ESSFxc1,ESSFxc1/101,ESSFxc1/101,,ESSFxc1/101,ESSFxc1/101,forest ,forest 
+Forest,ESSFxc1,ESSFxc1/102,ESSFxc1/102,,ESSFxc1/102,ESSFxc1/102,forest ,forest 
+Forest,ESSFxc1,ESSFxc1/103,ESSFxc1/103,,ESSFxc1/103,ESSFxc1/103,forest ,forest 
+Forest,ESSFxc1,ESSFxc1/104,ESSFxc1/104,,ESSFxc1/104,ESSFxc1/104,forest ,forest 
+Forest,ESSFxc1,ESSFxc1/105,ESSFxc1/105,,ESSFxc1/105,ESSFxc1/105,forest ,forest 
+Forest,ESSFxc1,ESSFxc1/110,ESSFxc1/110,,ESSFxc1/110,ESSFxc1/110,forest ,forest 
+Forest,ESSFxc1,ESSFxc1/111,ESSFxc1/111,,ESSFxc1/111,ESSFxc1/111,forest ,forest 
+Forest,ESSFxc1,ESSFxc1/112,ESSFxc1/112,,ESSFxc1/112,ESSFxc1/112,forest ,forest 
+Forest,ESSFxc1,ESSFxc1/113,ESSFxc1/113,,ESSFxc1/113,ESSFxc1/113,forest ,forest 
+Forest,ESSFxc2,ESSFxc2/101,ESSFxc2/101,,ESSFxc2/101,ESSFxc2/101,forest ,forest 
+Forest,ESSFxc2,ESSFxc2/102,ESSFxc2/102,,ESSFxc2/102,ESSFxc2/102,forest ,forest 
+Forest,ESSFxc2,ESSFxc2/103,ESSFxc2/103,,ESSFxc2/103,ESSFxc2/103,forest ,forest 
+Forest,ESSFxc2,ESSFxc2/110,ESSFxc2/110,,ESSFxc2/110,ESSFxc2/110,forest ,forest 
+Forest,ESSFxc2,ESSFxc2/111,ESSFxc2/111,,ESSFxc2/111,ESSFxc2/111,forest ,forest 
+Forest,ESSFxc2,ESSFxc2/112,ESSFxc2/112,,ESSFxc2/112,ESSFxc2/112,forest ,forest 
+Forest,ESSFxc3,ESSFxc3/01,ESSFxc3/01,,ESSFxc3/01,ESSFxc3/01,forest ,forest 
+Forest,ESSFxc3,ESSFxc3/02,ESSFxc3/02,,ESSFxc3/02,ESSFxc3/02,forest ,forest 
+Forest,ESSFxc3,ESSFxc3/03,ESSFxc3/03,,ESSFxc3/03,ESSFxc3/03,forest ,forest 
+Forest,ESSFxc3,ESSFxc3/04,ESSFxc3/04,,ESSFxc3/04,ESSFxc3/04,forest ,forest 
+Forest,ESSFxc3,ESSFxc3/05,ESSFxc3/05,,ESSFxc3/05,ESSFxc3/05,forest ,forest 
+Forest,ESSFxc3,ESSFxc3/06,ESSFxc3/06,,ESSFxc3/06,ESSFxc3/06,forest ,forest 
+Forest,ESSFxc3,ESSFxc3/07,ESSFxc3/07,,ESSFxc3/07,ESSFxc3/07,forest ,forest 
+Forest,ESSFxc3,ESSFxc3/08,ESSFxc3/08,,ESSFxc3/08,ESSFxc3/08,forest ,forest 
+Forest,ESSFxc3,ESSFxc3/09,ESSFxc3/09,,ESSFxc3/09,ESSFxc3/09,forest ,forest 
+Forest,ESSFxc3,ESSFxc3/10,ESSFxc3/10,,ESSFxc3/10,ESSFxc3/10,forest ,forest 
+Forest,ESSFxc3,ESSFxc3/11,ESSFxc3/11,,ESSFxc3/11,ESSFxc3/11,forest ,forest 
+Forest,ESSFxv1,ESSFxv1/01,ESSFxv1/01,,ESSFxv1/01,ESSFxv1/01,forest ,forest 
+Forest,ESSFxv1,ESSFxv1/02,ESSFxv1/02,,ESSFxv1/02,ESSFxv1/02,forest ,forest 
+Forest,ESSFxv1,ESSFxv1/03,ESSFxv1/03,,ESSFxv1/03,ESSFxv1/03,forest ,forest 
+Forest,ESSFxv1,ESSFxv1/04,ESSFxv1/04,,ESSFxv1/04,ESSFxv1/04,forest ,forest 
+Forest,ESSFxv1,ESSFxv1/05,ESSFxv1/05,,ESSFxv1/05,ESSFxv1/05,forest ,forest 
+Forest,ESSFxv1,ESSFxv1/06,ESSFxv1/06,,ESSFxv1/06,ESSFxv1/06,forest ,forest 
+Forest,ESSFxv1,ESSFxv1/07,ESSFxv1/07,,ESSFxv1/07,ESSFxv1/07,forest ,forest 
+Forest,ESSFxv1,ESSFxv1/08,ESSFxv1/08,,ESSFxv1/08,ESSFxv1/08,forest ,forest 
+Forest,ESSFxv1,ESSFxv1/09,ESSFxv1/09,,ESSFxv1/09,ESSFxv1/09,forest ,forest 
+Forest,ESSFxv2,ESSFxv2/01,ESSFxv2/01,,ESSFxv2/01,ESSFxv2/01,forest ,forest 
+Forest,ESSFxv2,ESSFxv2/02,ESSFxv2/02,,ESSFxv2/02,ESSFxv2/02,forest ,forest 
+Forest,ESSFxv2,ESSFxv2/03,ESSFxv2/03,,ESSFxv2/03,ESSFxv2/03,forest ,forest 
+Forest,ESSFxv2,ESSFxv2/04,ESSFxv2/04,,ESSFxv2/04,ESSFxv2/04,forest ,forest 
+Forest,ESSFxv2,ESSFxv2/05,ESSFxv2/05,,ESSFxv2/05,ESSFxv2/05,forest ,forest 
+Forest,ESSFxv2,ESSFxv2/06,ESSFxv2/06,,ESSFxv2/06,ESSFxv2/06,forest ,forest 
+Forest,ESSFxv2,ESSFxv2/07,ESSFxv2/07,,ESSFxv2/07,ESSFxv2/07,forest ,forest 
+Forest,ESSFxv2,ESSFxv2/08,ESSFxv2/08,,ESSFxv2/08,ESSFxv2/08,forest ,forest 
+Forest,ESSFxv2,ESSFxv2/09,ESSFxv2/09,,ESSFxv2/09,ESSFxv2/09,forest ,forest 
+Forest,ESSFxv2,ESSFxv2/10,ESSFxv2/10,,ESSFxv2/10,ESSFxv2/10,forest ,forest 
+NonForest,,,Ff,Fringe flood,F,Ff,nonforest,Ff
+NonForest,,,Ff01,Water birch - Red-osier dogwood - Rose,F,Ff,nonforest,Ff01
+NonForest,,,Ff01a,Water birch - Red-osier dogwood - Rose; Fringe phase,F,Ff,nonforest,Ff01a
+NonForest,,,Ff01b,Water birch - Red-osier dogwood - Rose; Grassland draw phase,F,Ff,nonforest,Ff01b
+NonForest,,,Ff02,Snowberry - Prairie Rose,F,Ff,nonforest,Ff02
+NonForest,,,Ff03,Water birch - Rose - Giant wildrye,F,Ff,nonforest,Ff03
+NonForest,,,Ff04,Aspen - Snowberry - Roses,F,Ff,nonforest,Ff04
+NonForest,,,Ff05,Aspen - Dogwood - Nootka rose,F,Ff,nonforest,Ff05
+NonForest,,,Fl,Low bench flood,F,Fl,nonforest,Fl
+NonForest,,,Fl01,Mountain alder - Common horsetail,F,Fl,nonforest,Fl01
+NonForest,,,Fl02,Mountain alder - Red-osier dogwood - Horsetail,F,Fl,nonforest,Fl02
+NonForest,,,Fl03,Pacific willow - Red-osier dogwood - Horsetail,F,Fl,nonforest,Fl03
+NonForest,,,Fl04,Sitka willow - Red-osier dogwood - Horsetail,F,Fl,nonforest,Fl04
+NonForest,,,Fl05,Drummond's willow - Bluejoint,F,Fl,nonforest,Fl05
+NonForest,,,Fl06,Sandbar willow,F,Fl,nonforest,Fl06
+NonForest,,,Fl07,Water birch - Rose,F,Fl,nonforest,Fl07
+NonForest,,,Fm,Medium bench flood,F,Fm,nonforest,Fm
+NonForest,,,Fm01,Cottonwood - Snowberry - Rose,F,Fm,nonforest,Fm01
+NonForest,,,Fm02,Cottonwood - Spruce - Dogwood,F,Fm,nonforest,Fm02
+NonForest,,,Fm04,Cottonwood - Subalpine fir - Devil's club,F,Fm,nonforest,Fm04
+NonForest,,,Fm05,Cottonwood - Douglas-fir - Douglas maple - Snowberry,F,Fm,nonforest,Fm05
+NonForest,,,Fm06,Cottonwood - Poison ivy - Rose,F,Fm,nonforest,Fm06
+NonForest,,,Fm07,Aspen - Dogwood - Sarsaparilla,F,Fm,nonforest,Fm07
+NonForest,,,Fm20,AcbSw - Mountain alder - Dogwood,F,Fm,nonforest,Fm20
+NonForest,,,Ga,Alkaline meadow,G,Ga,nonforest,Ga
+NonForest,,,Ga01,Saltgrass,G,Ga,nonforest,Ga01
+NonForest,,,Ga01.1,Saltgrass,G,Ga,nonforest,Ga01.1
+NonForest,,,Ga01.2,Alkali saltgrass - Spartina,G,Ga,nonforest,Ga01.2
+NonForest,,,Ga02,Nuttall's alkaligrass - Foxtail barley,G,Ga,nonforest,Ga02
+NonForest,,,Ga02.1,Nuttall's alkaligrass - Foxtail barley,G,Ga,nonforest,Ga02.1
+NonForest,,,Ga02.2,Foxtail barley - Nuttall's alkaligrass,G,Ga,nonforest,Ga02.2
+NonForest,,,Ga03,Field sedge,G,Ga,nonforest,Ga03
+NonForest,,,Ga05,Giant wildrye,G,Ga,nonforest,Ga05
+NonForest,,,Ga06,Seablite,G,Ga,nonforest,Ga06
+NonForest,,,Ga07,Red glasswort,G,Ga,nonforest,Ga07
+NonForest,,,Gb,Brushland,G,Gb,nonforest,Gb
+NonForest,,,Gb01,Juniper - Kinnikinnick - Bluebunch wheatgrass,G,Gb,nonforest,Gb01
+NonForest,,,Gb02,Saskatoon - Snowberry - Bluebunch wheatgrass,G,Gb,nonforest,Gb02
+NonForest,,,Gb03,Ninebark - Oceanspray - Bluebunch wheatgrass,G,Gb,nonforest,Gb03
+NonForest,,,Gb04,Choke cherry - Snowberry - Bluebunch wheatgrass,G,Gb,nonforest,Gb04
+NonForest,,,Gb05,Sumac - Bluebunch wheatgrass,G,Gb,nonforest,Gb05
+NonForest,,,Gb06,Snowbrush - Poverty oatgrass,G,Gb,nonforest,Gb06
+NonForest,,,Gb20,Saskatoon - Soopolallie - Juniper,G,Gb,nonforest,Gb20
+NonForest,,,Gb21,Juniper - Kinnikinnick - Strawberry,G,Gb,nonforest,Gb21
+NonForest,,,Gb51,Saskatoon - Blue wildrye,G,Gb,nonforest,Gb51
+NonForest,,,Gb52,Prickly rose - Fuzzy-spiked wildrye,G,Gb,nonforest,Gb52
+NonForest,,,Gg,Grassland,G,Gg,nonforest,Gg
+NonForest,,,Gg01,Bluebunch wheatgrass - Prairie sagewort - Junegrass,G,Gg,nonforest,Gg01
+NonForest,,,Gg02,Bluebunch wheatgrass - Balsamroot,G,Gg,nonforest,Gg02
+NonForest,,,Gg03,Bluebunch wheatgrass - Selaginella,G,Gg,nonforest,Gg03
+NonForest,,,Gg04,Bluebunch wheatgrass - Junegrass - Pussytoes,G,Gg,nonforest,Gg04
+NonForest,,,Gg10,Rough fescue - Bluebunch wheatgrass,G,Gg,nonforest,Gg10
+NonForest,,,Gg11,Idaho fescue - Bluebunch wheatgrass - Junegrass,G,Gg,nonforest,Gg11
+NonForest,,,Gg12,Rough fescue - Yarrow - Three-flowered avens,G,Gg,nonforest,Gg12
+NonForest,,,Gg12.1,Rough fescue - Yarrow - Three-flowered avens,G,Gg,nonforest,Gg12.1
+NonForest,,,Gg13,Idaho fescue - Silky lupine,G,Gg,nonforest,Gg13
+NonForest,,,Gg14,Idaho fescue - Sulphur buckwheat - Sandwort,G,Gg,nonforest,Gg14
+NonForest,,,Gg15,Rough fescue - Idaho fescue,G,Gg,nonforest,Gg15
+NonForest,,,Gg15a,Rough fescue - Idaho fescue,G,Gg,nonforest,Gg15a
+NonForest,,,Gg15b,Rough fescue - Idaho fescue,G,Gg,nonforest,Gg15b
+NonForest,,,Gg16,Rough fescue - Sulphur buckwheat - Sandwort,G,Gg,nonforest,Gg16
+NonForest,,,Gg17,Idaho fescue - Bluebunch wheatgrass - Sulphur buckwheat,G,Gg,nonforest,Gg17
+NonForest,,,Gg18,Idaho fescue - Bluebunch wheatgrass - Selaginella,G,Gg,nonforest,Gg18
+NonForest,,,Gg20,Spreading needlegrass - Short-awned porcupinegrass,G,Gg,nonforest,Gg20
+NonForest,,,Gg21,Spreading needlegrass - Rocky Mountain fescue,G,Gg,nonforest,Gg21
+NonForest,,,Gg21a,Spreading needlegrass - Rocky Mountain fescue; Depression phase,G,Gg,nonforest,Gg21a
+NonForest,,,Gg21b,Spreading needlegrass - Rocky Mountain fescue; Forest Edge phase,G,Gg,nonforest,Gg21b
+NonForest,,,Gg22,Spreading needlegrass - Northern bedstraw,G,Gg,nonforest,Gg22
+NonForest,,,Gg22a,Spreading needlegrass - Northern bedstraw; Depression phase,G,Gg,nonforest,Gg22a
+NonForest,,,Gg22b,Spreading needlegrass - Northern bedstraw; Forest Edge phase,G,Gg,nonforest,Gg22b
+NonForest,,,Gg24,Short-awned pocupinegrass - Junegrass - Clad lichen,G,Gg,nonforest,Gg24
+NonForest,,,Gg25,Sand dropseed - Needle-and-thread grass,G,Gg,nonforest,Gg25
+NonForest,,,Gg26,Red three-awn - Needle-and-thread grass,G,Gg,nonforest,Gg26
+NonForest,,,Gg27,Needle-and-thread grass - Prairie sagewort,G,Gg,nonforest,Gg27
+NonForest,,,Gg28,Sand needlegrass - Sand dropseed,G,Gg,nonforest,Gg28
+NonForest,,,Gg32,Pinegrass - Kinnikinnick,G,Gg,nonforest,Gg32
+NonForest,,,Gg33,Pinegrass - Yellow penstemon,G,Gg,nonforest,Gg33
+NonForest,,,Gg34,Junegrass - Kinnikinnick,G,Gg,nonforest,Gg34
+NonForest,,,Gg51,Slender wheatgrass - Pasture sage,G,Gg,nonforest,Gg51
+NonForest,,,Gs,Shrub-steppe,G,Gs,nonforest,Gs
+NonForest,,,Gs01,Shrub-steppe,G,Gs,nonforest,Gs01
+NonForest,,,Gs02,Big sagebrush - Bluebunch wheatgrass,G,Gs,nonforest,Gs02
+NonForest,,,Gs02a,Big sagebrush - Bluebunch wheatgrass - Sand dropseed,G,Gs,nonforest,Gs02a
+NonForest,,,Gs02b,Big sagebrush - Bluebunch wheatgrass - Sand dropseed,G,Gs,nonforest,Gs02b
+NonForest,,,Gs03,Big sagebrush - Bluebunch wheatgrass - Screw moss,G,Gs,nonforest,Gs03
+NonForest,,,Gs04,Mountain sagebrush - Bluebunch wheatgrass,G,Gs,nonforest,Gs04
+NonForest,,,Gs05,Rocky Mountain juniper - Big sagebrush - Bluebunch wheatgrass,G,Gs,nonforest,Gs05
+NonForest,,,Gs06,Mountain sagebrush - Pinegrass - Idaho Fescue,G,Gs,nonforest,Gs06
+NonForest,,,Gs10,Antelope-brush - Bluebunch wheatgrass,G,Gs,nonforest,Gs10
+NonForest,,,Gs11,Antelope-brush - Bluebunch wheatgrass - Red three-awn,G,Gs,nonforest,Gs11
+NonForest,,,Gs12,Antelope-brush - Snowberry - Bluebunch wheatgrass,G,Gs,nonforest,Gs12
+NonForest,,,Gs13,Antelope-brush - Prairie sandgrass,G,Gs,nonforest,Gs13
+Forest,ICHdk,ICHdk/01,ICHdk/01,,ICHdk/01,ICHdk/01,forest ,forest 
+Forest,ICHdk,ICHdk/02,ICHdk/02,,ICHdk/02,ICHdk/02,forest ,forest 
+Forest,ICHdk,ICHdk/02a,ICHdk/02a,,ICHdk/02,ICHdk/02,forest ,forest 
+Forest,ICHdk,ICHdk/02b,ICHdk/02b,,ICHdk/02,ICHdk/02,forest ,forest 
+Forest,ICHdk,ICHdk/03,ICHdk/03,,ICHdk/03,ICHdk/03,forest ,forest 
+Forest,ICHdk,ICHdk/04,ICHdk/04,,ICHdk/04,ICHdk/04,forest ,forest 
+Forest,ICHdk,ICHdk/05,ICHdk/05,,ICHdk/05,ICHdk/05,forest ,forest 
+Forest,ICHdk,ICHdk/06,ICHdk/06,,ICHdk/06,ICHdk/06,forest ,forest 
+Forest,ICHdk,ICHdk/07,ICHdk/07,,ICHdk/07,ICHdk/07,forest ,forest 
+Forest,ICHdk,ICHdk/08,ICHdk/08,,ICHdk/08,ICHdk/08,forest ,forest 
+Forest,ICHdk,ICHdk/09,ICHdk/09,,ICHdk/09,ICHdk/09,forest ,forest 
+Forest,ICHdm,ICHdm/101,ICHdm/101,,ICHdm/101,ICHdm/101,forest ,forest 
+Forest,ICHdm,ICHdm/102,ICHdm/102,,ICHdm/102,ICHdm/102,forest ,forest 
+Forest,ICHdm,ICHdm/102a,ICHdm/102a,,ICHdm/102,ICHdm/102,forest ,forest 
+Forest,ICHdm,ICHdm/102b,ICHdm/102b,,ICHdm/102,ICHdm/102,forest ,forest 
+Forest,ICHdm,ICHdm/103,ICHdm/103,,ICHdm/103,ICHdm/103,forest ,forest 
+Forest,ICHdm,ICHdm/110,ICHdm/110,,ICHdm/110,ICHdm/110,forest ,forest 
+Forest,ICHdm,ICHdm/111,ICHdm/111,,ICHdm/111,ICHdm/111,forest ,forest 
+Forest,ICHdm,ICHdm/112,ICHdm/112,,ICHdm/112,ICHdm/112,forest ,forest 
+Forest,ICHdw1,ICHdw1/113,ICHdw1/113,,ICHdw1/113,ICHdw1/113,forest ,forest 
+Forest,ICHdw4,ICHdw4/101,ICHdw4/101,,ICHdw4/101,ICHdw4/101,forest ,forest 
+Forest,ICHdw4,ICHdw4/102,ICHdw4/102,,ICHdw4/102,ICHdw4/102,forest ,forest 
+Forest,ICHdw4,ICHdw4/103,ICHdw4/103,,ICHdw4/103,ICHdw4/103,forest ,forest 
+Forest,ICHdw4,ICHdw4/104,ICHdw4/104,,ICHdw4/104,ICHdw4/104,forest ,forest 
+Forest,ICHdw4,ICHdw4/110,ICHdw4/110,,ICHdw4/110,ICHdw4/110,forest ,forest 
+Forest,ICHdw4,ICHdw4/110.1,ICHdw4/110.1,,ICHdw4/110,ICHdw4/110,forest ,forest 
+Forest,ICHdw4,ICHdw4/110.2,ICHdw4/110.2,,ICHdw4/110,ICHdw4/110,forest ,forest 
+Forest,ICHdw4,ICHdw4/111,ICHdw4/111,,ICHdw4/111,ICHdw4/111,forest ,forest 
+Forest,ICHdw4,ICHdw4/112,ICHdw4/112,,ICHdw4/112,ICHdw4/112,forest ,forest 
+Forest,ICHmc1,ICHmc1/01,ICHmc1/01,,ICHmc1/01,ICHmc1/01,forest ,forest 
+Forest,ICHmc1,ICHmc1/01a,ICHmc1/01a,,ICHmc1/01,ICHmc1/01,forest ,forest 
+Forest,ICHmc1,ICHmc1/01b,ICHmc1/01b,,ICHmc1/01,ICHmc1/01,forest ,forest 
+Forest,ICHmc1,ICHmc1/02,ICHmc1/02,,ICHmc1/02,ICHmc1/02,forest ,forest 
+Forest,ICHmc1,ICHmc1/03,ICHmc1/03,,ICHmc1/03,ICHmc1/03,forest ,forest 
+Forest,ICHmc1,ICHmc1/04,ICHmc1/04,,ICHmc1/04,ICHmc1/04,forest ,forest 
+Deciduous,ICHmc1,ICHmc1/05,ICHmc1/05,,ICHmc1/05,ICHmc1/05,forest ,forest 
+Forest,ICHmc1,ICHmc1/06,ICHmc1/06,,ICHmc1/06,ICHmc1/06,forest ,forest 
+Forest,ICHmc1,ICHmc1/07,ICHmc1/07,,ICHmc1/07,ICHmc1/07,forest ,forest 
+Forest,ICHmc1a,ICHmc1a/01,ICHmc1a/01,,ICHmc1a/01,ICHmc1a/01,forest ,forest 
+Forest,ICHmc1a,ICHmc1a/01a,ICHmc1a/01a,,ICHmc1a/01,ICHmc1a/01,forest ,forest 
+Forest,ICHmc1a,ICHmc1a/01b,ICHmc1a/01b,,ICHmc1a/01,ICHmc1a/01,forest ,forest 
+Forest,ICHmc1a,ICHmc1a/02,ICHmc1a/02,,ICHmc1a/02,ICHmc1a/02,forest ,forest 
+Forest,ICHmc1a,ICHmc1a/03,ICHmc1a/03,,ICHmc1a/03,ICHmc1a/03,forest ,forest 
+Forest,ICHmc2,ICHmc2/01,ICHmc2/01,,ICHmc2/01,ICHmc2/01,forest ,forest 
+Forest,ICHmc2,ICHmc2/01.1,ICHmc2/01.1,,ICHmc2/01,ICHmc2/01,forest ,forest 
+Forest,ICHmc2,ICHmc2/01.2,ICHmc2/01.2,,ICHmc2/01,ICHmc2/01,forest ,forest 
+Forest,ICHmc2,ICHmc2/01a,ICHmc2/01a,,ICHmc2/01,ICHmc2/01,forest ,forest 
+Forest,ICHmc2,ICHmc2/01a.1,ICHmc2/01a.1,,ICHmc2/01,ICHmc2/01,forest ,forest 
+Forest,ICHmc2,ICHmc2/01a.2,ICHmc2/01a.2,,ICHmc2/01,ICHmc2/01,forest ,forest 
+Forest,ICHmc2,ICHmc2/01b,ICHmc2/01b,,ICHmc2/01,ICHmc2/01,forest ,forest 
+Forest,ICHmc2,ICHmc2/01b.1,ICHmc2/01b.1,,ICHmc2/01,ICHmc2/01,forest ,forest 
+Forest,ICHmc2,ICHmc2/01b.2,ICHmc2/01b.2,,ICHmc2/01,ICHmc2/01,forest ,forest 
+Forest,ICHmc2,ICHmc2/02,ICHmc2/02,,ICHmc2/02,ICHmc2/02,forest ,forest 
+Forest,ICHmc2,ICHmc2/03,ICHmc2/03,,ICHmc2/03,ICHmc2/03,forest ,forest 
+Forest,ICHmc2,ICHmc2/04,ICHmc2/04,,ICHmc2/04,ICHmc2/04,forest ,forest 
+Forest,ICHmc2,ICHmc2/05,ICHmc2/05,,ICHmc2/05,ICHmc2/05,forest ,forest 
+Deciduous,ICHmc2,ICHmc2/06,ICHmc2/06,,ICHmc2/06,ICHmc2/06,forest ,forest 
+Deciduous,ICHmc2,ICHmc2/06a,ICHmc2/06a,,ICHmc2/06,ICHmc2/06,forest ,forest 
+Deciduous,ICHmc2,ICHmc2/06b,ICHmc2/06b,,ICHmc2/06,ICHmc2/06,forest ,forest 
+Forest,ICHmc2,ICHmc2/07,ICHmc2/07,,ICHmc2/07,ICHmc2/07,forest ,forest 
+Forest,ICHmc2,ICHmc2/08,ICHmc2/08,,ICHmc2/08,ICHmc2/08,forest ,forest 
+Forest,ICHmc2,ICHmc2/09,ICHmc2/09,,ICHmc2/09,ICHmc2/09,forest ,forest 
+Forest,ICHmc2,ICHmc2/10,ICHmc2/10,,ICHmc2/10,ICHmc2/10,forest ,forest 
+Forest,ICHmc2,ICHmc2/11,ICHmc2/11,,ICHmc2/11,ICHmc2/11,forest ,forest 
+Forest,ICHmc2,ICHmc2/12,ICHmc2/12,,ICHmc2/12,ICHmc2/12,forest ,forest 
+NonForest,ICHmc2,ICHmc2/55,ICHmc2/55,,ICHmc2/55,ICHmc2/55,forest ,forest 
+NonForest,ICHmc2,ICHmc2/56,ICHmc2/56,,ICHmc2/56,ICHmc2/56,forest ,forest 
+Forest,ICHmk1,ICHmk1/101,ICHmk1/101,,ICHmk1/101,ICHmk1/101,forest ,forest 
+Forest,ICHmk1,ICHmk1/102,ICHmk1/102,,ICHmk1/102,ICHmk1/102,forest ,forest 
+Forest,ICHmk1,ICHmk1/103,ICHmk1/103,,ICHmk1/103,ICHmk1/103,forest ,forest 
+Forest,ICHmk1,ICHmk1/104,ICHmk1/104,,ICHmk1/104,ICHmk1/104,forest ,forest 
+Forest,ICHmk1,ICHmk1/105,ICHmk1/105,,ICHmk1/105,ICHmk1/105,forest ,forest 
+Forest,ICHmk1,ICHmk1/110,ICHmk1/110,,ICHmk1/110,ICHmk1/110,forest ,forest 
+Forest,ICHmk1,ICHmk1/111,ICHmk1/111,,ICHmk1/111,ICHmk1/111,forest ,forest 
+Forest,ICHmk1,ICHmk1/112,ICHmk1/112,,ICHmk1/112,ICHmk1/112,forest ,forest 
+Forest,ICHmk2,ICHmk2/01,ICHmk2/01,,ICHmk2/01,ICHmk2/01,forest ,forest 
+Forest,ICHmk2,ICHmk2/02,ICHmk2/02,,ICHmk2/02,ICHmk2/02,forest ,forest 
+Forest,ICHmk2,ICHmk2/03,ICHmk2/03,,ICHmk2/03,ICHmk2/03,forest ,forest 
+Forest,ICHmk2,ICHmk2/04,ICHmk2/04,,ICHmk2/04,ICHmk2/04,forest ,forest 
+Forest,ICHmk2,ICHmk2/05,ICHmk2/05,,ICHmk2/05,ICHmk2/05,forest ,forest 
+Forest,ICHmk2,ICHmk2/06,ICHmk2/06,,ICHmk2/06,ICHmk2/06,forest ,forest 
+Forest,ICHmk3,ICHmk3/01,ICHmk3/01,,ICHmk3/01,ICHmk3/01,forest ,forest 
+Forest,ICHmk3,ICHmk3/02,ICHmk3/02,,ICHmk3/02,ICHmk3/02,forest ,forest 
+Forest,ICHmk3,ICHmk3/03,ICHmk3/03,,ICHmk3/03,ICHmk3/03,forest ,forest 
+Forest,ICHmk3,ICHmk3/04,ICHmk3/04,,ICHmk3/04,ICHmk3/04,forest ,forest 
+Forest,ICHmk3,ICHmk3/05,ICHmk3/05,,ICHmk3/05,ICHmk3/05,forest ,forest 
+Forest,ICHmk3,ICHmk3/06,ICHmk3/06,,ICHmk3/06,ICHmk3/06,forest ,forest 
+Forest,ICHmk3,ICHmk3/07,ICHmk3/07,,ICHmk3/07,ICHmk3/07,forest ,forest 
+Forest,ICHmk3,ICHmk3/08,ICHmk3/08,,ICHmk3/08,ICHmk3/08,forest ,forest 
+Forest,ICHmk4,ICHmk4/101,ICHmk4/101,,ICHmk4/101,ICHmk4/101,forest ,forest 
+Forest,ICHmk4,ICHmk4/102,ICHmk4/102,,ICHmk4/102,ICHmk4/102,forest ,forest 
+Forest,ICHmk4,ICHmk4/102a,ICHmk4/102a,,ICHmk4/102,ICHmk4/102,forest ,forest 
+Forest,ICHmk4,ICHmk4/102b,ICHmk4/102b,,ICHmk4/102,ICHmk4/102,forest ,forest 
+Forest,ICHmk4,ICHmk4/103,ICHmk4/103,,ICHmk4/103,ICHmk4/103,forest ,forest 
+Forest,ICHmk4,ICHmk4/110,ICHmk4/110,,ICHmk4/110,ICHmk4/110,forest ,forest 
+Forest,ICHmk4,ICHmk4/111,ICHmk4/111,,ICHmk4/111,ICHmk4/111,forest ,forest 
+Forest,ICHmk4,ICHmk4/112,ICHmk4/112,,ICHmk4/112,ICHmk4/112,forest ,forest 
+Forest,ICHmk5,ICHmk5/101,ICHmk5/101,,ICHmk5/101,ICHmk5/101,forest ,forest 
+Forest,ICHmk5,ICHmk5/102,ICHmk5/102,,ICHmk5/102,ICHmk5/102,forest ,forest 
+Forest,ICHmk5,ICHmk5/103,ICHmk5/103,,ICHmk5/103,ICHmk5/103,forest ,forest 
+Forest,ICHmk5,ICHmk5/104,ICHmk5/104,,ICHmk5/104,ICHmk5/104,forest ,forest 
+Forest,ICHmk5,ICHmk5/110,ICHmk5/110,,ICHmk5/110,ICHmk5/110,forest ,forest 
+Forest,ICHmk5,ICHmk5/111,ICHmk5/111,,ICHmk5/111,ICHmk5/111,forest ,forest 
+Forest,ICHmk5,ICHmk5/112,ICHmk5/112,,ICHmk5/112,ICHmk5/112,forest ,forest 
+Forest,ICHmm,ICHmm/01,ICHmm/01,,ICHmm/01,ICHmm/01,forest ,forest 
+Forest,ICHmm,ICHmm/02,ICHmm/02,,ICHmm/02,ICHmm/02,forest ,forest 
+Forest,ICHmm,ICHmm/03,ICHmm/03,,ICHmm/03,ICHmm/03,forest ,forest 
+Forest,ICHmm,ICHmm/04,ICHmm/04,,ICHmm/04,ICHmm/04,forest ,forest 
+Forest,ICHmm,ICHmm/05,ICHmm/05,,ICHmm/05,ICHmm/05,forest ,forest 
+Forest,ICHmm,ICHmm/06,ICHmm/06,,ICHmm/06,ICHmm/06,forest ,forest 
+Forest,ICHmm,ICHmm/07,ICHmm/07,,ICHmm/07,ICHmm/07,forest ,forest 
+Forest,ICHmm,ICHmm/08,ICHmm/08,,ICHmm/08,ICHmm/08,forest ,forest 
+Forest,ICHmw1,ICHmw1/01,ICHmw1/01,,ICHmw1/01,ICHmw1/01,forest ,forest 
+Forest,ICHmw1,ICHmw1/02,ICHmw1/02,,ICHmw1/02,ICHmw1/02,forest ,forest 
+Forest,ICHmw1,ICHmw1/03,ICHmw1/03,,ICHmw1/03,ICHmw1/03,forest ,forest 
+Forest,ICHmw1,ICHmw1/04,ICHmw1/04,,ICHmw1/04,ICHmw1/04,forest ,forest 
+Forest,ICHmw1,ICHmw1/05,ICHmw1/05,,ICHmw1/05,ICHmw1/05,forest ,forest 
+Forest,ICHmw1,ICHmw1/06,ICHmw1/06,,ICHmw1/06,ICHmw1/06,forest ,forest 
+Forest,ICHmw1,ICHmw1/07,ICHmw1/07,,ICHmw1/07,ICHmw1/07,forest ,forest 
+Forest,ICHmw2,ICHmw2/101,ICHmw2/101,,ICHmw2/101,ICHmw2/101,forest ,forest 
+Forest,ICHmw2,ICHmw2/102,ICHmw2/102,,ICHmw2/102,ICHmw2/102,forest ,forest 
+Forest,ICHmw2,ICHmw2/103,ICHmw2/103,,ICHmw2/103,ICHmw2/103,forest ,forest 
+Forest,ICHmw2,ICHmw2/104,ICHmw2/104,,ICHmw2/104,ICHmw2/104,forest ,forest 
+Forest,ICHmw2,ICHmw2/110,ICHmw2/110,,ICHmw2/110,ICHmw2/110,forest ,forest 
+Forest,ICHmw2,ICHmw2/111,ICHmw2/111,,ICHmw2/111,ICHmw2/111,forest ,forest 
+Forest,ICHmw2,ICHmw2/111.1,ICHmw2/111.1,,ICHmw2/111,ICHmw2/111,forest ,forest 
+Forest,ICHmw2,ICHmw2/111.2,ICHmw2/111.2,,ICHmw2/111,ICHmw2/111,forest ,forest 
+Forest,ICHmw2,ICHmw2/112,ICHmw2/112,,ICHmw2/112,ICHmw2/112,forest ,forest 
+Forest,ICHmw2,ICHmw2/113,ICHmw2/113,,ICHmw2/113,ICHmw2/113,forest ,forest 
+Forest,ICHmw2,ICHmw2/114,ICHmw2/114,,ICHmw2/114,ICHmw2/114,forest ,forest 
+Forest,ICHmw3,ICHmw3/01,ICHmw3/01,,ICHmw3/01,ICHmw3/01,forest ,forest 
+Forest,ICHmw3,ICHmw3/02,ICHmw3/02,,ICHmw3/02,ICHmw3/02,forest ,forest 
+Forest,ICHmw3,ICHmw3/03,ICHmw3/03,,ICHmw3/03,ICHmw3/03,forest ,forest 
+Forest,ICHmw3,ICHmw3/04,ICHmw3/04,,ICHmw3/04,ICHmw3/04,forest ,forest 
+Forest,ICHmw3,ICHmw3/05,ICHmw3/05,,ICHmw3/05,ICHmw3/05,forest ,forest 
+Forest,ICHmw3,ICHmw3/06,ICHmw3/06,,ICHmw3/06,ICHmw3/06,forest ,forest 
+Forest,ICHmw3,ICHmw3/07,ICHmw3/07,,ICHmw3/07,ICHmw3/07,forest ,forest 
+Forest,ICHmw3,ICHmw3/08,ICHmw3/08,,ICHmw3/08,ICHmw3/08,forest ,forest 
+NonForest,ICHmw3,ICHmw3/09,ICHmw3/09,,ICHmw3/09,ICHmw3/09,forest ,forest 
+Forest,ICHmw3,ICHmw3/10,ICHmw3/10,,ICHmw3/10,ICHmw3/10,forest ,forest 
+Forest,ICHmw4,ICHmw4/101,ICHmw4/101,,ICHmw4/101,ICHmw4/101,forest ,forest 
+Forest,ICHmw4,ICHmw4/102,ICHmw4/102,,ICHmw4/102,ICHmw4/102,forest ,forest 
+Forest,ICHmw4,ICHmw4/103,ICHmw4/103,,ICHmw4/103,ICHmw4/103,forest ,forest 
+Forest,ICHmw4,ICHmw4/104,ICHmw4/104,,ICHmw4/104,ICHmw4/104,forest ,forest 
+Forest,ICHmw4,ICHmw4/104.1,ICHmw4/104.1,,ICHmw4/104,ICHmw4/104,forest ,forest 
+Forest,ICHmw4,ICHmw4/104.2,ICHmw4/104.2,,ICHmw4/104,ICHmw4/104,forest ,forest 
+Forest,ICHmw4,ICHmw4/110,ICHmw4/110,,ICHmw4/110,ICHmw4/110,forest ,forest 
+Forest,ICHmw4,ICHmw4/111,ICHmw4/111,,ICHmw4/111,ICHmw4/111,forest ,forest 
+Forest,ICHmw4,ICHmw4/112,ICHmw4/112,,ICHmw4/112,ICHmw4/112,forest ,forest 
+Forest,ICHmw4,ICHmw4/113,ICHmw4/113,,ICHmw4/113,ICHmw4/113,forest ,forest 
+Forest,ICHmw4,ICHmw4/114,ICHmw4/114,,ICHmw4/114,ICHmw4/114,forest ,forest 
+Forest,ICHmw5,ICHmw5/101,ICHmw5/101,,ICHmw5/101,ICHmw5/101,forest ,forest 
+Forest,ICHmw5,ICHmw5/102,ICHmw5/102,,ICHmw5/102,ICHmw5/102,forest ,forest 
+Forest,ICHmw5,ICHmw5/103,ICHmw5/103,,ICHmw5/103,ICHmw5/103,forest ,forest 
+Forest,ICHmw5,ICHmw5/104,ICHmw5/104,,ICHmw5/104,ICHmw5/104,forest ,forest 
+Forest,ICHmw5,ICHmw5/110,ICHmw5/110,,ICHmw5/110,ICHmw5/110,forest ,forest 
+Forest,ICHmw5,ICHmw5/111,ICHmw5/111,,ICHmw5/111,ICHmw5/111,forest ,forest 
+Forest,ICHmw5,ICHmw5/111.1,ICHmw5/111.1,,ICHmw5/111,ICHmw5/111,forest ,forest 
+Forest,ICHmw5,ICHmw5/111.2,ICHmw5/111.2,,ICHmw5/111,ICHmw5/111,forest ,forest 
+Forest,ICHmw5,ICHmw5/112,ICHmw5/112,,ICHmw5/112,ICHmw5/112,forest ,forest 
+Forest,ICHmw5,ICHmw5/113,ICHmw5/113,,ICHmw5/113,ICHmw5/113,forest ,forest 
+Forest,ICHvc,ICHvc/01,ICHvc/01,,ICHvc/01,ICHvc/01,forest ,forest 
+Forest,ICHvc,ICHvc/01.1,ICHvc/01.1,,ICHvc/01,ICHvc/01,forest ,forest 
+Forest,ICHvc,ICHvc/01.2,ICHvc/01.2,,ICHvc/01,ICHvc/01,forest ,forest 
+Forest,ICHvc,ICHvc/02,ICHvc/02,,ICHvc/02,ICHvc/02,forest ,forest 
+Forest,ICHvc,ICHvc/02.1,ICHvc/02.1,,ICHvc/02,ICHvc/02,forest ,forest 
+Forest,ICHvc,ICHvc/02.2,ICHvc/02.2,,ICHvc/02,ICHvc/02,forest ,forest 
+Forest,ICHvc,ICHvc/03,ICHvc/03,,ICHvc/03,ICHvc/03,forest ,forest 
+Forest,ICHvc,ICHvc/03a,ICHvc/03a,,ICHvc/03,ICHvc/03,forest ,forest 
+Forest,ICHvc,ICHvc/03b,ICHvc/03b,,ICHvc/03,ICHvc/03,forest ,forest 
+Forest,ICHvc,ICHvc/04,ICHvc/04,,ICHvc/04,ICHvc/04,forest ,forest 
+Deciduous,ICHvc,ICHvc/05,ICHvc/05,,ICHvc/05,ICHvc/05,forest ,forest 
+Forest,ICHvc,ICHvc/06,ICHvc/06,,ICHvc/06,ICHvc/06,forest ,forest 
+Forest,ICHvc,ICHvc/07,ICHvc/07,,ICHvc/07,ICHvc/07,forest ,forest 
+Forest,ICHvk1,ICHvk1/01,ICHvk1/01,,ICHvk1/01,ICHvk1/01,forest ,forest 
+Forest,ICHvk1,ICHvk1/02,ICHvk1/02,,ICHvk1/02,ICHvk1/02,forest ,forest 
+Forest,ICHvk1,ICHvk1/03,ICHvk1/03,,ICHvk1/03,ICHvk1/03,forest ,forest 
+Forest,ICHvk1,ICHvk1/04,ICHvk1/04,,ICHvk1/04,ICHvk1/04,forest ,forest 
+Forest,ICHvk1,ICHvk1/05,ICHvk1/05,,ICHvk1/05,ICHvk1/05,forest ,forest 
+Forest,ICHvk1,ICHvk1/06,ICHvk1/06,,ICHvk1/06,ICHvk1/06,forest ,forest 
+Forest,ICHvk2,ICHvk2/01,ICHvk2/01,,ICHvk2/01,ICHvk2/01,forest ,forest 
+Forest,ICHvk2,ICHvk2/02,ICHvk2/02,,ICHvk2/02,ICHvk2/02,forest ,forest 
+Forest,ICHvk2,ICHvk2/03,ICHvk2/03,,ICHvk2/03,ICHvk2/03,forest ,forest 
+Forest,ICHvk2,ICHvk2/04,ICHvk2/04,,ICHvk2/04,ICHvk2/04,forest ,forest 
+Forest,ICHvk2,ICHvk2/05,ICHvk2/05,,ICHvk2/05,ICHvk2/05,forest ,forest 
+Forest,ICHvk2,ICHvk2/06,ICHvk2/06,,ICHvk2/06,ICHvk2/06,forest ,forest 
+Forest,ICHvk2,ICHvk2/07,ICHvk2/07,,ICHvk2/07,ICHvk2/07,forest ,forest 
+Forest,ICHvk2,ICHvk2/08,ICHvk2/08,,ICHvk2/08,ICHvk2/08,forest ,forest 
+Forest,ICHvk2,ICHvk2/09,ICHvk2/09,,ICHvk2/09,ICHvk2/09,forest ,forest 
+Forest,ICHvk2,ICHvk2/10,ICHvk2/10,,ICHvk2/10,ICHvk2/10,forest ,forest 
+Forest,ICHwc,ICHwc/01,ICHwc/01,,ICHwc/01,ICHwc/01,forest ,forest 
+Forest,ICHwc,ICHwc/02,ICHwc/02,,ICHwc/02,ICHwc/02,forest ,forest 
+Forest,ICHwc,ICHwc/03,ICHwc/03,,ICHwc/03,ICHwc/03,forest ,forest 
+Forest,ICHwc,ICHwc/04,ICHwc/04,,ICHwc/04,ICHwc/04,forest ,forest 
+Forest,ICHwc,ICHwc/05,ICHwc/05,,ICHwc/05,ICHwc/05,forest ,forest 
+Deciduous,ICHwc,ICHwc/06,ICHwc/06,,ICHwc/06,ICHwc/06,forest ,forest 
+Forest,ICHwc,ICHwc/07,ICHwc/07,,ICHwc/07,ICHwc/07,forest ,forest 
+Forest,ICHwc,ICHwc/08,ICHwc/08,,ICHwc/08,ICHwc/08,forest ,forest 
+Forest,ICHwc,ICHwc/09,ICHwc/09,,ICHwc/09,ICHwc/09,forest ,forest 
+Forest,ICHwc,ICHwc/10,ICHwc/10,,ICHwc/10,ICHwc/10,forest ,forest 
+Forest,ICHwk1,ICHwk1/01,ICHwk1/01,,ICHwk1/01,ICHwk1/01,forest ,forest 
+Forest,ICHwk1,ICHwk1/02,ICHwk1/02,,ICHwk1/02,ICHwk1/02,forest ,forest 
+Forest,ICHwk1,ICHwk1/03,ICHwk1/03,,ICHwk1/03,ICHwk1/03,forest ,forest 
+Forest,ICHwk1,ICHwk1/04,ICHwk1/04,,ICHwk1/04,ICHwk1/04,forest ,forest 
+Forest,ICHwk1,ICHwk1/05,ICHwk1/05,,ICHwk1/05,ICHwk1/05,forest ,forest 
+Forest,ICHwk1,ICHwk1/06,ICHwk1/06,,ICHwk1/06,ICHwk1/06,forest ,forest 
+Deciduous,ICHwk1,ICHwk1/07,ICHwk1/07,,ICHwk1/07,ICHwk1/07,forest ,forest 
+Forest,ICHwk1,ICHwk1/07,ICHwk1/07,,ICHwk1/07,ICHwk1/07,forest ,forest 
+Forest,ICHwk1,ICHwk1/08,ICHwk1/08,,ICHwk1/08,ICHwk1/08,forest ,forest 
+NonForest,ICHwk1,ICHwk1/08,ICHwk1/08,,ICHwk1/08,ICHwk1/08,forest ,forest 
+NonForest,ICHwk1,ICHwk1/09,ICHwk1/09,,ICHwk1/09,ICHwk1/09,forest ,forest 
+Forest,ICHwk2,ICHwk2/01,ICHwk2/01,,ICHwk2/01,ICHwk2/01,forest ,forest 
+Forest,ICHwk2,ICHwk2/01a,ICHwk2/01a,,ICHwk2/01,ICHwk2/01,forest ,forest 
+Forest,ICHwk2,ICHwk2/01b,ICHwk2/01b,,ICHwk2/01,ICHwk2/01,forest ,forest 
+Forest,ICHwk2,ICHwk2/02,ICHwk2/02,,ICHwk2/02,ICHwk2/02,forest ,forest 
+Forest,ICHwk2,ICHwk2/03,ICHwk2/03,,ICHwk2/03,ICHwk2/03,forest ,forest 
+Forest,ICHwk2,ICHwk2/04,ICHwk2/04,,ICHwk2/04,ICHwk2/04,forest ,forest 
+Forest,ICHwk2,ICHwk2/05,ICHwk2/05,,ICHwk2/05,ICHwk2/05,forest ,forest 
+Forest,ICHwk2,ICHwk2/06,ICHwk2/06,,ICHwk2/06,ICHwk2/06,forest ,forest 
+Forest,ICHwk2,ICHwk2/07,ICHwk2/07,,ICHwk2/07,ICHwk2/07,forest ,forest 
+Forest,ICHwk2,ICHwk2/08,ICHwk2/08,,ICHwk2/08,ICHwk2/08,forest ,forest 
+Forest,ICHwk2,ICHwk2/09,ICHwk2/09,,ICHwk2/09,ICHwk2/09,forest ,forest 
+Forest,ICHwk2,ICHwk2/10,ICHwk2/10,,ICHwk2/10,ICHwk2/10,forest ,forest 
+Forest,ICHwk3,ICHwk3/01,ICHwk3/01,,ICHwk3/01,ICHwk3/01,forest ,forest 
+Forest,ICHwk3,ICHwk3/02,ICHwk3/02,,ICHwk3/02,ICHwk3/02,forest ,forest 
+Forest,ICHwk3,ICHwk3/03,ICHwk3/03,,ICHwk3/03,ICHwk3/03,forest ,forest 
+Forest,ICHwk3,ICHwk3/04,ICHwk3/04,,ICHwk3/04,ICHwk3/04,forest ,forest 
+Forest,ICHwk3,ICHwk3/05,ICHwk3/05,,ICHwk3/05,ICHwk3/05,forest ,forest 
+Forest,ICHwk3,ICHwk3/06,ICHwk3/06,,ICHwk3/06,ICHwk3/06,forest ,forest 
+Forest,ICHwk3,ICHwk3/07,ICHwk3/07,,ICHwk3/07,ICHwk3/07,forest ,forest 
+Forest,ICHwk3,ICHwk3/08,ICHwk3/08,,ICHwk3/08,ICHwk3/08,forest ,forest 
+Forest,ICHwk3,ICHwk3/09,ICHwk3/09,,ICHwk3/09,ICHwk3/09,forest ,forest 
+Forest,ICHwk3,ICHwk3/10,ICHwk3/10,,ICHwk3/10,ICHwk3/10,forest ,forest 
+Forest,ICHwk3,ICHwk3/11,ICHwk3/11,,ICHwk3/11,ICHwk3/11,forest ,forest 
+Forest,ICHwk4,ICHwk4/01,ICHwk4/01,,ICHwk4/01,ICHwk4/01,forest ,forest 
+Forest,ICHwk4,ICHwk4/01a,ICHwk4/01a,,ICHwk4/01,ICHwk4/01,forest ,forest 
+Forest,ICHwk4,ICHwk4/01b,ICHwk4/01b,,ICHwk4/01,ICHwk4/01,forest ,forest 
+Forest,ICHwk4,ICHwk4/02,ICHwk4/02,,ICHwk4/02,ICHwk4/02,forest ,forest 
+Forest,ICHwk4,ICHwk4/03,ICHwk4/03,,ICHwk4/03,ICHwk4/03,forest ,forest 
+Forest,ICHwk4,ICHwk4/04,ICHwk4/04,,ICHwk4/04,ICHwk4/04,forest ,forest 
+Forest,ICHwk4,ICHwk4/05,ICHwk4/05,,ICHwk4/05,ICHwk4/05,forest ,forest 
+Forest,ICHwk4,ICHwk4/06,ICHwk4/06,,ICHwk4/06,ICHwk4/06,forest ,forest 
+Forest,ICHwk4,ICHwk4/07,ICHwk4/07,,ICHwk4/07,ICHwk4/07,forest ,forest 
+Forest,ICHwk4,ICHwk4/08,ICHwk4/08,,ICHwk4/08,ICHwk4/08,forest ,forest 
+NonForest,ICHwk4,ICHwk4/09,ICHwk4/09,,ICHwk4/09,ICHwk4/09,forest ,forest 
+Deciduous,ICHwk4,ICHwk4/10,ICHwk4/10,,ICHwk4/10,ICHwk4/10,forest ,forest 
+Forest,ICHxm1,ICHxm1/101,ICHxm1/101,,ICHxm1/101,ICHxm1/101,forest ,forest 
+Forest,ICHxm1,ICHxm1/102,ICHxm1/102,,ICHxm1/102,ICHxm1/102,forest ,forest 
+Forest,ICHxm1,ICHxm1/103,ICHxm1/103,,ICHxm1/103,ICHxm1/103,forest ,forest 
+Forest,ICHxm1,ICHxm1/104,ICHxm1/104,,ICHxm1/104,ICHxm1/104,forest ,forest 
+Forest,ICHxm1,ICHxm1/104.1,ICHxm1/104.1,,ICHxm1/104,ICHxm1/104,forest ,forest 
+Forest,ICHxm1,ICHxm1/104.2,ICHxm1/104.2,,ICHxm1/104,ICHxm1/104,forest ,forest 
+Forest,ICHxm1,ICHxm1/110,ICHxm1/110,,ICHxm1/110,ICHxm1/110,forest ,forest 
+Forest,ICHxm1,ICHxm1/111,ICHxm1/111,,ICHxm1/111,ICHxm1/111,forest ,forest 
+Forest,ICHxm1,ICHxm1/112,ICHxm1/112,,ICHxm1/112,ICHxm1/112,forest ,forest 
+Forest,ICHxw,ICHxw/101,ICHxw/101,,ICHxw/101,ICHxw/101,forest ,forest 
+Forest,ICHxw,ICHxw/102,ICHxw/102,,ICHxw/102,ICHxw/102,forest ,forest 
+Forest,ICHxw,ICHxw/103,ICHxw/103,,ICHxw/103,ICHxw/103,forest ,forest 
+Forest,ICHxw,ICHxw/104,ICHxw/104,,ICHxw/104,ICHxw/104,forest ,forest 
+Forest,ICHxw,ICHxw/110,ICHxw/110,,ICHxw/110,ICHxw/110,forest ,forest 
+Forest,ICHxw,ICHxw/111,ICHxw/111,,ICHxw/111,ICHxw/111,forest ,forest 
+Forest,ICHxw,ICHxw/112,ICHxw/112,,ICHxw/112,ICHxw/112,forest ,forest 
+Forest,ICHxw,ICHxw/113,ICHxw/113,,ICHxw/113,ICHxw/113,forest ,forest 
+Forest,ICHxwa,ICHxwa/101,ICHxwa/101,,ICHxwa/101,ICHxwa/101,forest ,forest 
+Forest,ICHxwa,ICHxwa/102,ICHxwa/102,,ICHxwa/102,ICHxwa/102,forest ,forest 
+Forest,ICHxwa,ICHxwa/103,ICHxwa/103,,ICHxwa/103,ICHxwa/103,forest ,forest 
+Forest,ICHxwa,ICHxwa/104,ICHxwa/104,,ICHxwa/104,ICHxwa/104,forest ,forest 
+Forest,ICHxwa,ICHxwa/110,ICHxwa/110,,ICHxwa/110,ICHxwa/110,forest ,forest 
+Forest,ICHxwa,ICHxwa/111,ICHxwa/111,,ICHxwa/111,ICHxwa/111,forest ,forest 
+Forest,ICHxwa,ICHxwa/112,ICHxwa/112,,ICHxwa/112,ICHxwa/112,forest ,forest 
+Forest,ICHxwa,ICHxwa/113,ICHxwa/113,,ICHxwa/113,ICHxwa/113,forest ,forest 
+Forest,IDFdh,IDFdh/101,IDFdh/101,,IDFdh/101,IDFdh/101,forest ,forest 
+Forest,IDFdh,IDFdh/102,IDFdh/102,,IDFdh/102,IDFdh/102,forest ,forest 
+Forest,IDFdh,IDFdh/103,IDFdh/103,,IDFdh/103,IDFdh/103,forest ,forest 
+Forest,IDFdh,IDFdh/104,IDFdh/104,,IDFdh/104,IDFdh/104,forest ,forest 
+Forest,IDFdh,IDFdh/104.1,IDFdh/104.1,,IDFdh/104,IDFdh/104,forest ,forest 
+Forest,IDFdh,IDFdh/104.2,IDFdh/104.2,,IDFdh/104,IDFdh/104,forest ,forest 
+Forest,IDFdh,IDFdh/110,IDFdh/110,,IDFdh/110,IDFdh/110,forest ,forest 
+Forest,IDFdh,IDFdh/111,IDFdh/111,,IDFdh/111,IDFdh/111,forest ,forest 
+Forest,IDFdk1,IDFdk1/101,IDFdk1/101,,IDFdk1/101,IDFdk1/101,forest ,forest 
+Forest,IDFdk1,IDFdk1/102,IDFdk1/102,,IDFdk1/102,IDFdk1/102,forest ,forest 
+Forest,IDFdk1,IDFdk1/103,IDFdk1/103,,IDFdk1/103,IDFdk1/103,forest ,forest 
+Forest,IDFdk1,IDFdk1/104,IDFdk1/104,,IDFdk1/104,IDFdk1/104,forest ,forest 
+Forest,IDFdk1,IDFdk1/105,IDFdk1/105,,IDFdk1/105,IDFdk1/105,forest ,forest 
+Forest,IDFdk1,IDFdk1/110,IDFdk1/110,,IDFdk1/110,IDFdk1/110,forest ,forest 
+Forest,IDFdk1,IDFdk1/111,IDFdk1/111,,IDFdk1/111,IDFdk1/111,forest ,forest 
+Forest,IDFdk2,IDFdk2/101,IDFdk2/101,,IDFdk2/101,IDFdk2/101,forest ,forest 
+Forest,IDFdk2,IDFdk2/102,IDFdk2/102,,IDFdk2/102,IDFdk2/102,forest ,forest 
+Forest,IDFdk2,IDFdk2/103,IDFdk2/103,,IDFdk2/103,IDFdk2/103,forest ,forest 
+Forest,IDFdk2,IDFdk2/104,IDFdk2/104,,IDFdk2/104,IDFdk2/104,forest ,forest 
+Forest,IDFdk2,IDFdk2/105,IDFdk2/105,,IDFdk2/105,IDFdk2/105,forest ,forest 
+Forest,IDFdk2,IDFdk2/110,IDFdk2/110,,IDFdk2/110,IDFdk2/110,forest ,forest 
+Forest,IDFdk2,IDFdk2/111,IDFdk2/111,,IDFdk2/111,IDFdk2/111,forest ,forest 
+Forest,IDFdk3,IDFdk3/01,IDFdk3/01,,IDFdk3/01,IDFdk3/01,forest ,forest 
+Forest,IDFdk3,IDFdk3/02,IDFdk3/02,,IDFdk3/02,IDFdk3/02,forest ,forest 
+Forest,IDFdk3,IDFdk3/03,IDFdk3/03,,IDFdk3/03,IDFdk3/03,forest ,forest 
+Forest,IDFdk3,IDFdk3/04,IDFdk3/04,,IDFdk3/04,IDFdk3/04,forest ,forest 
+Forest,IDFdk3,IDFdk3/05,IDFdk3/05,,IDFdk3/05,IDFdk3/05,forest ,forest 
+Forest,IDFdk3,IDFdk3/06,IDFdk3/06,,IDFdk3/06,IDFdk3/06,forest ,forest 
+Forest,IDFdk3,IDFdk3/07,IDFdk3/07,,IDFdk3/07,IDFdk3/07,forest ,forest 
+Forest,IDFdk3,IDFdk3/08,IDFdk3/08,,IDFdk3/08,IDFdk3/08,forest ,forest 
+Forest,IDFdk3,IDFdk3/09,IDFdk3/09,,IDFdk3/09,IDFdk3/09,forest ,forest 
+Forest,IDFdk4,IDFdk4/01,IDFdk4/01,,IDFdk4/01,IDFdk4/01,forest ,forest 
+Forest,IDFdk4,IDFdk4/02,IDFdk4/02,,IDFdk4/02,IDFdk4/02,forest ,forest 
+Forest,IDFdk4,IDFdk4/03,IDFdk4/03,,IDFdk4/03,IDFdk4/03,forest ,forest 
+Forest,IDFdk4,IDFdk4/04,IDFdk4/04,,IDFdk4/04,IDFdk4/04,forest ,forest 
+Forest,IDFdk4,IDFdk4/05,IDFdk4/05,,IDFdk4/05,IDFdk4/05,forest ,forest 
+Forest,IDFdk4,IDFdk4/06,IDFdk4/06,,IDFdk4/06,IDFdk4/06,forest ,forest 
+Forest,IDFdk4,IDFdk4/07,IDFdk4/07,,IDFdk4/07,IDFdk4/07,forest ,forest 
+Forest,IDFdk4,IDFdk4/08,IDFdk4/08,,IDFdk4/08,IDFdk4/08,forest ,forest 
+Forest,IDFdk4,IDFdk4/09,IDFdk4/09,,IDFdk4/09,IDFdk4/09,forest ,forest 
+Forest,IDFdk4,IDFdk4/10,IDFdk4/10,,IDFdk4/10,IDFdk4/10,forest ,forest 
+Forest,IDFdk5,IDFdk5/101,IDFdk5/101,,IDFdk5/101,IDFdk5/101,forest ,forest 
+Forest,IDFdk5,IDFdk5/102,IDFdk5/102,,IDFdk5/102,IDFdk5/102,forest ,forest 
+Forest,IDFdk5,IDFdk5/103,IDFdk5/103,,IDFdk5/103,IDFdk5/103,forest ,forest 
+Forest,IDFdk5,IDFdk5/104,IDFdk5/104,,IDFdk5/104,IDFdk5/104,forest ,forest 
+Forest,IDFdk5,IDFdk5/110,IDFdk5/110,,IDFdk5/110,IDFdk5/110,forest ,forest 
+Forest,IDFdk5,IDFdk5/111,IDFdk5/111,,IDFdk5/111,IDFdk5/111,forest ,forest 
+Forest,IDFdk5,IDFdk5/111a,IDFdk5/111a,,IDFdk5/111,IDFdk5/111,forest ,forest 
+Forest,IDFdk5,IDFdk5/111b,IDFdk5/111b,,IDFdk5/111,IDFdk5/111,forest ,forest 
+Forest,IDFdm1,IDFdm1/101,IDFdm1/101,,IDFdm1/101,IDFdm1/101,forest ,forest 
+Forest,IDFdm1,IDFdm1/102,IDFdm1/102,,IDFdm1/102,IDFdm1/102,forest ,forest 
+Forest,IDFdm1,IDFdm1/103,IDFdm1/103,,IDFdm1/103,IDFdm1/103,forest ,forest 
+Forest,IDFdm1,IDFdm1/104,IDFdm1/104,,IDFdm1/104,IDFdm1/104,forest ,forest 
+Forest,IDFdm1,IDFdm1/110,IDFdm1/110,,IDFdm1/110,IDFdm1/110,forest ,forest 
+Forest,IDFdm1,IDFdm1/110.1,IDFdm1/110.1,,IDFdm1/110,IDFdm1/110,forest ,forest 
+Forest,IDFdm1,IDFdm1/110.2,IDFdm1/110.2,,IDFdm1/110,IDFdm1/110,forest ,forest 
+Forest,IDFdm1,IDFdm1/111,IDFdm1/111,,IDFdm1/111,IDFdm1/111,forest ,forest 
+Forest,IDFdm1,IDFdm1/112,IDFdm1/112,,IDFdm1/112,IDFdm1/112,forest ,forest 
+Forest,IDFdm2,IDFdm2/101,IDFdm2/101,,IDFdm2/101,IDFdm2/101,forest ,forest 
+Forest,IDFdm2,IDFdm2/102,IDFdm2/102,,IDFdm2/102,IDFdm2/102,forest ,forest 
+Forest,IDFdm2,IDFdm2/103,IDFdm2/103,,IDFdm2/103,IDFdm2/103,forest ,forest 
+Forest,IDFdm2,IDFdm2/104,IDFdm2/104,,IDFdm2/104,IDFdm2/104,forest ,forest 
+Forest,IDFdm2,IDFdm2/104.1,IDFdm2/104.1,,IDFdm2/104,IDFdm2/104,forest ,forest 
+Forest,IDFdm2,IDFdm2/104.2,IDFdm2/104.2,,IDFdm2/104,IDFdm2/104,forest ,forest 
+Forest,IDFdm2,IDFdm2/110,IDFdm2/110,,IDFdm2/110,IDFdm2/110,forest ,forest 
+Forest,IDFdm2,IDFdm2/111,IDFdm2/111,,IDFdm2/111,IDFdm2/111,forest ,forest 
+Forest,IDFdm2,IDFdm2/112,IDFdm2/112,,IDFdm2/112,IDFdm2/112,forest ,forest 
+Forest,IDFdm2,IDFdm2/112a,IDFdm2/112a,,IDFdm2/112,IDFdm2/112,forest ,forest 
+Forest,IDFdm2,IDFdm2/112b,IDFdm2/112b,,IDFdm2/112,IDFdm2/112,forest ,forest 
+Forest,IDFmw2,IDFmw2/01,IDFmw2/01,,IDFmw2/01,IDFmw2/01,forest ,forest 
+Forest,IDFmw2,IDFmw2/02,IDFmw2/02,,IDFmw2/02,IDFmw2/02,forest ,forest 
+Forest,IDFmw2,IDFmw2/03,IDFmw2/03,,IDFmw2/03,IDFmw2/03,forest ,forest 
+Forest,IDFmw2,IDFmw2/04,IDFmw2/04,,IDFmw2/04,IDFmw2/04,forest ,forest 
+NonForest,IDFmw2,IDFmw2/05,IDFmw2/05,,IDFmw2/05,IDFmw2/05,forest ,forest 
+Forest,IDFww,IDFww/01,IDFww/01,,IDFww/01,IDFww/01,forest ,forest 
+Forest,IDFww,IDFww/02,IDFww/02,,IDFww/02,IDFww/02,forest ,forest 
+Forest,IDFww,IDFww/03,IDFww/03,,IDFww/03,IDFww/03,forest ,forest 
+Forest,IDFww,IDFww/04,IDFww/04,,IDFww/04,IDFww/04,forest ,forest 
+Forest,IDFww,IDFww/05,IDFww/05,,IDFww/05,IDFww/05,forest ,forest 
+Forest,IDFww,IDFww/06,IDFww/06,,IDFww/06,IDFww/06,forest ,forest 
+Forest,IDFww,IDFww/07,IDFww/07,,IDFww/07,IDFww/07,forest ,forest 
+Forest,IDFxh1,IDFxh1/101,IDFxh1/101,,IDFxh1/101,IDFxh1/101,forest ,forest 
+Forest,IDFxh1,IDFxh1/102,IDFxh1/102,,IDFxh1/102,IDFxh1/102,forest ,forest 
+Forest,IDFxh1,IDFxh1/103,IDFxh1/103,,IDFxh1/103,IDFxh1/103,forest ,forest 
+Forest,IDFxh1,IDFxh1/104,IDFxh1/104,,IDFxh1/104,IDFxh1/104,forest ,forest 
+Forest,IDFxh1,IDFxh1/105,IDFxh1/105,,IDFxh1/105,IDFxh1/105,forest ,forest 
+Forest,IDFxh1,IDFxh1/106,IDFxh1/106,,IDFxh1/106,IDFxh1/106,forest ,forest 
+Forest,IDFxh1,IDFxh1/110,IDFxh1/110,,IDFxh1/110,IDFxh1/110,forest ,forest 
+Forest,IDFxh1,IDFxh1/111,IDFxh1/111,,IDFxh1/111,IDFxh1/111,forest ,forest 
+Forest,IDFxh1,IDFxh1/111.1,IDFxh1/111.1,,IDFxh1/111,IDFxh1/111,forest ,forest 
+Forest,IDFxh1,IDFxh1/111.2,IDFxh1/111.2,,IDFxh1/111,IDFxh1/111,forest ,forest 
+Forest,IDFxh1,IDFxh1/112,IDFxh1/112,,IDFxh1/112,IDFxh1/112,forest ,forest 
+Forest,IDFxh2,IDFxh2/101,IDFxh2/101,,IDFxh2/101,IDFxh2/101,forest ,forest 
+Forest,IDFxh2,IDFxh2/102,IDFxh2/102,,IDFxh2/102,IDFxh2/102,forest ,forest 
+Forest,IDFxh2,IDFxh2/103,IDFxh2/103,,IDFxh2/103,IDFxh2/103,forest ,forest 
+Forest,IDFxh2,IDFxh2/104,IDFxh2/104,,IDFxh2/104,IDFxh2/104,forest ,forest 
+Forest,IDFxh2,IDFxh2/110,IDFxh2/110,,IDFxh2/110,IDFxh2/110,forest ,forest 
+Forest,IDFxh2,IDFxh2/111,IDFxh2/111,,IDFxh2/111,IDFxh2/111,forest ,forest 
+Forest,IDFxh2,IDFxh2/112,IDFxh2/112,,IDFxh2/112,IDFxh2/112,forest ,forest 
+Forest,IDFxh2,IDFxh2/113,IDFxh2/113,,IDFxh2/113,IDFxh2/113,forest ,forest 
+Forest,IDFxk,IDFxk/101,IDFxk/101,,IDFxk/101,IDFxk/101,forest ,forest 
+Forest,IDFxk,IDFxk/102,IDFxk/102,,IDFxk/102,IDFxk/102,forest ,forest 
+Forest,IDFxk,IDFxk/102a,IDFxk/102a,,IDFxk/102,IDFxk/102,forest ,forest 
+Forest,IDFxk,IDFxk/102b,IDFxk/102b,,IDFxk/102,IDFxk/102,forest ,forest 
+Forest,IDFxk,IDFxk/103,IDFxk/103,,IDFxk/103,IDFxk/103,forest ,forest 
+Forest,IDFxk,IDFxk/110,IDFxk/110,,IDFxk/110,IDFxk/110,forest ,forest 
+Forest,IDFxk,IDFxk/111,IDFxk/111,,IDFxk/111,IDFxk/111,forest ,forest 
+Forest,IDFxk,IDFxk/112,IDFxk/112,,IDFxk/112,IDFxk/112,forest ,forest 
+Forest,IDFxk,IDFxk/113,IDFxk/113,,IDFxk/113,IDFxk/113,forest ,forest 
+Forest,IDFxk,IDFxk/113a,IDFxk/113a,,IDFxk/113,IDFxk/113,forest ,forest 
+Forest,IDFxm,IDFxm/01,IDFxm/01,,IDFxm/01,IDFxm/01,forest ,forest 
+Forest,IDFxm,IDFxm/01a,IDFxm/01a,,IDFxm/01,IDFxm/01,forest ,forest 
+Forest,IDFxm,IDFxm/01b,IDFxm/01b,,IDFxm/01,IDFxm/01,forest ,forest 
+Forest,IDFxm,IDFxm/02,IDFxm/02,,IDFxm/02,IDFxm/02,forest ,forest 
+Forest,IDFxm,IDFxm/02a,IDFxm/02a,,IDFxm/02,IDFxm/02,forest ,forest 
+Forest,IDFxm,IDFxm/02b,IDFxm/02b,,IDFxm/02,IDFxm/02,forest ,forest 
+Forest,IDFxm,IDFxm/03,IDFxm/03,,IDFxm/03,IDFxm/03,forest ,forest 
+Forest,IDFxm,IDFxm/04,IDFxm/04,,IDFxm/04,IDFxm/04,forest ,forest 
+Forest,IDFxm,IDFxm/05,IDFxm/05,,IDFxm/05,IDFxm/05,forest ,forest 
+Forest,IDFxm,IDFxm/06,IDFxm/06,,IDFxm/06,IDFxm/06,forest ,forest 
+Forest,IDFxm,IDFxm/07,IDFxm/07,,IDFxm/07,IDFxm/07,forest ,forest 
+Forest,IDFxm,IDFxm/08,IDFxm/08,,IDFxm/08,IDFxm/08,forest ,forest 
+Forest,IDFxm,IDFxm/09,IDFxm/09,,IDFxm/09,IDFxm/09,forest ,forest 
+Deciduous,IDFxm,IDFxm/10,IDFxm/10,,IDFxm/10,IDFxm/10,forest ,forest 
+Forest,IDFxw,IDFxw/01,IDFxw/01,,IDFxw/01,IDFxw/01,forest ,forest 
+Forest,IDFxw,IDFxw/02,IDFxw/02,,IDFxw/02,IDFxw/02,forest ,forest 
+Forest,IDFxw,IDFxw/03,IDFxw/03,,IDFxw/03,IDFxw/03,forest ,forest 
+Forest,IDFxw,IDFxw/04,IDFxw/04,,IDFxw/04,IDFxw/04,forest ,forest 
+Forest,IDFxw,IDFxw/05,IDFxw/05,,IDFxw/05,IDFxw/05,forest ,forest 
+Forest,IDFxw,IDFxw/06,IDFxw/06,,IDFxw/06,IDFxw/06,forest ,forest 
+Forest,IDFxw,IDFxw/07,IDFxw/07,,IDFxw/07,IDFxw/07,forest ,forest 
+Forest,IDFxx1,IDFxx1/101,IDFxx1/101,,IDFxx1/101,IDFxx1/101,forest ,forest 
+Forest,IDFxx1,IDFxx1/102,IDFxx1/102,,IDFxx1/102,IDFxx1/102,forest ,forest 
+Forest,IDFxx1,IDFxx1/103,IDFxx1/103,,IDFxx1/103,IDFxx1/103,forest ,forest 
+Forest,IDFxx1,IDFxx1/104,IDFxx1/104,,IDFxx1/104,IDFxx1/104,forest ,forest 
+Forest,IDFxx1,IDFxx1/110,IDFxx1/110,,IDFxx1/110,IDFxx1/110,forest ,forest 
+Forest,IDFxx1,IDFxx1/111,IDFxx1/111,,IDFxx1/111,IDFxx1/111,forest ,forest 
+Forest,IDFxx2,IDFxx2/101,IDFxx2/101,,IDFxx2/101,IDFxx2/101,forest ,forest 
+Forest,IDFxx2,IDFxx2/101.1,IDFxx2/101.1,,IDFxx2/101,IDFxx2/101,forest ,forest 
+Forest,IDFxx2,IDFxx2/101.2,IDFxx2/101.2,,IDFxx2/101,IDFxx2/101,forest ,forest 
+Forest,IDFxx2,IDFxx2/102,IDFxx2/102,,IDFxx2/102,IDFxx2/102,forest ,forest 
+Forest,IDFxx2,IDFxx2/103,IDFxx2/103,,IDFxx2/103,IDFxx2/103,forest ,forest 
+Forest,IDFxx2,IDFxx2/104,IDFxx2/104,,IDFxx2/104,IDFxx2/104,forest ,forest 
+Forest,IDFxx2,IDFxx2/110,IDFxx2/110,,IDFxx2/110,IDFxx2/110,forest ,forest 
+Forest,IDFxx2,IDFxx2/111,IDFxx2/111,,IDFxx2/111,IDFxx2/111,forest ,forest 
+Forest,IDFxx2,IDFxx2/112,IDFxx2/112,,IDFxx2/112,IDFxx2/112,forest ,forest 
+Forest,IDFxx2,IDFxx2/112a,IDFxx2/112a,,IDFxx2/112,IDFxx2/112,forest ,forest 
+Forest,IDFxx2,IDFxx2/112b,IDFxx2/112b,,IDFxx2/112,IDFxx2/112,forest ,forest 
+Forest,MHmm1,MHmm1/01,MHmm1/01,,MHmm1/01,MHmm1/01,forest ,forest 
+Forest,MHmm1,MHmm1/02,MHmm1/02,,MHmm1/02,MHmm1/02,forest ,forest 
+Forest,MHmm1,MHmm1/03,MHmm1/03,,MHmm1/03,MHmm1/03,forest ,forest 
+Forest,MHmm1,MHmm1/04,MHmm1/04,,MHmm1/04,MHmm1/04,forest ,forest 
+Forest,MHmm1,MHmm1/05,MHmm1/05,,MHmm1/05,MHmm1/05,forest ,forest 
+Forest,MHmm1,MHmm1/06,MHmm1/06,,MHmm1/06,MHmm1/06,forest ,forest 
+Forest,MHmm1,MHmm1/07,MHmm1/07,,MHmm1/07,MHmm1/07,forest ,forest 
+Forest,MHmm1,MHmm1/08,MHmm1/08,,MHmm1/08,MHmm1/08,forest ,forest 
+Forest,MHmm1,MHmm1/09,MHmm1/09,,MHmm1/09,MHmm1/09,forest ,forest 
+Forest,MHmm2,MHmm2/01,MHmm2/01,,MHmm2/01,MHmm2/01,forest ,forest 
+Forest,MHmm2,MHmm2/02,MHmm2/02,,MHmm2/02,MHmm2/02,forest ,forest 
+Forest,MHmm2,MHmm2/03,MHmm2/03,,MHmm2/03,MHmm2/03,forest ,forest 
+Forest,MHmm2,MHmm2/04,MHmm2/04,,MHmm2/04,MHmm2/04,forest ,forest 
+Forest,MHmm2,MHmm2/05,MHmm2/05,,MHmm2/05,MHmm2/05,forest ,forest 
+Forest,MHmm2,MHmm2/06,MHmm2/06,,MHmm2/06,MHmm2/06,forest ,forest 
+Forest,MHmm2,MHmm2/07,MHmm2/07,,MHmm2/07,MHmm2/07,forest ,forest 
+Forest,MHmm2,MHmm2/08,MHmm2/08,,MHmm2/08,MHmm2/08,forest ,forest 
+Forest,MHmm2,MHmm2/09,MHmm2/09,,MHmm2/09,MHmm2/09,forest ,forest 
+Forest,MHwh,MHwh/101,MHwh/101,,MHwh/101,MHwh/101,forest ,forest 
+Forest,MHwh,MHwh/101a,MHwh/101a,,MHwh/101,MHwh/101,forest ,forest 
+Forest,MHwh,MHwh/101b,MHwh/101b,,MHwh/101,MHwh/101,forest ,forest 
+Forest,MHwh,MHwh/101c,MHwh/101c,,MHwh/101,MHwh/101,forest ,forest 
+Forest,MHwh,MHwh/102,MHwh/102,,MHwh/102,MHwh/102,forest ,forest 
+Forest,MHwh,MHwh/110,MHwh/110,,MHwh/110,MHwh/110,forest ,forest 
+Forest,MHwh,MHwh/111,MHwh/111,,MHwh/111,MHwh/111,forest ,forest 
+Forest,MHwh1,MHwh1/01,MHwh1/01,,MHwh1/01,MHwh1/01,forest ,forest 
+Forest,MHwh1,MHwh1/02,MHwh1/02,,MHwh1/02,MHwh1/02,forest ,forest 
+Forest,MHwh1,MHwh1/03,MHwh1/03,,MHwh1/03,MHwh1/03,forest ,forest 
+Forest,MHwh1,MHwh1/04,MHwh1/04,,MHwh1/04,MHwh1/04,forest ,forest 
+Forest,MHwh1,MHwh1/05,MHwh1/05,,MHwh1/05,MHwh1/05,forest ,forest 
+Forest,MHwh1,MHwh1/06,MHwh1/06,,MHwh1/06,MHwh1/06,forest ,forest 
+Forest,MHwh1,MHwh1/07,MHwh1/07,,MHwh1/07,MHwh1/07,forest ,forest 
+Forest,MHwh1,MHwh1/08,MHwh1/08,,MHwh1/08,MHwh1/08,forest ,forest 
+Forest,MHwh1,MHwh1/09,MHwh1/09,,MHwh1/09,MHwh1/09,forest ,forest 
+Forest,MSdc1,MSdc1/01,MSdc1/01,,MSdc1/01,MSdc1/01,forest ,forest 
+Forest,MSdc1,MSdc1/02,MSdc1/02,,MSdc1/02,MSdc1/02,forest ,forest 
+Forest,MSdc1,MSdc1/03,MSdc1/03,,MSdc1/03,MSdc1/03,forest ,forest 
+Forest,MSdc1,MSdc1/04,MSdc1/04,,MSdc1/04,MSdc1/04,forest ,forest 
+NonForest,MSdc1,MSdc1/05,MSdc1/05,,MSdc1/05,MSdc1/05,forest ,forest 
+Forest,MSdc2,MSdc2/01,MSdc2/01,,MSdc2/01,MSdc2/01,forest ,forest 
+Forest,MSdc2,MSdc2/02,MSdc2/02,,MSdc2/02,MSdc2/02,forest ,forest 
+Forest,MSdc2,MSdc2/03,MSdc2/03,,MSdc2/03,MSdc2/03,forest ,forest 
+Forest,MSdc2,MSdc2/04,MSdc2/04,,MSdc2/04,MSdc2/04,forest ,forest 
+Forest,MSdc2,MSdc2/05,MSdc2/05,,MSdc2/05,MSdc2/05,forest ,forest 
+Forest,MSdc2,MSdc2/06,MSdc2/06,,MSdc2/06,MSdc2/06,forest ,forest 
+Forest,MSdc2,MSdc2/07,MSdc2/07,,MSdc2/07,MSdc2/07,forest ,forest 
+Forest,MSdc2,MSdc2/08,MSdc2/08,,MSdc2/08,MSdc2/08,forest ,forest 
+Forest,MSdk,MSdk/101,MSdk/101,,MSdk/101,MSdk/101,forest ,forest 
+Forest,MSdk,MSdk/102,MSdk/102,,MSdk/102,MSdk/102,forest ,forest 
+Forest,MSdk,MSdk/103,MSdk/103,,MSdk/103,MSdk/103,forest ,forest 
+Forest,MSdk,MSdk/104,MSdk/104,,MSdk/104,MSdk/104,forest ,forest 
+Forest,MSdk,MSdk/105,MSdk/105,,MSdk/105,MSdk/105,forest ,forest 
+Forest,MSdk,MSdk/110,MSdk/110,,MSdk/110,MSdk/110,forest ,forest 
+Forest,MSdk,MSdk/110.1,MSdk/110.1,,MSdk/110,MSdk/110,forest ,forest 
+Forest,MSdk,MSdk/110.2,MSdk/110.2,,MSdk/110,MSdk/110,forest ,forest 
+Forest,MSdk,MSdk/111,MSdk/111,,MSdk/111,MSdk/111,forest ,forest 
+Forest,MSdk,MSdk/111a,MSdk/111a,,MSdk/111,MSdk/111,forest ,forest 
+Forest,MSdk,MSdk/111b,MSdk/111b,,MSdk/111,MSdk/111,forest ,forest 
+Forest,MSdk,MSdk/112,MSdk/112,,MSdk/112,MSdk/112,forest ,forest 
+Forest,MSdk,MSdk/112a,MSdk/112a,,MSdk/112,MSdk/112,forest ,forest 
+Forest,MSdk,MSdk/112b,MSdk/112b,,MSdk/112,MSdk/112,forest ,forest 
+Forest,MSdm1,MSdm1/101,MSdm1/101,,MSdm1/101,MSdm1/101,forest ,forest 
+Forest,MSdm1,MSdm1/102,MSdm1/102,,MSdm1/102,MSdm1/102,forest ,forest 
+Forest,MSdm1,MSdm1/103,MSdm1/103,,MSdm1/103,MSdm1/103,forest ,forest 
+Forest,MSdm1,MSdm1/103a,MSdm1/103a,,MSdm1/103,MSdm1/103,forest ,forest 
+Forest,MSdm1,MSdm1/103b,MSdm1/103b,,MSdm1/103,MSdm1/103,forest ,forest 
+Forest,MSdm1,MSdm1/104,MSdm1/104,,MSdm1/104,MSdm1/104,forest ,forest 
+Forest,MSdm1,MSdm1/110,MSdm1/110,,MSdm1/110,MSdm1/110,forest ,forest 
+Forest,MSdm1,MSdm1/111,MSdm1/111,,MSdm1/111,MSdm1/111,forest ,forest 
+Forest,MSdm1,MSdm1/111.1,MSdm1/111.1,,MSdm1/111,MSdm1/111,forest ,forest 
+Forest,MSdm1,MSdm1/111.2,MSdm1/111.2,,MSdm1/111,MSdm1/111,forest ,forest 
+Forest,MSdm1,MSdm1/112,MSdm1/112,,MSdm1/112,MSdm1/112,forest ,forest 
+Forest,MSdm1,MSdm1/113,MSdm1/113,,MSdm1/113,MSdm1/113,forest ,forest 
+Forest,MSdm1,MSdm1/113a,MSdm1/113a,,MSdm1/113,MSdm1/113,forest ,forest 
+Forest,MSdm1,MSdm1/113b,MSdm1/113b,,MSdm1/113,MSdm1/113,forest ,forest 
+Forest,MSdm2,MSdm2/101,MSdm2/101,,MSdm2/101,MSdm2/101,forest ,forest 
+Forest,MSdm2,MSdm2/102,MSdm2/102,,MSdm2/102,MSdm2/102,forest ,forest 
+Forest,MSdm2,MSdm2/103,MSdm2/103,,MSdm2/103,MSdm2/103,forest ,forest 
+Forest,MSdm2,MSdm2/104,MSdm2/104,,MSdm2/104,MSdm2/104,forest ,forest 
+Forest,MSdm2,MSdm2/105,MSdm2/105,,MSdm2/105,MSdm2/105,forest ,forest 
+Forest,MSdm2,MSdm2/110,MSdm2/110,,MSdm2/110,MSdm2/110,forest ,forest 
+Forest,MSdm2,MSdm2/111,MSdm2/111,,MSdm2/111,MSdm2/111,forest ,forest 
+Forest,MSdm2,MSdm2/112,MSdm2/112,,MSdm2/112,MSdm2/112,forest ,forest 
+Forest,MSdm2,MSdm2/113,MSdm2/113,,MSdm2/113,MSdm2/113,forest ,forest 
+Forest,MSdm3,MSdm3/01,MSdm3/01,,MSdm3/01,MSdm3/01,forest ,forest 
+Forest,MSdm3,MSdm3/02,MSdm3/02,,MSdm3/02,MSdm3/02,forest ,forest 
+Forest,MSdm3,MSdm3/03,MSdm3/03,,MSdm3/03,MSdm3/03,forest ,forest 
+Forest,MSdm3,MSdm3/04,MSdm3/04,,MSdm3/04,MSdm3/04,forest ,forest 
+Forest,MSdm3,MSdm3/05,MSdm3/05,,MSdm3/05,MSdm3/05,forest ,forest 
+Forest,MSdm3,MSdm3/06,MSdm3/06,,MSdm3/06,MSdm3/06,forest ,forest 
+Forest,MSdm3,MSdm3/07,MSdm3/07,,MSdm3/07,MSdm3/07,forest ,forest 
+Forest,MSdv,MSdv/01,MSdv/01,,MSdv/01,MSdv/01,forest ,forest 
+Forest,MSdv,MSdv/02,MSdv/02,,MSdv/02,MSdv/02,forest ,forest 
+Forest,MSdv,MSdv/02a,MSdv/02a,,MSdv/02,MSdv/02,forest ,forest 
+Forest,MSdv,MSdv/02b,MSdv/02b,,MSdv/02,MSdv/02,forest ,forest 
+Forest,MSdv,MSdv/03,MSdv/03,,MSdv/03,MSdv/03,forest ,forest 
+Forest,MSdv,MSdv/04,MSdv/04,,MSdv/04,MSdv/04,forest ,forest 
+Forest,MSdv,MSdv/05,MSdv/05,,MSdv/05,MSdv/05,forest ,forest 
+Forest,MSdv,MSdv/06,MSdv/06,,MSdv/06,MSdv/06,forest ,forest 
+Forest,MSdv,MSdv/07,MSdv/07,,MSdv/07,MSdv/07,forest ,forest 
+Forest,MSdv,MSdv/08,MSdv/08,,MSdv/08,MSdv/08,forest ,forest 
+Forest,MSdv,MSdv/09,MSdv/09,,MSdv/09,MSdv/09,forest ,forest 
+Forest,MSdw,MSdw/101,MSdw/101,,MSdw/101,MSdw/101,forest ,forest 
+Forest,MSdw,MSdw/102,MSdw/102,,MSdw/102,MSdw/102,forest ,forest 
+Forest,MSdw,MSdw/103,MSdw/103,,MSdw/103,MSdw/103,forest ,forest 
+Forest,MSdw,MSdw/104,MSdw/104,,MSdw/104,MSdw/104,forest ,forest 
+Forest,MSdw,MSdw/104.1,MSdw/104.1,,MSdw/104,MSdw/104,forest ,forest 
+Forest,MSdw,MSdw/104.2,MSdw/104.2,,MSdw/104,MSdw/104,forest ,forest 
+Forest,MSdw,MSdw/110,MSdw/110,,MSdw/110,MSdw/110,forest ,forest 
+Forest,MSdw,MSdw/110.1,MSdw/110.1,,MSdw/110,MSdw/110,forest ,forest 
+Forest,MSdw,MSdw/110.2,MSdw/110.2,,MSdw/110,MSdw/110,forest ,forest 
+Forest,MSdw,MSdw/111,MSdw/111,,MSdw/111,MSdw/111,forest ,forest 
+Forest,MSdw,MSdw/111a,MSdw/111a,,MSdw/111,MSdw/111,forest ,forest 
+Forest,MSdw,MSdw/111b,MSdw/111b,,MSdw/111,MSdw/111,forest ,forest 
+Forest,MSdw,MSdw/112,MSdw/112,,MSdw/112,MSdw/112,forest ,forest 
+Forest,MSxk1,MSxk1/101,MSxk1/101,,MSxk1/101,MSxk1/101,forest ,forest 
+Forest,MSxk1,MSxk1/101a,MSxk1/101a,,MSxk1/101,MSxk1/101,forest ,forest 
+Forest,MSxk1,MSxk1/101b,MSxk1/101b,,MSxk1/101,MSxk1/101,forest ,forest 
+Forest,MSxk1,MSxk1/102,MSxk1/102,,MSxk1/102,MSxk1/102,forest ,forest 
+Forest,MSxk1,MSxk1/103,MSxk1/103,,MSxk1/103,MSxk1/103,forest ,forest 
+Forest,MSxk1,MSxk1/104,MSxk1/104,,MSxk1/104,MSxk1/104,forest ,forest 
+Forest,MSxk1,MSxk1/105,MSxk1/105,,MSxk1/105,MSxk1/105,forest ,forest 
+Forest,MSxk1,MSxk1/110,MSxk1/110,,MSxk1/110,MSxk1/110,forest ,forest 
+Forest,MSxk1,MSxk1/111,MSxk1/111,,MSxk1/111,MSxk1/111,forest ,forest 
+Forest,MSxk1,MSxk1/112,MSxk1/112,,MSxk1/112,MSxk1/112,forest ,forest 
+Forest,MSxk1,MSxk1/113,MSxk1/113,,MSxk1/113,MSxk1/113,forest ,forest 
+Forest,MSxk2,MSxk2/101,MSxk2/101,,MSxk2/101,MSxk2/101,forest ,forest 
+Forest,MSxk2,MSxk2/102,MSxk2/102,,MSxk2/102,MSxk2/102,forest ,forest 
+Forest,MSxk2,MSxk2/103,MSxk2/103,,MSxk2/103,MSxk2/103,forest ,forest 
+Forest,MSxk2,MSxk2/104,MSxk2/104,,MSxk2/104,MSxk2/104,forest ,forest 
+Forest,MSxk2,MSxk2/105,MSxk2/105,,MSxk2/105,MSxk2/105,forest ,forest 
+Forest,MSxk2,MSxk2/106,MSxk2/106,,MSxk2/106,MSxk2/106,forest ,forest 
+Forest,MSxk2,MSxk2/110,MSxk2/110,,MSxk2/110,MSxk2/110,forest ,forest 
+Forest,MSxk2,MSxk2/111,MSxk2/111,,MSxk2/111,MSxk2/111,forest ,forest 
+Forest,MSxk2,MSxk2/112,MSxk2/112,,MSxk2/112,MSxk2/112,forest ,forest 
+Forest,MSxk3,MSxk3/01,MSxk3/01,,MSxk3/01,MSxk3/01,forest ,forest 
+Forest,MSxk3,MSxk3/02,MSxk3/02,,MSxk3/02,MSxk3/02,forest ,forest 
+Forest,MSxk3,MSxk3/03,MSxk3/03,,MSxk3/03,MSxk3/03,forest ,forest 
+Forest,MSxk3,MSxk3/04,MSxk3/04,,MSxk3/04,MSxk3/04,forest ,forest 
+Forest,MSxk3,MSxk3/05,MSxk3/05,,MSxk3/05,MSxk3/05,forest ,forest 
+Forest,MSxk3,MSxk3/06,MSxk3/06,,MSxk3/06,MSxk3/06,forest ,forest 
+Forest,MSxk3,MSxk3/07,MSxk3/07,,MSxk3/07,MSxk3/07,forest ,forest 
+Forest,MSxk3,MSxk3/08,MSxk3/08,,MSxk3/08,MSxk3/08,forest ,forest 
+Forest,MSxk3,MSxk3/09,MSxk3/09,,MSxk3/09,MSxk3/09,forest ,forest 
+Forest,MSxk3,MSxk3/10,MSxk3/10,,MSxk3/10,MSxk3/10,forest ,forest 
+Forest,MSxv,MSxv/01,MSxv/01,,MSxv/01,MSxv/01,forest ,forest 
+Forest,MSxv,MSxv/02,MSxv/02,,MSxv/02,MSxv/02,forest ,forest 
+Forest,MSxv,MSxv/03,MSxv/03,,MSxv/03,MSxv/03,forest ,forest 
+Forest,MSxv,MSxv/03a,MSxv/03a,,MSxv/03,MSxv/03,forest ,forest 
+Forest,MSxv,MSxv/03b,MSxv/03b,,MSxv/03,MSxv/03,forest ,forest 
+Forest,MSxv,MSxv/04,MSxv/04,,MSxv/04,MSxv/04,forest ,forest 
+Forest,MSxv,MSxv/05,MSxv/05,,MSxv/05,MSxv/05,forest ,forest 
+Forest,MSxv,MSxv/06,MSxv/06,,MSxv/06,MSxv/06,forest ,forest 
+Forest,MSxv,MSxv/07,MSxv/07,,MSxv/07,MSxv/07,forest ,forest 
+Forest,MSxv,MSxv/08,MSxv/08,,MSxv/08,MSxv/08,forest ,forest 
+Forest,MSxv,MSxv/09,MSxv/09,,MSxv/09,MSxv/09,forest ,forest 
+Forest,MSxv,MSxv/10,MSxv/10,,MSxv/10,MSxv/10,forest ,forest 
+Forest,PPxh1,PPxh1/101,PPxh1/101,,PPxh1/101,PPxh1/101,forest ,forest 
+Forest,PPxh1,PPxh1/102,PPxh1/102,,PPxh1/102,PPxh1/102,forest ,forest 
+Forest,PPxh1,PPxh1/103,PPxh1/103,,PPxh1/103,PPxh1/103,forest ,forest 
+Forest,PPxh1,PPxh1/104,PPxh1/104,,PPxh1/104,PPxh1/104,forest ,forest 
+Forest,PPxh1,PPxh1/110,PPxh1/110,,PPxh1/110,PPxh1/110,forest ,forest 
+Forest,PPxh1,PPxh1/111,PPxh1/111,,PPxh1/111,PPxh1/111,forest ,forest 
+Forest,PPxh2,PPxh2/101,PPxh2/101,,PPxh2/101,PPxh2/101,forest ,forest 
+Forest,PPxh2,PPxh2/102,PPxh2/102,,PPxh2/102,PPxh2/102,forest ,forest 
+Forest,PPxh2,PPxh2/103,PPxh2/103,,PPxh2/103,PPxh2/103,forest ,forest 
+Forest,PPxh2,PPxh2/110,PPxh2/110,,PPxh2/110,PPxh2/110,forest ,forest 
+Forest,PPxh2,PPxh2/110.1,PPxh2/110.1,,PPxh2/110,PPxh2/110,forest ,forest 
+Forest,PPxh2,PPxh2/110.2,PPxh2/110.2,,PPxh2/110,PPxh2/110,forest ,forest 
+Forest,PPxh2,PPxh2/111,PPxh2/111,,PPxh2/111,PPxh2/111,forest ,forest 
+NonForest,,,Ro,Rock Outcrop,R,Ro,nonforest,Ro
+NonForest,,,Ro01,Selaginella - Bluebunch wheatgrass - Screw moss,R,Ro,nonforest,Ro01
+NonForest,,,Ro01.1,Selaginella - Bluebunch wheatgrass - Screw moss,R,Ro,nonforest,Ro01.1
+NonForest,,,Ro01.2,Selaginella - Screw moss,R,Ro,nonforest,Ro01.2
+NonForest,,,Ro02,Rocky Mountain juniper - Selaginella - Bluebunch wheatgrass,R,Ro,nonforest,Ro02
+NonForest,,,Ro03,Antelope-brush - Selaginella - Bluebunch wheatgrass,R,Ro,nonforest,Ro03
+NonForest,,,Ro04,Big sagebrush - Selaginella - Bluebunch wheatgrass,R,Ro,nonforest,Ro04
+NonForest,,,Ro04.1,Big sagebrush - Selaginella - Bluebunch wheatgrass,R,Ro,nonforest,Ro04.1
+NonForest,,,Ro04.2,Rabbit-brush - Big sagebrush - Selaginella - Bluebunch wheatgrass,R,Ro,nonforest,Ro04.2
+NonForest,,,Ro05,Juniper - Kinnikinnick - Penstemon,R,Ro,nonforest,Ro05
+NonForest,,,Ro05.1,Juniper - Kinnikinnick - Penstemon,R,Ro,nonforest,Ro05.1
+NonForest,,,Ro05.2,Juniper - Kinnikinnick - Penstemon - Screw moss,R,Ro,nonforest,Ro05.2
+NonForest,,,Ro06,Juniper - Stonecrop - Sandwort,R,Ro,nonforest,Ro06
+NonForest,,,Ro06.1,Juniper - Stonecrop - Sandwort,R,Ro,nonforest,Ro06.1
+NonForest,,,Ro06.2,Juniper - Kinnikinnick - Stonecrop - Sandwort,R,Ro,nonforest,Ro06.2
+NonForest,,,Ro07,Juniper - Soopolallie - Shrubby cinquefoil,R,Ro,nonforest,Ro07
+NonForest,,,Ro09,Saskatoon - Rock-moss - Clad lichen,R,Ro,nonforest,Ro09
+NonForest,,,Ro09.1,Saskatoon - Rock-moss - Clad lichen,R,Ro,nonforest,Ro09.1
+NonForest,,,Ro09.2,Saskatoon - Poverty oatgrass - Rock-moss - Clad lichen,R,Ro,nonforest,Ro09.2
+NonForest,,,Ro10,Huckleberry - Rock-moss - Haircap moss,R,Ro,nonforest,Ro10
+NonForest,,,Ro11,Grouseberry - Clad lichen,R,Ro,nonforest,Ro11
+NonForest,,,Ro12,Mountain-heather - Alaska saxifrage - Rock-moss,R,Ro,nonforest,Ro12
+NonForest,,,Ro51,Juniper - Saskatoon - Kinnikinnick,R,Ro,nonforest,Ro51
+NonForest,,,Rt,Rock Talus,R,Rt,nonforest,Rt
+NonForest,,,Rt01,Rocktripe - Green map,R,Rt,nonforest,Rt01
+NonForest,,,Rt02,Rock-moss - Clad lichen,R,Rt,nonforest,Rt02
+NonForest,,,Rt03,Raspberry - Feathermoss - Clad lichen,R,Rt,nonforest,Rt03
+NonForest,,,Rt04,Saskatoon - Bluebunch wheatgrass,R,Rt,nonforest,Rt04
+NonForest,,,Rt04a,Saskatoon - Bluebunch wheatgrass,R,Rt,nonforest,Rt04a
+NonForest,,,Rt04b,Saskatoon - Bluebunch wheatgrass,R,Rt,nonforest,Rt04b
+NonForest,,,Rt05,Big sagebrush - Saskatoon - Bluebunch wheatgrass,R,Rt,nonforest,Rt05
+NonForest,,,Rt06,Mock-orange - Choke cherry - Saskatoon,R,Rt,nonforest,Rt06
+NonForest,,,Rt07,Aspen - Juniper - Rocktripe,R,Rt,nonforest,Rt07
+NonForest,,,Rt07.1,Aspen - Juniper - Rocktripe,R,Rt,nonforest,Rt07.1
+NonForest,,,Rt07.2,Juniper - Rocktripe,R,Rt,nonforest,Rt07.2
+NonForest,,,Rt08,Aspen - Douglas maple - Saskatoon,R,Rt,nonforest,Rt08
+NonForest,,,Rt20,Spotted saxifrage - Clad lichen,R,Rt,nonforest,Rt20
+NonForest,,,Rt21,Subalpine larch - Pink mountain-heather - Heron's-bill,R,Rt,nonforest,Rt21
+Forest,SBPSdc,SBPSdc/01,SBPSdc/01,,SBPSdc/01,SBPSdc/01,forest ,forest 
+Forest,SBPSdc,SBPSdc/02,SBPSdc/02,,SBPSdc/02,SBPSdc/02,forest ,forest 
+Forest,SBPSdc,SBPSdc/02a,SBPSdc/02a,,SBPSdc/02,SBPSdc/02,forest ,forest 
+Forest,SBPSdc,SBPSdc/02b,SBPSdc/02b,,SBPSdc/02,SBPSdc/02,forest ,forest 
+Forest,SBPSdc,SBPSdc/03,SBPSdc/03,,SBPSdc/03,SBPSdc/03,forest ,forest 
+Forest,SBPSdc,SBPSdc/03a,SBPSdc/03a,,SBPSdc/03,SBPSdc/03,forest ,forest 
+Forest,SBPSdc,SBPSdc/03b,SBPSdc/03b,,SBPSdc/03,SBPSdc/03,forest ,forest 
+Forest,SBPSdc,SBPSdc/04,SBPSdc/04,,SBPSdc/04,SBPSdc/04,forest ,forest 
+Forest,SBPSdc,SBPSdc/05,SBPSdc/05,,SBPSdc/05,SBPSdc/05,forest ,forest 
+Forest,SBPSdc,SBPSdc/06,SBPSdc/06,,SBPSdc/06,SBPSdc/06,forest ,forest 
+Forest,SBPSdc,SBPSdc/07,SBPSdc/07,,SBPSdc/07,SBPSdc/07,forest ,forest 
+Forest,SBPSdc,SBPSdc/08,SBPSdc/08,,SBPSdc/08,SBPSdc/08,forest ,forest 
+Forest,SBPSmc,SBPSmc/01,SBPSmc/01,,SBPSmc/01,SBPSmc/01,forest ,forest 
+Forest,SBPSmc,SBPSmc/01a,SBPSmc/01a,,SBPSmc/01,SBPSmc/01,forest ,forest 
+Forest,SBPSmc,SBPSmc/01b,SBPSmc/01b,,SBPSmc/01,SBPSmc/01,forest ,forest 
+Forest,SBPSmc,SBPSmc/02,SBPSmc/02,,SBPSmc/02,SBPSmc/02,forest ,forest 
+Forest,SBPSmc,SBPSmc/03,SBPSmc/03,,SBPSmc/03,SBPSmc/03,forest ,forest 
+Forest,SBPSmc,SBPSmc/04,SBPSmc/04,,SBPSmc/04,SBPSmc/04,forest ,forest 
+Forest,SBPSmc,SBPSmc/05,SBPSmc/05,,SBPSmc/05,SBPSmc/05,forest ,forest 
+Forest,SBPSmc,SBPSmc/06,SBPSmc/06,,SBPSmc/06,SBPSmc/06,forest ,forest 
+Forest,SBPSmc,SBPSmc/07,SBPSmc/07,,SBPSmc/07,SBPSmc/07,forest ,forest 
+Forest,SBPSmc,SBPSmc/08,SBPSmc/08,,SBPSmc/08,SBPSmc/08,forest ,forest 
+Forest,SBPSmk,SBPSmk/01,SBPSmk/01,,SBPSmk/01,SBPSmk/01,forest ,forest 
+Forest,SBPSmk,SBPSmk/02,SBPSmk/02,,SBPSmk/02,SBPSmk/02,forest ,forest 
+Forest,SBPSmk,SBPSmk/03,SBPSmk/03,,SBPSmk/03,SBPSmk/03,forest ,forest 
+Forest,SBPSmk,SBPSmk/04,SBPSmk/04,,SBPSmk/04,SBPSmk/04,forest ,forest 
+Forest,SBPSmk,SBPSmk/04a,SBPSmk/04a,,SBPSmk/04,SBPSmk/04,forest ,forest 
+Forest,SBPSmk,SBPSmk/04b,SBPSmk/04b,,SBPSmk/04,SBPSmk/04,forest ,forest 
+Forest,SBPSmk,SBPSmk/05,SBPSmk/05,,SBPSmk/05,SBPSmk/05,forest ,forest 
+Forest,SBPSmk,SBPSmk/06,SBPSmk/06,,SBPSmk/06,SBPSmk/06,forest ,forest 
+Forest,SBPSmk,SBPSmk/07,SBPSmk/07,,SBPSmk/07,SBPSmk/07,forest ,forest 
+Forest,SBPSmk,SBPSmk/08,SBPSmk/08,,SBPSmk/08,SBPSmk/08,forest ,forest 
+Forest,SBPSxc,SBPSxc/01,SBPSxc/01,,SBPSxc/01,SBPSxc/01,forest ,forest 
+Forest,SBPSxc,SBPSxc/02,SBPSxc/02,,SBPSxc/02,SBPSxc/02,forest ,forest 
+Forest,SBPSxc,SBPSxc/02a,SBPSxc/02a,,SBPSxc/02,SBPSxc/02,forest ,forest 
+Forest,SBPSxc,SBPSxc/02b,SBPSxc/02b,,SBPSxc/02,SBPSxc/02,forest ,forest 
+Forest,SBPSxc,SBPSxc/02c,SBPSxc/02c,,SBPSxc/02,SBPSxc/02,forest ,forest 
+Forest,SBPSxc,SBPSxc/03,SBPSxc/03,,SBPSxc/03,SBPSxc/03,forest ,forest 
+Forest,SBPSxc,SBPSxc/04,SBPSxc/04,,SBPSxc/04,SBPSxc/04,forest ,forest 
+Forest,SBPSxc,SBPSxc/05,SBPSxc/05,,SBPSxc/05,SBPSxc/05,forest ,forest 
+Forest,SBPSxc,SBPSxc/06,SBPSxc/06,,SBPSxc/06,SBPSxc/06,forest ,forest 
+Forest,SBSdh1,SBSdh1/01,SBSdh1/01,,SBSdh1/01,SBSdh1/01,forest ,forest 
+Forest,SBSdh1,SBSdh1/02,SBSdh1/02,,SBSdh1/02,SBSdh1/02,forest ,forest 
+Forest,SBSdh1,SBSdh1/03,SBSdh1/03,,SBSdh1/03,SBSdh1/03,forest ,forest 
+Forest,SBSdh1,SBSdh1/04,SBSdh1/04,,SBSdh1/04,SBSdh1/04,forest ,forest 
+Forest,SBSdh1,SBSdh1/05,SBSdh1/05,,SBSdh1/05,SBSdh1/05,forest ,forest 
+Forest,SBSdh1,SBSdh1/06,SBSdh1/06,,SBSdh1/06,SBSdh1/06,forest ,forest 
+Forest,SBSdh1,SBSdh1/07,SBSdh1/07,,SBSdh1/07,SBSdh1/07,forest ,forest 
+Forest,SBSdh1,SBSdh1/08,SBSdh1/08,,SBSdh1/08,SBSdh1/08,forest ,forest 
+Forest,SBSdk,SBSdk/01,SBSdk/01,,SBSdk/01,SBSdk/01,forest ,forest 
+Forest,SBSdk,SBSdk/01a,SBSdk/01a,,SBSdk/01,SBSdk/01,forest ,forest 
+Forest,SBSdk,SBSdk/01b,SBSdk/01b,,SBSdk/01,SBSdk/01,forest ,forest 
+Forest,SBSdk,SBSdk/02,SBSdk/02,,SBSdk/02,SBSdk/02,forest ,forest 
+Forest,SBSdk,SBSdk/03,SBSdk/03,,SBSdk/03,SBSdk/03,forest ,forest 
+Forest,SBSdk,SBSdk/04,SBSdk/04,,SBSdk/04,SBSdk/04,forest ,forest 
+Forest,SBSdk,SBSdk/05,SBSdk/05,,SBSdk/05,SBSdk/05,forest ,forest 
+Forest,SBSdk,SBSdk/06,SBSdk/06,,SBSdk/06,SBSdk/06,forest ,forest 
+Forest,SBSdk,SBSdk/07,SBSdk/07,,SBSdk/07,SBSdk/07,forest ,forest 
+Forest,SBSdk,SBSdk/07a,SBSdk/07a,,SBSdk/07,SBSdk/07,forest ,forest 
+Forest,SBSdk,SBSdk/07b,SBSdk/07b,,SBSdk/07,SBSdk/07,forest ,forest 
+Deciduous,SBSdk,SBSdk/08,SBSdk/08,,SBSdk/08,SBSdk/08,forest ,forest 
+Deciduous,SBSdk,SBSdk/08a,SBSdk/08a,,SBSdk/08,SBSdk/08,forest ,forest 
+Deciduous,SBSdk,SBSdk/08b,SBSdk/08b,,SBSdk/08,SBSdk/08,forest ,forest 
+Forest,SBSdk,SBSdk/09,SBSdk/09,,SBSdk/09,SBSdk/09,forest ,forest 
+Forest,SBSdk,SBSdk/10,SBSdk/10,,SBSdk/10,SBSdk/10,forest ,forest 
+Deciduous,SBSdk,SBSdk/50,SBSdk/50,,SBSdk/50,SBSdk/50,forest ,forest 
+NonForest,SBSdk,SBSdk/51,SBSdk/51,,SBSdk/51,SBSdk/51,forest ,forest 
+NonForest,SBSdk,SBSdk/52,SBSdk/52,,SBSdk/52,SBSdk/52,forest ,forest 
+NonForest,SBSdk,SBSdk/53,SBSdk/53,,SBSdk/53,SBSdk/53,forest ,forest 
+NonForest,SBSdk,SBSdk/54,SBSdk/54,,SBSdk/54,SBSdk/54,forest ,forest 
+NonForest,SBSdk,SBSdk/81,SBSdk/81,,SBSdk/81,SBSdk/81,forest ,forest 
+NonForest,SBSdk,SBSdk/82,SBSdk/82,,SBSdk/82,SBSdk/82,forest ,forest 
+Forest,SBSdw1,SBSdw1/01,SBSdw1/01,,SBSdw1/01,SBSdw1/01,forest ,forest 
+Forest,SBSdw1,SBSdw1/02,SBSdw1/02,,SBSdw1/02,SBSdw1/02,forest ,forest 
+Forest,SBSdw1,SBSdw1/03,SBSdw1/03,,SBSdw1/03,SBSdw1/03,forest ,forest 
+Forest,SBSdw1,SBSdw1/04,SBSdw1/04,,SBSdw1/04,SBSdw1/04,forest ,forest 
+Forest,SBSdw1,SBSdw1/05,SBSdw1/05,,SBSdw1/05,SBSdw1/05,forest ,forest 
+Forest,SBSdw1,SBSdw1/06,SBSdw1/06,,SBSdw1/06,SBSdw1/06,forest ,forest 
+Forest,SBSdw1,SBSdw1/07,SBSdw1/07,,SBSdw1/07,SBSdw1/07,forest ,forest 
+Forest,SBSdw1,SBSdw1/08,SBSdw1/08,,SBSdw1/08,SBSdw1/08,forest ,forest 
+Forest,SBSdw1,SBSdw1/09,SBSdw1/09,,SBSdw1/09,SBSdw1/09,forest ,forest 
+Forest,SBSdw2,SBSdw2/01,SBSdw2/01,,SBSdw2/01,SBSdw2/01,forest ,forest 
+Forest,SBSdw2,SBSdw2/02,SBSdw2/02,,SBSdw2/02,SBSdw2/02,forest ,forest 
+Forest,SBSdw2,SBSdw2/03,SBSdw2/03,,SBSdw2/03,SBSdw2/03,forest ,forest 
+Forest,SBSdw2,SBSdw2/04,SBSdw2/04,,SBSdw2/04,SBSdw2/04,forest ,forest 
+Forest,SBSdw2,SBSdw2/05,SBSdw2/05,,SBSdw2/05,SBSdw2/05,forest ,forest 
+Forest,SBSdw2,SBSdw2/06,SBSdw2/06,,SBSdw2/06,SBSdw2/06,forest ,forest 
+Forest,SBSdw2,SBSdw2/07,SBSdw2/07,,SBSdw2/07,SBSdw2/07,forest ,forest 
+Forest,SBSdw2,SBSdw2/08,SBSdw2/08,,SBSdw2/08,SBSdw2/08,forest ,forest 
+Forest,SBSdw2,SBSdw2/09,SBSdw2/09,,SBSdw2/09,SBSdw2/09,forest ,forest 
+Forest,SBSdw2,SBSdw2/10,SBSdw2/10,,SBSdw2/10,SBSdw2/10,forest ,forest 
+Forest,SBSdw2,SBSdw2/11,SBSdw2/11,,SBSdw2/11,SBSdw2/11,forest ,forest 
+Forest,SBSdw2,SBSdw2/12,SBSdw2/12,,SBSdw2/12,SBSdw2/12,forest ,forest 
+Forest,SBSdw3,SBSdw3/01,SBSdw3/01,,SBSdw3/01,SBSdw3/01,forest ,forest 
+Forest,SBSdw3,SBSdw3/02,SBSdw3/02,,SBSdw3/02,SBSdw3/02,forest ,forest 
+Forest,SBSdw3,SBSdw3/03,SBSdw3/03,,SBSdw3/03,SBSdw3/03,forest ,forest 
+Forest,SBSdw3,SBSdw3/04,SBSdw3/04,,SBSdw3/04,SBSdw3/04,forest ,forest 
+Forest,SBSdw3,SBSdw3/05,SBSdw3/05,,SBSdw3/05,SBSdw3/05,forest ,forest 
+Forest,SBSdw3,SBSdw3/06,SBSdw3/06,,SBSdw3/06,SBSdw3/06,forest ,forest 
+Forest,SBSdw3,SBSdw3/07,SBSdw3/07,,SBSdw3/07,SBSdw3/07,forest ,forest 
+Forest,SBSdw3,SBSdw3/08,SBSdw3/08,,SBSdw3/08,SBSdw3/08,forest ,forest 
+Forest,SBSdw3,SBSdw3/09,SBSdw3/09,,SBSdw3/09,SBSdw3/09,forest ,forest 
+Forest,SBSdw3,SBSdw3/10,SBSdw3/10,,SBSdw3/10,SBSdw3/10,forest ,forest 
+Forest,SBSdw3,SBSdw3/11,SBSdw3/11,,SBSdw3/11,SBSdw3/11,forest ,forest 
+Forest,SBSdw3,SBSdw3/12,SBSdw3/12,,SBSdw3/12,SBSdw3/12,forest ,forest 
+Forest,SBSmc1,SBSmc1/01,SBSmc1/01,,SBSmc1/01,SBSmc1/01,forest ,forest 
+Forest,SBSmc1,SBSmc1/01a,SBSmc1/01a,,SBSmc1/01,SBSmc1/01,forest ,forest 
+Forest,SBSmc1,SBSmc1/01b,SBSmc1/01b,,SBSmc1/01,SBSmc1/01,forest ,forest 
+Forest,SBSmc1,SBSmc1/01c,SBSmc1/01c,,SBSmc1/01,SBSmc1/01,forest ,forest 
+Forest,SBSmc1,SBSmc1/02,SBSmc1/02,,SBSmc1/02,SBSmc1/02,forest ,forest 
+Forest,SBSmc1,SBSmc1/03,SBSmc1/03,,SBSmc1/03,SBSmc1/03,forest ,forest 
+Forest,SBSmc1,SBSmc1/04,SBSmc1/04,,SBSmc1/04,SBSmc1/04,forest ,forest 
+Forest,SBSmc1,SBSmc1/05,SBSmc1/05,,SBSmc1/05,SBSmc1/05,forest ,forest 
+Forest,SBSmc1,SBSmc1/06,SBSmc1/06,,SBSmc1/06,SBSmc1/06,forest ,forest 
+Forest,SBSmc1,SBSmc1/07,SBSmc1/07,,SBSmc1/07,SBSmc1/07,forest ,forest 
+Forest,SBSmc1,SBSmc1/08,SBSmc1/08,,SBSmc1/08,SBSmc1/08,forest ,forest 
+Forest,SBSmc2,SBSmc2/01,SBSmc2/01,,SBSmc2/01,SBSmc2/01,forest ,forest 
+Forest,SBSmc2,SBSmc2/01a,SBSmc2/01a,,SBSmc2/01,SBSmc2/01,forest ,forest 
+Forest,SBSmc2,SBSmc2/01b,SBSmc2/01b,,SBSmc2/01,SBSmc2/01,forest ,forest 
+Forest,SBSmc2,SBSmc2/01c,SBSmc2/01c,,SBSmc2/01,SBSmc2/01,forest ,forest 
+Forest,SBSmc2,SBSmc2/02,SBSmc2/02,,SBSmc2/02,SBSmc2/02,forest ,forest 
+Forest,SBSmc2,SBSmc2/02a,SBSmc2/02a,,SBSmc2/02,SBSmc2/02,forest ,forest 
+Forest,SBSmc2,SBSmc2/02b,SBSmc2/02b,,SBSmc2/02,SBSmc2/02,forest ,forest 
+Forest,SBSmc2,SBSmc2/03,SBSmc2/03,,SBSmc2/03,SBSmc2/03,forest ,forest 
+Forest,SBSmc2,SBSmc2/04,SBSmc2/04,,SBSmc2/04,SBSmc2/04,forest ,forest 
+Forest,SBSmc2,SBSmc2/05,SBSmc2/05,,SBSmc2/05,SBSmc2/05,forest ,forest 
+Forest,SBSmc2,SBSmc2/06,SBSmc2/06,,SBSmc2/06,SBSmc2/06,forest ,forest 
+Forest,SBSmc2,SBSmc2/07,SBSmc2/07,,SBSmc2/07,SBSmc2/07,forest ,forest 
+Forest,SBSmc2,SBSmc2/08,SBSmc2/08,,SBSmc2/08,SBSmc2/08,forest ,forest 
+Forest,SBSmc2,SBSmc2/09,SBSmc2/09,,SBSmc2/09,SBSmc2/09,forest ,forest 
+Forest,SBSmc2,SBSmc2/09a,SBSmc2/09a,,SBSmc2/09,SBSmc2/09,forest ,forest 
+Forest,SBSmc2,SBSmc2/09b,SBSmc2/09b,,SBSmc2/09,SBSmc2/09,forest ,forest 
+Forest,SBSmc2,SBSmc2/10,SBSmc2/10,,SBSmc2/10,SBSmc2/10,forest ,forest 
+Forest,SBSmc2,SBSmc2/10a,SBSmc2/10a,,SBSmc2/10,SBSmc2/10,forest ,forest 
+Forest,SBSmc2,SBSmc2/10b,SBSmc2/10b,,SBSmc2/10,SBSmc2/10,forest ,forest 
+Forest,SBSmc2,SBSmc2/11,SBSmc2/11,,SBSmc2/11,SBSmc2/11,forest ,forest 
+Forest,SBSmc2,SBSmc2/12,SBSmc2/12,,SBSmc2/12,SBSmc2/12,forest ,forest 
+Forest,SBSmc2,SBSmc2/13,SBSmc2/13,,SBSmc2/13,SBSmc2/13,forest ,forest 
+Forest,SBSmc2,SBSmc2/14,SBSmc2/14,,SBSmc2/14,SBSmc2/14,forest ,forest 
+Forest,SBSmc2,SBSmc2/15,SBSmc2/15,,SBSmc2/15,SBSmc2/15,forest ,forest 
+Forest,SBSmc2,SBSmc2/16,SBSmc2/16,,SBSmc2/16,SBSmc2/16,forest ,forest 
+Forest,SBSmc3,SBSmc3/01,SBSmc3/01,,SBSmc3/01,SBSmc3/01,forest ,forest 
+Forest,SBSmc3,SBSmc3/02,SBSmc3/02,,SBSmc3/02,SBSmc3/02,forest ,forest 
+Forest,SBSmc3,SBSmc3/03,SBSmc3/03,,SBSmc3/03,SBSmc3/03,forest ,forest 
+Forest,SBSmc3,SBSmc3/04,SBSmc3/04,,SBSmc3/04,SBSmc3/04,forest ,forest 
+Forest,SBSmc3,SBSmc3/05,SBSmc3/05,,SBSmc3/05,SBSmc3/05,forest ,forest 
+Forest,SBSmc3,SBSmc3/06,SBSmc3/06,,SBSmc3/06,SBSmc3/06,forest ,forest 
+Forest,SBSmc3,SBSmc3/07,SBSmc3/07,,SBSmc3/07,SBSmc3/07,forest ,forest 
+Forest,SBSmc3,SBSmc3/08,SBSmc3/08,,SBSmc3/08,SBSmc3/08,forest ,forest 
+Forest,SBSmc3,SBSmc3/09,SBSmc3/09,,SBSmc3/09,SBSmc3/09,forest ,forest 
+Forest,SBSmh,SBSmh/01,SBSmh/01,,SBSmh/01,SBSmh/01,forest ,forest 
+Forest,SBSmh,SBSmh/02,SBSmh/02,,SBSmh/02,SBSmh/02,forest ,forest 
+Forest,SBSmh,SBSmh/03,SBSmh/03,,SBSmh/03,SBSmh/03,forest ,forest 
+Forest,SBSmh,SBSmh/04,SBSmh/04,,SBSmh/04,SBSmh/04,forest ,forest 
+Forest,SBSmh,SBSmh/05,SBSmh/05,,SBSmh/05,SBSmh/05,forest ,forest 
+Forest,SBSmh,SBSmh/06,SBSmh/06,,SBSmh/06,SBSmh/06,forest ,forest 
+Forest,SBSmh,SBSmh/07,SBSmh/07,,SBSmh/07,SBSmh/07,forest ,forest 
+Forest,SBSmh,SBSmh/08,SBSmh/08,,SBSmh/08,SBSmh/08,forest ,forest 
+Forest,SBSmh,SBSmh/09,SBSmh/09,,SBSmh/09,SBSmh/09,forest ,forest 
+Forest,SBSmk1,SBSmk1/01,SBSmk1/01,,SBSmk1/01,SBSmk1/01,forest ,forest 
+Forest,SBSmk1,SBSmk1/02,SBSmk1/02,,SBSmk1/02,SBSmk1/02,forest ,forest 
+Forest,SBSmk1,SBSmk1/03,SBSmk1/03,,SBSmk1/03,SBSmk1/03,forest ,forest 
+Forest,SBSmk1,SBSmk1/04,SBSmk1/04,,SBSmk1/04,SBSmk1/04,forest ,forest 
+Forest,SBSmk1,SBSmk1/05,SBSmk1/05,,SBSmk1/05,SBSmk1/05,forest ,forest 
+Forest,SBSmk1,SBSmk1/06,SBSmk1/06,,SBSmk1/06,SBSmk1/06,forest ,forest 
+Forest,SBSmk1,SBSmk1/07,SBSmk1/07,,SBSmk1/07,SBSmk1/07,forest ,forest 
+Forest,SBSmk1,SBSmk1/08,SBSmk1/08,,SBSmk1/08,SBSmk1/08,forest ,forest 
+Forest,SBSmk1,SBSmk1/09,SBSmk1/09,,SBSmk1/09,SBSmk1/09,forest ,forest 
+Forest,SBSmk1,SBSmk1/09a,SBSmk1/09a,,SBSmk1/09,SBSmk1/09,forest ,forest 
+Forest,SBSmk1,SBSmk1/09b,SBSmk1/09b,,SBSmk1/09,SBSmk1/09,forest ,forest 
+Forest,SBSmk1,SBSmk1/10,SBSmk1/10,,SBSmk1/10,SBSmk1/10,forest ,forest 
+Forest,SBSmk2,SBSmk2/01,SBSmk2/01,,SBSmk2/01,SBSmk2/01,forest ,forest 
+Forest,SBSmk2,SBSmk2/02,SBSmk2/02,,SBSmk2/02,SBSmk2/02,forest ,forest 
+Forest,SBSmk2,SBSmk2/03,SBSmk2/03,,SBSmk2/03,SBSmk2/03,forest ,forest 
+Forest,SBSmk2,SBSmk2/04,SBSmk2/04,,SBSmk2/04,SBSmk2/04,forest ,forest 
+Forest,SBSmk2,SBSmk2/05,SBSmk2/05,,SBSmk2/05,SBSmk2/05,forest ,forest 
+Forest,SBSmk2,SBSmk2/06,SBSmk2/06,,SBSmk2/06,SBSmk2/06,forest ,forest 
+Forest,SBSmk2,SBSmk2/07,SBSmk2/07,,SBSmk2/07,SBSmk2/07,forest ,forest 
+Forest,SBSmm,SBSmm/01,SBSmm/01,,SBSmm/01,SBSmm/01,forest ,forest 
+Forest,SBSmm,SBSmm/02,SBSmm/02,,SBSmm/02,SBSmm/02,forest ,forest 
+Forest,SBSmm,SBSmm/03,SBSmm/03,,SBSmm/03,SBSmm/03,forest ,forest 
+Forest,SBSmm,SBSmm/04,SBSmm/04,,SBSmm/04,SBSmm/04,forest ,forest 
+Forest,SBSmm,SBSmm/05,SBSmm/05,,SBSmm/05,SBSmm/05,forest ,forest 
+Forest,SBSmm,SBSmm/06,SBSmm/06,,SBSmm/06,SBSmm/06,forest ,forest 
+Forest,SBSmm,SBSmm/07,SBSmm/07,,SBSmm/07,SBSmm/07,forest ,forest 
+Forest,SBSmm,SBSmm/08,SBSmm/08,,SBSmm/08,SBSmm/08,forest ,forest 
+NonForest,SBSmm,SBSmm/09,SBSmm/09,,SBSmm/09,SBSmm/09,forest ,forest 
+Forest,SBSmm,SBSmm/10,SBSmm/10,,SBSmm/10,SBSmm/10,forest ,forest 
+Forest,SBSmw,SBSmw/01,SBSmw/01,,SBSmw/01,SBSmw/01,forest ,forest 
+Forest,SBSmw,SBSmw/02,SBSmw/02,,SBSmw/02,SBSmw/02,forest ,forest 
+Forest,SBSmw,SBSmw/03,SBSmw/03,,SBSmw/03,SBSmw/03,forest ,forest 
+Forest,SBSmw,SBSmw/04,SBSmw/04,,SBSmw/04,SBSmw/04,forest ,forest 
+Forest,SBSmw,SBSmw/05,SBSmw/05,,SBSmw/05,SBSmw/05,forest ,forest 
+Forest,SBSmw,SBSmw/06,SBSmw/06,,SBSmw/06,SBSmw/06,forest ,forest 
+Forest,SBSmw,SBSmw/07,SBSmw/07,,SBSmw/07,SBSmw/07,forest ,forest 
+Forest,SBSmw,SBSmw/08,SBSmw/08,,SBSmw/08,SBSmw/08,forest ,forest 
+Forest,SBSmw,SBSmw/09,SBSmw/09,,SBSmw/09,SBSmw/09,forest ,forest 
+Forest,SBSmw,SBSmw/10,SBSmw/10,,SBSmw/10,SBSmw/10,forest ,forest 
+Forest,SBSmw,SBSmw/11,SBSmw/11,,SBSmw/11,SBSmw/11,forest ,forest 
+Forest,SBSmw,SBSmw/12,SBSmw/12,,SBSmw/12,SBSmw/12,forest ,forest 
+Forest,SBSmw,SBSmw/13,SBSmw/13,,SBSmw/13,SBSmw/13,forest ,forest 
+Forest,SBSmw,SBSmw/14,SBSmw/14,,SBSmw/14,SBSmw/14,forest ,forest 
+Forest,SBSmw,SBSmw/15,SBSmw/15,,SBSmw/15,SBSmw/15,forest ,forest 
+Forest,SBSmw,SBSmw/16,SBSmw/16,,SBSmw/16,SBSmw/16,forest ,forest 
+Forest,SBSvk,SBSvk/01,SBSvk/01,,SBSvk/01,SBSvk/01,forest ,forest 
+Forest,SBSvk,SBSvk/02,SBSvk/02,,SBSvk/02,SBSvk/02,forest ,forest 
+Forest,SBSvk,SBSvk/03,SBSvk/03,,SBSvk/03,SBSvk/03,forest ,forest 
+Forest,SBSvk,SBSvk/04,SBSvk/04,,SBSvk/04,SBSvk/04,forest ,forest 
+Forest,SBSvk,SBSvk/05,SBSvk/05,,SBSvk/05,SBSvk/05,forest ,forest 
+Forest,SBSvk,SBSvk/06,SBSvk/06,,SBSvk/06,SBSvk/06,forest ,forest 
+Forest,SBSvk,SBSvk/07,SBSvk/07,,SBSvk/07,SBSvk/07,forest ,forest 
+Forest,SBSvk,SBSvk/08,SBSvk/08,,SBSvk/08,SBSvk/08,forest ,forest 
+Forest,SBSvk,SBSvk/09,SBSvk/09,,SBSvk/09,SBSvk/09,forest ,forest 
+Forest,SBSvk,SBSvk/10,SBSvk/10,,SBSvk/10,SBSvk/10,forest ,forest 
+Deciduous,SBSvk,SBSvk/12,SBSvk/12,,SBSvk/12,SBSvk/12,forest ,forest 
+Forest,SBSvk,SBSvk/13,SBSvk/13,,SBSvk/13,SBSvk/13,forest ,forest 
+NonForest,SBSvk,SBSvk/51,SBSvk/51,,SBSvk/51,SBSvk/51,forest ,forest 
+Forest,SBSwk1,SBSwk1/01,SBSwk1/01,,SBSwk1/01,SBSwk1/01,forest ,forest 
+Forest,SBSwk1,SBSwk1/02,SBSwk1/02,,SBSwk1/02,SBSwk1/02,forest ,forest 
+Forest,SBSwk1,SBSwk1/03,SBSwk1/03,,SBSwk1/03,SBSwk1/03,forest ,forest 
+Forest,SBSwk1,SBSwk1/04,SBSwk1/04,,SBSwk1/04,SBSwk1/04,forest ,forest 
+Forest,SBSwk1,SBSwk1/05,SBSwk1/05,,SBSwk1/05,SBSwk1/05,forest ,forest 
+Forest,SBSwk1,SBSwk1/06,SBSwk1/06,,SBSwk1/06,SBSwk1/06,forest ,forest 
+Forest,SBSwk1,SBSwk1/07,SBSwk1/07,,SBSwk1/07,SBSwk1/07,forest ,forest 
+Forest,SBSwk1,SBSwk1/08,SBSwk1/08,,SBSwk1/08,SBSwk1/08,forest ,forest 
+Forest,SBSwk1,SBSwk1/09,SBSwk1/09,,SBSwk1/09,SBSwk1/09,forest ,forest 
+Forest,SBSwk1,SBSwk1/10,SBSwk1/10,,SBSwk1/10,SBSwk1/10,forest ,forest 
+Forest,SBSwk1,SBSwk1/11,SBSwk1/11,,SBSwk1/11,SBSwk1/11,forest ,forest 
+Forest,SBSwk1,SBSwk1/12,SBSwk1/12,,SBSwk1/12,SBSwk1/12,forest ,forest 
+Deciduous,SBSwk1,SBSwk1/13,SBSwk1/13,,SBSwk1/13,SBSwk1/13,forest ,forest 
+Forest,SBSwk1,SBSwk1/14,SBSwk1/14,,SBSwk1/14,SBSwk1/14,forest ,forest 
+Forest,SBSwk1,SBSwk1/15,SBSwk1/15,,SBSwk1/15,SBSwk1/15,forest ,forest 
+Forest,SBSwk1,SBSwk1/16,SBSwk1/16,,SBSwk1/16,SBSwk1/16,forest ,forest 
+Forest,SBSwk1,SBSwk1/17,SBSwk1/17,,SBSwk1/17,SBSwk1/17,forest ,forest 
+Forest,SBSwk2,SBSwk2/01,SBSwk2/01,,SBSwk2/01,SBSwk2/01,forest ,forest 
+Forest,SBSwk2,SBSwk2/02,SBSwk2/02,,SBSwk2/02,SBSwk2/02,forest ,forest 
+Forest,SBSwk2,SBSwk2/03,SBSwk2/03,,SBSwk2/03,SBSwk2/03,forest ,forest 
+Forest,SBSwk2,SBSwk2/04,SBSwk2/04,,SBSwk2/04,SBSwk2/04,forest ,forest 
+Forest,SBSwk2,SBSwk2/05,SBSwk2/05,,SBSwk2/05,SBSwk2/05,forest ,forest 
+Forest,SBSwk2,SBSwk2/06,SBSwk2/06,,SBSwk2/06,SBSwk2/06,forest ,forest 
+Forest,SBSwk2,SBSwk2/07,SBSwk2/07,,SBSwk2/07,SBSwk2/07,forest ,forest 
+Forest,SBSwk3,SBSwk3/01,SBSwk3/01,,SBSwk3/01,SBSwk3/01,forest ,forest 
+Forest,SBSwk3,SBSwk3/02,SBSwk3/02,,SBSwk3/02,SBSwk3/02,forest ,forest 
+Forest,SBSwk3,SBSwk3/03,SBSwk3/03,,SBSwk3/03,SBSwk3/03,forest ,forest 
+Forest,SBSwk3,SBSwk3/04,SBSwk3/04,,SBSwk3/04,SBSwk3/04,forest ,forest 
+Forest,SBSwk3,SBSwk3/05,SBSwk3/05,,SBSwk3/05,SBSwk3/05,forest ,forest 
+Forest,SBSwk3,SBSwk3/06,SBSwk3/06,,SBSwk3/06,SBSwk3/06,forest ,forest 
+Forest,SBSwk3,SBSwk3/07,SBSwk3/07,,SBSwk3/07,SBSwk3/07,forest ,forest 
+Forest,SBSwk3,SBSwk3/08,SBSwk3/08,,SBSwk3/08,SBSwk3/08,forest ,forest 
+Forest,SBSwk3a,SBSwk3a/01,SBSwk3a/01,,SBSwk3a/01,SBSwk3a/01,forest ,forest 
+Forest,SBSwk3a,SBSwk3a/02,SBSwk3a/02,,SBSwk3a/02,SBSwk3a/02,forest ,forest 
+Forest,SBSwk3a,SBSwk3a/03,SBSwk3a/03,,SBSwk3a/03,SBSwk3a/03,forest ,forest 
+Forest,SBSwk3a,SBSwk3a/04,SBSwk3a/04,,SBSwk3a/04,SBSwk3a/04,forest ,forest 
+Forest,SBSwk3a,SBSwk3a/05,SBSwk3a/05,,SBSwk3a/05,SBSwk3a/05,forest ,forest 
+Forest,SBSwk3a,SBSwk3a/06,SBSwk3a/06,,SBSwk3a/06,SBSwk3a/06,forest ,forest 
+Forest,SBSwk3a,SBSwk3a/07,SBSwk3a/07,,SBSwk3a/07,SBSwk3a/07,forest ,forest 
+Forest,SBSwk3a,SBSwk3a/08,SBSwk3a/08,,SBSwk3a/08,SBSwk3a/08,forest ,forest 
+NonForest,,,Sc,Shrub Carr,S,Sc,nonforest,Sc
+NonForest,,,Sc01,Scrub birch - Kinnikinnick,S,Sc,nonforest,Sc01
+NonForest,,,Sc02,Grey-leaved willow - Glow moss,S,Sc,nonforest,Sc02
+NonForest,,,Sk,Krummholz,S,Sk,nonforest,Sk
+NonForest,,,Sk33,Mountain hemlock - Bog blueberry - Crowberry,S,Sk,nonforest,Sk33
+NonForest,,,Sk34,Mountain  hemlock - Pacific reedgrass - Hellebore ,S,Sk,nonforest,Sk34
+Forest,SWBmk,SWBmk/01,SWBmk/01,,SWBmk/01,SWBmk/01,forest ,forest 
+Forest,SWBmk,SWBmk/02,SWBmk/02,,SWBmk/02,SWBmk/02,forest ,forest 
+Forest,SWBmk,SWBmk/03,SWBmk/03,,SWBmk/03,SWBmk/03,forest ,forest 
+Forest,SWBmk,SWBmk/04,SWBmk/04,,SWBmk/04,SWBmk/04,forest ,forest 
+Forest,SWBmk,SWBmk/05,SWBmk/05,,SWBmk/05,SWBmk/05,forest ,forest 
+Forest,SWBmk,SWBmk/06,SWBmk/06,,SWBmk/06,SWBmk/06,forest ,forest 
+Forest,SWBmk,SWBmk/07,SWBmk/07,,SWBmk/07,SWBmk/07,forest ,forest 
+Forest,SWBmk,SWBmk/08,SWBmk/08,,SWBmk/08,SWBmk/08,forest ,forest 
+Forest,SWBmk,SWBmk/09,SWBmk/09,,SWBmk/09,SWBmk/09,forest ,forest 
+NonForest,,,Vh,Avalanche Herb,V,Vh,nonforest,Vh
+NonForest,,,Vh01,Cow-parsnip - Fireweed - Nettle,V,Vh,nonforest,Vh01
+NonForest,,,Vh01.1,Cow-parsnip - Fireweed - Nettle,V,Vh,nonforest,Vh01.1
+NonForest,,,Vh01.2,Cow-parsnip - Fireweed - Bluejoint,V,Vh,nonforest,Vh01.2
+NonForest,,,Vh02,Valerian - Hellebore - Fireweed,V,Vh,nonforest,Vh02
+NonForest,,,Vh02.1,Valerian - Hellebore - Fireweed,V,Vh,nonforest,Vh02.1
+NonForest,,,Vh02.2,Valerian - Showy Sedge - Fireweed,V,Vh,nonforest,Vh02.2
+NonForest,,,Vh03,Lady fern - Hellebore - Valerian,V,Vh,nonforest,Vh03
+NonForest,,,Vh04,Valerian - Meadowrue - Waterleaf,V,Vh,nonforest,Vh04
+NonForest,,,Vh10,Fireweed - Grouseberry,V,Vh,nonforest,Vh10
+NonForest,,,Vh11,Fireweed - Yarrow - Strawberry,V,Vh,nonforest,Vh11
+NonForest,,,Vh12,Idaho fescue - Sulphur buckwheat - Fireweed,V,Vh,nonforest,Vh12
+NonForest,,,Vs,Avalanche Shrub,Vs,Vs,nonforest,Vs
+NonForest,,,Vs01,Sitka alder - Lady fern,V,Vs,nonforest,Vs01
+NonForest,,,Vs01.1,Sitka alder - Lady fern,V,Vs,nonforest,Vs01.1
+NonForest,,,Vs01.2,Sitka alder - Spiny wood fern,V,Vs,nonforest,Vs01.2
+NonForest,,,Vs02,Sitka alder - Solomon's-seal,V,Vs,nonforest,Vs02
+NonForest,,,Vs03,Sitka alder - Hellebore,V,Vs,nonforest,Vs03
+NonForest,,,Vs04,Sitka alder - Devil's club - Oak fern,V,Vs,nonforest,Vs04
+NonForest,,,Vs05,Sitka alder - Waterleaf,V,Vs,nonforest,Vs05
+NonForest,,,Vs10,Willow - Cow-parsnip - Fireweed,V,Vs,nonforest,Vs10
+NonForest,,,Vs10.1,Sitka willow - Cow-parsnip - Fireweed,V,Vs,nonforest,Vs10.1
+NonForest,,,Vs10.2,Barclay's willow - Cow-parsnip - Fireweed,V,Vs,nonforest,Vs10.2
+NonForest,,,Vs11,Thimbleberry - Cow-parsnip - Fireweed,V,Vs,nonforest,Vs11
+NonForest,,,Vs12,Huckleberry - Rhododendron - Fireweed,V,Vs,nonforest,Vs12
+NonForest,,,Vs13,Huckleberry - Bear-grass - Fireweed,V,Vs,nonforest,Vs13
+NonForest,,,Vs14,Saskatoon - Snowberry - Strawberry,V,Vs,nonforest,Vs14
+NonForest,,,Vs50,Sitka alder - Salmonberry,V,Vs,nonforest,Vs50
+NonForest,,,Wa,Alpine Wetland,W,Wa,nonforest,Wa
+NonForest,,,Wa01,Alpine sedge - Glowmoss,W,Wa,nonforest,Wa01
+NonForest,,,Wa01.1,Alpine sedge - Marsh-marigold - Glowmoss,W,Wa,nonforest,Wa01.1
+NonForest,,,Wa01.2,Alpine sedge - Leatherleaf saxifrage - Glowmoss,W,Wa,nonforest,Wa01.2
+NonForest,,,Wa02,Alpine sedge - Bog-laurel - Peat-moss,W,Wa,nonforest,Wa02
+NonForest,,,Wa03,Marsh-marigold - Globeflower - Springmoss,W,Wa,nonforest,Wa03
+NonForest,,,Wb,Bog,W,Wb,nonforest,Wb
+NonForest,,Wb01,Wb01,Sb - Creeping snowberry - Peat-moss,W,Wb,nonforest,Wb01
+NonForest,,Wb02,Wb02,Pl - Bog rosemary - Peat-moss,W,Wb,nonforest,Wb02
+NonForest,,Wb03,Wb03,Sb - Lingonberry - Peat-moss,W,Wb,nonforest,Wb03
+NonForest,,Wb04,Wb04,Hw - Cloudberry - Peat-moss,W,Wb,nonforest,Wb04
+NonForest,,Wb05,Wb05,Sb - Water sedge - Peat-moss,W,Wb,nonforest,Wb05
+NonForest,,,Wb06,Lt - Water sedge - Fen-moss,W,Wb,nonforest,Wb06
+NonForest,,,Wb07,Pl - Water sedge - Peat-moss,W,Wb,nonforest,Wb07
+NonForest,,,Wb08,Sb - Soft-leaved sedge - Peat-moss,W,Wb,nonforest,Wb08
+Forest,,,Wb09,Sb - Common horsetail - Peat-moss,W,Wb,nonforest,Wb09
+Forest,,,Wb11,Sb - Buckbean - Peat-moss,W,Wb,nonforest,Wb11
+NonForest,,,Wb12,Scheuchzeria - Peat-moss,W,Wb,nonforest,Wb12
+NonForest,,,Wb13,Shore sedge - Buckbean - Peat-moss,W,Wb,nonforest,Wb13
+NonForest,,,Wb14,Leatherleaf - Bog-rosemary - Peat-moss,W,Wb,nonforest,Wb14
+Forest,,,Wb15,Spruce - Labrador tea - Peat-moss,W,Wb,nonforest,Wb15
+Forest,,,Wb16,Sxw - Trapper's tea - Peat moss,W,Wb,nonforest,Wb16
+NonForest,,,Wb50,Labrador tea - Bog-laurel - Peat-moss,W,Wb,nonforest,Wb50
+Forest,,,Wb51,Shore pine - Crowberry - Tough peat-moss,W,Wb,nonforest,Wb51
+Forest,,,Wb51.1,Shore pine - Crowberry - Tough peat-moss; tall shrub variation,W,Wb,nonforest,Wb51.1
+Forest,,,Wb51.2,Shore pine - Crowberry - Tough peat-moss; wooded variation,W,Wb,nonforest,Wb51.2
+Forest,,,Wb53,Shore pine - Yellow-cedar - Tufted clubrush,W,Wb,nonforest,Wb53
+Forest,,,Wb53.1,Shore pine - Yellow-cedar - Tufted clubrush; wooded variation,W,Wb,nonforest,Wb53.1
+Forest,,,Wb53.2,Shore pine - Yellow-cedar - Tufted clubrush; tall shrub variation,W,Wb,nonforest,Wb53.2
+Forest,,,Wb54,Yellow-cedar  - Tufted clubrush - Tufted hairgrass ,W,Wb,nonforest,Wb54
+NonForest,,,Wf,Fen,W,Wf,nonforest,Wf
+NonForest,,,Wf01,Water sedge - Beaked sedge,W,Wf,nonforest,Wf01
+NonForest,,,Wf02,Scrub birch - Water sedge,W,Wf,nonforest,Wf02
+NonForest,,,Wf03,Water sedge - Peat-moss,W,Wf,nonforest,Wf03
+NonForest,,,Wf04,Barclay's willow - Water sedge - Glow moss,W,Wf,nonforest,Wf04
+NonForest,,,Wf05,Slender sedge - Common hook-moss,W,Wf,nonforest,Wf05
+NonForest,,,Wf06,Slender sedge - Buckbean,W,Wf,nonforest,Wf06
+NonForest,,,Wf07,Scrub birch - Buckbean - Shore sedge,W,Wf,nonforest,Wf07
+NonForest,,,Wf08,Shore sedge - Buckbean - Hook-moss,W,Wf,nonforest,Wf08
+NonForest,,,Wf09,Few-flowered spike-rush - Hook-moss,W,Wf,nonforest,Wf09
+NonForest,,,Wf10,Hudson Bay clubrush - Red hook-moss,W,Wf,nonforest,Wf10
+NonForest,,,Wf11,Tufted clubrush - Star moss,W,Wf,nonforest,Wf11
+NonForest,,,Wf12,Narrow-leaved cotton-grass - Marsh-marigold,W,Wf,nonforest,Wf12
+NonForest,,,Wf13,Narrow-leaved cotton-grass - Shore sedge,W,Wf,nonforest,Wf13
+NonForest,,,Wf14,Tea-leaved willow - Water sedge - Glow moss,W,Wf,nonforest,Wf14
+NonForest,,,Wf15,Rocky mountain sedge - Glow moss,W,Wf,nonforest,Wf15
+NonForest,,,Wf18,Lt - Buckbean - Shore sedge,W,Wf,nonforest,Wf18
+NonForest,,,Wf50,Narrow-leaved cotton-grass - Peat-moss,W,Wf,nonforest,Wf50
+NonForest,,,Wf51,Sitka sedge - Peat-moss,W,Wf,nonforest,Wf51
+NonForest,,,Wf52,Sweet gale - Sitka sedge,W,Wf,nonforest,Wf52
+NonForest,,,Wf53,Slender sedge - White beak-rush,W,Wf,nonforest,Wf53
+NonForest,,,Wm,Marsh,W,Wm,nonforest,Wm
+NonForest,,,Wm01,Beaked sedge - Water sedge,W,Wm,nonforest,Wm01
+NonForest,,,Wm02,Swamp horsetail - Beaked sedge,W,Wm,nonforest,Wm02
+NonForest,,,Wm03,Awned sedge,W,Wm,nonforest,Wm03
+NonForest,,,Wm04,Common spike-rush,W,Wm,nonforest,Wm04
+NonForest,,,Wm05,Cattail,W,Wm,nonforest,Wm05
+NonForest,,,Wm06,Great bulrush,W,Wm,nonforest,Wm06
+NonForest,,,Wm07,Baltic rush,W,Wm,nonforest,Wm07
+NonForest,,,Wm08,Sharp bulrush,W,Wm,nonforest,Wm08
+NonForest,,,Wm09,Inflated sedge,W,Wm,nonforest,Wm09
+NonForest,,,Wm10,Sharp bulrush,W,Wm,nonforest,Wm10
+NonForest,,,Wm11,Inflated sedge,W,Wm,nonforest,Wm11
+NonForest,,,Wm12,Woolly sedge,W,Wm,nonforest,Wm12
+NonForest,,,Wm13,Seaside arrow-grass,W,Wm,nonforest,Wm13
+NonForest,,,Wm14,Common reed,W,Wm,nonforest,Wm14
+NonForest,,,Wm15,Bluejoint - Water sedge,W,Wm,nonforest,Wm15
+NonForest,,,Wm16,Bluejoint - Arrow-leaved groundsel,W,Wm,nonforest,Wm16
+NonForest,,,Wm50,Sitka sedge - Hemlock-parsley,W,Wm,nonforest,Wm50
+NonForest,,,Wm51,Three-way sedge,W,Wm,nonforest,Wm51
+NonForest,,,Ws,Swamp,W,Ws,nonforest,Ws
+NonForest,,,Ws01,Mountain alder - Skunk cabbage - Lady fern,W,Ws,nonforest,Ws01
+NonForest,,,Ws02,Mountain alder - Pink spirea - Sitka sedge,W,Ws,nonforest,Ws02
+NonForest,,,Ws03,Bebb's willow - Bluejoint,W,Ws,nonforest,Ws03
+NonForest,,,Ws04,Drummond's willow - Beaked sedge,W,Ws,nonforest,Ws04
+NonForest,,,Ws05,Maccalla's willow - Beaked sedge,W,Ws,nonforest,Ws05
+NonForest,,,Ws06,Sitka willow - Sitka sedge,W,Ws,nonforest,Ws06
+Forest,,,Ws07,Spruce - Common horsetail - Leafy moss,W,Ws,nonforest,Ws07
+Forest,,,Ws07.1,Sxw - Horsetail - Leafy moss,W,Ws,nonforest,Ws07.1
+Forest,,,Ws07.2,Sxw - Horsetail - Soft-leaved sedge - Leafy moss,W,Ws,nonforest,Ws07.2
+Forest,,,Ws08,Subalpine fir - Sitka valerian - Common horsetail,W,Ws,nonforest,Ws08
+Forest,,,Ws08.1,Bl - Sitka valerian - Horsetail,W,Ws,nonforest,Ws08.1
+Forest,,,Ws08.2,Engelmann spruce - Subalpine fir - Horsetail - Canby's Lovage,W,Ws,nonforest,Ws08.2
+Forest,,,Ws10,Western redcedar - Spruce - Skunk cabbage,W,Ws,nonforest,Ws10
+Forest,,,Ws12,Sxw - Rocky Mountain sedge - Glow moss,W,Ws,nonforest,Ws12
+NonForest,,,Ws13,Barclay’s willow - Common horsetail - Arrow-leaved groundsel,W,Ws,nonforest,Ws13
+NonForest,,,Ws14,Mountain alder - Willow - Bluejoint,W,Ws,nonforest,Ws14
+Forest,,,Ws15,SwSb - Labrador tea - Glow moss,W,Ws,nonforest,Ws15
+NonForest,,,Ws50,Hardhack - Sitka sedge,W,Ws,nonforest,Ws50
+Forest,,,Ws58,Mountain alder - Willow - Bluejoint,W,Ws,nonforest,Ws58
+NonForest,,Wss,Wss,SwSb - Labrador tea - Glow moss,W,Ws,nonforest,Wss
+NonForest,,Xv,Xv,Vegetation Disclimax,X,Xv,nonforest,Xv
+NonForest,,Xvh,Xvh,"Vegetation Disclimax, Herb",X,Xv,nonforest,Xvh
+NonForest,,Xvs,Xvs,"Vegetation Disclimax, Shrub",X,Xv,nonforest,Xvs
+NonForest,,Xvt,Xvt,"Vegetation Disclimax, Treed",X,Xv,nonforest,Xvt
+NonForested,,CA,CA,Canal,,NA,nonvegetated,nonvegetated
+NonForested,,CB,CB,Cutbank,,NA,nonvegetated,nonvegetated
+NonForested,,CF,CF,Cultivated Field,,NA,nonvegetated,nonvegetated
+NonForested,,CO,CO,Cultivated Orchard,,NA,nonvegetated,nonvegetated
+NonForested,,CV,CV,Cultivated Vineyard,,NA,nonvegetated,nonvegetated
+NonForested,,CX,CX,Corridor/ Industry- Related Disturbance,,NA,nonvegetated,nonvegetated
+NonForested,,DZ,DZ,Dam,,NA,nonvegetated,nonvegetated
+NonForested,,ES,ES,Exposed Soil,,NA,nonvegetated,nonvegetated
+NonForested,,GC,GC,Golf Course,,NA,nonvegetated,nonvegetated
+NonForested,,GL,GL,Glacier,,NA,nonvegetated,nonvegetated
+NonForested,,GP,GP,Gravel Pit,,NA,nonvegetated,nonvegetated
+NonForested,,LA,LA,Lake,,NA,nonvegetated,nonvegetated
+NonForested,,MI,MI,Mine,,NA,nonvegetated,nonvegetated
+NonForested,,MO,MO,Moraine,,NA,nonvegetated,nonvegetated
+NonForested,,MS,MS,Mine Spoil,,NA,nonvegetated,nonvegetated
+NonForested,,OC,OC,Ocean,,NA,nonvegetated,nonvegetated
+NonForested,,PD,PD,Pond,,NA,nonvegetated,nonvegetated
+NonForested,,PS,PS,Permanent Snow,,NA,nonvegetated,nonvegetated
+NonForested,,RE,RE,Reservoir,,NA,nonvegetated,nonvegetated
+NonForested,,RI,RI,River,,NA,nonvegetated,nonvegetated
+NonForested,,RM,RM,Reclaimed Mine,,NA,nonvegetated,nonvegetated
+NonForested,,RN,RN,Railway Surface,,NA,nonvegetated,nonvegetated
+NonForested,,RP,RP,Road Permanent,,NA,nonvegetated,nonvegetated
+NonForested,,RR,RR,Rural Residential,,NA,nonvegetated,nonvegetated
+NonForested,,TS,TS,Mine Tailing,,NA,nonvegetated,nonvegetated
+NonForested,,UR,UR,Urban/ Suburban,,NA,nonvegetated,nonvegetated
