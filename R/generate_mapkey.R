@@ -60,7 +60,7 @@ generate_mapkey <- function(data_pts,
   if (!all(allmapunits %in% mapkeysub$basemapunit)) {
     cli::cat_line()
     cli::cli_alert_warning("The field data contains non-standard mapunits and requires manual review.
-      Please review the output file {.var {outfile}} and add equivalent mapunit names to the 'mapunit' field for the following units: ")
+      Please review the output file {.var {outfile}} and add equivalent mapunit names to the 'basemapunit' field for the following units: ")
     unmatched_units <- dplyr::setdiff(allmapunits, mapkeysub$basemapunit)
     print(unmatched_units)
 
