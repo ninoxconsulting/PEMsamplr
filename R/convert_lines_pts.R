@@ -31,8 +31,6 @@ convert_lines_pts <- function(processed_lines = fs::path(PEMprepr::read_fid()$di
                               write_output = TRUE,
                               out_dir = PEMprepr::read_fid()$dir_20105020_clean_field_data$path_rel,
                               out_name = "allpoints.gpkg") {
-
-
   # check processed_transects is path or spatvect
   processed_lines <- PEMprepr:::read_sf_if_necessary(processed_lines)
 
@@ -89,32 +87,32 @@ convert_lines_pts <- function(processed_lines = fs::path(PEMprepr::read_fid()$di
     cell_lookup <- tibble::tibble(ID = pts$ptsID, cell = cellNums)
 
     adjCells <- terra::adjacent(trast, cells = cellNums[, 2], directions = "queen", include = TRUE) |>
-      tibble::as_tibble(.name_repair = 'unique')  |>
-      dplyr::rename_with(~ c("Orig", paste("Adj", 1:8, sep = "")))  |>
+      tibble::as_tibble(.name_repair = "unique") |>
+      dplyr::rename_with(~ c("Orig", paste("Adj", 1:8, sep = ""))) |>
       dplyr::mutate(ID = dplyr::row_number())
 
-    adjLong <- adjCells  |>
-      tidyr::pivot_longer(cols = !("ID") , names_to = "Position", values_to = "CellNum") |>
-      dplyr::arrange("ID", "Position")
+    adjLong <- adjCells |>
+      tidyr::pivot_longer(cols = !("ID"), names_to = "position", values_to = "CellNum") |>
+      dplyr::arrange("ID", "position")
 
     terra::values(trast) <- 1:terra::ncell(trast)
     cellnums <- 1:terra::ncell(trast)
     trast[!cellnums %in% adjLong$CellNum] <- NA
 
-    pts <- terra::as.points(trast, values = TRUE, na.rm = TRUE)  |>
-      sf::st_as_sf()  |>
-      tibble::as_tibble(.name_repair = 'unique')   |>
+    pts <- terra::as.points(trast, values = TRUE, na.rm = TRUE) |>
+      sf::st_as_sf() |>
+      tibble::as_tibble(.name_repair = "unique") |>
       dplyr::rename(CellNum = 1)
 
-    allPts <- pts  |>
-      dplyr::left_join(adjLong, by = "CellNum")  |>
-      dplyr::left_join(dat_atts, by = c("ID" = "ptsID"))  |>
-      sf::st_as_sf()  |>
-      dplyr::select(-"CellNum",-"ID")
+    allpts <- pts |>
+      dplyr::left_join(adjLong, by = "CellNum") |>
+      dplyr::left_join(dat_atts, by = c("ID" = "ptsID")) |>
+      sf::st_as_sf() |>
+      dplyr::select(-"CellNum", -"ID")
 
+    names(allpts) <- tolower(names(allpts))
   } else {
-
-    allpts$Position <- "Orig"
+    allpts$position <- "Orig"
   }
 
   if (write_output) {
