@@ -91,9 +91,6 @@ build_site_transects <- function(sample_points,
     dplyr::select(-c("cost", "aoi"))
 
 
-  sample_points_low_cost <- sample_points_low_cost |>
-    dplyr::select(-c("cost", "aoi"))
-
   sample_points_clhs <- sample_points_clhs |>
     dplyr::mutate(rotation = "cLHS") |>
     dplyr::select(-"aoi")
