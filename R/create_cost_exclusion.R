@@ -72,6 +72,8 @@ create_cost_exclusion <- function(vec_dir = fs::path(PEMprepr::read_fid()$dir_10
   sample_cost_masked <- terra::mask(cost, roads_buff, inverse = TRUE) |>
     terra::mask(water_buff, inverse = TRUE)
 
+  names(sample_cost_masked) <- "cost"
+
   if (write_output) {
     if (!fs::dir_exists(out_dir)) {
       fs::dir_create(out_dir, recurse = TRUE)
