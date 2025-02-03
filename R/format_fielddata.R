@@ -137,7 +137,6 @@ format_fielddata <- function(data_dir = NULL,
       points_read <- points_read |>
         dplyr::mutate(mapunit1 = dplyr::case_when(
           is.na(mapunit1) & !is.na(mapunit2) ~ mapunit2,
-          is.null(mapunit1) & !is.na(mapunit2) ~ mapunit2,
           mapunit1 == " " & !is.na(mapunit2) ~ mapunit2,
           TRUE ~ as.character(mapunit1)
         ))
