@@ -94,7 +94,7 @@ format_fielddata <- function(data_dir = NULL,
           dplyr::mutate(order = as.numeric(.data$objectid))
       }
 
-      if (("order" %in% names(points_read)) == FALSE) {
+      if (!"order" %in% names(points_read)) {
         points_read <- points_read |>
           dplyr::mutate(order = as.numeric(seq(1, length(points_read$geom), 1)))
       }
