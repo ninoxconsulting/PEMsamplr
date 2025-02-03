@@ -113,7 +113,7 @@ make_lines <- function(points = NA,
       # x <- transects_id[1] # testing line
 
       GPSPoints_transect <- GPSPoints |>
-        dplyr:::filter(.data$TID == x)
+        dplyr::filter(.data$TID == x)
 
       ## Define the Line Start and End Coordinates and Add XY coordinates as
 
