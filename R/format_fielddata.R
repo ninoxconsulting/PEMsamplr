@@ -215,7 +215,7 @@ format_fielddata <- function(data_dir = NULL,
 .fix_timestamp <- function(points_read){
   if ("timestamp" %in% names(points_read)) {
     points_read <- points_read |>
-      dplyr::mutate(date_ymd = lubridate::as_date(points_read$timestamp))
+      dplyr::mutate(date_ymd = lubridate::as_date(.data$timestamp))
 
     if (any(stringr::str_length(points_read$timestamp) > 10)) {
       points_read <- points_read |>
