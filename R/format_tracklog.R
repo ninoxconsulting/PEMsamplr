@@ -72,7 +72,7 @@ format_tracklog <- function(data_dir = NULL,
 
       # 2) check the transact id
 
-      tdat <- tdat[!is.na(sf::st_is_valid(tdat), , drop = FALSE]
+      tdat <- tdat[!is.na(sf::st_is_valid(tdat)), , drop = FALSE]
       tdat <- sf::st_make_valid(tdat)
 
 

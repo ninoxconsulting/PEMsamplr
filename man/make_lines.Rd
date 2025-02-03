@@ -5,8 +5,10 @@
 \title{Convert point or tracklog to line segments}
 \usage{
 make_lines(
-  points = NA,
-  transect_layout,
+  points = fs::path(PEMprepr::read_fid()$dir_20105020_clean_field_data$path_rel,
+    "s1_points_raw.gpkg"),
+  transect_layout = fs::path(PEMprepr::read_fid()$dir_20104020_transect$path_rel,
+    "transect_layout.gpkg"),
   method = "pts2lines",
   buffer = 20,
   write_output = TRUE,

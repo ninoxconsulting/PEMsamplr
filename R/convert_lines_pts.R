@@ -47,8 +47,12 @@ convert_lines_pts <- function(processed_lines = fs::path(PEMprepr::read_fid()$di
   processed_transects_id <- sf::st_drop_geometry(processed_lines)
 
   geom_type <- as.character(unique(sf::st_geometry_type(processed_lines, by_geometry = TRUE)))
+  if ("POINTS" %in% geom_type) {
+    cli::cat_line()
+    cli::cli_alert("points detected in dataset, please review. Only lines will be incorporated in this function")
+  }
 
-  if (geom_type %in% c("LINESTRING")) {
+  if ("LINESTRING" %in% geom_type) {
     # for lines
     lBuff <- sf::st_buffer(processed_lines, dist = buffer, endCapStyle = "FLAT", joinStyle = "MITRE")
     lBuff <- sf::st_cast(lBuff, "MULTIPOLYGON")
@@ -67,9 +71,7 @@ convert_lines_pts <- function(processed_lines = fs::path(PEMprepr::read_fid()$di
     dplyr::select(c(-"ID", -tname))
 
   # add slice and tid (transect id)
-  allpts <- raster_points_xy |>
-    dplyr::mutate(tid = tolower(gsub("_[[:alpha:]].*", "", .data$transect_id))) |>
-    dplyr::mutate(slice = sub(".*(?=.$)", "", gsub("\\..*", "", .data$tid), perl = T))
+  allpts <- add_slice_tid_values(raster_points_xy)
 
   # add neighbours if selected
 
@@ -129,4 +131,13 @@ convert_lines_pts <- function(processed_lines = fs::path(PEMprepr::read_fid()$di
   }
 
   return(allpts)
+}
+
+
+add_slice_tid_values <- function(raster_points_xy) {
+  output <- raster_points_xy |>
+    dplyr::mutate(tid = tolower(gsub("_[[:alpha:]].*", "", .data$transect_id))) |>
+    dplyr::mutate(slice = sub(".*(?=.$)", "", gsub("\\..*", "", .data$tid), perl = T))
+
+  return(output)
 }
