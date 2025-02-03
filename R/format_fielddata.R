@@ -108,7 +108,7 @@ format_fielddata <- function(data_dir = NULL,
 
       # 5) assign incidental to points outside the transect buffer and give warning
 
-      if (any(is.na(unique(points_read$transect_id)))) {
+      if (any(is.na(points_read$transect_id))) {
         points_read <- points_read |>
           dplyr::mutate(data_type = ifelse(is.na(.data$transect_id), "incidental", "s1"))
         cli::cat_line()
