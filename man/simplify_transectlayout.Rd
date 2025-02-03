@@ -14,14 +14,13 @@ simplify_transectlayout(
 \arguments{
 \item{input_path}{A \code{character} string or path where sample plan layout geopackage is stored.
 Default location is based on standard workflow. Note this function is set up to work with
-multiple files so ensure sample plan is only .gpkg in folder.}
+multiple files so ensure any \code{.gpkg} files in this folder are part of the sample plan.}
 
 \item{out_dir}{A path to the location in which the simplified transect layout will be
 saved. Default location is based on standard workflow.}
 
-\item{write_output}{should the simplifeid transect layout sf object be written to disk?
-If \code{TRUE} (default), will write to \code{out_dir}. Default location is based
-on standard workflow.}
+\item{write_output}{should the simplified transect layout sf object be written to disk?
+If \code{TRUE} (default), will write to \code{out_dir}.}
 
 \item{overwrite}{a \code{logical} to determine if the output file be overwritten
 if it already exists? Only used when \code{write_output = TRUE}. Default is \code{FALSE}.}

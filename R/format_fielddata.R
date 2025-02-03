@@ -112,37 +112,15 @@ format_fielddata <- function(data_dir = NULL,
       }
 
 
-      # 4) add the transect id number using the transect layout buffered.
+      # 4) add the transect id number using the transect layout buffered and
+      # assign incidental to points outside the transect buffer and give warning
 
       points_read <- .transect_intersect(points_read, transect_layout_buf)
 
 
+      # 5) add observer name to points
 
-      # 5) assign incidental to points outside the transect buffer and give warning
-
-      if (any(is.na(points_read$transect_id))) {
-        points_read <- points_read |>
-          dplyr::mutate(data_type = ifelse(is.na(.data$transect_id), "incidental", "s1"))
-        cli::cat_line()
-        cli::cli_alert_warning("points outside the transect buffer, assigned to incidental,
-                               please check these and re-run if needed")
-      }
-
-
-      # 6) add observer name to points
-
-      points_read <- points_read |>
-        dplyr::mutate(observer = stringr::str_trim(.data$observer)) |>
-        dplyr::mutate(observer = dplyr::na_if(.data$observer, ""))
-
-      if (all(is.na(points_read$observer))) {
-        cli::cat_line()
-        cli::cli_abort("observer name missing in original data, check and re-run the above transect data")
-      } else {
-
-        points_read <- .fill_observer(points_read)
-      }
-
+      points_read <- .fill_observer(points_read)
 
       # 7) check the mapunit 1 is filled if mapunit 2 is not NA
 
@@ -243,30 +221,36 @@ format_fielddata <- function(data_dir = NULL,
 
 
 # fill observer name
-
 .fill_observer <- function(input_data) {
-
-  observer_key <- input_data |>
-    dplyr::select(.data$transect_id, observer_fill = .data$observer) |>
-    sf::st_drop_geometry() |>
-    dplyr::distinct() |>
-    stats::na.omit() |>
-    dplyr::mutate(observer_fill = trimws(.data$observer_fill, which = "both")) |>
-    dplyr::filter(.data$observer_fill != "")
-
-  if (length(observer_key$transect_id) != length(unique(observer_key$transect_id))) {
-    cli::cat_line()
-    cli::cli_abort(" number of observers does not match unique transect number")
-  }
-
   input_data <- input_data |>
-    dplyr::group_by(.data$transect_id) |>
-    tidyr::fill(.data$observer, .direction = "downup") |>
-    dplyr::ungroup()
+    dplyr::mutate(observer = stringr::str_trim(.data$observer)) |>
+    dplyr::mutate(observer = dplyr::na_if(.data$observer, ""))
 
-  return(input_data)
+  if (all(is.na(input_data$observer))) {
+    cli::cat_line()
+    cli::cli_abort("observer name missing in original data, check and re-run the above transect data")
+  } else {
+    observer_key <- input_data |>
+      dplyr::select(.data$transect_id, observer_fill = .data$observer) |>
+      sf::st_drop_geometry() |>
+      dplyr::distinct() |>
+      stats::na.omit() |>
+      dplyr::mutate(observer_fill = trimws(.data$observer_fill, which = "both")) |>
+      dplyr::filter(.data$observer_fill != "")
+
+    if (length(observer_key$transect_id) != length(unique(observer_key$transect_id))) {
+      cli::cat_line()
+      cli::cli_abort(" number of observers does not match unique transect number")
+    }
+
+    input_data <- input_data |>
+      dplyr::group_by(.data$transect_id) |>
+      tidyr::fill(.data$observer, .direction = "downup") |>
+      dplyr::ungroup()
+
+    return(input_data)
+  }
 }
-
 
 
 .check_col_names <- function(points_read) {
@@ -305,7 +289,6 @@ format_fielddata <- function(data_dir = NULL,
     )
   )
 
-
   recode_vec <- stats::setNames(recode_df$old, recode_df$new)
 
   points_read <- points_read |>
@@ -336,6 +319,14 @@ format_fielddata <- function(data_dir = NULL,
   points_read <- points_read |>
     dplyr::mutate(id = gsub("\\s", "", .data$id)) |>
     dplyr::mutate(transect_id = .data$id)
+
+  if (any(is.na(points_read$transect_id))) {
+    points_read <- points_read |>
+      dplyr::mutate(data_type = ifelse(is.na(.data$transect_id), "incidental", "s1"))
+    cli::cat_line()
+    cli::cli_alert_warning("points outside the transect buffer, assigned to incidental,
+                               please check these and re-run if needed")
+  }
 
 return(points_read)
 }
