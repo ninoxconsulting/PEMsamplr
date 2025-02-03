@@ -134,13 +134,12 @@ make_lines <- function(points = NA,
 
 
     ## Need to remove excess lines -- currently there are lines that run between the plots
-    all_lines$within <- as.logical(rowSums(unlist(sf::st_within(all_lines, planT, sparse = FALSE)) == TRUE))
-    all_lines <- all_lines[all_lines$within == TRUE, ]
+    within <- lengths(sf::st_within(all_lines, planT)) > 0
+    all_lines <- all_lines[within, ]
 
-    all_lines$valid <- as.logical(sf::st_is_valid(all_lines))
     all_lines <- sf::st_make_valid(all_lines)
 
-    all_lines <- all_lines |> dplyr::select(-c("X", "Y", "TID", "ID", "Xend", "Yend", "within", "valid"))
+    all_lines <- all_lines |> dplyr::select(-c("X", "Y", "TID", "ID", "Xend", "Yend"))
   } else if (method == "tracklog") {
     cli::cli_alert_info("Tracklog method not implemented yet")
     #
