@@ -2,7 +2,7 @@
 #'
 #' @param input_path A `character` string or path where sample plan layout geopackage is stored.
 #'  Default location is based on standard workflow. Note this function is set up to work with
-#'  multiple files so ensure sample plan is only .gpkg in folder.
+#'  multiple files so ensure any `.gpkg` files in this folder are part of the sample plan.
 #' @param out_dir A path to the location in which the simplified transect layout will be
 #' saved. Default location is based on standard workflow.
 #' @param write_output should the simplifeid transect layout sf object be written to disk?
