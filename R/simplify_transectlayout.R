@@ -1,5 +1,10 @@
 #' Simplify sample plan layout for post processing
 #'
+#' This function takes the full sample plan generated previously and extracts the lines for
+#' all possible transects. This provides a simple single spatial layer with all named transects
+#' which is used quality control field data collected.
+#'
+#'
 #' @param input_path A `character` string or path where sample plan layout geopackage is stored.
 #'  Default location is based on standard workflow. Note this function is set up to work with
 #'  multiple files so ensure sample plan is only .gpkg in folder.
@@ -17,7 +22,7 @@
 #' @examples
 #' \dontrun{
 #' t1 <- simplify_transectlayout(
-#'     input_dir = fs::path(PEMprepr::read_fid()$dir_20104020_transect$path_abs),
+#'     input_path = fs::path(PEMprepr::read_fid()$dir_20104020_transect$path_abs),
 #'     out_dir = fs::path(PEMprepr::read_fid()$dir_20104020_transect$path_abs),
 #'     write_output = TRUE,
 #'     overwrite = FALSE)
