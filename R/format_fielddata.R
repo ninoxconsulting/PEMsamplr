@@ -74,7 +74,7 @@ format_fielddata <- function(data_dir = NULL,
     pts <- which(s1_layers[["geomtype"]] %in% c("Point", "3D Point", "3D Measured Point"))
 
     if (length(pts) > 0) {
-      points_read <- sf::st_read(i, quiet = TRUE) |>
+      points_read <- sf::st_read(i, layer = pts, quiet = TRUE) |>
         sf::st_transform(3005) |>
         sf::st_zm() |>
         dplyr::rename_all(.funs = tolower)
@@ -106,7 +106,7 @@ format_fielddata <- function(data_dir = NULL,
           dplyr::mutate(order = as.numeric(.data$objectid))
       }
 
-      if (("order" %in% names(points_read)) == FALSE) {
+      if (!"order" %in% names(points_read)) {
         points_read <- points_read |>
           dplyr::mutate(order = as.numeric(seq(1, length(points_read$geom), 1)))
       }
@@ -120,7 +120,7 @@ format_fielddata <- function(data_dir = NULL,
 
       # 5) assign incidental to points outside the transect buffer and give warning
 
-      if (any(is.na(unique(points_read$transect_id)))) {
+      if (any(is.na(points_read$transect_id))) {
         points_read <- points_read |>
           dplyr::mutate(data_type = ifelse(is.na(.data$transect_id), "incidental", "s1"))
         cli::cat_line()
@@ -227,9 +227,9 @@ format_fielddata <- function(data_dir = NULL,
 .fix_timestamp <- function(points_read){
   if ("timestamp" %in% names(points_read)) {
     points_read <- points_read |>
-      dplyr::mutate(date_ymd = lubridate::as_date(points_read$timestamp))
+      dplyr::mutate(date_ymd = lubridate::as_date(.data$timestamp))
 
-    if (stringr::str_length(points_read$timestamp[1]) > 10) {
+    if (any(stringr::str_length(points_read$timestamp) > 10)) {
       points_read <- points_read |>
         dplyr::mutate(date_time = lubridate::as_datetime(points_read$timestamp))
 
@@ -247,8 +247,7 @@ format_fielddata <- function(data_dir = NULL,
 .fill_observer <- function(input_data) {
 
   observer_key <- input_data |>
-    dplyr::select(.data$transect_id, .data$observer) |>
-    dplyr::rename("observer_fill" = .data$observer) |>
+    dplyr::select(.data$transect_id, observer_fill = .data$observer) |>
     sf::st_drop_geometry() |>
     dplyr::distinct() |>
     stats::na.omit() |>
