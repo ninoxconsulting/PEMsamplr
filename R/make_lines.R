@@ -129,4 +129,3 @@ make_lines <- function(points = fs::path(PEMprepr::read_fid()$dir_20105020_clean
 
   return(all_lines)
 }
-
