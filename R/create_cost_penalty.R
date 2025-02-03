@@ -57,13 +57,13 @@
 #' }
 #'
 #'
-create_cost_penalty <- function(vec_dir = fs::path(PEMprepr::read_fid()$dir_1010_vector$path_abs),
+create_cost_penalty <- function(vec_dir = fs::path(PEMprepr::read_fid()$dir_1010_vector$path_rel),
                                 dem,
                                 cost,
                                 costval = 3000,
                                 vri_cost = 2500,
                                 calc_by_qq = TRUE,
-                                out_dir = fs::path(PEMprepr::read_fid()$dir_201010_inputs$path_abs),
+                                out_dir = fs::path(PEMprepr::read_fid()$dir_201010_inputs$path_rel),
                                 write_output = TRUE,
                                 overwrite = FALSE) {
   if (!inherits(vec_dir, "character") || !fs::dir_exists(vec_dir)) {

@@ -5,9 +5,9 @@
 \title{Create cost no sample areas per bec zone}
 \usage{
 create_bgc_mask(
-  vec_dir = fs::path(PEMprepr::read_fid()$dir_1010_vector$path_abs),
+  vec_dir = fs::path(PEMprepr::read_fid()$dir_1010_vector$path_rel),
   cost_masked,
-  out_dir = fs::path(PEMprepr::read_fid()$dir_201010_inputs$path_abs),
+  out_dir = fs::path(PEMprepr::read_fid()$dir_201010_inputs$path_rel),
   overwrite = TRUE,
   ...
 )

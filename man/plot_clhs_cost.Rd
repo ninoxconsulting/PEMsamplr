@@ -4,7 +4,7 @@
 \alias{plot_clhs_cost}
 \title{Plot the cost of clhs sample plans}
 \usage{
-plot_clhs_cost(clhs_dir = PEMprepr::read_fid()$dir_20102010_clhs$path_abs)
+plot_clhs_cost(clhs_dir = PEMprepr::read_fid()$dir_20102010_clhs$path_rel)
 }
 \arguments{
 \item{clhs_dir}{A path or directory where the multiple clhs sample plans are saved.

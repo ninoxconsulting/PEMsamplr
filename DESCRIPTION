@@ -29,8 +29,11 @@ Imports:
     clhs,
     stringr,
     LearnGeom,
+    lubridate,
+    tibble,
     purrr,
     stats,
+    tidyr,
     dplyr,
     rlang
 Encoding: UTF-8
