@@ -6,8 +6,7 @@
 #' @param out_dir A path to the location in which the simplified transect layout will be
 #' saved. Default location is based on standard workflow.
 #' @param write_output should the simplified transect layout sf object be written to disk?
-#'     If `TRUE` (default), will write to `out_dir`. Default location is based
-#'     on standard workflow.
+#'     If `TRUE` (default), will write to `out_dir`.
 #' @param overwrite a `logical` to determine if the output file be overwritten
 #'      if it already exists? Only used when `write_output = TRUE`. Default is `FALSE`.
 #'
