@@ -127,8 +127,7 @@ format_fielddata <- function(data_dir = NULL,
       points_read <- points_read |>
         dplyr::mutate(mapunit1 = dplyr::case_when(
           is.na(mapunit1) & !is.na(mapunit2) ~ mapunit2,
-          is.null(mapunit1) & !is.na(mapunit2) ~ mapunit2,
-          mapunit1 == " " & !is.na(mapunit2) ~ mapunit2,
+          grepl("^\\s*$", mapunit1) & !is.na(mapunit2) ~ mapunit2,
           TRUE ~ as.character(mapunit1)
         ))
 
@@ -302,7 +301,7 @@ format_fielddata <- function(data_dir = NULL,
 # add missing columns if not in data
 
 .add_missing_cols <- function(points_read, cols) {
-  add <- cols[!cols %in% names(points_read)]
+  add <- setdiff(cols, names(points_read))
   if (length(add) != 0) points_read[add] <- NA
   return(points_read)
 }

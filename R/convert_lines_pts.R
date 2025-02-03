@@ -95,8 +95,7 @@ convert_lines_pts <- function(processed_lines = fs::path(PEMprepr::read_fid()$di
       tidyr::pivot_longer(cols = !("ID"), names_to = "position", values_to = "CellNum") |>
       dplyr::arrange("ID", "position")
 
-    terra::values(trast) <- 1:terra::ncell(trast)
-    cellnums <- 1:terra::ncell(trast)
+    terra::values(trast) <- cellnums <- seq_len(terra::ncell(trast))
     trast[!cellnums %in% adjLong$CellNum] <- NA
 
     pts <- terra::as.points(trast, values = TRUE, na.rm = TRUE) |>
