@@ -235,8 +235,7 @@ format_fielddata <- function(data_dir = NULL,
 .fill_observer <- function(input_data) {
 
   observer_key <- input_data |>
-    dplyr::select(.data$transect_id, .data$observer) |>
-    dplyr::rename("observer_fill" = .data$observer) |>
+    dplyr::select(.data$transect_id, observer_fill = .data$observer) |>
     sf::st_drop_geometry() |>
     dplyr::distinct() |>
     stats::na.omit() |>
