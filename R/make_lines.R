@@ -82,7 +82,7 @@ make_lines <- function(points = NA,
     planT <- transect_layout |>
       dplyr::mutate(TID = dplyr::row_number()) |>
       sf::st_buffer(buffer) |>
-      dplyr::select(.data$TID)
+      dplyr::select("TID")
 
     ## Spatial join attributes
     GPSPoints <- sf::st_join(points, planT)
