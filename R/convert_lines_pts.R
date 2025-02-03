@@ -86,7 +86,6 @@ convert_lines_pts <- function(processed_lines = fs::path(PEMprepr::read_fid()$di
 
     pts <- terra::vect(dat_pts)
     cellNums <- terra::cells(trast, pts)
-    cell_lookup <- tibble::tibble(ID = pts$ptsID, cell = cellNums)
 
     adjCells <- terra::adjacent(trast, cells = cellNums[, 2], directions = "queen", include = TRUE) |>
       tibble::as_tibble(.name_repair = "unique") |>
