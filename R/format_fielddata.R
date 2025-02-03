@@ -306,7 +306,7 @@ format_fielddata <- function(data_dir = NULL,
 # add missing columns if not in data
 
 .add_missing_cols <- function(points_read, cols) {
-  add <- cols[!cols %in% names(points_read)]
+  add <- setdiff(cols, names(points_read))
   if (length(add) != 0) points_read[add] <- NA
   return(points_read)
 }
