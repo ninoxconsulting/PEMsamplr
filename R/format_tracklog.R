@@ -36,7 +36,7 @@ format_tracklog <- function(data_dir = NULL,
   }
 
   # check buffer
-  if (!is.numeric(buffer)) {
+  if (!is.numeric(buffer) || buffer < 0) {
     cli::cat_line()
     cli::cli_abort("{.var buffer} must be numeric")
   }
@@ -46,6 +46,12 @@ format_tracklog <- function(data_dir = NULL,
 
   lines <- fs::dir_ls(path = data_dir, recurse = TRUE, regexp = ".gpkg$|.shp$")
 
+  if(length(lines) == 0){
+    cli::cat_line()
+    cli::cli_abort("no files found in {.var data_dir}")
+  }
+
+
   all_lines <- purrr::map(lines, function(i) {
     # i <- lines[1]
 
@@ -53,7 +59,7 @@ format_tracklog <- function(data_dir = NULL,
     lns <- which(s1_layers[["geomtype"]] %in% c("LINE", "LINESTRING", "3D Line String", "3D Measured Multi Line String", "3D Multi Line String"))
 
     if (length(lns) > 0) {
-      tdat <- sf::st_read(i, quiet = TRUE) |>
+      tdat <- sf::st_read(i, layer = lns, quiet = TRUE) |>
         sf::st_transform(3005) |>
         sf::st_zm() |>
         dplyr::rename_all(.funs = tolower)

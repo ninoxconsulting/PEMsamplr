@@ -41,9 +41,6 @@ generate_mapkey <- function(data_pts,
     cli::cli_abort("WARNING! {.var {outfile}} already exists, use write_output = TRUE to overwrite this file")
   }
 
-  # match the column for map unit based on key
-  mapkeysub <- key |> dplyr::select(.data$basemapunit)
-
   # format spaces
   tps <- tps |>
     sf::st_drop_geometry() |>
@@ -60,11 +57,11 @@ generate_mapkey <- function(data_pts,
 
 
   # check if all names appear in list
-  if (!all(allmapunits %in% mapkeysub$basemapunit)) {
+  if (!all(allmapunits %in% key$basemapunit)) {
     cli::cat_line()
     cli::cli_alert_warning("The field data contains non-standard mapunits and requires manual review.
       Please review the output file {.var {outfile}} and add equivalent mapunit names to the 'basemapunit' field for the following units: ")
-    unmatched_units <- dplyr::setdiff(allmapunits, mapkeysub$basemapunit)
+    unmatched_units <- dplyr::setdiff(allmapunits, key$basemapunit)
     print(unmatched_units)
 
     # add unmatched field calls to key
