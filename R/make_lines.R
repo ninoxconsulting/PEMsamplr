@@ -65,7 +65,7 @@ make_lines <- function(points = fs::path(PEMprepr::read_fid()$dir_20105020_clean
     planT <- transect_layout |>
       dplyr::mutate(TID = dplyr::row_number()) |>
       sf::st_buffer(buffer) |>
-      dplyr::select(.data$TID)
+      dplyr::select("TID")
 
     ## Spatial join attributes
     GPSPoints <- sf::st_join(points, planT)
@@ -87,37 +87,29 @@ make_lines <- function(points = fs::path(PEMprepr::read_fid()$dir_20105020_clean
 
       ## Define the Line Start and End Coordinates and Add XY coordinates as
 
-      lines <- GPSPoints_transect |>
+      GPSPoints_transect |>
         dplyr::mutate(
           Xend = dplyr::lead(.data$X),
           Yend = dplyr::lead(.data$Y)
         ) |>
-        dplyr::filter(!is.na(.data$Yend))
-
-      sf <- lines |>
-        dplyr::group_by(.data$ID) |>
-        dplyr::summarize(
-          geometry = sf::st_sfc(sf::st_linestring(x = matrix(c(.data$X, .data$Xend, .data$Y, .data$Yend), ncol = 2)))
-        ) |>
-        sf::st_sf()
-
-      lines$geometry <- sf$geometry
-
-      lines <- sf::st_as_sf(lines, sf_column_name = "geometry") |>
-        sf::st_set_crs(PROJ)
-
-      lines
+        dplyr::filter(!is.na(.data$Yend)) |>
+        dplyr::rowwise(.data$ID) |>
+        dplyr::mutate(geometry = sf::st_sfc(
+          sf::st_linestring(
+            x = matrix(c(.data$X, .data$Xend, .data$Y, .data$Yend), ncol = 2)
+          )
+        )) |>
+        sf::st_sf(crs = PROJ)
     }) |> dplyr::bind_rows()
 
 
     ## Need to remove excess lines -- currently there are lines that run between the plots
-    all_lines$within <- as.logical(rowSums(unlist(sf::st_within(all_lines, planT, sparse = FALSE)) == TRUE))
-    all_lines <- all_lines[all_lines$within == TRUE, ]
+    within <- lengths(sf::st_within(all_lines, planT)) > 0
+    all_lines <- all_lines[within, ]
 
-    all_lines$valid <- as.logical(sf::st_is_valid(all_lines))
     all_lines <- sf::st_make_valid(all_lines)
 
-    all_lines <- all_lines |> dplyr::select(-c("X", "Y", "TID", "ID", "Xend", "Yend", "within", "valid"))
+    all_lines <- all_lines |> dplyr::select(-c("X", "Y", "TID", "ID", "Xend", "Yend"))
   } else if (method == "tracklog") {
     cli::cli_alert_info("Tracklog method not implemented yet")
     # see file: placeholder_make_lines_tracklog_method.R for details. As of Jan 20205 this has not been updated

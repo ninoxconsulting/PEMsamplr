@@ -39,7 +39,7 @@ convert_lines_pts <- function(processed_lines = fs::path(PEMprepr::read_fid()$di
   tname <- names(trast)
 
   # check if ID column exists
-  if ("ID" %in% colnames(processed_lines) == FALSE) {
+  if (!"ID" %in% colnames(processed_lines)) {
     processed_lines <- processed_lines |>
       dplyr::mutate(ID = seq(1, length(processed_lines$order), 1))
   }

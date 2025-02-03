@@ -72,13 +72,8 @@ format_tracklog <- function(data_dir = NULL,
 
       # 2) check the transact id
 
-      if (anyNA(sf::st_is_valid(tdat) == T)) {
-        inval <- sf::st_is_valid(tdat)
-        which(inval == TRUE)
-
-        fixed <- tdat[which(inval == TRUE), ]
-        tdat <- fixed
-      }
+      tdat <- tdat[!is.na(sf::st_is_valid(tdat), , drop = FALSE]
+      tdat <- sf::st_make_valid(tdat)
 
 
       # 3) intersect with transect layout to define transect_id
