@@ -45,7 +45,6 @@ format_fielddata <- function(data_dir = NULL,
   }
 
 
-
   transect_layout_buf <- sf::st_buffer(transect_layout, buffer)
   sf::st_geometry(transect_layout_buf) <- "geom"
 
@@ -54,7 +53,20 @@ format_fielddata <- function(data_dir = NULL,
     cli::cli_abort("{.var data_dir} must be a directory path")
   }
 
+
+  if (!inherits(data_dir, "character") || !fs::dir_exists(data_dir)) {
+    cli::cat_line()
+    cli::cli_abort("{.var data_dir} must be a directory path")
+  }
+
+
   points <- fs::dir_ls(path = data_dir, recurse = TRUE, regexp = ".gpkg$|.shp$")
+
+  if(length(points) == 0){
+    cli::cat_line()
+    cli::cli_abort("no files found in {.var data_dir}")
+  }
+
 
   all_points <- purrr::map(points, function(i) {
 
