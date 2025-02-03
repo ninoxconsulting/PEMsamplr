@@ -117,26 +117,19 @@ make_lines <- function(points = NA,
 
       ## Define the Line Start and End Coordinates and Add XY coordinates as
 
-      lines <- GPSPoints_transect |>
+      GPSPoints_transect |>
         dplyr::mutate(
           Xend = dplyr::lead(.data$X),
           Yend = dplyr::lead(.data$Y)
         ) |>
-        dplyr::filter(!is.na(.data$Yend))
-
-      sf <- lines |>
-        dplyr::group_by(.data$ID) |>
-        dplyr::summarize(
-          geometry = sf::st_sfc(sf::st_linestring(x = matrix(c(.data$X, .data$Xend, .data$Y, .data$Yend), ncol = 2)))
-        ) |>
-        sf::st_sf()
-
-      lines$geometry <- sf$geometry
-
-      lines <- sf::st_as_sf(lines, sf_column_name = "geometry") |>
-        sf::st_set_crs(PROJ)
-
-      lines
+        dplyr::filter(!is.na(.data$Yend)) |>
+        dplyr::rowwise(.data$ID) |>
+        dplyr::mutate(geometry = sf::st_sfc(
+          sf::st_linestring(
+            x = matrix(c(.data$X, .data$Xend, .data$Y, .data$Yend), ncol = 2)
+          )
+        )) |>
+        sf::st_sf(crs = PROJ)
     }) |> dplyr::bind_rows()
 
 
