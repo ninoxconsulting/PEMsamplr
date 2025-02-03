@@ -62,7 +62,7 @@ format_fielddata <- function(data_dir = NULL,
     pts <- which(s1_layers[["geomtype"]] %in% c("Point", "3D Point", "3D Measured Point"))
 
     if (length(pts) > 0) {
-      points_read <- sf::st_read(i, quiet = TRUE) |>
+      points_read <- sf::st_read(i, layer = pts, quiet = TRUE) |>
         sf::st_transform(3005) |>
         sf::st_zm() |>
         dplyr::rename_all(.funs = tolower)
