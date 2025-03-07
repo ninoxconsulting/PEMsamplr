@@ -5,6 +5,8 @@
 #' @param data_dir text string with location of raw files in shp or gpk format
 #' @param transect_layout A `sf` object with simplified transect layout
 #' @param buffer numeric value for buffer distance around transect layout
+#' @param extra_points A character string of the file names which includes
+#' additional points not collected in standard methods. Default is NULL
 #' @param write_output should the sf object be written to disk?
 #'     If `TRUE` (default), will write to `out_dir` under the appropriate resolution subfolder.
 #' @param out_dir A character string of path which points to output location. A default
@@ -20,6 +22,7 @@
 format_fielddata <- function(data_dir = NULL,
                              transect_layout,
                              buffer = 10,
+                             extra_points = NULL,
                              write_output = TRUE,
                              out_dir = fs::path(PEMprepr::read_fid()$dir_20105020_clean_field_data$path_rel),
                              out_name = "s1_points_raw.gpkg"){
@@ -61,6 +64,27 @@ format_fielddata <- function(data_dir = NULL,
 
 
   points <- fs::dir_ls(path = data_dir, recurse = TRUE, regexp = ".gpkg$|.shp$")
+
+
+  # if extra points included check if fcorrect format
+  if(!is.null(extra_points) && !inherits(extra_points, "character")){
+    cli::cat_line()
+    cli::cli_abort("{.var extra_points} must be a character string")
+  }
+
+  # if extra points exist, keep seperate and add to final datasets
+  if (!is.null(extra_points) && fs::file_exists(fs::path(data_dir, extra_points))) {
+
+    extra_pts <- sf::st_read(fs::path(data_dir, extra_points), quiet = TRUE) |>
+      sf::st_transform(3005) |>
+      sf::st_zm() |>
+      dplyr::rename_all(.funs = tolower) |>
+      dplyr::mutate(data_type = "incidental")
+
+    # remove from points and add as seperate dataset
+    points <- points[-grep(fs::path(data_dir, extra_points), points)]
+
+  }
 
   if(length(points) == 0){
     cli::cat_line()
@@ -178,6 +202,15 @@ format_fielddata <- function(data_dir = NULL,
     }
   }) |> dplyr::bind_rows()
 
+
+  if(exists("extra_pts")){
+
+    namestokeep <-  colnames(extra_pts) %in% colnames(all_points)
+    extra_pts <- extra_pts[, namestokeep]
+
+    all_points <- dplyr::bind_rows(all_points, extra_pts)
+
+  }
 
   if(write_output) {
 
@@ -319,13 +352,14 @@ format_fielddata <- function(data_dir = NULL,
     dplyr::mutate(id = gsub("\\s", "", .data$id)) |>
     dplyr::mutate(transect_id = .data$id)
 
-  if (any(is.na(points_read$transect_id))) {
-    points_read <- points_read |>
-      dplyr::mutate(data_type = ifelse(is.na(.data$transect_id), "incidental", "s1"))
+  points_read <- points_read |>
+    dplyr::mutate(data_type = ifelse(is.na(.data$transect_id), "incidental", "s1"))
+
+  if(any(is.na(points_read$transect_id))) {
     cli::cat_line()
     cli::cli_alert_warning("points outside the transect buffer, assigned to incidental,
                                please check these and re-run if needed")
   }
 
-return(points_read)
+  return(points_read)
 }
