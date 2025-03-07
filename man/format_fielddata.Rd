@@ -8,6 +8,7 @@ format_fielddata(
   data_dir = NULL,
   transect_layout,
   buffer = 10,
+  extra_points = NULL,
   write_output = TRUE,
   out_dir = fs::path(PEMprepr::read_fid()$dir_20105020_clean_field_data$path_rel),
   out_name = "s1_points_raw.gpkg"
@@ -19,6 +20,9 @@ format_fielddata(
 \item{transect_layout}{A \code{sf} object with simplified transect layout}
 
 \item{buffer}{numeric value for buffer distance around transect layout}
+
+\item{extra_points}{A character string of the file names which includes
+additional points not collected in standard methods. Default is NULL}
 
 \item{write_output}{should the sf object be written to disk?
 If \code{TRUE} (default), will write to \code{out_dir} under the appropriate resolution subfolder.}
