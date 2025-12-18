@@ -109,7 +109,16 @@ make_lines <- function(points = fs::path(PEMprepr::read_fid()$dir_20105020_clean
 
     all_lines <- sf::st_make_valid(all_lines)
 
+    # drop any points produced by line segment creation
+    geom_type <- as.character(unique(sf::st_geometry_type(all_lines, by_geometry = TRUE)))
+
+    if ("POINT" %in% geom_type) {
+      all_lines <- all_lines[grep("POINT", tt, invert = TRUE),]
+      all_lines <- sf::st_make_valid(all_lines)
+    }
+
     all_lines <- all_lines |> dplyr::select(-c("X", "Y", "TID", "ID", "Xend", "Yend"))
+
   } else if (method == "tracklog") {
     cli::cli_alert_info("Tracklog method not implemented yet")
     # see file: placeholder_make_lines_tracklog_method.R for details. As of Jan 20205 this has not been updated
