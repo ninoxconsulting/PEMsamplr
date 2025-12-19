@@ -113,7 +113,7 @@ make_lines <- function(points = fs::path(PEMprepr::read_fid()$dir_20105020_clean
     geom_type <- as.character(unique(sf::st_geometry_type(all_lines, by_geometry = TRUE)))
 
     if ("POINT" %in% geom_type) {
-      all_lines <- all_lines[grep("POINT", tt, invert = TRUE),]
+      all_lines<- all_lines[grep("POINT", sf::st_geometry_type(all_lines, by_geometry = TRUE), invert = TRUE),]
       all_lines <- sf::st_make_valid(all_lines)
     }
 
