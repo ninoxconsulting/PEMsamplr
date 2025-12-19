@@ -2,7 +2,6 @@
 #'
 #' @param processed_lines A `sf` object of all attributed line segments or points
 #' @param trast A `SpatRast` or path to file with resolution matching the modelling resolution.
-#' @param neighbours A `logical` if adjacent neighbouring cells should be added. Default is FALSE.
 #' @param buffer A `numeric`to determine the extend in meters the line segments will be expanded to.
 #' Default is half of the raster template resolution 2.5m for a 5m resolution raster template
 #' @param write_output A `logical`if the sf object be written to disk?
@@ -19,7 +18,6 @@
 #'   "proc_s1_transects5.gpkg"),
 #'   trast = fs::path(PEMprepr::read_fid()$dir_1020_covariates$path_rel, "5m", "template.tif"),
 #'   buffer = 2.5,
-#'   neighbours = FALSE,
 #'   write_output = TRUE,
 #'   out_dir = PEMprepr::read_fid()$dir_20105020_clean_field_data$path_rel,
 #'   out_name = "allpoints.gpkg")
@@ -27,7 +25,6 @@
 convert_lines_pts <- function(processed_lines = fs::path(PEMprepr::read_fid()$dir_20105020_clean_field_data$path_rel, "proc_s1_transects5.gpkg"),
                               trast,
                               buffer = 2.5,
-                              neighbours = FALSE,
                               write_output = TRUE,
                               out_dir = PEMprepr::read_fid()$dir_20105020_clean_field_data$path_rel,
                               out_name = "allpoints.gpkg") {
@@ -73,9 +70,6 @@ convert_lines_pts <- function(processed_lines = fs::path(PEMprepr::read_fid()$di
   # add slice and tid (transect id)
   allpts <- add_slice_tid_values(raster_points_xy)
 
-  # add neighbours if selected
-
-  if (neighbours) {
     sf::st_geometry(allpts) <- "geom"
     cli::cat_line()
     cli::cli_alert_warning("generating neighbouring points")
@@ -87,14 +81,29 @@ convert_lines_pts <- function(processed_lines = fs::path(PEMprepr::read_fid()$di
     pts <- terra::vect(dat_pts)
     cellNums <- terra::cells(trast, pts)
 
+    # first ring of neighbours
     adjCells <- terra::adjacent(trast, cells = cellNums[, 2], directions = "queen", include = TRUE) |>
       tibble::as_tibble(.name_repair = "unique") |>
       dplyr::rename_with(~ c("Orig", paste("Adj", 1:8, sep = ""))) |>
       dplyr::mutate(ID = dplyr::row_number())
 
+    # second ring of neighbours
+    adjCells2 <- terra::adjacent(trast, cells = cellNums[, 2], directions = "16", include = TRUE) |>
+      tibble::as_tibble(.name_repair = "unique") |>
+      dplyr::rename_with(~ c("Orig", paste("Adj", 9:24, sep = ""))) |>
+      dplyr::mutate(ID = dplyr::row_number())
+
     adjLong <- adjCells |>
       tidyr::pivot_longer(cols = !("ID"), names_to = "position", values_to = "CellNum") |>
       dplyr::arrange("ID", "position")
+
+    adjLong2 <- adjCells2 |>
+      tidyr::pivot_longer(cols = !("ID"), names_to = "position", values_to = "CellNum") |>
+      dplyr::arrange("ID", "position")
+
+    adjLong <- dplyr::bind_rows(adjLong, adjLong2) |>  dplyr::distinct()
+    adjLong <- dplyr::arrange(adjLong, .data$ID)
+
 
     terra::values(trast) <- cellnums <- seq_len(terra::ncell(trast))
     trast[!cellnums %in% adjLong$CellNum] <- NA
@@ -108,12 +117,10 @@ convert_lines_pts <- function(processed_lines = fs::path(PEMprepr::read_fid()$di
       dplyr::left_join(adjLong, by = "CellNum") |>
       dplyr::left_join(dat_atts, by = c("ID" = "ptsID")) |>
       sf::st_as_sf() |>
-      dplyr::select(-"CellNum", -"ID")
+      dplyr::select(-"CellNum")
 
     names(allpts) <- tolower(names(allpts))
-  } else {
-    allpts$position <- "Orig"
-  }
+
 
   if (write_output) {
     out_loc <- fs::path(out_dir, out_name)
