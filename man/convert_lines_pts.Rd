@@ -9,7 +9,6 @@ convert_lines_pts(
     "proc_s1_transects5.gpkg"),
   trast,
   buffer = 2.5,
-  neighbours = FALSE,
   write_output = TRUE,
   out_dir = PEMprepr::read_fid()$dir_20105020_clean_field_data$path_rel,
   out_name = "allpoints.gpkg"
@@ -22,8 +21,6 @@ convert_lines_pts(
 
 \item{buffer}{A \code{numeric}to determine the extend in meters the line segments will be expanded to.
 Default is half of the raster template resolution 2.5m for a 5m resolution raster template}
-
-\item{neighbours}{A \code{logical} if adjacent neighbouring cells should be added. Default is FALSE.}
 
 \item{write_output}{A \code{logical}if the sf object be written to disk?
 If \code{TRUE} (default), will write to \code{out_dir} under the appropriate resolution subfolder.}
@@ -46,7 +43,6 @@ clean_tracks <- convert_to_pts(
   "proc_s1_transects5.gpkg"),
   trast = fs::path(PEMprepr::read_fid()$dir_1020_covariates$path_rel, "5m", "template.tif"),
   buffer = 2.5,
-  neighbours = FALSE,
   write_output = TRUE,
   out_dir = PEMprepr::read_fid()$dir_20105020_clean_field_data$path_rel,
   out_name = "allpoints.gpkg")
