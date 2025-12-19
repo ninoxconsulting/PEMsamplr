@@ -35,7 +35,7 @@ attribute_points <- function(data_pts,
     cli::cli_alert_warning("Duplicated names are contained within the raster stack and will be removed")
     ancDat <- ancDat[[!duplicated(names(ancDat))]]
   }
-  atts <- terra::extract(ancDat, data_pts)
+  atts <- terra::extract(ancDat, data_pts)|> dplyr::select(-.data$ID)
   att_all <- dplyr::bind_cols(sf::st_as_sf(data_pts), atts)
 
   # write out point file
