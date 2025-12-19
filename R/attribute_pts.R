@@ -24,7 +24,7 @@ attribute_points <- function(data_pts,
     cli::cli_abort("{.var in_dir} does not exist, please check the path to your
                  landscape covariates is correct")
   }
-  cli::cli_alert_warning("Hold tight - this might take awhiel depending on number of points to attribute")
+  cli::cli_alert_warning("Hold tight - this might take awhile depending on number of points to attribute")
 
   # get list of raster
   rastlist <- list.files(cov_dir, pattern = ".sdat$|.tif$", recursive = T, full.names = T)
